@@ -1,4 +1,4 @@
-const updateDate = '10.01.2026';
+const updateDate = '13.01.2026';
 
 const remotePlugins = [
   {
@@ -23,6 +23,12 @@ const remotePlugins = [
     name: 'Online lampac grabber',
     url: 'https://honeyxcat.github.io/lampa-link-online/oooo.js',
     description: 'Плагин ворует онлайн из открытых Lampac.',
+    category: 'Разное'
+  },
+  {
+    name: 'Plugin installer',
+    url: 'https://addonslmp.github.io/pluginsinstaller.js',
+    description: 'Простая установка плагинов из вашего источника.',
     category: 'Разное'
   },
   {
@@ -134,4 +140,5 @@ const remotePlugins = [
     category: 'IPTV'
   }
 ];
+
 
