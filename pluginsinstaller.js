@@ -1,7 +1,7 @@
 (function () {
     'use strict'
 
-    const REMOTE_URL = 'https://dl.dropboxusercontent.com/scl/fi/bypooxwkdtvz2pt9s2bzr/plugins.js?rlkey=qupaatazb61wez8qwax4y7con&st=cetw2rk7'
+    const REMOTE_URL = 'https://addonslmp.github.io/sources/plugins_example.js'
     const STORAGE_KEY = 'external_installer_plugins'
     const SOURCE_KEY = 'external_installer'
     const URL_STORAGE_KEY = 'external_installer_source_url'
