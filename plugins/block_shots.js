@@ -30,6 +30,4 @@
     Lampa.Listener.follow('full', e => {
         if (e.type === 'complite') setTimeout(removeShotsOnlineButton, 0);
     });
-
-    console.log('[shots_blocker] Block Shots service');
 })();
