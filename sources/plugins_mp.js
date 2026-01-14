@@ -33,7 +33,7 @@ const remotePlugins = [
   },
   {
     name: 'Plugin installer',
-    url: 'https://addonslmp.github.io/pluginsinstaller.js',
+    url: 'https://addonslmp.github.io/plugins/pluginsinstaller.js',
     description: 'Простая установка плагинов из вашего источника.',
     category: 'Разное'
   },
@@ -41,6 +41,12 @@ const remotePlugins = [
     name: 'Комментарии от Резки',
     url: 'https://bdvburik.github.io/rezkacomment.js',
     description: 'Комментарии от Резки',
+    category: 'Разное'
+  },
+  {
+    name: 'Block Shots',
+    url: 'https://addonslmp.github.io/plugins/block_shots.js',
+    description: 'Убирает Shots',
     category: 'Разное'
   },
   {
@@ -164,6 +170,7 @@ const remotePlugins = [
     category: 'IPTV'
   }
 ];
+
 
 
 
