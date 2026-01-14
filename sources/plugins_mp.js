@@ -116,12 +116,6 @@ const remotePlugins = [
     category: 'Торрент'
   },
   {
-    name: 'Tracks Probe от LME',
-    url: 'https://lampame.github.io/main/tracks.js',
-    description: 'Tracks Probe — плагин для Lampa, который добавляет распознавание аудиодорожек и субтитров в видео (особенно в торрент-файлах) и делает выбор треков в плеере намного удобнее.',
-    category: 'Торрент'
-  },
-  {
     name: 'Online_Mod',
     url: 'https://nb557.github.io/plugins/online_mod.js',
     description: 'Онлайн',
@@ -158,6 +152,7 @@ const remotePlugins = [
     category: 'IPTV'
   }
 ];
+
 
 
 
