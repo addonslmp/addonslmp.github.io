@@ -1,107 +1,130 @@
 const updateDate = '14.01.2026';
 
 const remotePlugins = [
-    {
-        url: 'https://raw.githubusercontent.com/addonslmp/addonslmp.github.io/main/plugins/no_shots.js',
-        name: {
-            ru: 'Блокировка Shots',
-            uk: 'Блокування Shots',
-            en: 'Shots Blocker'
-        },
-        description: {
-            ru: 'Полностью скрывает кнопку и сервис Shots из интерфейса Lampa',
-            uk: 'Повністю приховує кнопку та сервіс Shots з інтерфейсу Lampa',
-            en: 'Completely hides the Shots button and service from Lampa interface'
-        },
-        category: {
-            ru: 'Системные',
-            uk: 'Системні',
-            en: 'System'
-        }
+  {
+    name: {
+      ru: 'MyShows',
+      uk: 'MyShows',
+      en: 'MyShows'
     },
-    {
-        url: 'https://raw.githubusercontent.com/addonslmp/addonslmp.github.io/main/plugins/no_ads.js',
-        name: {
-            ru: 'Блокировка рекламы',
-            uk: 'Блокування реклами',
-            en: 'Ad Blocker'
-        },
-        description: {
-            ru: 'Отключает всю встроенную рекламу в Lampa (баннеры, всплывающие окна)',
-            uk: 'Вимикає всю вбудовану рекламу в Lampa (банери, спливаючі вікна)',
-            en: 'Disables all built-in ads in Lampa (banners, pop-ups)'
-        },
-        category: {
-            ru: 'Системные',
-            uk: 'Системні',
-            en: 'System'
-        }
+    url: 'https://igorek1986.github.io/lampa-plugins/myshows.js',
+    description: {
+      ru: 'Плагин для синхронизации сервиса MyShows с Lampa',
+      uk: 'Плагін для синхронізації сервісу MyShows з Lampa',
+      en: 'Plugin for synchronizing MyShows service with Lampa'
     },
-    {
-        url: 'https://raw.githubusercontent.com/addonslmp/addonslmp.github.io/main/plugins/online.js',
-        name: {
-            ru: 'Онлайн-кинотеатры',
-            uk: 'Онлайн-кінотеатри',
-            en: 'Online Cinemas'
-        },
-        description: {
-            ru: 'Добавляет доступ к популярным онлайн-кинотеатрам и сериалам',
-            uk: 'Додає доступ до популярних онлайн-кінотеатрів та серіалів',
-            en: 'Adds access to popular online cinemas and series'
-        },
-        category: {
-            ru: 'Онлайн',
-            uk: 'Онлайн',
-            en: 'Online'
-        }
-    },
-    {
-        url: 'https://raw.githubusercontent.com/addonslmp/addonslmp.github.io/main/plugins/torrents.js',
-        name: {
-            ru: 'Торрент-клиент',
-            uk: 'Торент-клієнт',
-            en: 'Torrent Client'
-        },
-        description: {
-            ru: 'Встроенный торрент-клиент с поиском и загрузкой',
-            uk: 'Вбудований торент-клієнт з пошуком та завантаженням',
-            en: 'Built-in torrent client with search and download'
-        },
-        category: {
-            ru: 'Торренты',
-            uk: 'Торенти',
-            en: 'Torrents'
-        }
-    },
-    {
-        url: 'https://raw.githubusercontent.com/addonslmp/addonslmp.github.io/main/plugins/18plus.js',
-        name: {
-            ru: '18+ контент',
-            uk: '18+ контент',
-            en: '18+ Content'
-        },
-        description: {
-            ru: 'Доступ к контенту для взрослых (осторожно!)',
-            uk: 'Доступ до контенту для дорослих (обережно!)',
-            en: 'Access to adult content (use with caution!)'
-        },
-        category: {
-            ru: '18+',
-            uk: '18+',
-            en: '18+'
-        }
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
     }
+  },
+  {
+    name: {
+      ru: 'TraktTV',
+      uk: 'TraktTV',
+      en: 'TraktTV'
+    },
+    url: 'https://lampame.github.io/main/trakttv.js',
+    description: {
+      ru: 'Интеграция аккаунта Trakt.tv в Lampa: списки, прогресс, календарь сериалов',
+      uk: 'Інтеграція акаунту Trakt.tv у Lampa: списки, прогрес, календар серіалів',
+      en: 'Trakt.tv account integration in Lampa: lists, progress, series calendar'
+    },
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
+    }
+  },
+  {
+    name: {
+      ru: 'Series Skip Intro',
+      uk: 'Series Skip Intro',
+      en: 'Series Skip Intro'
+    },
+    url: 'https://honeyxcat.github.io/series-skip/series-skip.js',
+    description: {
+      ru: 'Автоматический пропуск заставок в сериалах',
+      uk: 'Автоматичний пропуск заставок у серіалах',
+      en: 'Automatic intro skipping in TV series'
+    },
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
+    }
+  },
+  {
+    name: {
+      ru: 'Онлайн українською мовою',
+      uk: 'Онлайн українською мовою',
+      en: 'Online in Ukrainian'
+    },
+    url: 'https://lampame.github.io/main/online.js',
+    description: {
+      ru: 'Онлайн-кинотеатры с украинской озвучкой и субтитрами',
+      uk: 'Онлайн-кінотеатри з українською озвучкою та субтитрами',
+      en: 'Online cinemas with Ukrainian audio and subtitles'
+    },
+    category: {
+      ru: 'Онлайн',
+      uk: 'Онлайн',
+      en: 'Online'
+    }
+  },
+  {
+    name: {
+      ru: '🇺🇦 Free Bandera Online',
+      uk: '🇺🇦 Free Bandera Online',
+      en: '🇺🇦 Free Bandera Online'
+    },
+    url: 'https://lampame.github.io/main/bo.js',
+    description: {
+      ru: 'Спільнота t.me/mmssixxx',
+      uk: 'Спільнота t.me/mmssixxx',
+      en: 'Community t.me/mmssixxx'
+    },
+    category: {
+      ru: 'Онлайн',
+      uk: 'Онлайн',
+      en: 'Online'
+    }
+  },
+  {
+    name: {
+      ru: 'IPTV',
+      uk: 'IPTV',
+      en: 'IPTV'
+    },
+    url: 'https://plugin.rootu.top/tv.js',
+    description: {
+      ru: 'Плагин для просмотра своих плейлистов IPTV в Lampa',
+      uk: 'Плагін для перегляду власних плейлистів IPTV в Lampa',
+      en: 'Plugin for viewing your own IPTV playlists in Lampa'
+    },
+    category: {
+      ru: 'IPTV',
+      uk: 'IPTV',
+      en: 'IPTV'
+    }
+  },
+  {
+    name: {
+      ru: '🇺🇦 TryzubTV',
+      uk: '🇺🇦 TryzubTV',
+      en: '🇺🇦 TryzubTV'
+    },
+    url: 'https://lampame.github.io/main/ttv.js',
+    description: {
+      ru: 'TryzubTV — украинские ТВ-каналы в удобном каталоге. Спільнота t.me/mmssixxx',
+      uk: 'TryzubTV — українські ТВ-канали у зручному каталозі. Спільнота t.me/mmssixxx',
+      en: 'TryzubTV — Ukrainian TV channels in a convenient catalog. Community t.me/mmssixxx'
+    },
+    category: {
+      ru: 'IPTV',
+      uk: 'IPTV',
+      en: 'IPTV'
+    }
+  }
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
