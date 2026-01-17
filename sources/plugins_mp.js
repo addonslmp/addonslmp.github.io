@@ -1,4 +1,4 @@
-const updateDate = '14.01.2026';
+const updateDate = '18.01.2026';
 
 const remotePlugins = [
   {
@@ -84,6 +84,78 @@ const remotePlugins = [
       ru: 'Убирает сервис Shots из интерфейса',
       uk: 'Прибирає сервіс Shots з інтерфейсу',
       en: 'Removes the Shots service from the interface'
+    },
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
+    }
+  },
+  {
+    name: {
+      ru: 'OnlineServe',
+      uk: 'OnlineServe',
+      en: 'OnlineServe'
+    },
+    url: 'https://ipavlin98.github.io/lmp-plugins/oooo.js',
+    description: {
+      ru: 'Можно ввести онлайн с Lampac сервера или с BWA (по коду), ссылки можно указать в настройках.',
+      uk: 'Можна ввести онлайн з Lampac сервера або з BWA (за кодом), посилання можна вказати в налаштуваннях.',
+      en: 'You can enter it online from the Lampac server or from BWA (by code); links can be specified in the settings.'
+    },
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
+    }
+  },
+  {
+    name: {
+      ru: 'Season Fix',
+      uk: 'Season Fix',
+      en: 'Season Fix'
+    },
+    url: 'https://ipavlin98.github.io/lmp-plugins/season-fix.js',
+    description: {
+      ru: 'Разбивает бесконечные первые сезоны аниме на нормальные части используя базу данных TVmaze.',
+      uk: 'Розбиває нескінченні перші сезони аніме на нормальні частини, використовуючи базу даних TVmaze.',
+      en: 'Breaks endless first seasons of anime into normal parts using the TVmaze database.'
+    },
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
+    }
+  },
+  {
+    name: {
+      ru: 'Anime Skip',
+      uk: 'Anime Skip',
+      en: 'Anime Skip'
+    },
+    url: 'https://ipavlin98.github.io/lmp-plugins/anime-skip.js',
+    description: {
+      ru: 'Пропуск опенингов и эндингов в аниме через базу Aniskip.',
+      uk: 'Пропуск опенінгів та ендінгів в аніме через базу Aniskip.',
+      en: 'Skipping openings and endings in anime using the Aniskip database.'
+    },
+    category: {
+      ru: 'Разное',
+      uk: 'Різне',
+      en: 'Misc'
+    }
+  },
+    {
+    name: {
+      ru: 'Series Skip',
+      uk: 'Series Skip',
+      en: 'Series Skip'
+    },
+    url: 'https://ipavlin98.github.io/lmp-series-skip-db/series-skip.js',
+    description: {
+      ru: 'Пропуск интро и аутро для сериалов. Работает для большинства популярных тайтлов.',
+      uk: 'Пропуск інтро та аутро для серіалів. Працює для більшості популярних титулів.',
+      en: 'Skip intro and outro for TV series. Works for most popular titles.'
     },
     category: {
       ru: 'Разное',
@@ -192,9 +264,27 @@ const remotePlugins = [
     },
     url: 'https://lampame.github.io/main/hikka.js',
     description: {
-      ru: 'Каталог аниме с hikka.io: поиск, фильтры, сортировка',
-      uk: 'Каталог аніме з hikka.io: пошук, фільтри, сортування',
-      en: 'Anime catalog from hikka.io: search, filters, sorting'
+      ru: 'Каталог аниме с hikka.io: поиск, фильтры, сортировка.',
+      uk: 'Каталог аніме з hikka.io: пошук, фільтри, сортування.',
+      en: 'Anime catalog from hikka.io: search, filters, sorting.'
+    },
+    category: {
+      ru: 'Категории',
+      uk: 'Категорії',
+      en: 'Categories'
+    }
+  },
+  {
+    name: {
+      ru: 'Studios',
+      uk: 'Studios',
+      en: 'Studios'
+    },
+    url: 'https://syvyj.github.io/studios_4lampa/studios.js',
+    description: {
+      ru: 'Добавляет в боковое меню подборки по крупным студиям Netflix, Disney, Apple. Внутри каждой категории есть подборки, похожие на сами сервисы, а не просто набор фильмов/сериалов.',
+      uk: 'Додає в бічне меню добірки по великим студіям Netflix, Disney, Apple. В середині кожної категорії має добірки подібні до самих сервісів, а не просто набір фільмів/серіалів.',
+      en: 'Adds selections from major studios such as Netflix, Disney, and Apple to the side menu. Each category contains selections similar to the services themselves, rather than just a collection of movies/TV shows.'
     },
     category: {
       ru: 'Категории',
@@ -252,6 +342,24 @@ const remotePlugins = [
       ru: 'Подробная информация в карточке фильма/сериала',
       uk: 'Детальна інформація в картці фільму/серіалу',
       en: 'Detailed information in movie/series card'
+    },
+    category: {
+      ru: 'Интерфейс',
+      uk: 'Інтерфейс',
+      en: 'Interface'
+    }
+  },
+    {
+    name: {
+      ru: 'Interface UI',
+      uk: 'Interface UI',
+      en: 'Interface UI'
+    },
+    url: 'https://ipavlin98.github.io/lmp-plugins/int.js',
+    description: {
+      ru: 'Версия интерфейса с множеством настроек и мелких улучшений.',
+      uk: 'Версія інтерфейсу з безліччю налаштувань і дрібних поліпшень.',
+      en: 'A version of the interface with numerous settings and minor improvements.'
     },
     category: {
       ru: 'Интерфейс',
@@ -327,6 +435,24 @@ const remotePlugins = [
       ru: 'Корректное отображение списка озвучек в торрентах',
       uk: 'Коректне відображення списку озвучок у торрентах',
       en: 'Correct display of voice acting lists in torrents'
+    },
+    category: {
+      ru: 'Торрент',
+      uk: 'Торрент',
+      en: 'Torrent'
+    }
+  },
+  {
+    name: {
+      ru: 'Torrent Styles',
+      uk: 'Torrent Styles',
+      en: 'Torrent Styles'
+    },
+    url: 'https://ipavlin98.github.io/lmp-plugins/torr-styles.js',
+    description: {
+      ru: 'Подсветка высоких сидов зелёным, высокого битрейта красным, зелёная рамка фокуса.',
+      uk: 'Підсвічування високих сидів зеленим, високого бітрейту червоним, зелена рамка фокусу.',
+      en: 'High seeds highlighted in green, high bitrate in red, green focus frame.'
     },
     category: {
       ru: 'Торрент',
@@ -449,6 +575,7 @@ const remotePlugins = [
     }
   }
 ];
+
 
 
 
