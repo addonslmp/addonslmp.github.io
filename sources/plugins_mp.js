@@ -589,12 +589,13 @@ const remotePlugins = [
       en: 'Anime catalog from hikka.io: search, filters, sorting.'
     },
     category: {
-      ru: 'Категории',
-      uk: 'Категорії',
-      en: 'Categories'
+      ru: 'Аниме',
+      uk: 'Аніме',
+      en: 'Anime'
     }
   }
 ];
+
 
 
 
