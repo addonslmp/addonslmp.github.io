@@ -203,6 +203,20 @@
     }
 
 
+    function confirmExportEnabled() {
+        const prev = Lampa.Controller.enabled().name;
+        Lampa.Modal.open({
+            title: Lampa.Lang.translate('mp_export_to_lampa'),
+            align: 'center',
+            html: $('<div class="about">' + Lampa.Lang.translate('mp_export_message') + '</div>'),
+            buttons: [
+                { name: Lampa.Lang.translate('mp_cancel'), onSelect: function () { Lampa.Modal.close(); Lampa.Controller.toggle(prev); } },
+                { name: 'Экспорт', onSelect: function () { Lampa.Modal.close(); exportToLampa(); } }
+            ]
+        });
+    }
+
+
     function savePluginList(list) {
         Lampa.Storage.set(STORAGE_KEY, list);
         pluginList = list;
@@ -528,7 +542,7 @@
             component: 'multi_plugin',
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_export_to_lampa') },
-            onChange: exportToLampa
+            onChange: confirmExportEnabled
         });
 
 
