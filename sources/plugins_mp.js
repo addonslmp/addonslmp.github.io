@@ -1,6 +1,6 @@
-const updateDate = '18.01.2026';
-
-const remotePlugins = [
+{
+  "updateDate" = '18.01.2026';
+  "plugins" = [
   {
     name: {
       ru: 'MyShows',
@@ -595,7 +595,9 @@ const remotePlugins = [
       en: 'Anime'
     }
   }     
-];
+]
+}  
+
 
 
 
