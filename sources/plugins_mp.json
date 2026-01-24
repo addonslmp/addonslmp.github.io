@@ -327,6 +327,24 @@
     },
     {
       "name": {
+        "ru": "Cardify Rating",
+        "uk": "Cardify Rating",
+        "en": "Cardify Rating"
+      },
+      "url": "https://ipavlin98.github.io/lmp-plugins/cardify.js",
+      "description": {
+        "ru": "Немного исправленная версия Cardify с парой фиксов и отображением рейтингов.",
+        "uk": "Трохи виправлена версія Cardify з парою фіксів і відображенням рейтингів.",
+        "en": "A slightly modified version of Cardify with a couple of fixes and rating display."
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },    
+    {
+      "name": {
         "ru": "Torrent Manager",
         "uk": "Torrent Manager",
         "en": "Torrent Manager"
@@ -579,3 +597,4 @@
     }
   ]
 }
+
