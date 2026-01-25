@@ -1,13 +1,11 @@
 (function () {
-    'use strict'
+    'use strict';
 
-
-    const DEFAULT_URL = 'https://addonslmp.github.io/sources/plugins_example.js'
-    const STORAGE_KEY = 'external_installer_plugins'
-    const SOURCE_KEY = 'external_installer'
-    const URL_STORAGE_KEY = 'external_installer_source_url'
-    const INSTALLED_COLOR = '#02e602'
-
+    const DEFAULT_URL = 'https://addonslmp.github.io/sources/plugins_example.json';
+    const STORAGE_KEY = 'external_installer_plugins';
+    const SOURCE_KEY = 'external_installer';
+    const URL_STORAGE_KEY = 'external_installer_source_url';
+    const INSTALLED_COLOR = '#02e602';
 
     Lampa.Lang.add({
         pi_title: {
@@ -31,29 +29,19 @@
             en: 'Plugin Removed'
         },
         pi_no_plugins: {
-            ru: 'В категории "%s" нет плагинов',
-            uk: 'У категорії "%s" немає плагінів',
-            en: 'No plugins in category "%s"'
-        },
-        pi_install: {
-            ru: 'Установить',
-            uk: 'Встановити',
-            en: 'Install'
-        },
-        pi_remove: {
-            ru: 'Удалить',
-            uk: 'Видалити',
-            en: 'Remove'
+            ru: 'Список плагинов пуст',
+            uk: 'Список плагінів порожній',
+            en: 'Plugins list is empty'
         },
         pi_invalid_url: {
-            ru: 'Неверный URL',
-            uk: 'Неправильний URL',
+            ru: 'Некорректная ссылка',
+            uk: 'Некоректне посилання',
             en: 'Invalid URL'
         },
         pi_source_set_reload: {
-            ru: 'Ссылка установлена. Перезагрузка…',
-            uk: 'Посилання встановлено. Перезавантаження…',
-            en: 'URL set. Reloading…'
+            ru: 'Источник изменён. Перезагрузка через 3 секунды...',
+            uk: 'Джерело змінено. Перезавантаження через 3 секунди...',
+            en: 'Source changed. Reloading in 3 seconds...'
         },
         pi_categories_title: {
             ru: 'Категории',
@@ -62,184 +50,136 @@
         }
     });
 
-
-    function tr(value) {
-        if (!value) return '';
-        if (typeof value === 'string') return value;
-        const lang = Lampa.Storage.get('language', 'ru');
-        return value[lang] || value.ru || '';
-    }
-
-
-    let plugins = []
-
+    let plugins = [];
+    let currentSourceUrl = Lampa.Storage.get(URL_STORAGE_KEY, DEFAULT_URL);
 
     function getSourceUrl() {
-        return Lampa.Storage.get(URL_STORAGE_KEY, DEFAULT_URL)
+        return currentSourceUrl;
     }
-
 
     function loadRemoteList() {
         return fetch(getSourceUrl(), { cache: 'no-cache' })
-            .then(r => r.text())
-            .then(text => {
-                const match = text.match(/pluginsList\s*=\s*(\[[\s\S]*?\])/)
-                if (!match) return []
-                const list = eval(match[1])
-                plugins = list
-                Lampa.Storage.set(STORAGE_KEY, list, true)
-                return list
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                const list = Array.isArray(data.plugins) ? data.plugins : [];
+                plugins = list;
+                Lampa.Storage.set(STORAGE_KEY, list, true);
+                return list;
             })
-            .catch(() => {
-                plugins = Lampa.Storage.get(STORAGE_KEY, [])
-                return plugins
-            })
+            .catch(function () {
+                plugins = Lampa.Storage.get(STORAGE_KEY, []);
+                return plugins;
+            });
     }
-
-
-    function getInstalled() {
-        return Lampa.Plugins.get() || []
-    }
-
 
     function isInstalled(url) {
-        return getInstalled().some(p => p.url === url)
+        return Lampa.Plugins.get().some(function (p) { return p.url === url && p.status === 1; });
     }
 
-
-    function installPlugin(p) {
-        if (isInstalled(p.url)) return
+    function installPlugin(plugin) {
+        if (isInstalled(plugin.url)) {
+            Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
+            return;
+        }
         Lampa.Plugins.add({
-            url: p.url,
-            name: tr(p.name) || p.url.split('/').pop(),
+            url: plugin.url,
+            name: tr(plugin.name) || plugin.url.split('/').pop(),
             status: 1,
             source: SOURCE_KEY
-        })
-        Lampa.Plugins.save()
-        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'))
+        });
+        Lampa.Plugins.save();
+        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
     }
 
-
-    function removePlugin(p) {
-        const installed = getInstalled()
-        const target = installed.find(x => x.url === p.url && x.source === SOURCE_KEY)
-        if (!target) return
-        Lampa.Plugins.remove(target)
-        Lampa.Plugins.save()
-        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_removed'))
+    function removePlugin(url) {
+        Lampa.Plugins.remove(url);
+        Lampa.Plugins.save();
+        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_removed'));
     }
-
-
-    function showPluginMenu(category, plugin) {
-        const installed = isInstalled(plugin.url)
-        Lampa.Select.show({
-            title: tr(plugin.name),
-            items: [
-                {
-                    title: installed ? Lampa.Lang.translate('pi_remove') : Lampa.Lang.translate('pi_install'),
-                    action: installed ? 'remove' : 'install'
-                }
-            ],
-            onSelect: function (item) {
-                if (item.action === 'install') {
-                    installPlugin(plugin)
-                } else {
-                    removePlugin(plugin)
-                }
-                Lampa.Select.close()
-                setTimeout(() => showCategory(category), 0)
-            },
-            onBack: function () {
-                setTimeout(() => showCategory(category), 0)
-            }
-        })
-    }
-
-
-    function showCategory(category) {
-        const categoryPlugins = plugins.filter(p => tr(p.category) === category)
-        if (!categoryPlugins.length) {
-            Lampa.Noty.show(Lampa.Lang.translate('pi_no_plugins').replace('%s', category))
-            return
-        }
-        const items = categoryPlugins.map(p => ({
-            title: tr(p.name),
-            subtitle: tr(p.description) || '',
-            plugin: p
-        }))
-        Lampa.Select.show({
-            title: tr(category),
-            items: items,
-            onSelect: function (item) {
-                showPluginMenu(category, item.plugin)
-            },
-            onBack: function () {
-                Lampa.Controller.toggle('settings_component')
-            }
-        })
-    }
-
 
     function buildMenu() {
-        const categories = [...new Set(plugins.map(p => tr(p.category)))]
-        categories.forEach(cat => {
+        if (plugins.length === 0) {
+            Lampa.Noty.show(Lampa.Lang.translate('pi_no_plugins'));
+            return;
+        }
+
+        const categories = {};
+        plugins.forEach(function (plugin) {
+            const cat = tr(plugin.category || 'Разное');
+            if (!categories[cat]) categories[cat] = [];
+            categories[cat].push(plugin);
+        });
+
+        Object.keys(categories).sort().forEach(function (cat) {
             Lampa.SettingsApi.addParam({
                 component: 'external_installer',
-                param: { type: 'button' },
-                field: { name: cat },
-                onChange: () => showCategory(cat)
-            })
-        })
-    }
+                param: { type: 'title' },
+                field: { name: cat }
+            });
 
+            categories[cat].forEach(function (plugin) {
+                const installed = isInstalled(plugin.url);
+                Lampa.SettingsApi.addParam({
+                    component: 'external_installer',
+                    param: { type: 'button' },
+                    field: {
+                        name: tr(plugin.name) || plugin.url.split('/').pop(),
+                        description: tr(plugin.description) || '',
+                        color: installed ? INSTALLED_COLOR : null
+                    },
+                    onChange: function () {
+                        if (installed) {
+                            removePlugin(plugin.url);
+                        } else {
+                            installPlugin(plugin);
+                        }
+                        // Перерисовка после изменения
+                        Lampa.SettingsApi.reloadComponent('external_installer');
+                    }
+                });
+            });
+        });
+    }
 
     Lampa.SettingsApi.addComponent({
         component: 'external_installer',
-        icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="16" height="12" rx="4" stroke="#fff" stroke-width="2"/><circle cx="9.5" cy="12" r="1.4" fill="#fff"/><circle cx="14.5" cy="12" r="1.4" fill="#fff"/><path d="M8 2v4M16 2v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>',
+        icon: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h10v2H7v-2z"/></svg>',
         name: Lampa.Lang.translate('pi_title')
-    })
-
+    });
 
     Lampa.SettingsApi.addParam({
         component: 'external_installer',
-        param: { type: 'button' },
-        field: { name: Lampa.Lang.translate('pi_source_plugins') },
-        onChange: function () {
-            const currentUrl = Lampa.Storage.get(URL_STORAGE_KEY, DEFAULT_URL)
-            Lampa.Input.edit({
-                title: Lampa.Lang.translate('pi_source_plugins'),
-                free: true,
-                nosave: true,
-                nomic: true,
-                value: currentUrl
-            }, (value) => {
-                if (value && value.startsWith('http')) {
-                    Lampa.Storage.set(URL_STORAGE_KEY, value)
-                    Lampa.Noty.show(Lampa.Lang.translate('pi_source_set_reload'))
-                    setTimeout(() => {
-                        window.location.reload()
-                    }, 3000)
-                } else {
-                    Lampa.Noty.show(Lampa.Lang.translate('pi_invalid_url'))
-                }
-            })
+        param: { type: 'input' },
+        field: {
+            name: Lampa.Lang.translate('pi_source_plugins'),
+            value: currentSourceUrl,
+            description: currentSourceUrl === DEFAULT_URL ? 'По умолчанию' : ''
+        },
+        onChange: function (value) {
+            if (value && value.startsWith('http')) {
+                Lampa.Storage.set(URL_STORAGE_KEY, value);
+                currentSourceUrl = value;
+                Lampa.Noty.show(Lampa.Lang.translate('pi_source_set_reload'));
+                setTimeout(function () {
+                    window.location.reload();
+                }, 3000);
+            } else {
+                Lampa.Noty.show(Lampa.Lang.translate('pi_invalid_url'));
+            }
         }
-    })
-
+    });
 
     Lampa.SettingsApi.addParam({
         component: 'external_installer',
         param: { type: 'title' },
         field: { name: Lampa.Lang.translate('pi_categories_title') }
-    })
+    });
 
-
-    Lampa.Listener.follow('app', e => {
+    Lampa.Listener.follow('app', function (e) {
         if (e.type === 'ready') {
-            loadRemoteList().then(buildMenu)
+            loadRemoteList().then(buildMenu);
         }
-    })
+    });
 
-
-    console.log('External Plugin Installer loaded')
+    console.log('External Plugin Installer loaded');
 })();
