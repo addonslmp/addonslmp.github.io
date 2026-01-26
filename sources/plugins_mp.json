@@ -489,11 +489,11 @@
     },
     {
       "name": {
-        "ru": "🇺🇦 Online (безкоштовно)",
-        "uk": "🇺🇦 Online (безкоштовно)",
-        "en": "🇺🇦 Online (free)"
+        "ru": "🇺🇦 BazarNetUA (безкоштовно)",
+        "uk": "🇺🇦 BazarNetUA (безкоштовно)",
+        "en": "🇺🇦 BazarNetUA (free)"
       },
-      "url": "http://lampaua.mooo.com/online.js",
+      "url": "https://lampaua.mooo.com/online/js/bazarnetua",
       "description": {
         "ru": "Онлайн-контент українською мовою",
         "uk": "Онлайн-контент українською мовою",
@@ -615,5 +615,6 @@
     }
   ]
 }
+
 
 
