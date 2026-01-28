@@ -54,25 +54,7 @@
         "uk": "Різне",
         "en": "Misc"
       }
-    },
-    {
-      "name": {
-        "ru": "Подборки TMDB_MOD",
-        "uk": "Підбірки TMDB_MOD",
-        "en": "TMDB_MOD compilations"
-      },
-      "url": "https://gitfuntik.github.io/tmdb_mod.js",
-      "description": {
-        "ru": "Главная цель — предоставить вам уникальные и актуальные тематические коллекции, которые вы можете включить или выключить по своему усмотрению. Плагин создает отдельный источник контента: 'TMDB_MOD'.",
-        "uk": "Головна мета — надати вам унікальні та актуальні тематичні колекції, які ви можете ввімкнути або вимкнути на свій розсуд. Плагін створює окреме джерело контенту: “TMDB_MOD”.",
-        "en": "The main goal is to provide you with unique and relevant themed collections that you can enable or disable at your discretion. The plugin creates a separate content source: ‘TMDB_MOD’."
-      },
-      "category": {
-        "ru": "Разное",
-        "uk": "Різне",
-        "en": "Misc"
-      }
-    },    
+    },   
     {
       "name": {
         "ru": "Комментарии от Резки",
@@ -165,6 +147,24 @@
     },
     {
       "name": {
+        "ru": "Quality+Mod",
+        "uk": "Quality+Mod",
+        "en": "Quality+Mod"
+      },
+      "url": "https://ko31k.github.io/LMP/plugins/Quality+Mod.js",
+      "description": {
+        "ru": "Показывает метку качества на карточке фильма.",
+        "uk": "Показує позначку якості на картці фільму.",
+        "en": "Shows the quality mark on the movie card."
+      },
+      "category": {
+        "ru": "Разное",
+        "uk": "Різне",
+        "en": "Misc"
+      }
+    },    
+    {
+      "name": {
         "ru": "Новые категории и подборки фильмов",
         "uk": "Нові категорії та добірки фільмів",
         "en": "New movie categories and collections"
@@ -199,6 +199,24 @@
         "en": "Categories"
       }
     },
+    {
+      "name": {
+        "ru": "Подборки TMDB_MOD",
+        "uk": "Підбірки TMDB_MOD",
+        "en": "TMDB_MOD compilations"
+      },
+      "url": "https://gitfuntik.github.io/tmdb_mod.js",
+      "description": {
+        "ru": "Главная цель — предоставить вам уникальные и актуальные тематические коллекции, которые вы можете включить или выключить по своему усмотрению. Плагин создает отдельный источник контента: 'TMDB_MOD'.",
+        "uk": "Головна мета — надати вам унікальні та актуальні тематичні колекції, які ви можете ввімкнути або вимкнути на свій розсуд. Плагін створює окреме джерело контенту: “TMDB_MOD”.",
+        "en": "The main goal is to provide you with unique and relevant themed collections that you can enable or disable at your discretion. The plugin creates a separate content source: ‘TMDB_MOD’."
+      },
+      "category": {
+        "ru": "Разное",
+        "uk": "Різне",
+        "en": "Misc"
+      }
+    },     
     {
       "name": {
         "ru": "LNUM категория",
@@ -615,6 +633,7 @@
     }
   ]
 }
+
 
 
 
