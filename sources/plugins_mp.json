@@ -1,5 +1,5 @@
 {
-  "updateDate": "30.01.2026",
+  "updateDate": "31.01.2026",
   "plugins": [
     {
       "name": {
@@ -327,11 +327,11 @@
     },
     {
       "name": {
-        "ru": "Interface Mod Plus",
-        "uk": "Interface Mod Plus",
-        "en": "Interface Mod Plus"
+        "ru": "Interface Mod by Wolf",
+        "uk": "Interface Mod by Wolf",
+        "en": "Interface Mod by Wolf"
       },
-      "url": "https://bywolf88.github.io/lampa-plugins/interface_mod_new.js",
+      "url": "https://bywolf88.github.io/lampa-plugins/interface_mod.js",
       "description": {
         "ru": "Подробная информация в карточке фильма/сериала",
         "uk": "Детальна інформація в картці фільму/серіалу",
@@ -414,7 +414,25 @@
         "uk": "Інтерфейс",
         "en": "Interface"
       }
-    },     
+    },   
+    {
+      "name": {
+        "ru": "TMDB Networks & Providers",
+        "uk": "TMDB Networks & Providers",
+        "en": "TMDB Networks & Providers"
+      },
+      "url": "https://levende.github.io/lampa-plugins/tmdb-networks.js",
+      "description": {
+        "ru": "Плагин добавляет на карточки кнопки стриминговых сервисов и платформ, показывающие, где были выпущены или проданы фильмы и сериалы, что упрощает их поиск.",
+        "uk": "Плагін додає на картки кнопки стрімінгових сервісів і платформ, що показують, де були випущені або продані фільми та серіали, що спрощує їх пошук.",
+        "en": "The plugin adds buttons for streaming services and platforms to the cards, showing where movies and TV series were released or sold, making them easier to find."
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },      
     {
       "name": {
         "ru": "Torrent Manager",
@@ -451,6 +469,24 @@
         "en": "Torrent"
       }
     },
+    {
+      "name": {
+        "ru": "Parsers",
+        "uk": "Parsers",
+        "en": "Parsers"
+      },
+      "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
+      "description": {
+        "ru": "Плагин со списком парсеров и индикацией доступности. Позволяет выбрать один из нескольких готовых вариантов, чтобы не вводить вручную URL/ключи.",
+        "uk": "Плагін зі списком парсерів та індикацією доступності. Дозволяє вибрати один з декількох готових варіантів, щоб не вводити вручну URL/ключі.",
+        "en": "Plugin with a list of parsers and availability indicators. Allows you to choose from several ready-made options so you don't have to enter URLs/keys manually."
+      },
+      "category": {
+        "ru": "Торрент",
+        "uk": "Торрент",
+        "en": "Torrent"
+      }
+    },    
     {
       "name": {
         "ru": "Etor",
@@ -669,6 +705,7 @@
     }
   ]
 }
+
 
 
 
