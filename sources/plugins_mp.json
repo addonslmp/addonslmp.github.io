@@ -1,5 +1,5 @@
 {
-  "updateDate": "01.02.2026",
+  "updateDate": "02.02.2026",
   "plugins": [
     {
       "name": {
@@ -417,6 +417,24 @@
     }, 
     {
       "name": {
+        "ru": "QualityUA",
+        "uk": "QualityUA",
+        "en": "QualityUA"
+      },
+      "url": "https://crowley38.github.io/QualityUA.js",
+      "description": {
+        "ru": "Показывает информацию о качестве и наличие украинской озвучки фильма в карточке.",
+        "uk": "Показує інформацію про якість та наявність української озвучки фільму в картці.",
+        "en": "Displays information about the quality and availability of Ukrainian dubbing for the film in the card."
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },     
+    {
+      "name": {
         "ru": "Рейтинг фильмов и сериалов",
         "uk": "Рейтинг фільмів і серіалів",
         "en": "Rating of movies and TV series "
@@ -723,6 +741,7 @@
     }
   ]
 }
+
 
 
 
