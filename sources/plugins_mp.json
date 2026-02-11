@@ -81,9 +81,9 @@
       },
       "url": "https://addonslmp.github.io/plugins/block_shots.js",
       "description": {
-        "ru": "Убирает сервис Shots из интерфейса",
-        "uk": "Прибирає сервіс Shots з інтерфейсу",
-        "en": "Removes the Shots service from the interface"
+        "ru": "Убирает сервис Shots из интерфейса. Нужен экспорт.",
+        "uk": "Прибирає сервіс Shots з інтерфейсу. Потрібен експорт.",
+        "en": "Removes the Shots service from the interface. Need export."
       },
       "category": {
         "ru": "Разное",
@@ -165,11 +165,11 @@
     },   
     {
       "name": {
-        "ru": "Buttons Editor",
-        "uk": "Buttons Editor",
-        "en": "Buttons Editor"
+        "ru": "Bazarnetua Buttons+",
+        "uk": "Bazarnetua Buttons+",
+        "en": "Bazarnetua Buttons+"
       },
-      "url": "https://mylampa1.github.io/buttons.js",
+      "url": "https://addonslmp.github.io/plugins/bazarnetuabuttons+.js",
       "description": {
         "ru": "Редактор для кнопок меню в карточке.",
         "uk": "Редактор для кнопок меню в картці.",
@@ -813,6 +813,7 @@
     }
   ]
 }
+
 
 
 
