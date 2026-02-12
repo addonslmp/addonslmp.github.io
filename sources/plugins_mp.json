@@ -1,5 +1,5 @@
 {
-  "updateDate": "12.02.2026",
+  "updateDate": "13.02.2026",
   "plugins": [
     {
       "name": {
@@ -273,6 +273,24 @@
     },
     {
       "name": {
+        "ru": "Dorama source",
+        "uk": "Dorama source",
+        "en": "Dorama source"
+      },
+      "url": "https://xxhekpxx2307.github.io/Plagins/Dorama.js",
+      "description": {
+        "ru": "Источник с дорамамы.",
+        "uk": "Джерело з дорамами.",
+        "en": "Dorama source."
+      },
+      "category": {
+        "ru": "Категории",
+        "uk": "Категорії",
+        "en": "Categories"
+      }
+    },    
+    {
+      "name": {
         "ru": "Studios",
         "uk": "Studios",
         "en": "Studios"
@@ -432,25 +450,7 @@
         "uk": "Інтерфейс",
         "en": "Interface"
       }
-    },     
-    {
-      "name": {
-        "ru": "QualityUa+Studios",
-        "uk": "QualityUa+Studios",
-        "en": "QualityUa+Studios"
-      },
-      "url": "https://crowley38.github.io/QualityUa+Studios.js",
-      "description": {
-        "ru": "Информация о качестве фильма и название студий.",
-        "uk": "Інформація про якість фільму та назва студій.",
-        "en": "Information about the quality of the film and the names of the studios."
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    },    
+    },        
     {
       "name": {
         "ru": "Рейтинг фильмов и сериалов",
@@ -729,9 +729,9 @@
       },
       "url": "https://lampame.github.io/main/ttv.js",
       "description": {
-        "ru": "TryzubTV — украинские ТВ-каналы в удобном каталоге. Спільнота t.me/mmssixxx",
-        "uk": "TryzubTV — українські ТВ-канали в зручному каталозі. Спільнота t.me/mmssixxx",
-        "en": "TryzubTV — Ukrainian TV channels in a convenient catalog. Community t.me/mmssixxx"
+        "ru": "TryzubTV - украинские ТВ-каналы в удобном каталоге. Спільнота t.me/mmssixxx",
+        "uk": "TryzubTV - українські ТВ-канали в зручному каталозі. Спільнота t.me/mmssixxx",
+        "en": "TryzubTV - Ukrainian TV channels in a convenient catalog. Community t.me/mmssixxx"
       },
       "category": {
         "ru": "IPTV",
@@ -777,6 +777,7 @@
     }
   ]
 }
+
 
 
 
