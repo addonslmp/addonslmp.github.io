@@ -435,24 +435,6 @@
     },
     {
       "name": {
-        "ru": "Quality+Mod",
-        "uk": "Quality+Mod",
-        "en": "Quality+Mod"
-      },
-      "url": "https://ko31k.github.io/LMP/plugins/Quality+Mod.js",
-      "description": {
-        "ru": "Показывает метку качества на карточке фильма.",
-        "uk": "Показує позначку якості на картці фільму.",
-        "en": "Shows the quality mark on the movie card."
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    }, 
-    {
-      "name": {
         "ru": "QualityUA",
         "uk": "QualityUA",
         "en": "QualityUA"
@@ -795,6 +777,7 @@
     }
   ]
 }
+
 
 
 
