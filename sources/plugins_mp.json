@@ -1,5 +1,5 @@
 {
-  "updateDate": "19.02.2026",
+  "updateDate": "20.02.2026",
   "plugins": [
     {
       "name": {
@@ -723,6 +723,24 @@
     },    
     {
       "name": {
+        "ru": "BWA Online",
+        "uk": "BWA Online",
+        "en": "BWA Online"
+      },
+      "url": "https://bwa.ad/rc",
+      "description": {
+        "ru": "Bwa - источник для онлайн просмотра фильмов и сериалов.",
+        "uk": "Bwa - джерело для онлайн перегляду фільмів та серіалів.",
+        "en": "Bwa - online source for watching movies and TVShows."
+      },
+      "category": {
+        "ru": "Онлайн",
+        "uk": "Онлайн",
+        "en": "Online"
+      }
+    },     
+    {
+      "name": {
         "ru": "Онлайн Stream",
         "uk": "Онлайн Stream",
         "en": "Online Stream"
@@ -813,6 +831,7 @@
     }
   ]
 }
+
 
 
 
