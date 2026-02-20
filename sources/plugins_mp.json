@@ -453,6 +453,24 @@
     },    
     {
       "name": {
+        "ru": "Quality+Mod - метки качества на карточке.",
+        "uk": "Quality+Mod - мітки якості на картці.",
+        "en": "Quality+Mod - quality labels on the card."
+      },
+      "url": "https://addonslmp.github.io/plugins/Quality+Mod.js",
+      "description": {
+        "ru": "Плагин отображает метку качества на карточке фильма.",
+        "uk": "Плагін відображає мітку якості на картці фільму.",
+        "en": "The plugin displays a quality label on the movie card."
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },     
+    {
+      "name": {
         "ru": "Rating_omdb",
         "uk": "Rating_omdb",
         "en": "Rating_omdb"
@@ -831,6 +849,7 @@
     }
   ]
 }
+
 
 
 
