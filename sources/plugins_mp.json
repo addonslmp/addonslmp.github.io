@@ -1,5 +1,5 @@
 {
-  "updateDate": "20.02.2026",
+  "updateDate": "21.02.2026",
   "plugins": [
     {
       "name": {
@@ -522,7 +522,43 @@
         "uk": "Інтерфейс",
         "en": "Interface"
       }
-    },      
+    }, 
+    {
+      "name": {
+        "ru": "Torrent Quality UA",
+        "uk": "Torrent Quality UA",
+        "en": "Torrent Quality UA"
+      },
+      "url": "https://yarikrazor-star.github.io/lmp/torrentqualityUa.js",
+      "description": {
+        "ru": "Отражает качество среди торрентов с украинскими  дорожками. Показывает реальную картину из выбранного вами парсера. Отражает наилучшее возможное качество фильма, реальное качество, которое чаще всего раздают, и наибольшее количество седеров, качество звука, наличие HDR.",
+        "uk": "Відображає якість серед торентів з Українськими  доріжками. Показує реальну картину з вашого обраного парсеру. Відображає найкращу можливу якість фільму, реальну якість яку найбільше роздають, та найбільшу кількість сідерів, якість звуку, наявність HDR.",
+        "en": "Displays the quality among torrents with Ukrainian tracks. Shows the real picture from your selected parser. Displays the best possible movie quality, the actual quality that is most widely distributed, and the largest number of seeders, sound quality, and HDR availability."
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },    
+    {
+      "name": {
+        "ru": "Torrent Quality UA Cardify",
+        "uk": "Torrent Quality UA Cardify",
+        "en": "Torrent Quality UA Cardify"
+      },
+      "url": "https://yarikrazor-star.github.io/lmp/torqUAcardify.js",
+      "description": {
+        "ru": "Torrent Quality Ua Cardify",
+        "uk": "Torrent Quality Ua Cardify",
+        "en": "Torrent Quality Ua Cardify"
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },     
     {
       "name": {
         "ru": "Torrent Manager",
@@ -867,6 +903,7 @@
     }
   ]
 }
+
 
 
 
