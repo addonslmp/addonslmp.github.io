@@ -37,23 +37,13 @@
         },
         mp_reload_message: { ru: 'Перезапустить приложение?', uk: 'Перезавантажити додаток?', en: 'Restart application?' },
         mp_ok: { ru: 'OK', uk: 'OK', en: 'OK' },
-        mp_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' }
+        mp_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
+        mp_no_updates_found: {
+            ru: 'Обновлений не найдено',
+            uk: 'Оновлень не знайдено',
+            en: 'No updates found'
+        }
     });
-
-
-    let CURRENT_LANG = Lampa.Storage.get('language', 'ru');
-
-
-    Lampa.Listener.follow('app', function (e) {
-        if (e.type === 'language') CURRENT_LANG = Lampa.Storage.get('language', 'ru');
-    });
-
-
-    function tr(value) {
-        if (!value) return '';
-        if (typeof value === 'string') return value;
-        return value[CURRENT_LANG] || value.ru || '';
-    }
 
 
     const syncUrl = 'https://addonslmp.github.io/sources/plugins_mp.json';
@@ -67,6 +57,15 @@
 
     let pluginList = [];
     const loadedPlugins = new Set();
+
+
+    // Вспомогательная функция для перевода объектов {ru: "...", uk: "...", en: "..."}
+    function translateObj(obj) {
+        if (!obj) return '';
+        if (typeof obj === 'string') return obj;
+        const lang = Lampa.Storage.get('language', 'ru');
+        return obj[lang] || obj.ru || obj.en || '';
+    }
 
 
     function lazyLoadPlugin(url) {
@@ -102,7 +101,7 @@
             if (exists) return;
             Lampa.Plugins.add({
                 url: plugin.url,
-                name: tr(plugin.name) || plugin.url.split('/').pop(),
+                name: translateObj(plugin.name) || plugin.url.split('/').pop(),
                 status: 1,
                 source: 'multiplugin'
             });
@@ -118,7 +117,7 @@
 
 
     function getCategories(list) {
-        return [...new Set(list.map(function (p) { return tr(p.category || 'Разное'); }))];
+        return [...new Set(list.map(function (p) { return translateObj(p.category) || 'Разное'; }))];
     }
 
 
@@ -140,11 +139,11 @@
 
     function showExportCategoryPlugins(category) {
         const selected = new Set(Lampa.Storage.get(EXPORT_KEY, []));
-        const plugins = pluginList.filter(function (p) { return tr(p.category || 'Разное') === category; });
+        const plugins = pluginList.filter(function (p) { return translateObj(p.category) === category; });
         const items = plugins.map(function (p) {
             return {
-                title: tr(p.name) || p.url.split('/').pop(),
-                subtitle: tr(p.description) || '',
+                title: translateObj(p.name) || p.url.split('/').pop(),
+                subtitle: translateObj(p.description) || '',
                 checkbox: true,
                 checked: selected.has(p.url),
                 url: p.url
@@ -154,11 +153,8 @@
             title: category,
             items: items,
             onCheck: function (item) {
-                if (item.checked) {
-                    selected.add(item.url);
-                } else {
-                    selected.delete(item.url);
-                }
+                if (item.checked) selected.add(item.url);
+                else selected.delete(item.url);
                 Lampa.Storage.set(EXPORT_KEY, Array.from(selected));
             },
             onBack: showExportCategories
@@ -173,13 +169,7 @@
             html: $('<div class="about">Экспортировать этот плагин в расширения Lampa?</div>'),
             buttons: [
                 { name: 'Отмена', onSelect: function () { Lampa.Modal.close(); } },
-                {
-                    name: 'Экспорт',
-                    onSelect: function () {
-                        exportPlugins([url]);
-                        Lampa.Modal.close();
-                    }
-                }
+                { name: 'Экспорт', onSelect: function () { exportPlugins([url]); Lampa.Modal.close(); } }
             ]
         });
     }
@@ -229,30 +219,47 @@
 
     function showInfo() {
         const info = getUpdateInfo();
+
+
+        // Если обновлений нет — уведомление с переводом
+        if (info.added.length === 0 && info.removed.length === 0) {
+            Lampa.Noty.show(Lampa.Lang.translate('mp_no_updates_found'));
+            return;
+        }
+
+
+        // Если есть — диалоговое окно
         let html = '<div class="about" style="text-align:left">';
         html += '<div><b>' + Lampa.Lang.translate('mp_last_update') + '</b> ' + info.date + '</div><br>';
+
+
         if (info.added.length) {
             html += '<b>' + Lampa.Lang.translate('mp_added') + '</b><br>';
             info.added.forEach(function (p) {
-                const name = tr(p.name) || p.url.split('/').pop();
+                const name = translateObj(p.name) || p.url.split('/').pop();
                 html += '• <b>' + name + '</b><br>';
-                if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + tr(p.description) + '</div>';
+                if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + translateObj(p.description) + '</div>';
                 html += '<br>';
             });
             html += '<br>';
         }
+
+
         if (info.removed.length) {
             html += '<b>' + Lampa.Lang.translate('mp_removed') + '</b><br>';
             info.removed.forEach(function (p) {
-                const name = tr(p.name) || p.url.split('/').pop();
+                const name = translateObj(p.name) || p.url.split('/').pop();
                 html += '• <b>' + name + '</b><br>';
-                if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + tr(p.description) + '</div>';
+                if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + translateObj(p.description) + '</div>';
                 html += '<br>';
             });
             html += '<br>';
         }
-        if (!info.added.length && !info.removed.length) html += '<div>' + Lampa.Lang.translate('mp_no_changes') + '</div>';
+
+
         html += '</div>';
+
+
         const prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
             title: Lampa.Lang.translate('mp_update_info'),
@@ -264,7 +271,7 @@
 
 
     function showCategory(category) {
-        const plugins = pluginList.filter(function (p) { return tr(p.category || 'Разное') === category; });
+        const plugins = pluginList.filter(function (p) { return translateObj(p.category) === category; });
         if (plugins.length === 0) {
             Lampa.Noty.show(Lampa.Lang.translate('mp_no_plugins_category').replace('%s', category));
             return;
@@ -272,8 +279,8 @@
         const enabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
         const items = plugins.map(function (p) {
             return {
-                title: tr(p.name) || p.url.split('/').pop(),
-                subtitle: tr(p.description) || '',
+                title: translateObj(p.name) || p.url.split('/').pop(),
+                subtitle: translateObj(p.description) || '',
                 checkbox: true,
                 checked: enabled.has(p.url),
                 url: p.url,
@@ -309,8 +316,8 @@
         }
         const items = active.map(function (p) {
             return {
-                title: tr(p.name) || p.url.split('/').pop(),
-                subtitle: tr(p.description) || '',
+                title: translateObj(p.name) || p.url.split('/').pop(),
+                subtitle: translateObj(p.description) || '',
                 checkbox: true,
                 checked: true,
                 url: p.url
@@ -379,22 +386,27 @@
         fetch(syncUrl, { cache: 'no-cache' })
             .then(function (response) { return response.json(); })
             .then(function (data) {
-                const newList = data.plugins.map(function (item) {
-                    return {
-                        url: item.url,
-                        name: item.name,
-                        description: item.description,
-                        category: item.category
-                    };
-                });
-                savePluginList(newList);
-                const enabledSet = new Set(Lampa.Storage.get(ENABLED_KEY, []));
-                newList.filter(function (p) { return tr(p.category) === 'Онлайн' || tr(p.category) === 'Online'; }).forEach(function (p) {
-                    enabledSet.add(p.url);
-                    lazyLoadPlugin(p.url);
-                });
-                Lampa.Storage.set(ENABLED_KEY, Array.from(enabledSet));
-                Lampa.Noty.show(Lampa.Lang.translate('mp_online_enabled'));
+                try {
+                    if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
+                    const newList = data.plugins.map(function (item) {
+                        return {
+                            url: item.url,
+                            name: item.name,
+                            description: item.description,
+                            category: item.category
+                        };
+                    });
+                    savePluginList(newList);
+                    const enabledSet = new Set(Lampa.Storage.get(ENABLED_KEY, []));
+                    newList.filter(function (p) { return translateObj(p.category) === 'Онлайн' || translateObj(p.category) === 'Online'; }).forEach(function (p) {
+                        enabledSet.add(p.url);
+                        lazyLoadPlugin(p.url);
+                    });
+                    Lampa.Storage.set(ENABLED_KEY, Array.from(enabledSet));
+                    Lampa.Noty.show(Lampa.Lang.translate('mp_online_enabled'));
+                } catch (e) {
+                    console.error('Load online error:', e);
+                }
             })
             .catch(function () { Lampa.Noty.show('Ошибка загрузки'); })
             .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
@@ -406,27 +418,45 @@
         fetch(syncUrl, { cache: 'no-cache' })
             .then(function (response) { return response.json(); })
             .then(function (data) {
-                const remoteDate = data.updateDate || '—';
-                const remotePlugins = data.plugins || [];
-                const newList = remotePlugins.map(function (item) {
-                    return {
-                        url: item.url,
-                        name: item.name,
-                        description: item.description,
-                        category: item.category
-                    };
-                });
-                const prevList = getPluginList();
-                const prevUrls = prevList.map(function (p) { return p.url; });
-                const newUrls = newList.map(function (p) { return p.url; });
-                const added = newUrls.filter(function (x) { return !prevUrls.includes(x); });
-                const removed = prevUrls.filter(function (x) { return !newUrls.includes(x); });
-                savePluginList(newList);
-                const oldEnabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
-                const validEnabled = prevUrls.filter(function (u) { return oldEnabled.has(u) && newUrls.includes(u); });
-                Lampa.Storage.set(ENABLED_KEY, validEnabled);
-                Lampa.Noty.show(Lampa.Lang.translate('mp_sync_complete'));
-                saveUpdateInfo(remoteDate, added, removed);
+                try {
+                    if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
+
+
+                    const remoteDate = data.updateDate || '—';
+                    const newList = data.plugins.map(function (item) {
+                        return {
+                            url: item.url,
+                            name: item.name,
+                            description: item.description,
+                            category: item.category
+                        };
+                    });
+
+
+                    const prevList = getPluginList();
+                    const prevUrls = prevList.map(function (p) { return p.url; });
+                    const newUrls = newList.map(function (p) { return p.url; });
+
+
+                    const added = newList.filter(function (p) { return !prevUrls.includes(p.url); });
+                    const removed = prevList.filter(function (p) { return !newUrls.includes(p.url); });
+
+
+                    savePluginList(newList);
+
+
+                    const oldEnabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
+                    const validEnabled = Array.from(oldEnabled).filter(function (u) { return newUrls.includes(u); });
+                    Lampa.Storage.set(ENABLED_KEY, validEnabled);
+
+
+                    Lampa.Noty.show(Lampa.Lang.translate('mp_sync_complete'));
+
+
+                    saveUpdateInfo(remoteDate, added, removed);
+                } catch (e) {
+                    console.error('Sync error:', e);
+                }
             })
             .catch(function () { Lampa.Noty.show('Ошибка синхронизации'); })
             .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
@@ -437,21 +467,26 @@
         fetch(syncUrl, { cache: 'no-cache' })
             .then(function (r) { return r.json(); })
             .then(function (data) {
-                const remoteDate = data.updateDate || '—';
-                const remotePlugins = data.plugins || [];
-                const remoteList = remotePlugins.map(function (item) {
-                    return { url: item.url, name: item.name, description: item.description };
-                });
-                const localList = getPluginList();
-                const localUrls = localList.map(function (p) { return p.url; });
-                const remoteUrls = remoteList.map(function (p) { return p.url; });
-                const added = remoteList.filter(function (p) { return !localUrls.includes(p.url); }).map(function (p) {
-                    return { url: p.url, name: p.name, description: p.description };
-                });
-                const removed = localList.filter(function (p) { return !remoteUrls.includes(p.url); }).map(function (p) {
-                    return { url: p.url, name: p.name || p.url.split('/').pop(), description: p.description || '' };
-                });
-                if (added.length > 0 || removed.length > 0) saveUpdateInfo(remoteDate, added, removed);
+                try {
+                    if (!Array.isArray(data.plugins)) return;
+                    const remoteDate = data.updateDate || '—';
+                    const remotePlugins = data.plugins;
+                    const remoteList = remotePlugins.map(function (item) {
+                        return { url: item.url, name: item.name, description: item.description };
+                    });
+                    const localList = getPluginList();
+                    const localUrls = localList.map(function (p) { return p.url; });
+                    const remoteUrls = remoteList.map(function (p) { return p.url; });
+                    const added = remoteList.filter(function (p) { return !localUrls.includes(p.url); }).map(function (p) {
+                        return { url: p.url, name: p.name, description: p.description };
+                    });
+                    const removed = localList.filter(function (p) { return !remoteUrls.includes(p.url); }).map(function (p) {
+                        return { url: p.url, name: p.name || p.url.split('/').pop(), description: p.description || '' };
+                    });
+                    if (added.length > 0 || removed.length > 0) saveUpdateInfo(remoteDate, added, removed);
+                } catch (e) {
+                    console.error('Check on start error:', e);
+                }
             })
             .catch(function () {});
     }
