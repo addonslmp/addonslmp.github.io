@@ -394,10 +394,6 @@
             }
         });
 
-        document.querySelector('[data-key="step2_cont"]').textContent = translations[lang].step2_cont || '';
-        document.querySelector('[data-key="step4_cont"]').textContent = translations[lang].step4_cont || '';
-        document.querySelector('[data-key="alt_cont"]').textContent = translations[lang].alt_cont || '';
-
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
@@ -446,3 +442,4 @@
 
 </body>
 </html>
+
