@@ -189,7 +189,7 @@
             html: $('<div class="about">' + Lampa.Lang.translate('mp_export_message') + '</div>'),
             buttons: [
                 { name: Lampa.Lang.translate('mp_cancel'), onSelect: function () { Lampa.Modal.close(); Lampa.Controller.toggle(prev); } },
-                { name: 'Экспорт', onSelect: function () { Lampa.Modal.close(); exportToLampa(); } }
+                { name: 'Экспорт', onSelect: function () { Lampa.Modal.close(); exportToLampa(); Lampa.Controller.toggle(prev); } }
             ]
         });
     }
@@ -621,3 +621,4 @@
 
     console.log('Мультиплагин v4');
 })();
+
