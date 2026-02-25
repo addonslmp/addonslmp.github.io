@@ -114,7 +114,7 @@
     .copied.show {
         opacity: 1;
     }
-    .help-btn {
+    .help-btn, .plugins-list-btn {
         margin-top: 20px;
         padding: 18px 50px;
         font-size: 24px;
@@ -127,11 +127,14 @@
         transition: transform 0.15s ease, box-shadow 0.15s ease;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
-    .help-btn:hover {
+    .help-btn:hover, .plugins-list-btn:hover {
         transform: scale(1.04);
     }
-    .help-btn:active {
+    .help-btn:active, .plugins-list-btn:active {
         transform: scale(0.98);
+    }
+    .plugins-list-btn {
+        margin-top: 12px;
     }
 
     .modal {
@@ -176,11 +179,16 @@
     .close:hover {
         color: white;
     }
-    .modal h2 {
+    .modal h2,
+    .modal h3 {
         text-align: center;
         margin: 0 0 20px;
         font-size: 30px;
         color: #ffffff;
+    }
+    .modal h3 {
+        font-size: 24px;
+        margin: 32px 0 12px;
     }
     .modal ol {
         font-size: 19px;
@@ -198,12 +206,6 @@
         font-size: 19px;
         line-height: 1.45;
         margin: 12px 0;
-    }
-    .modal h3 {
-        font-size: 24px;
-        margin: 24px 0 12px;
-        text-align: center;
-        color: #ffffff;
     }
 
     .github-footer {
@@ -266,6 +268,11 @@
         <div id="copied" class="copied" data-key="copied">✔ Скопійовано</div>
 
         <button class="help-btn" onclick="openHelp()" data-key="help_button">Як користуватися мультиплагином?</button>
+
+        <!-- Кнопка "Список плагинов" с переводом -->
+        <a href="https://addonslmp.github.io/sources/plugins_mp.json" target="_blank" class="plugins-list-btn" data-key="plugins_list_button">
+            Список плагинов
+        </a>
     </div>
 
     <div class="github-footer">
@@ -313,10 +320,10 @@
             path: "Lampa → Розширення → Додати плагін",
             copy_button: "https://addonslmp.github.io/multiplugin.js",
             copied: "✔ Скопійовано",
-            help_title: "Як користуватися мультиплагином?",
+            help_title: "Як користуватися мультиплагіном?",
             step1: "Установіть плагін в Lampa.",
             step1_sub: "В налаштуваннях з'явиться кнопка «Мультиплагін».",
-            step2: "Відкрийте мультиплагін і натисніть «Синхронізація плагинов»",
+            step2: "Відкрийте мультиплагін і натисніть «Синхронізація плагінів»",
             step2_cont: "Щоб завантажити актуальний список плагінів.",
             step3: "Перезавантажте Lampa.",
             step4: "Поставте галочки навпроти потрібних плагінів",
@@ -329,7 +336,8 @@
             export_step2: "Відмітьте потрібні плагіни",
             export_step3: "Вийдіть з меню",
             export_note: "Плагіни встановляться як звичайні розширення і працюватимуть незалежно від мультиплагіна.",
-            help_button: "Як користуватися мультиплагином?"
+            help_button: "Як користуватися мультиплагином?",
+            plugins_list_button: "Список плагінів"
         },
         ru: {
             title: "Мультиплагин для Lampa",
@@ -347,14 +355,15 @@
             step4: "Отметьте галочками нужные плагины",
             step4_cont: "Они будут загружаться автоматически.",
             alt_title: "Если вам нужен только онлайн-просмотр",
-            alt_cont: "Нажмите «Загрузить только онлайн», и система автоматически включит подходящие плагины.",
+            alt_cont: "нажмите «Загрузить только онлайн», и система автоматически включит подходящие плагины.",
             export_title: "Альтернативный способ - Экспорт",
             export_desc: "Вы можете экспортировать выбранные плагины напрямую в расширения:",
             export_step1: "Откройте раздел Экспорт",
             export_step2: "Отметьте нужные плагины",
             export_step3: "Выйдите из меню",
             export_note: "Плагины установятся как обычные расширения и будут работать независимо от мультиплагина.",
-            help_button: "Как пользоваться мультиплагином?"
+            help_button: "Как пользоваться мультиплагином?",
+            plugins_list_button: "Список плагинов"
         },
         en: {
             title: "Multiplugin for Lampa",
@@ -370,16 +379,17 @@
             step2_cont: "To load the current list of plugins.",
             step3: "Restart Lampa.",
             step4: "Check the boxes for the plugins you need",
-            step4_cont: "They will load automatically.",
+            step4_cont: "- they will load automatically.",
             alt_title: "If you only need online viewing",
-            alt_cont: "Click «Load only online», and the system will automatically enable suitable plugins.",
+            alt_cont: "click «Load only online», and the system will automatically enable suitable plugins.",
             export_title: "Alternative way - Export",
             export_desc: "You can export selected plugins directly to extensions:",
             export_step1: "Open the Export section",
             export_step2: "Check the desired plugins",
             export_step3: "Exit the menu",
             export_note: "Plugins will be installed as regular extensions and will work independently of Multiplugin.",
-            help_button: "How to use Multiplugin?"
+            help_button: "How to use Multiplugin?",
+            plugins_list_button: "Plugins list"
         }
     };
 
@@ -393,6 +403,11 @@
                 el.textContent = translations[lang][key];
             }
         });
+
+        const pluginsBtn = document.querySelector('.plugins-list-btn');
+        if (pluginsBtn) {
+            pluginsBtn.textContent = translations[lang].plugins_list_button || 'Список плагинов';
+        }
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
@@ -442,4 +457,3 @@
 
 </body>
 </html>
-
