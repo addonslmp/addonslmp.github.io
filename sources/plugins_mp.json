@@ -3,8 +3,6 @@
   "plugins": [
     {
       "name": {
-        "ru": "MyShows",
-        "uk": "MyShows",
         "en": "MyShows"
       },
       "url": "https://igorek1986.github.io/lampa-plugins/myshows.js",
@@ -21,8 +19,6 @@
     },
     {
       "name": {
-        "ru": "TraktTV",
-        "uk": "TraktTV",
         "en": "TraktTV"
       },
       "url": "https://lampame.github.io/main/trakttv.js",
@@ -57,8 +53,6 @@
     }, 
     {
       "name": {
-        "ru": "NightingaleNotifications LME",
-        "uk": "NightingaleNotifications LME",
         "en": "NightingaleNotifications LME"
       },
       "url": "https://lampame.github.io/main/nn.js",
@@ -93,8 +87,6 @@
     },
     {
       "name": {
-        "ru": "Block Shots",
-        "uk": "Block Shots",
         "en": "Block Shots"
       },
       "url": "https://addonslmp.github.io/plugins/block_shots.js",
@@ -111,8 +103,6 @@
     },
     {
       "name": {
-        "ru": "Movie Enhancer",
-        "uk": "Movie Enhancer",
         "en": "Movie Enhancer"
       },
       "url": "https://lampame.github.io/main/lme.js",
@@ -129,8 +119,6 @@
     },    
     {
       "name": {
-        "ru": "OnlineServe",
-        "uk": "OnlineServe",
         "en": "OnlineServe"
       },
       "url": "https://ipavlin98.github.io/lmp-plugins/oooo.js",
@@ -147,8 +135,6 @@
     },
     {
       "name": {
-        "ru": "Ultimate Skip",
-        "uk": "Ultimate Skip",
         "en": "Ultimate Skip"
       },
       "url": "https://ipavlin98.github.io/lmp-series-skip-db/ultimate-skip.js",
@@ -165,8 +151,6 @@
     },   
     {
       "name": {
-        "ru": "Bazarnetua Buttons+",
-        "uk": "Bazarnetua Buttons+",
         "en": "Bazarnetua Buttons+"
       },
       "url": "https://addonslmp.github.io/plugins/bazarnetuabuttons+.js",
@@ -201,8 +185,6 @@
     },
     {
       "name": {
-        "ru": "NUM Parser",
-        "uk": "NUM Parser",
         "en": "NUM Parser"
       },
       "url": "https://igorek1986.github.io/lampa-plugins/np.js",
@@ -291,8 +273,6 @@
     },
     {
       "name": {
-        "ru": "Dorama source",
-        "uk": "Dorama source",
         "en": "Dorama source"
       },
       "url": "https://xxhekpxx2307.github.io/Plagins/Dorama.js",
@@ -309,8 +289,6 @@
     },    
     {
       "name": {
-        "ru": "Studios",
-        "uk": "Studios",
         "en": "Studios"
       },
       "url": "https://syvyj.github.io/studios_4lampa/studios.js",
@@ -327,8 +305,6 @@
     },
     {
       "name": {
-        "ru": "Netflix Premium Style",
-        "uk": "Netflix Premium Style",
         "en": "Netflix Premium Style"
       },
       "url": "https://ourbeerdelivery.github.io/pluginlmp/netflix_premium_style.js",
@@ -345,8 +321,6 @@
     },    
     {
       "name": {
-        "ru": "Logo Title",
-        "uk": "Logo Title",
         "en": "Logo Title"
       },
       "url": "https://crowley38.github.io/NewLogo.js",
@@ -381,8 +355,6 @@
     },    
     {
       "name": {
-        "ru": "Apple theme",
-        "uk": "Apple theme",
         "en": "Apple Theme"
       },
       "url": "https://darkestclouds.github.io/plugins/applecation/applecation.min.js",
@@ -399,8 +371,6 @@
     },
     {
       "name": {
-        "ru": "Interface Mod by Wolf",
-        "uk": "Interface Mod by Wolf",
         "en": "Interface Mod by Wolf"
       },
       "url": "https://bywolf88.github.io/lampa-plugins/interface_mod.js",
@@ -417,8 +387,6 @@
     },
     {
       "name": {
-        "ru": "Interface UI",
-        "uk": "Interface UI",
         "en": "Interface UI"
       },
       "url": "https://ipavlin98.github.io/lmp-plugins/int.js",
@@ -435,8 +403,6 @@
     },
     {
       "name": {
-        "ru": "🇺🇦 Interface+",
-        "uk": "🇺🇦 Interface+",
         "en": "🇺🇦 Interface+"
       },
       "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
@@ -453,8 +419,6 @@
     },       
     {
       "name": {
-        "ru": "Cardify Rating",
-        "uk": "Cardify Rating",
         "en": "Cardify Rating"
       },
       "url": "https://ipavlin98.github.io/lmp-plugins/cardify.js",
@@ -471,8 +435,6 @@
     },
     {
       "name": {
-        "ru": "QualityUA",
-        "uk": "QualityUA",
         "en": "QualityUA"
       },
       "url": "https://crowley38.github.io/QualityUA.js",
@@ -507,8 +469,6 @@
     },     
     {
       "name": {
-        "ru": "Rating_omdb Tvigl",
-        "uk": "Rating_omdb Tvigl",
         "en": "Rating_omdb Tvigl"
       },
       "url": "https://tvigl.github.io/plugins/rating_omdb.js",
@@ -561,8 +521,6 @@
     },       
     {
       "name": {
-        "ru": "TMDB Networks & Providers",
-        "uk": "TMDB Networks & Providers",
         "en": "TMDB Networks & Providers"
       },
       "url": "https://levende.github.io/lampa-plugins/tmdb-networks.js",
@@ -579,8 +537,6 @@
     }, 
     {
       "name": {
-        "ru": "Torrent Quality UA",
-        "uk": "Torrent Quality UA",
         "en": "Torrent Quality UA"
       },
       "url": "https://yarikrazor-star.github.io/lmp/torrentqualityUa.js",
@@ -597,8 +553,6 @@
     },    
     {
       "name": {
-        "ru": "Torrent Quality UA Cardify",
-        "uk": "Torrent Quality UA Cardify",
         "en": "Torrent Quality UA Cardify"
       },
       "url": "https://yarikrazor-star.github.io/lmp/torqUAcardify.js",
@@ -615,8 +569,6 @@
     },     
     {
       "name": {
-        "ru": "Torrent Manager",
-        "uk": "Torrent Manager",
         "en": "Torrent Manager"
       },
       "url": "https://lampame.github.io/main/torrentmanager.js",
@@ -633,8 +585,6 @@
     },
     {
       "name": {
-        "ru": "PubTorr",
-        "uk": "PubTorr",
         "en": "PubTorr"
       },
       "url": "https://lampame.github.io/main/pubtorr.js",
@@ -651,8 +601,6 @@
     },
     {
       "name": {
-        "ru": "Parsers",
-        "uk": "Parsers",
         "en": "Parsers"
       },
       "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
@@ -669,8 +617,6 @@
     },    
     {
       "name": {
-        "ru": "Etor",
-        "uk": "Etor",
         "en": "Etor"
       },
       "url": "http://cub.red/plugin/etor",
@@ -705,8 +651,6 @@
     },
     {
       "name": {
-        "ru": "EasyTorrent",
-        "uk": "EasyTorrent",
         "en": "EasyTorrent"
       },
       "url": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js",
@@ -723,8 +667,6 @@
     },
     {
       "name": {
-        "ru": "Torrent Styles by Hlushok",
-        "uk": "Torrent Styles by Hlushok",
         "en": "Torrent Styles by Hlushok"
       },
       "url": "https://hlushok.github.io/lampa-plugin/torrent_styles.js",
@@ -741,8 +683,6 @@
     },    
     {
       "name": {
-        "ru": "TS Preload",
-        "uk": "TS Preload",
         "en": "TS Preload"
       },
       "url": "https://plugin.rootu.top/ts-preload.js",
@@ -759,8 +699,6 @@
     },    
     {
       "name": {
-        "ru": "Online_Mod",
-        "uk": "Online_Mod",
         "en": "Online_Mod"
       },
       "url": "https://nb557.github.io/plugins/online_mod.js",
@@ -777,8 +715,6 @@
     },
     {
       "name": {
-        "ru": "AIpac Online Beta",
-        "uk": "AIpac Online Beta",
         "en": "AIpac Online Beta"
       },
       "url": "https://beta.l-vid.online/online.js",
@@ -795,7 +731,6 @@
     },    
     {
       "name": {
-        "ru": "🇺🇦 BazarNetUA (безкоштовно)",
         "uk": "🇺🇦 BazarNetUA (безкоштовно)",
         "en": "🇺🇦 BazarNetUA (free)"
       },
@@ -813,8 +748,7 @@
     },
     {
       "name": {
-        "ru": "🇺🇦 Free Bandera Online",
-        "uk": "🇺🇦 Free Bandera Online",
+        "uk": "🇺🇦 Free Bandera Онлайн",
         "en": "🇺🇦 Free Bandera Online"
       },
       "url": "https://lampame.github.io/main/bo.js",
@@ -831,8 +765,6 @@
     },
     {
       "name": {
-        "ru": "Онлайн wtch.ch",
-        "uk": "Онлайн wtch.ch",
         "en": "Онлайн wtch.ch"
       },
       "url": "http://wtch.ch/m",
@@ -849,8 +781,6 @@
     },    
     {
       "name": {
-        "ru": "BWA Online",
-        "uk": "BWA Online",
         "en": "BWA Online"
       },
       "url": "https://bwa.ad/rc",
@@ -867,8 +797,6 @@
     },     
     {
       "name": {
-        "ru": "Онлайн Stream",
-        "uk": "Онлайн Stream",
         "en": "Online Stream"
       },
       "url": "http://arkmv.ru/vod",
@@ -885,8 +813,6 @@
     },      
     {
       "name": {
-        "ru": "IPTV",
-        "uk": "IPTV",
         "en": "IPTV"
       },
       "url": "https://plugin.rootu.top/tv.js",
@@ -903,7 +829,6 @@
     },
     {
       "name": {
-        "ru": "🇺🇦 TryzubTV",
         "uk": "🇺🇦 TryzubTV",
         "en": "🇺🇦 TryzubTV"
       },
@@ -921,8 +846,6 @@
     },
     {
       "name": {
-        "ru": "Season Fix",
-        "uk": "Season Fix",
         "en": "Season Fix"
       },
       "url": "https://ipavlin98.github.io/lmp-plugins/season-fix.js",
@@ -939,7 +862,6 @@
     },
     {
       "name": {
-        "ru": "🇺🇦 Hikka Anime",
         "uk": "🇺🇦 Hikka Anime",
         "en": "🇺🇦 Hikka Anime"
       },
@@ -1032,6 +954,7 @@
     }     
   ]
 }
+
 
 
 
