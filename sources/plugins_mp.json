@@ -736,7 +736,7 @@
       },
       "url": "http://lampaua.mooo.com/online/js/",
       "description": {
-        "ru": "Онлайн-контент українською мовою. Для работы плагина нужен экспорт.",
+        "ru": "Онлайн-контент на украинском языке. Для работы плагина нужен экспорт.",
         "uk": "Онлайн-контент українською мовою. Для роботи плагіна потрібен експорт.",
         "en": "Online content in Ukrainian. The plugin requires exporting to function."
       },
@@ -753,7 +753,7 @@
       },
       "url": "https://lampame.github.io/main/bo.js",
       "description": {
-        "ru": "Спільнота t.me/mmssixxx",
+        "ru": "Группа t.me/mmssixxx",
         "uk": "Спільнота t.me/mmssixxx",
         "en": "Community t.me/mmssixxx"
       },
@@ -954,6 +954,7 @@
     }     
   ]
 }
+
 
 
 
