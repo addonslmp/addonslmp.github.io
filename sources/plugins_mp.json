@@ -1,5 +1,5 @@
 {
-  "updateDate": "23.02.2026",
+  "updateDate": "27.02.2026",
   "plugins": [
     {
       "name": {
@@ -712,40 +712,7 @@
         "uk": "Онлайн",
         "en": "Online"
       }
-    },
-    {
-      "name": {
-        "en": "AIpac Online Beta"
-      },
-      "url": "https://beta.l-vid.online/online.js",
-      "description": {
-        "ru": "Онлайн-источник",
-        "uk": "Онлайн-джерело",
-        "en": "Online source"
-      },
-      "category": {
-        "ru": "Онлайн",
-        "uk": "Онлайн",
-        "en": "Online"
-      }
-    },    
-    {
-      "name": {
-        "uk": "🇺🇦 BazarNetUA (безкоштовно)",
-        "en": "🇺🇦 BazarNetUA (free)"
-      },
-      "url": "http://lampaua.mooo.com/online/js/",
-      "description": {
-        "ru": "Онлайн-контент на украинском языке. Для работы плагина нужен экспорт.",
-        "uk": "Онлайн-контент українською мовою. Для роботи плагіна потрібен експорт.",
-        "en": "Online content in Ukrainian. The plugin requires exporting to function."
-      },
-      "category": {
-        "ru": "BazarNetUA",
-        "uk": "BazarNetUA",
-        "en": "BazarNetUA"
-      }
-    },
+    },   
     {
       "name": {
         "uk": "🇺🇦 Free Bandera Онлайн",
@@ -810,7 +777,104 @@
         "uk": "Онлайн",
         "en": "Online"
       }
-    },      
+    }, 
+    {
+      "name": {
+        "uk": "🇺🇦 BazarNetUA (безкоштовно)",
+        "en": "🇺🇦 BazarNetUA (free)"
+      },
+      "url": "http://lampaua.mooo.com/online/js/",
+      "description": {
+        "ru": "Онлайн-контент на украинском языке. Для работы плагина нужен экспорт. Больше иноформации вы найдете в этой группе ТГ: https://t.me/bazarnetua/9/4113",
+        "uk": "Онлайн-контент українською мовою. Для роботи плагіна потрібен експорт. Більше інформації ви знайдете в цій групі ТГ: https://t.me/bazarnetua/9/4113",
+        "en": "Online content in Ukrainian. The plugin requires exporting to function. You can find more information in this Telegram group: https://t.me/bazarnetua/9/4113"
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    },
+    {
+      "name": {
+        "en": "AIpac Online Beta"
+      },
+      "url": "https://beta.l-vid.online/online.js",
+      "description": {
+        "ru": "Онлайн AIpac. Для просмотра онлайна необходимо авторизоваться в ТГ-боте: @go_lampa_testbot",
+        "uk": "Онлайн AIpac. Для перегляду онлайн необхідно авторизуватися в ТГ-боті: @go_lampa_testbot",
+        "en": "Online AIpac. To view online, you must log in to the TG bot: @go_lampa_testbot"
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    },	
+    {
+      "name": {
+        "en": "Z01 Online"
+      },
+      "url": "http://z01.online/live",
+      "description": {
+        "ru": "Z01 Онлайн",
+        "uk": "Z01 Онлайн",
+        "en": "Z01 Online"
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    },		
+    {
+      "name": {
+        "en": "Showy Online"
+      },
+      "url": "http://showwwy.com/m.js",
+      "description": {
+        "ru": "Платный онлайн",
+        "uk": "Платний онлайн",
+        "en": "Paid online"
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    },	
+    {
+      "name": {
+        "en": "MODS's"
+      },
+      "url": "https://lampa.stream/modss",
+      "description": {
+        "ru": "ТГ Бот: @modssmy_bot",
+        "uk": "ТГ Бот: @modssmy_bot",
+        "en": "TG Bot: @modssmy_bot"
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    },	
+  	{
+      "name": {
+        "en": "Filmix Online"
+      },
+      "url": "https://lampaplugins.github.io/store/fx.js",
+      "description": {
+        "ru": "Плагин для подключения своего аккаунта Filmix.",
+        "uk": "Плагін для підключення свого облікового запису Filmix.",
+        "en": "Plugin for connecting your Filmix account."
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    },	
     {
       "name": {
         "en": "IPTV"
@@ -954,6 +1018,7 @@
     }     
   ]
 }
+
 
 
 
