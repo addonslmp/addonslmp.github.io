@@ -833,9 +833,9 @@
       },
       "url": "http://showwwy.com/m.js",
       "description": {
-        "ru": "Платный онлайн",
-        "uk": "Платний онлайн",
-        "en": "Paid online"
+        "ru": "ТГ Бот: @showybot",
+        "uk": "ТГ Бот: @showybot",
+        "en": "TG Bot: @showybot"
       },
       "category": {
         "ru": "Дополнительный онлайн",
@@ -1018,6 +1018,7 @@
     }     
   ]
 }
+
 
 
 
