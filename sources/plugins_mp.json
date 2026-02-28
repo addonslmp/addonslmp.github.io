@@ -1,5 +1,5 @@
 {
-  "updateDate": "27.02.2026",
+  "updateDate": "28.02.2026",
   "plugins": [
     {
       "name": {
@@ -148,7 +148,39 @@
         "uk": "Різне",
         "en": "Misc"
       }
-    },   
+    },  
+    {
+      "name": {
+        "en": "Redirect"
+      },
+      "url": "https://epsill.github.io/plugins/redirect.js",
+      "description": {
+        "ru": "Можно прописать свою ссылку на Lampa.",
+        "uk": "Можна прописати своє посилання на Lampa.",
+        "en": "You can register your link on Lampa."
+      },
+      "category": {
+        "ru": "Разное",
+        "uk": "Різне",
+        "en": "Misc"
+      }
+    },
+    {
+      "name": {
+        "uk": "Редірект від BazarNetUa",
+        "en": "Redirect BazarNetUa"
+      },
+      "url": "https://hlushok.github.io/lampa-plugin/redirect.js",
+      "description": {
+        "uk": "Перехід на серевер LampaUA від Hlushok.",
+        "en": "Transition to the LampaUA server from Hlushok."
+      },
+      "category": {
+        "ru": "Разное",
+        "uk": "Різне",
+        "en": "Misc"
+      }
+    },    
     {
       "name": {
         "en": "Bazarnetua Buttons+"
@@ -1018,6 +1050,7 @@
     }     
   ]
 }
+
 
 
 
