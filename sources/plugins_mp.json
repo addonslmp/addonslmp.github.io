@@ -183,9 +183,11 @@
     },    
     {
       "name": {
-        "en": "Bazarnetua Buttons+"
+        "ru": "Редактор кнопок от CheeZe",
+        "uk": "Редактор кнопок від CheeZe",     
+        "en": "Button Editor by CheeZe"
       },
-      "url": "https://addonslmp.github.io/plugins/bazarnetuabuttons+.js",
+      "url": "https://mylampa1.github.io/buttons.js",
       "description": {
         "ru": "Редактор для кнопок меню в карточке.",
         "uk": "Редактор для кнопок меню в картці.",
@@ -1181,6 +1183,7 @@
     }    
   ]
 }
+
 
 
 
