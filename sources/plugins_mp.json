@@ -491,8 +491,8 @@
       },
       "url": "https://addonslmp.github.io/plugins/Quality+Mod.js",
       "description": {
-        "ru": "Плагин отображает метку качества на карточке фильма.",
-        "uk": "Плагін відображає мітку якості на картці фільму.",
+        "ru": "Плагин отображает отметку качества на карточке фильма.",
+        "uk": "Плагін відображає відмітку якості на картці фільму.",
         "en": "The plugin displays a quality label on the movie card."
       },
       "category": {
@@ -500,7 +500,17 @@
         "uk": "Інтерфейс",
         "en": "Interface"
       }
-    },     
+    }, 
+    {
+      "name": { "en": "Vyvidmitok by Hlushok" },
+      "url": "https://hlushok.github.io/lampa-plugin/vyvidmitok.js",
+      "description": {
+        "ru": "Отображение отметок качества и наличие украинской озвучки на постерах.",
+        "uk": "Відображення відміток якості та наявність української озвучки на постерах.",
+        "en": "Display of quality marks and availability of Ukrainian voiceovers on posters."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },       
     {
       "name": {
         "en": "Rating_omdb Tvigl"
@@ -829,6 +839,15 @@
         "en": "Additional online"
       }
     },
+    {
+      "name": { "en": "AIpac BazarNetUa Online" },
+      "url": "https://golampaua.mooo.com/online.js",
+      "description": {
+        "uk": "Дивись кіно, серіали та аніме у 4K без гальм! Наш новий надшвидкий онлайн на базі Go/Alcopac.",
+        "en": "Watch movies, TV series, and anime in 4K without any lag! Our new super-fast online service based on Go/Alcopac."
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },    
     {
       "name": {
         "en": "AIpac Online Beta"
@@ -1183,6 +1202,7 @@
     }    
   ]
 }
+
 
 
 
