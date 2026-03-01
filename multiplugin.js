@@ -73,20 +73,23 @@
         Lampa.Utils.putScriptAsync([url], function () { loadedPlugins.add(url); });
     }
 
-
-    function loadEnabledPluginsLazy() {
-        const enabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
-        const lazy = pluginList
+   function loadEnabledPluginsLazy() {
+    const enabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
+    const lazy = [...new Set(
+        pluginList
             .filter(function (p) { return enabled.has(p.url); })
             .filter(function (p) { return !loadedPlugins.has(p.url); })
-            .map(function (p) { return p.url; });
-        if (!lazy.length) return;
-        Lampa.Utils.putScriptAsync(lazy, function () {
-            lazy.forEach(function (url) { loadedPlugins.add(url); });
-        });
-    }
+            .map(function (p) { return p.url; })
+    )];
+    if (!lazy.length) return;
+    lazy.forEach(function (url) {
+        loadedPlugins.add(url);
+    });
+    Lampa.Utils.putScriptAsync(lazy, function () {
+    });
+}
 
-
+    
     function exportPlugins(urls) {
         if (!urls || !urls.length) {
             Lampa.Noty.show('Плагины не выбраны');
@@ -621,4 +624,5 @@
 
     console.log('Мультиплагин v4');
 })();
+
 
