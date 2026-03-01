@@ -1,5 +1,5 @@
 {
-  "updateDate": "28.02.2026",
+  "updateDate": "01.03.2026",
   "plugins": [
     {
       "name": {
@@ -1047,9 +1047,141 @@
         "uk": "Плагіни від Yarik's",
         "en": "Plugins by Yarik's"
       }
-    }     
+    },
+    {
+      "name": { "ru": "Infuse Save", "uk": "Infuse Save", "en": "Infuse Save" },
+      "url": "https://lampame.github.io/main/infuseSave.js",
+      "description": {
+        "ru": "Быстрое сохранение торрент-потока в Infuse из меню файлов.",
+        "uk": "Швидке збереження торент-потоку в Infuse з меню файлів.",
+        "en": "Quick torrent stream saving to Infuse from file menu."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "New Category", "uk": "New Category", "en": "New Category" },
+      "url": "https://lampame.github.io/main/newcategory.js",
+      "description": {
+        "ru": "Добавляет новые разделы, сети стримингов, закладки и коллекции.",
+        "uk": "Додає нові розділи, мережі стримінгів, закладки та колекції.",
+        "en": "Adds new sections, streaming networks, bookmarks and collections."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "Concert Torr Search", "uk": "Concert Torr Search", "en": "Concert Torr Search" },
+      "url": "https://lampame.github.io/main/cts.js",
+      "description": {
+        "ru": "Отдельный поиск концертного контента в торрент-источниках.",
+        "uk": "Окремий пошук концертного контенту в торент-джерелах.",
+        "en": "Dedicated search for concert content in torrent sources."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "Movie Enhancer", "uk": "Movie Enhancer", "en": "Movie Enhancer" },
+      "url": "https://lampame.github.io/main/lme.js",
+      "description": {
+        "ru": "Комплексное улучшение карточки: кнопки, рейтинги, источники, метаданные.",
+        "uk": "Комплексний апгрейд картки: кнопки, рейтинги, джерела, метадані.",
+        "en": "Comprehensive card upgrade: buttons, ratings, sources, metadata."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "Torrent Downloader", "uk": "Torrent Downloader", "en": "Torrent Downloader" },
+      "url": "https://lampame.github.io/main/torrentmanager.js",
+      "description": {
+        "ru": "Управление торрент-клиентом в Lampa: статусы, действия, метаданные.",
+        "uk": "Керування торент-клієнтом у Lampa: статуси, дії, метадані.",
+        "en": "Manage torrent client in Lampa: statuses, actions, metadata."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "TraktTV", "uk": "TraktTV", "en": "TraktTV" },
+      "url": "https://lampame.github.io/main/trakttv.js",
+      "description": {
+        "ru": "Глубокая интеграция с Trakt: авторизация, история, списки, Up Next.",
+        "uk": "Глибока інтеграція з Trakt: авторизація, історія, списки, Up Next.",
+        "en": "Deep Trakt integration: auth, history, lists, Up Next."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "Tracks Probe", "uk": "Tracks Probe", "en": "Tracks Probe" },
+      "url": "https://lampame.github.io/main/tracks.js",
+      "description": {
+        "ru": "Подробная информация об аудио и субтитрах с удобным выбором дорожек.",
+        "uk": "Детальна інформація про аудіо/субтитри та зручний вибір доріжок.",
+        "en": "Detailed audio/subtitle info with easy track selection."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "TS Tracks Probe", "uk": "TS Tracks Probe", "en": "TS Tracks Probe" },
+      "url": "https://lampame.github.io/main/tstracks.js",
+      "description": {
+        "ru": "Информация об аудио и субтитрах от TorrServer.",
+        "uk": "Детальна інформація про аудіо/субтитри від TorrServer.",
+        "en": "Audio/subtitle information from TorrServer."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "Hikka Anime", "uk": "Hikka Anime", "en": "Hikka Anime" },
+      "url": "https://lampame.github.io/main/hikka.js",
+      "description": {
+        "ru": "Аниме-каталог Hikka с фильтрами, франшизами и персонажами.",
+        "uk": "Аніме-каталог Hikka з фільтрами, франшизами та персонажами.",
+        "en": "Hikka anime catalog with filters and characters."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "TryzubTV", "uk": "TryzubTV", "en": "TryzubTV" },
+      "url": "https://lampame.github.io/main/ttv.js",
+      "description": {
+        "ru": "Украинское ТВ: каналы, категории и кешированный каталог.",
+        "uk": "Українське ТБ: канали, категорії та кешований каталог.",
+        "en": "Ukrainian TV channels with categorized catalog."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "Bandera 2.0", "uk": "Bandera 2.0", "en": "Bandera 2.0" },
+      "url": "https://lampame.github.io/main/bo.js",
+      "description": {
+        "ru": "Онлайн с украинскими источниками.",
+        "uk": "Онлайн з українськими джерелами.",
+        "en": "Online with Ukrainian sources."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "CommunityWatches", "uk": "CommunityWatches", "en": "CommunityWatches" },
+      "url": "https://lampame.github.io/main/cw.js",
+      "description": {
+        "ru": "Топ недели и скрытые жемчужины для главной, фильмов и сериалов.",
+        "uk": "Топ тижня та сховані геми для головної, фільмів і серіалів.",
+        "en": "Weekly top and hidden gems."
+      },
+      "author": "LME",
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "ru": "NightingaleNotifications", "uk": "NightingaleNotifications", "en": "NightingaleNotifications" },
+      "url": "https://lampame.github.io/main/nn.js",
+      "description": {
+        "ru": "Подписки на сериалы с уведомлениями о новых эпизодах.",
+        "uk": "Підписки на серіали з повідомленнями про нові епізоди.",
+        "en": "Series subscription notifications."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    }    
   ]
 }
+
 
 
 
