@@ -925,6 +925,23 @@
     },
     {
       "name": {
+        "uk": "🇺🇦 TryzubTV",
+        "en": "🇺🇦 TryzubTV"
+      },
+      "url": "https://lampame.github.io/main/ttv.js",
+      "description": {
+        "ru": "TryzubTV - украинские ТВ-каналы в удобном каталоге. Спільнота t.me/mmssixxx",
+        "uk": "TryzubTV - українські ТВ-канали в зручному каталозі. Спільнота t.me/mmssixxx",
+        "en": "TryzubTV - Ukrainian TV channels in a convenient catalog. Community t.me/mmssixxx"
+      },
+      "category": {
+        "ru": "IPTV",
+        "uk": "IPTV",
+        "en": "IPTV"
+      }
+    },
+    {
+      "name": {
         "en": "Season Fix"
       },
       "url": "https://ipavlin98.github.io/lmp-plugins/season-fix.js",
@@ -1164,6 +1181,7 @@
     }    
   ]
 }
+
 
 
 
