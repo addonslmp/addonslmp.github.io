@@ -1,3 +1,5 @@
+[Русский](README.md) | [Українська](README.ua.md) | [English](README.en.md)
+
 # Multiplugin
 
 Multiplugin - это сборка подключаемых плагинов для Lampa.
