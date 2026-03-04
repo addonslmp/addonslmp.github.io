@@ -1054,8 +1054,6 @@
     },      
     {
       "name": {
-        "ru": "Плагины от Yarik's",
-        "uk": "Plugin WikiFind",
         "en": "Plugin WikiFind"
       },
       "url": "http://lampalampa.free.nf/wikifind.js",
@@ -1229,6 +1227,7 @@
     }        
   ]
 }
+
 
 
 
