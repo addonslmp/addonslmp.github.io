@@ -183,9 +183,9 @@
     },    
     {
       "name": {
-        "ru": "Редактор кнопок от CheeZe",
-        "uk": "Редактор кнопок від CheeZe",     
-        "en": "Button Editor by CheeZe"
+        "ru": "Редактор кнопок от Cheeze_l",
+        "uk": "Редактор кнопок від Cheeze_l",     
+        "en": "Button Editor by Cheeze_l"
       },
       "url": "https://mylampa1.github.io/buttons.js",
       "description": {
@@ -1219,6 +1219,7 @@
     }    
   ]
 }
+
 
 
 
