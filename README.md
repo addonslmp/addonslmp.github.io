@@ -1,0 +1,1 @@
+## Multiplugin for Lampa
