@@ -256,7 +256,7 @@
       "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
       "description": {
         "ru": "Likhtar — кастомна главная страница для Lampa, полностью заменяющая стандартный интерфейс и добавляющая премиальный опыт просмотра с фокусом на украиноязычный контент.",
-        "uk": "Ліхтар — кастомна головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
+        "uk": "Ліхтар — кастомная головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
         "en": "Unified plugin for Lampa that integrates multiple streaming studio collections into one interface."
       },
       "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
@@ -853,6 +853,7 @@
       "name": { "en": "AIpac BazarNetUa Online" },
       "url": "https://golampaua.mooo.com/online.js",
       "description": {
+        "ru": "Смотри фильмы, сериалы и аниме в 4K без тормозов! Наш новый сверхбыстрый онлайн на базе Go/Alcopac.",
         "uk": "Дивись кіно, серіали та аніме у 4K без гальм! Наш новий надшвидкий онлайн на базі Go/Alcopac.",
         "en": "Watch movies, TV series, and anime in 4K without any lag! Our new super-fast online service based on Go/Alcopac."
       },
@@ -989,7 +990,6 @@
     },
     {
       "name": {
-        "uk": "🇺🇦 Hikka Anime",
         "en": "🇺🇦 Hikka Anime"
       },
       "url": "https://lampame.github.io/main/hikka.js",
@@ -1006,75 +1006,82 @@
     },
     {
       "name": {
-        "uk": "Plugin Yarik's Mod",
         "en": "Plugin Yarik's Mod"
       },
       "url": "http://lampalampa.free.nf/ymod.js",
       "description": {
+        "ru": "Большой набор для оформления карточки: Лого вместо названий (Если нет Укр ставит ENG), Лого студий - активные кнопки на страницу студии, Рейтинги IMDB, RT, Mc и т.д. (Требуются api-ключи с сайтов OMDB, MDBList) Оригинальное название (Добавляет тем языком, которого не хватает). Отображение наличия и статуса украинских торрентов из вашего парсера (Должен быть включен и настроен парсер).",
         "uk": "Великий набір для оформлення картки : Лого замість назв (Якщо немає Укр ставить ENG), Лого студій - активні кнопки на сторінку студії, Рейтинги IMDB, RT, Mc, тощо. (Потрібні api-ключі з сайтів OMDB , MDBList ) Оригінальна назва (Додає тією мовою, якої не вистачає). Відображення наявності та статусу українських торентів з вашого парсеру (Повинен бути увімкнений та налаштований парсер).",
         "en": "Large set for card design: Logos instead of names (if there is no Ukrainian, use English), studio logos - active buttons on the studio page, IMDB, RT, Mc ratings, etc. (API keys from OMDB and MDBList websites are required). Original name (adds the missing language). Display the availability and status of Ukrainian torrents from your parser (parser must be enabled and configured)."
       },
       "category": {
+        "ru": "Плагины от Yarik's",
         "uk": "Плагіни від Yarik's",
         "en": "Plugins by Yarik's"
       }
     },  
     {
       "name": {
-        "uk": "Plugin Cardify Mod",
         "en": "Plugin Cardify Mod"
       },
       "url": "http://lampalampa.free.nf/ycardmod.js",
       "description": {
+        "ru": "Модификация плагина Cardify с новым отображением описания фильма. Подходит для работы с другими плагинами отсюда. Добавлено слайд-шоу обложек фильмов.",
         "uk": "Модифікація плагіну Cardify з новим відображенням опису фільму. Підходить для роботи з іншими плагінами звідси. Додане слайд-шоу обкладинок фільму.",
         "en": "Modification of the Cardify plugin with a new movie description display. Suitable for working with other plugins from here. Added movie cover slideshow."
       },
       "category": {
+        "ru": "Плагины от Yarik's",
         "uk": "Плагіни від Yarik's",
         "en": "Plugins by Yarik's"
       }
     },      
     {
       "name": {
-        "uk": "Plugin Ua Comments",
         "en": "Plugin Ua Comments"
       },
       "url": "http://lampalampa.free.nf/uacoments.js",
       "description": {
-        "uk": "Додає коментарі з Українських ресурсів одразу під карткою фільму.",
+        "ru": "Добавляет комментарии с украинских ресурсов сразу под карточкой фильма.",
+        "uk": "Додає коментарі з українських ресурсів одразу під карткою фільму.",
         "en": "Adds comments from Ukrainian resources directly below the movie card."
       },
       "category": {
+        "ru": "Плагины от Yarik's",
         "uk": "Плагіни від Yarik's",
         "en": "Plugins by Yarik's"
       }
     },      
     {
       "name": {
+        "ru": "Плагины от Yarik's",
         "uk": "Plugin WikiFind",
         "en": "Plugin WikiFind"
       },
       "url": "http://lampalampa.free.nf/wikifind.js",
       "description": {
+        "ru": "Добавляет кнопку поиска статьи на Wikipedia. Сами статьи переформатируются под формат экрана, чтобы было удобно просматривать информацию. Также добавляет дополнительные статьи, имеющие отношение к фильму.",
         "uk": "Додає кнопку пошуку статті на Wikipedia. Самі статті переформатовуються під формат екрану, щоб зручно було дивитись інформацію. Також додає додаткові статті дотичні до фільму.",
         "en": "Adds a button to search for articles on Wikipedia. The articles themselves are reformatted to fit the screen for easy viewing. Also adds additional articles related to the film."
       },
       "category": {
+        "ru": "Плагины от Yarik's",
         "uk": "Плагіни від Yarik's",
         "en": "Plugins by Yarik's"
       }
     },      
     {
       "name": {
-        "uk": "Mod for Interface+",
         "en": "Mod for Interface+"
       },
       "url": "http://lampalampa.free.nf/interfaceymod.js",
       "description": {
+        "ru": "Модификация плагина Интерфейс+, в которой есть возможность управлять отступами до и после, чтобы вписать в ваш интерфейс. Также есть много других приятных настроек.",
         "uk": "Модифікація плагіну Інтерфейс+, в якій є можливість керувати відступами до та після, щоб вписати у ваш інтерфейс. Також є багато інших приємних налаштувань.",
         "en": "A modification of the Interface+ plugin that allows you to control the indents before and after to fit your interface. There are also many other nice settings."
       },
       "category": {
+        "ru": "Плагины от Yarik's",
         "uk": "Плагіни від Yarik's",
         "en": "Plugins by Yarik's"
       }
@@ -1212,6 +1219,7 @@
     }    
   ]
 }
+
 
 
 
