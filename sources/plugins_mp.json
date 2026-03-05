@@ -1,5 +1,5 @@
 {
-  "updateDate": "04.03.2026",
+  "updateDate": "05.03.2026",
   "plugins": [
     {
       "name": {
@@ -718,7 +718,20 @@
         "uk": "Торрент",
         "en": "Torrent"
       }
-    },
+    },  
+    {
+      "name": {
+        "en": "EasyTorrent UA Mod by Cevamnelampaplagin"
+      },
+      "url": "https://cevamnelampaplagin.github.io/plugins/easytorrent2.1.0.5.js",
+      "description": {
+        "ru": "Обновленный EasyTorrent. Плагин переведён на украинский язык, и в первую очередь рекомендует раздачи с украинским языком.",
+        "uk": "Оновлений EasyTorrent. Плагін перекладено українською мовою, і в першу чергу рекомендує роздачі з українською мовою.",
+        "en": "Updated EasyTorrent. The plugin has been translated into Ukrainian and primarily recommends distributions with Ukrainian language support."
+      },
+      "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent"
+      }
+    },       
     {
       "name": {
         "en": "Torrent Styles by Hlushok"
@@ -1227,6 +1240,7 @@
     }        
   ]
 }
+
 
 
 
