@@ -707,7 +707,7 @@
       "name": {
         "en": "EasyTorrent"
       },
-      "url": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js",
+      "url": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.js",
       "description": {
         "ru": "Новое оформление для списка торрентов.",
         "uk": "Нове оформлення для списку торрентів.",
@@ -1227,6 +1227,7 @@
     }        
   ]
 }
+
 
 
 
