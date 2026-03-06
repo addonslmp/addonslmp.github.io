@@ -435,7 +435,6 @@ pluginsList= [
       "name": { "ru": "TEST", "uk": "TEST", "en": "TEST" },
       "url": "https://test.com/main/ttv.js",
       "description": { "ru": "TEST", "uk": "TEST", "en": "TEST" },
-      "category": { "ru": "TEST", "uk": "TEST", "en": "TEST" }
-    }   
+      "category": { "ru": "TEST", "uk": "TEST", "en": "TEST" }  
   }
 ];
