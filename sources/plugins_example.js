@@ -432,18 +432,18 @@ pluginsList= [
     },
   {
     name: {
-      ru: 'TEST',
+      ru: 'ТЕСТ',
       uk: 'TEST',
       en: 'TEST'
     },
     url: 'https://test.com/main/ttv.js',
     description: {
-      ru: 'TEST',
+      ru: 'ТЕСТ',
       uk: 'TEST',
       en: 'TEST'
     },
     category: {
-      ru: 'TEST',
+      ru: 'ТЕСТ',
       uk: 'TEST',
       en: 'TEST'
     }    
