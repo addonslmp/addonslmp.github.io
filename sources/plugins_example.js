@@ -430,22 +430,11 @@ pluginsList= [
       uk: 'IPTV',
       en: 'IPTV'
     },
-  {
-    name: {
-      ru: 'ТЕСТ',
-      uk: 'TEST',
-      en: 'TEST'
-    },
-    url: 'https://test.com/main/ttv.js',
-    description: {
-      ru: 'ТЕСТ',
-      uk: 'TEST',
-      en: 'TEST'
-    },
-    category: {
-      ru: 'ТЕСТ',
-      uk: 'TEST',
-      en: 'TEST'
-    }    
+    {
+      "name": { "ru": "TEST", "uk": "TEST", "en": "TEST" },
+      "url": "https://test.com/main/ttv.js",
+      "description": { "ru": "TEST", "uk": "TEST", "en": "TEST" },
+      "category": { "ru": "TEST", "uk": "TEST", "en": "TEST" }
+    }   
   }
 ];
