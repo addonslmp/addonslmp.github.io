@@ -887,7 +887,17 @@
         "uk": "Додатковий онлайн",
         "en": "Additional online"
       }
-    },	
+    },
+    {
+      "name": { "en": "Skaz Online 4k" },
+      "url": "http://skaz.tv/o.js",
+      "description": {
+        "ru": "Подписка by Skaz. Платные онлайн 4k источники в Lampa. Управление через телеграм-бот @skaztv_bot",
+        "uk": "Підписка від Skaz. Платні онлайн 4k джерела в Lampa. Управління через телеграм-бот @skaztv_bot",
+        "en": "Subscription by Skaz. Paid online 4K sources in Lampa. Control via Telegram bot @skaztv_bot"
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },          
     {
       "name": {
         "en": "Z01 Online"
@@ -979,12 +989,18 @@
         "uk": "TryzubTV - українські ТВ-канали в зручному каталозі. Спільнота t.me/mmssixxx",
         "en": "TryzubTV - Ukrainian TV channels in a convenient catalog. Community t.me/mmssixxx"
       },
-      "category": {
-        "ru": "IPTV",
-        "uk": "IPTV",
-        "en": "IPTV"
-      }
+      "category": { "en": "IPTV" }
     },
+    {
+      "name": { "en": "Skaz TV + Online 4k" },
+      "url": "http://skaz.tv/tv.js",
+      "description": {
+        "ru": "Подписка by Skaz. Более 1800 каналов · SD, HD, FHD, 4K HDR. Онлайн 4k источники в Lampa. Управление через телеграм-бот @skaztv_bot",
+        "uk": "Підписка від Skaz. Понад 1800 каналів · SD, HD, FHD, 4K HDR. Онлайн 4k джерела в Lampa. Управління через телеграм-бот @skaztv_bot",
+        "en": "Subscription by Skaz. Over 1,800 channels · SD, HD, FHD, 4K HDR. Online 4K sources in Lampa. Control via Telegram bot @skaztv_bot"
+      },
+      "category": { "en": "IPTV" }
+    },       
     {
       "name": {
         "en": "Season Fix"
@@ -1254,6 +1270,7 @@
     }        
   ]
 }
+
 
 
 
