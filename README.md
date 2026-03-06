@@ -29,7 +29,7 @@ It only connects them via URLs.
 3. **Add plugin**
 4. Paste this link:
 
-```text
+```
 https://addonslmp.github.io/multiplugin.js
 ````
 
