@@ -1,5 +1,5 @@
 {
-  "updateDate": "05.03.2026",
+  "updateDate": "06.03.2026",
   "plugins": [
     {
       "name": {
@@ -1018,6 +1018,20 @@
       }
     },
     {
+      "name": { "en": "Plugin Home Page UA", "uk": "Plugin Головна сторінка UA" },
+      "url": "http://lampalampa.free.nf/ymain.js",
+      "description": {
+        "ru": "Замена главной страницы на модифицированную с фильмами, доступными на украинских сайтах UaSerials, UaKino, Uaflix и т. д. Больше никаких странных карточек на главной! Возможность перемещать, включать/выключать нужную вам строку. Также добавляет новые страницы с фильмами и сериалами в основе те, где есть украинский язык. Новый стиль карточек главной страницы и всех других карточек в Lampa (рейтинг, год, список сезонов/серий сериала, наличие украинской озвучки). Интеграция подборки Сообщества LME, а также определение и отображение имеющейся озвучки у фильма - флажком. (спасибо LME) Внимание! Полностью заменяет вашу главную страницу. Может конфликтовать с другими плагинами, которые стилизуют рейтинг на карточках или главной странице.",
+        "uk": "Заміна головної сторінки на модифіковану з фільмами наявними на українських сайтах UaSerials, UaKino, Uaflix, тощо. Більше ніяких дивних карток на головній! Можливість переміщати, вмикати/вимикати потрібний вам рядок. Також додає нові сторінки з фільмами та серіалами в основі ті, де є українська. Новий стиль карток головної, та усіх інших карток в Lampa (рейтинг, рік, список сезонів/серій серіалу, наявність укр. озвучки). Інтеграція підбірки Спільноти LME, а також визначення та відображення наявної озвучки у фільма - прапорцем. (подякувати LME) Увага! Повністю заміняє вашу головну сторінку. Може конфліктувати з іншими плагінами які стилізують рейтинг на картках чи головну сторінку.",
+        "en": "Replacement of the main page with a modified one featuring films available on Ukrainian websites such as UaSerials, UaKino, Uaflix, etc. No more strange cards on the main page! Ability to move, enable/disable the row you need. Also adds new pages with movies and TV series based on those available in Ukrainian. New style of main cards and all other cards in Lampa (rating, year, list of seasons/episodes of the series, availability of Ukrainian voiceover). Integration of the LME Community selection, as well as identification and display of available dubbing for a movie with a flag. (thanks to LME) Attention! Completely replaces your home page. May conflict with other plugins that style ratings on cards or the home page."
+      },
+      "category": {
+        "ru": "Плагины от Yarik's",
+        "uk": "Плагіни від Yarik's",
+        "en": "Plugins by Yarik's"
+      }
+    },       
+    {
       "name": {
         "en": "Plugin Yarik's Mod"
       },
@@ -1240,6 +1254,7 @@
     }        
   ]
 }
+
 
 
 
