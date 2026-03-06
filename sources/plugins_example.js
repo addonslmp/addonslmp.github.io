@@ -429,6 +429,23 @@ pluginsList= [
       ru: 'IPTV',
       uk: 'IPTV',
       en: 'IPTV'
-    }
+    },
+  {
+    name: {
+      ru: 'TEST',
+      uk: 'TEST',
+      en: 'TEST'
+    },
+    url: 'https://lampame.github.io/main/ttv.js',
+    description: {
+      ru: 'TEST',
+      uk: 'TEST',
+      en: 'TEST'
+    },
+    category: {
+      ru: 'TEST',
+      uk: 'TEST',
+      en: 'TEST'
+    }    
   }
 ];
