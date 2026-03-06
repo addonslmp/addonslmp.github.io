@@ -436,7 +436,7 @@ pluginsList= [
       uk: 'TEST',
       en: 'TEST'
     },
-    url: 'https://lampame.github.io/main/ttv.js',
+    url: 'https://test.com/main/ttv.js',
     description: {
       ru: 'TEST',
       uk: 'TEST',
