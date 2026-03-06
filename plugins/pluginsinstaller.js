@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const DEFAULT_URL = 'link';
+    const DEFAULT_URL = 'https://addonslmp.github.io/sources/plugins_example.js';
     const STORAGE_KEY = 'external_installer_plugins';
     const SOURCE_KEY = 'external_installer';
     const URL_STORAGE_KEY = 'external_installer_source_url';
