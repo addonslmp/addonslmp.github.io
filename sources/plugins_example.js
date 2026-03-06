@@ -429,8 +429,9 @@ pluginsList= [
       ru: 'IPTV',
       uk: 'IPTV',
       en: 'IPTV'
-    },
-    {
+    }
+  },    
+  {
       "name": { "ru": "TEST", "uk": "TEST", "en": "TEST" },
       "url": "https://test.com/main/ttv.js",
       "description": { "ru": "TEST", "uk": "TEST", "en": "TEST" },
