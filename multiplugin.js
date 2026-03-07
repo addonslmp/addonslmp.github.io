@@ -1,7 +1,6 @@
 (function () {
     'use strict';
 
-
     Lampa.Lang.add({
         mp_title: { ru: 'Мультиплагин', uk: 'Мультиплагін', en: 'Multiplugin' },
         mp_category_plugins: { ru: 'Категории плагинов', uk: 'Категорії плагінів', en: 'Plugin Categories' },
@@ -9,9 +8,9 @@
         mp_sync_plugins: { ru: 'Синхронизировать плагины', uk: 'Синхронізувати плагіни', en: 'Sync Plugins' },
         mp_load_online_only: { ru: 'Загрузить только онлайн', uk: 'Завантажити тільки онлайн', en: 'Load Online Only' },
         mp_management: { ru: 'Управление', uk: 'Керування', en: 'Management' },
-        mp_current_plugins: { ru: 'Текущие плагины', uk: 'Поточні плагіни', en: 'Current Plugins' },
+        mp_current_plugins: { ru: 'Включённые плагины', uk: 'Увімкнені плагіни', en: 'Enabled Plugins' },
         mp_export_to_lampa: { ru: 'Экспорт включённых', uk: 'Експорт увімкнених', en: 'Export Enabled' },
-        mp_export_select: { ru: 'Экспорт → Выбрать плагины', uk: 'Експорт → Обрати плагіни', en: 'Export → Select Plugins' },
+        mp_export_select: { ru: 'Установка плагинов', uk: 'Встановлення плагінів', en: 'Install Plugins' },
         mp_disable_all: { ru: 'Выключить все плагины', uk: 'Вимкнути всі плагіни', en: 'Disable All Plugins' },
         mp_reload_lampa: { ru: 'Перезагрузить Lampa', uk: 'Перезавантажити Lampa', en: 'Reload Lampa' },
         mp_update_info: { ru: 'Информация об обновлении', uk: 'Інформація про оновлення', en: 'Update Information' },
@@ -38,28 +37,26 @@
         mp_reload_message: { ru: 'Перезапустить приложение?', uk: 'Перезавантажити додаток?', en: 'Restart application?' },
         mp_ok: { ru: 'OK', uk: 'OK', en: 'OK' },
         mp_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
-        mp_no_updates_found: {
-            ru: 'Обновлений не найдено',
-            uk: 'Оновлень не знайдено',
-            en: 'No updates found'
-        }
+        mp_no_updates_found: { ru: 'Обновлений не найдено', uk: 'Оновлень не знайдено', en: 'No updates found' },
+        pi_install: { ru: 'Установить', uk: 'Встановити', en: 'Install' },
+        pi_remove: { ru: 'Удалить', uk: 'Видалити', en: 'Remove' },
+        pi_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
+        pi_plugin_installed: { ru: 'Плагин установлен', uk: 'Плагін встановлено', en: 'Plugin installed' },
+        pi_plugin_removed: { ru: 'Плагин удалён', uk: 'Плагін видалено', en: 'Plugin removed' }
     });
 
-
     const syncUrl = 'https://addonslmp.github.io/sources/plugins_mp.json';
-
-
     const STORAGE_KEY = 'multi_plugins_list';
     const ENABLED_KEY = 'multi_enabled_plugins';
     const INFO_KEY = 'multi_last_update';
     const EXPORT_KEY = 'multi_export_selection';
-
+    const SOURCE_KEY = 'multiplugin';
+    const INSTALLED_COLOR = '#6bd66b';
 
     let pluginList = [];
     const loadedPlugins = new Set();
+    let menuBuilt = false;
 
-
-    // Вспомогательная функция для перевода объектов {ru: "...", uk: "...", en: "..."}
     function translateObj(obj) {
         if (!obj) return '';
         if (typeof obj === 'string') return obj;
@@ -67,29 +64,26 @@
         return obj[lang] || obj.ru || obj.en || '';
     }
 
-
     function lazyLoadPlugin(url) {
         if (loadedPlugins.has(url)) return;
         Lampa.Utils.putScriptAsync([url], function () { loadedPlugins.add(url); });
     }
 
-   function loadEnabledPluginsLazy() {
-    const enabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
-    const lazy = [...new Set(
-        pluginList
-            .filter(function (p) { return enabled.has(p.url); })
-            .filter(function (p) { return !loadedPlugins.has(p.url); })
-            .map(function (p) { return p.url; })
-    )];
-    if (!lazy.length) return;
-    lazy.forEach(function (url) {
-        loadedPlugins.add(url);
-    });
-    Lampa.Utils.putScriptAsync(lazy, function () {
-    });
-}
+    function loadEnabledPluginsLazy() {
+        const enabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
+        const lazy = [...new Set(
+            pluginList
+                .filter(function (p) { return enabled.has(p.url); })
+                .filter(function (p) { return !loadedPlugins.has(p.url); })
+                .map(function (p) { return p.url; })
+        )];
+        if (!lazy.length) return;
+        lazy.forEach(function (url) {
+            loadedPlugins.add(url);
+        });
+        Lampa.Utils.putScriptAsync(lazy, function () {});
+    }
 
-    
     function exportPlugins(urls) {
         if (!urls || !urls.length) {
             Lampa.Noty.show('Плагины не выбраны');
@@ -118,11 +112,9 @@
         }
     }
 
-
     function getCategories(list) {
         return [...new Set(list.map(function (p) { return translateObj(p.category) || 'Разное'; }))];
     }
-
 
     function showExportCategories() {
         const categories = getCategories(pluginList);
@@ -138,7 +130,6 @@
             }
         });
     }
-
 
     function showExportCategoryPlugins(category) {
         const selected = new Set(Lampa.Storage.get(EXPORT_KEY, []));
@@ -164,7 +155,6 @@
         });
     }
 
-
     function exportSinglePlugin(url) {
         Lampa.Modal.open({
             title: 'Экспорт плагина',
@@ -177,12 +167,10 @@
         });
     }
 
-
     function exportToLampa() {
         const enabledUrls = Lampa.Storage.get(ENABLED_KEY, []);
         exportPlugins(enabledUrls);
     }
-
 
     function confirmExportEnabled() {
         const prev = Lampa.Controller.enabled().name;
@@ -197,45 +185,32 @@
         });
     }
 
-
     function savePluginList(list) {
         Lampa.Storage.set(STORAGE_KEY, list);
         pluginList = list;
     }
 
-
     function getPluginList() {
         return Lampa.Storage.get(STORAGE_KEY, []);
     }
-
 
     function saveUpdateInfo(date, added, removed) {
         const info = { date: date || '—', added: added || [], removed: removed || [] };
         Lampa.Storage.set(INFO_KEY, info, true);
     }
 
-
     function getUpdateInfo() {
         return Lampa.Storage.get(INFO_KEY, { date: '—', added: [], removed: [] });
     }
 
-
     function showInfo() {
         const info = getUpdateInfo();
-
-
-        // Если обновлений нет — уведомление с переводом
         if (info.added.length === 0 && info.removed.length === 0) {
             Lampa.Noty.show(Lampa.Lang.translate('mp_no_updates_found'));
             return;
         }
-
-
-        // Если есть — диалоговое окно
         let html = '<div class="about" style="text-align:left">';
         html += '<div><b>' + Lampa.Lang.translate('mp_last_update') + '</b> ' + info.date + '</div><br>';
-
-
         if (info.added.length) {
             html += '<b>' + Lampa.Lang.translate('mp_added') + '</b><br>';
             info.added.forEach(function (p) {
@@ -246,8 +221,6 @@
             });
             html += '<br>';
         }
-
-
         if (info.removed.length) {
             html += '<b>' + Lampa.Lang.translate('mp_removed') + '</b><br>';
             info.removed.forEach(function (p) {
@@ -258,11 +231,7 @@
             });
             html += '<br>';
         }
-
-
         html += '</div>';
-
-
         const prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
             title: Lampa.Lang.translate('mp_update_info'),
@@ -271,7 +240,6 @@
             buttons: [{ name: Lampa.Lang.translate('mp_ok'), onSelect: function () { Lampa.Modal.close(); Lampa.Controller.toggle(prev); } }]
         });
     }
-
 
     function showCategory(category) {
         const plugins = pluginList.filter(function (p) { return translateObj(p.category) === category; });
@@ -309,7 +277,6 @@
         });
     }
 
-
     function showEnabledPlugins() {
         const enabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
         const active = pluginList.filter(function (p) { return enabled.has(p.url); });
@@ -341,7 +308,6 @@
         });
     }
 
-
     function disableAllPlugins() {
         const prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
@@ -354,7 +320,6 @@
             ]
         });
     }
-
 
     function confirmAndSync() {
         const prev = Lampa.Controller.enabled().name;
@@ -369,7 +334,6 @@
         });
     }
 
-
     function confirmAndLoadOnline() {
         const prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
@@ -382,7 +346,6 @@
             ]
         });
     }
-
 
     function loadOnlyOnline(callback) {
         Lampa.Loading.start();
@@ -415,7 +378,6 @@
             .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
     }
 
-
     function synchronize(callback) {
         Lampa.Loading.start();
         fetch(syncUrl, { cache: 'no-cache' })
@@ -423,8 +385,6 @@
             .then(function (data) {
                 try {
                     if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
-
-
                     const remoteDate = data.updateDate || '—';
                     const newList = data.plugins.map(function (item) {
                         return {
@@ -434,28 +394,16 @@
                             category: item.category
                         };
                     });
-
-
                     const prevList = getPluginList();
                     const prevUrls = prevList.map(function (p) { return p.url; });
                     const newUrls = newList.map(function (p) { return p.url; });
-
-
                     const added = newList.filter(function (p) { return !prevUrls.includes(p.url); });
                     const removed = prevList.filter(function (p) { return !newUrls.includes(p.url); });
-
-
                     savePluginList(newList);
-
-
                     const oldEnabled = new Set(Lampa.Storage.get(ENABLED_KEY, []));
                     const validEnabled = Array.from(oldEnabled).filter(function (u) { return newUrls.includes(u); });
                     Lampa.Storage.set(ENABLED_KEY, validEnabled);
-
-
                     Lampa.Noty.show(Lampa.Lang.translate('mp_sync_complete'));
-
-
                     saveUpdateInfo(remoteDate, added, removed);
                 } catch (e) {
                     console.error('Sync error:', e);
@@ -464,7 +412,6 @@
             .catch(function () { Lampa.Noty.show('Ошибка синхронизации'); })
             .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
     }
-
 
     function checkUpdatesOnStart() {
         fetch(syncUrl, { cache: 'no-cache' })
@@ -494,7 +441,6 @@
             .catch(function () {});
     }
 
-
     function addCategoryButtons() {
         if (pluginList.length === 0) return;
         const categories = getCategories(pluginList);
@@ -508,14 +454,12 @@
         });
     }
 
-
     function registerSettings() {
         Lampa.SettingsApi.addComponent({
             component: 'multi_plugin',
             icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/><rect x="8" y="8" width="8" height="8" rx="1" stroke="#fff" stroke-width="2"/></svg>',
             name: Lampa.Lang.translate('mp_title')
         });
-
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -524,14 +468,12 @@
             onChange: showInfo
         });
 
-
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_sync_plugins') },
             onChange: confirmAndSync
         });
-
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -540,21 +482,18 @@
             onChange: confirmAndLoadOnline
         });
 
-
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_export_select') },
-            onChange: showExportCategories
+            onChange: showInstallPlugins
         });
-
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'title' },
             field: { name: Lampa.Lang.translate('mp_management') }
         });
-
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -563,7 +502,6 @@
             onChange: showEnabledPlugins
         });
 
-
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
@@ -571,14 +509,12 @@
             onChange: confirmExportEnabled
         });
 
-
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_disable_all') },
             onChange: disableAllPlugins
         });
-
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -598,7 +534,6 @@
             }
         });
 
-
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'title' },
@@ -606,14 +541,131 @@
         });
     }
 
+    function showInstallPlugins() {
+        const categories = getCategories(pluginList);
+
+        const items = categories.map(function(cat){
+            return {
+                title: cat,
+                category: cat
+            };
+        });
+
+        Lampa.Select.show({
+            title: Lampa.Lang.translate('mp_export_select'),
+            items: items,
+            onSelect: function(item){
+                showInstallCategory(item.category);
+            },
+            onBack: function(){
+                Lampa.Controller.toggle('settings_component');
+            }
+        });
+    }
+
+    function showInstallCategory(category) {
+        const plugins = pluginList.filter(function(p){
+            return translateObj(p.category) === category;
+        });
+
+        const items = plugins.map(function(p){
+            const installed = isInstalled(p.url);
+            const title = installed
+                ? `<span style="color:${INSTALLED_COLOR}">${translateObj(p.name) || p.url.split('/').pop()}</span>`
+                : translateObj(p.name) || p.url.split('/').pop();
+
+            return {
+                title: title,
+                subtitle: translateObj(p.description) || '',
+                url: p.url,
+                plugin: p,
+                installed: installed
+            };
+        });
+
+        Lampa.Select.show({
+            title: category,
+            items: items,
+            onSelect: function(item){
+                showPluginActions(item.plugin, item.installed, category);
+            },
+            onBack: function(){
+                showInstallPlugins();
+            }
+        });
+    }
+
+    function showPluginActions(plugin, isInstalled, category) {
+        const actions = [];
+
+        if (isInstalled) {
+            actions.push({
+                title: Lampa.Lang.translate('pi_remove'),
+                onSelect: () => {
+                    removePlugin(plugin.url);
+                    showInstallCategory(category);
+                }
+            });
+        } else {
+            actions.push({
+                title: Lampa.Lang.translate('pi_install'),
+                onSelect: () => {
+                    installPlugin(plugin);
+                    showInstallCategory(category);
+                }
+            });
+        }
+
+        actions.push({
+            title: Lampa.Lang.translate('pi_cancel'),
+            onSelect: () => showInstallCategory(category)
+        });
+
+        Lampa.Select.show({
+            title: translateObj(plugin.name) || plugin.url.split('/').pop(),
+            items: actions,
+            onBack: () => showInstallCategory(category)
+        });
+    }
+
+    function installPlugin(p) {
+        const url = p.url;
+        if (isInstalled(url)) return;
+
+        Lampa.Plugins.add({
+            url: url,
+            name: translateObj(p.name) || url.split('/').pop(),
+            status: 1,
+            source: SOURCE_KEY
+        });
+
+        Lampa.Plugins.save();
+        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
+    }
+
+    function removePlugin(url) {
+        const installed = getInstalled();
+        const plugin = installed.find(p => p.url === url);
+        if (plugin) {
+            Lampa.Plugins.remove(plugin);
+            Lampa.Plugins.save();
+            Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_removed'));
+        }
+    }
+
+    function getInstalled() {
+        return Lampa.Plugins.get() || [];
+    }
+
+    function isInstalled(url) {
+        return getInstalled().some(p => p.url === url);
+    }
 
     pluginList = getPluginList();
     checkUpdatesOnStart();
 
-
     registerSettings();
     addCategoryButtons();
-
 
     Lampa.Listener.follow('app', function (e) {
         if (e.type === 'ready') {
@@ -621,8 +673,5 @@
         }
     });
 
-
-    console.log('Мультиплагин v4');
+    console.log('Мультиплагин v5');
 })();
-
-
