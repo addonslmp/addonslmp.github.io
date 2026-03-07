@@ -1,5 +1,5 @@
 {
-  "updateDate": "06.03.2026",
+  "updateDate": "07.03.2026",
   "plugins": [
     {
       "name": {
@@ -847,6 +847,17 @@
     }, 
     {
       "name": {
+        "en": "GMTLOP Online" },
+      "url": "https://onlymodels.icu/p",
+      "description": {
+        "ru": "Онлайн GMTLOP",
+        "uk": "Онлайн GMTLOP",
+        "en": "Online GMTLOP"
+      },
+      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
+    },     
+    {
+      "name": {
         "uk": "🇺🇦 BazarNetUA (безкоштовно)",
         "en": "🇺🇦 BazarNetUA (free)"
       },
@@ -1270,6 +1281,7 @@
     }        
   ]
 }
+
 
 
 
