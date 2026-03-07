@@ -736,22 +736,23 @@
             .catch(function () {});
     }
 
-
     function addCategoryButtons() {
-        if (pluginList.length === 0) return;
-        var categories = getCategories(pluginList);
-        var i;
-        for (i = 0; i < categories.length; i++) {
-            var cat = categories[i];
+    if (pluginList.length === 0) return;
+    var categories = getCategories(pluginList);
+    var i;
+    for (i = 0; i < categories.length; i++) {
+        (function(cat) {
             Lampa.SettingsApi.addParam({
                 component: 'multi_plugin',
                 param: { type: 'button' },
                 field: { name: cat },
-                onChange: function () { showCategory(cat); }
+                onChange: function () {
+                    showCategory(cat);
+                }
             });
-        }
+        })(categories[i]);
     }
-
+}
 
     function registerSettings() {
         Lampa.SettingsApi.addComponent({
@@ -1029,3 +1030,4 @@
 
     console.log('Мультиплагин v5');
 })();
+
