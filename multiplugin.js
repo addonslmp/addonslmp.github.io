@@ -1,6 +1,45 @@
 (function () {
     'use strict';
 
+
+    if (typeof fetch === 'undefined') {
+        window.fetch = function (url) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            var response = {
+                                ok: true,
+                                status: xhr.status,
+                                statusText: xhr.statusText,
+                                text: function () {
+                                    return Promise.resolve(xhr.responseText);
+                                },
+                                json: function () {
+                                    try {
+                                        return Promise.resolve(JSON.parse(xhr.responseText));
+                                    } catch (e) {
+                                        return Promise.reject(e);
+                                    }
+                                }
+                            };
+                            resolve(response);
+                        } else {
+                            reject(new Error('HTTP error ' + xhr.status));
+                        }
+                    }
+                };
+                xhr.onerror = function () {
+                    reject(new Error('Network error'));
+                };
+                xhr.send();
+            });
+        };
+    }
+
+
     Lampa.Lang.add({
         mp_title: { ru: 'Мультиплагин', uk: 'Мультиплагін', en: 'Multiplugin' },
         mp_category_plugins: { ru: 'Категории плагинов', uk: 'Категорії плагінів', en: 'Plugin Categories' },
@@ -45,6 +84,7 @@
         pi_plugin_removed: { ru: 'Плагин удалён', uk: 'Плагін видалено', en: 'Plugin removed' }
     });
 
+
     var syncUrl = 'https://addonslmp.github.io/sources/plugins_mp.json';
     var STORAGE_KEY = 'multi_plugins_list';
     var ENABLED_KEY = 'multi_enabled_plugins';
@@ -53,9 +93,11 @@
     var SOURCE_KEY = 'multiplugin';
     var INSTALLED_COLOR = '#6bd66b';
 
+
     var pluginList = [];
     var loadedPlugins = [];
     var menuBuilt = false;
+
 
     function translateObj(obj) {
         if (!obj) return '';
@@ -63,6 +105,7 @@
         var lang = Lampa.Storage.get('language', 'ru');
         return obj[lang] || obj.ru || obj.en || '';
     }
+
 
     function lazyLoadPlugin(url) {
         var i;
@@ -74,10 +117,12 @@
         });
     }
 
+
     function loadEnabledPluginsLazy() {
         var enabled = Lampa.Storage.get(ENABLED_KEY, []);
         var lazy = [];
         var i, j, found;
+
 
         for (i = 0; i < pluginList.length; i++) {
             var p = pluginList[i];
@@ -90,6 +135,7 @@
             }
             if (!found) continue;
 
+
             found = false;
             for (j = 0; j < loadedPlugins.length; j++) {
                 if (loadedPlugins[j] === p.url) {
@@ -100,14 +146,18 @@
             if (!found) lazy.push(p.url);
         }
 
+
         if (lazy.length === 0) return;
+
 
         for (i = 0; i < lazy.length; i++) {
             loadedPlugins.push(lazy[i]);
         }
 
+
         Lampa.Utils.putScriptAsync(lazy, function () {});
     }
+
 
     function exportPlugins(urls) {
         if (!urls || urls.length === 0) {
@@ -152,6 +202,7 @@
         }
     }
 
+
     function getCategories(list) {
         var cats = [];
         var i;
@@ -169,6 +220,7 @@
         }
         return cats;
     }
+
 
     function showExportCategories() {
         var categories = getCategories(pluginList);
@@ -189,6 +241,7 @@
             }
         });
     }
+
 
     function showExportCategoryPlugins(category) {
         var selected = Lampa.Storage.get(EXPORT_KEY, []);
@@ -247,6 +300,7 @@
         });
     }
 
+
     function exportSinglePlugin(url) {
         Lampa.Modal.open({
             title: 'Экспорт плагина',
@@ -259,10 +313,12 @@
         });
     }
 
+
     function exportToLampa() {
         var enabledUrls = Lampa.Storage.get(ENABLED_KEY, []);
         exportPlugins(enabledUrls);
     }
+
 
     function confirmExportEnabled() {
         var prev = Lampa.Controller.enabled().name;
@@ -277,23 +333,28 @@
         });
     }
 
+
     function savePluginList(list) {
         Lampa.Storage.set(STORAGE_KEY, list);
         pluginList = list;
     }
 
+
     function getPluginList() {
         return Lampa.Storage.get(STORAGE_KEY, []);
     }
+
 
     function saveUpdateInfo(date, added, removed) {
         var info = { date: date || '—', added: added || [], removed: removed || [] };
         Lampa.Storage.set(INFO_KEY, info, true);
     }
 
+
     function getUpdateInfo() {
         return Lampa.Storage.get(INFO_KEY, { date: '—', added: [], removed: [] });
     }
+
 
     function showInfo() {
         var info = getUpdateInfo();
@@ -336,6 +397,7 @@
             buttons: [{ name: Lampa.Lang.translate('mp_ok'), onSelect: function () { Lampa.Modal.close(); Lampa.Controller.toggle(prev); } }]
         });
     }
+
 
     function showCategory(category) {
         var plugins = [];
@@ -402,6 +464,7 @@
         });
     }
 
+
     function showEnabledPlugins() {
         var enabled = Lampa.Storage.get(ENABLED_KEY, []);
         var active = [];
@@ -452,6 +515,7 @@
         });
     }
 
+
     function disableAllPlugins() {
         var prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
@@ -464,6 +528,7 @@
             ]
         });
     }
+
 
     function confirmAndSync() {
         var prev = Lampa.Controller.enabled().name;
@@ -478,6 +543,7 @@
         });
     }
 
+
     function confirmAndLoadOnline() {
         var prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
@@ -490,6 +556,7 @@
             ]
         });
     }
+
 
     function loadOnlyOnline(callback) {
         Lampa.Loading.start();
@@ -535,6 +602,7 @@
             .catch(function () { Lampa.Noty.show('Ошибка загрузки'); })
             .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
     }
+
 
     function synchronize(callback) {
         Lampa.Loading.start();
@@ -613,6 +681,7 @@
             .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
     }
 
+
     function checkUpdatesOnStart() {
         fetch(syncUrl, { cache: 'no-cache' })
             .then(function (r) { return r.json(); })
@@ -667,6 +736,7 @@
             .catch(function () {});
     }
 
+
     function addCategoryButtons() {
         if (pluginList.length === 0) return;
         var categories = getCategories(pluginList);
@@ -682,12 +752,14 @@
         }
     }
 
+
     function registerSettings() {
         Lampa.SettingsApi.addComponent({
             component: 'multi_plugin',
             icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/><rect x="8" y="8" width="8" height="8" rx="1" stroke="#fff" stroke-width="2"/></svg>',
             name: Lampa.Lang.translate('mp_title')
         });
+
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -696,12 +768,14 @@
             onChange: showInfo
         });
 
+
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_sync_plugins') },
             onChange: confirmAndSync
         });
+
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -710,6 +784,7 @@
             onChange: confirmAndLoadOnline
         });
 
+
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
@@ -717,11 +792,13 @@
             onChange: showInstallPlugins
         });
 
+
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'title' },
             field: { name: Lampa.Lang.translate('mp_management') }
         });
+
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -730,6 +807,7 @@
             onChange: showEnabledPlugins
         });
 
+
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
@@ -737,12 +815,14 @@
             onChange: confirmExportEnabled
         });
 
+
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_disable_all') },
             onChange: disableAllPlugins
         });
+
 
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
@@ -762,6 +842,7 @@
             }
         });
 
+
         Lampa.SettingsApi.addParam({
             component: 'multi_plugin',
             param: { type: 'title' },
@@ -769,8 +850,10 @@
         });
     }
 
+
     function showInstallPlugins() {
         var categories = getCategories(pluginList);
+
 
         var items = [];
         var i;
@@ -780,6 +863,7 @@
                 category: categories[i]
             });
         }
+
 
         Lampa.Select.show({
             title: Lampa.Lang.translate('mp_export_select'),
@@ -793,6 +877,7 @@
         });
     }
 
+
     function showInstallCategory(category) {
         var plugins = [];
         var i;
@@ -802,6 +887,7 @@
             }
         }
 
+
         var items = [];
         for (i = 0; i < plugins.length; i++) {
             var p = plugins[i];
@@ -809,6 +895,7 @@
             var title = installed
                 ? '<span style="color:' + INSTALLED_COLOR + '">' + (translateObj(p.name) || p.url.split('/').pop()) + '</span>'
                 : translateObj(p.name) || p.url.split('/').pop();
+
 
             items.push({
                 title: title,
@@ -818,6 +905,7 @@
                 installed: installed
             });
         }
+
 
         Lampa.Select.show({
             title: category,
@@ -831,8 +919,10 @@
         });
     }
 
+
     function showPluginActions(plugin, isInstalled, category) {
         var actions = [];
+
 
         if (isInstalled) {
             actions.push({
@@ -852,12 +942,14 @@
             });
         }
 
+
         actions.push({
             title: Lampa.Lang.translate('pi_cancel'),
             onSelect: function () {
                 showInstallCategory(category);
             }
         });
+
 
         Lampa.Select.show({
             title: translateObj(plugin.name) || plugin.url.split('/').pop(),
@@ -868,9 +960,11 @@
         });
     }
 
+
     function installPlugin(p) {
         var url = p.url;
         if (isInstalled(url)) return;
+
 
         Lampa.Plugins.add({
             url: url,
@@ -879,9 +973,11 @@
             source: SOURCE_KEY
         });
 
+
         Lampa.Plugins.save();
         Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
     }
+
 
     function removePlugin(url) {
         var installed = getInstalled();
@@ -900,9 +996,11 @@
         }
     }
 
+
     function getInstalled() {
         return Lampa.Plugins.get() || [];
     }
+
 
     function isInstalled(url) {
         var installed = getInstalled();
@@ -913,17 +1011,21 @@
         return false;
     }
 
+
     pluginList = getPluginList();
     checkUpdatesOnStart();
 
+
     registerSettings();
     addCategoryButtons();
+
 
     Lampa.Listener.follow('app', function (e) {
         if (e.type === 'ready') {
             loadEnabledPluginsLazy();
         }
     });
+
 
     console.log('Мультиплагин v5');
 })();
