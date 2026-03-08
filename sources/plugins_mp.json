@@ -844,18 +844,7 @@
         "uk": "Онлайн",
         "en": "Online"
       }
-    }, 
-    {
-      "name": {
-        "en": "GMTLOP Online" },
-      "url": "https://onlymodels.icu/p",
-      "description": {
-        "ru": "Онлайн GMTLOP",
-        "uk": "Онлайн GMTLOP",
-        "en": "Online GMTLOP"
-      },
-      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    },     
+    },    
     {
       "name": {
         "uk": "🇺🇦 BazarNetUA (безкоштовно)",
@@ -972,7 +961,18 @@
         "uk": "Додатковий онлайн",
         "en": "Additional online"
       }
-    },	
+    },
+    {
+      "name": {
+        "en": "GMTLOP Online" },
+      "url": "https://onlymodels.icu/p",
+      "description": {
+        "ru": "Онлайн GMTLOP",
+        "uk": "Онлайн GMTLOP",
+        "en": "Online GMTLOP"
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },     
     {
       "name": {
         "en": "IPTV"
@@ -1281,6 +1281,7 @@
     }        
   ]
 }
+
 
 
 
