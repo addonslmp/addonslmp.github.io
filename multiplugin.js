@@ -118,45 +118,31 @@
     }
 
 
-    function loadEnabledPluginsLazy() {
-        var enabled = Lampa.Storage.get(ENABLED_KEY, []);
-        var lazy = [];
-        var i, j, found;
+function loadEnabledPluginsLazy() {
+    var enabled = Lampa.Storage.get(ENABLED_KEY, []);
+    var lazy = [];
+    var i;
 
+    for (i = 0; i < pluginList.length; i++) {
+        var url = pluginList[i].url;
 
-        for (i = 0; i < pluginList.length; i++) {
-            var p = pluginList[i];
-            found = false;
-            for (j = 0; j < enabled.length; j++) {
-                if (enabled[j] === p.url) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) continue;
-
-
-            found = false;
-            for (j = 0; j < loadedPlugins.length; j++) {
-                if (loadedPlugins[j] === p.url) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) lazy.push(p.url);
+        if (
+            enabled.indexOf(url) !== -1 &&          
+            loadedPlugins.indexOf(url) === -1 &&   
+            lazy.indexOf(url) === -1                
+        ) {
+            lazy.push(url);
         }
-
-
-        if (lazy.length === 0) return;
-
-
-        for (i = 0; i < lazy.length; i++) {
-            loadedPlugins.push(lazy[i]);
-        }
-
-
-        Lampa.Utils.putScriptAsync(lazy, function () {});
     }
+
+    if (!lazy.length) return;
+
+    Lampa.Utils.putScriptAsync(lazy, function () {
+        for (var j = 0; j < lazy.length; j++) {
+            loadedPlugins.push(lazy[j]);
+        }
+    });
+}
 
 
     function exportPlugins(urls) {
@@ -1030,4 +1016,5 @@
 
     console.log('Мультиплагин v5');
 })();
+
 
