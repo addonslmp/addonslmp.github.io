@@ -50,6 +50,9 @@
         mp_current_plugins: { ru: 'Включённые плагины', uk: 'Увімкнені плагіни', en: 'Enabled Plugins' },
         mp_export_to_lampa: { ru: 'Экспорт включённых', uk: 'Експорт увімкнених', en: 'Export Enabled' },
         mp_export_select: { ru: 'Установка плагинов', uk: 'Встановлення плагінів', en: 'Install Plugins' },
+        mp_installed_plugins: { ru: 'Установленные плагины', uk: 'Встановлені плагіни', en: 'Installed Plugins' },
+        mp_no_installed_plugins: { ru: 'Нет установленных плагинов', uk: 'Немає встановлених плагінів', en: 'No installed plugins' },
+        mp_plugin_removed: { ru: 'Плагин удалён', uk: 'Плагін видалено', en: 'Plugin removed' },
         mp_disable_all: { ru: 'Выключить все плагины', uk: 'Вимкнути всі плагіни', en: 'Disable All Plugins' },
         mp_reload_lampa: { ru: 'Перезагрузить Lampa', uk: 'Перезавантажити Lampa', en: 'Reload Lampa' },
         mp_update_info: { ru: 'Информация об обновлении', uk: 'Інформація про оновлення', en: 'Update Information' },
@@ -77,6 +80,8 @@
         mp_ok: { ru: 'OK', uk: 'OK', en: 'OK' },
         mp_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
         mp_no_updates_found: { ru: 'Обновлений не найдено', uk: 'Оновлень не знайдено', en: 'No updates found' },
+        mp_no_new_plugins: { ru: 'Новых плагинов не добавлено', uk: 'Нових плагінів не додано', en: 'No new plugins added' },
+        mp_plugins_not_selected: { ru: 'Плагины не выбраны', uk: 'Плагіни не вибрано', en: 'No plugins selected' },
         pi_install: { ru: 'Установить', uk: 'Встановити', en: 'Install' },
         pi_remove: { ru: 'Удалить', uk: 'Видалити', en: 'Remove' },
         pi_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
@@ -90,8 +95,9 @@
     var ENABLED_KEY = 'multi_enabled_plugins';
     var INFO_KEY = 'multi_last_update';
     var EXPORT_KEY = 'multi_export_selection';
+    var INSTALLED_KEY = 'multi_installed_plugins';
     var SOURCE_KEY = 'multiplugin';
-    var INSTALLED_COLOR = '#6bd66b';
+    var INSTALLED_COLOR = '#8bc34a';
 
 
     var pluginList = [];
@@ -118,41 +124,49 @@
     }
 
 
-function loadEnabledPluginsLazy() {
-    var enabled = Lampa.Storage.get(ENABLED_KEY, []);
-    var lazy = [];
-    var i;
+    function loadEnabledPluginsLazy() {
+        var enabled = Lampa.Storage.get(ENABLED_KEY, []);
+        var lazy = [];
+        var i;
 
-    for (i = 0; i < pluginList.length; i++) {
-        var url = pluginList[i].url;
 
-        if (
-            enabled.indexOf(url) !== -1 &&          
-            loadedPlugins.indexOf(url) === -1 &&   
-            lazy.indexOf(url) === -1                
-        ) {
-            lazy.push(url);
+        for (i = 0; i < pluginList.length; i++) {
+            var url = pluginList[i].url;
+
+
+            if (
+                enabled.indexOf(url) !== -1 &&
+                loadedPlugins.indexOf(url) === -1 &&
+                lazy.indexOf(url) === -1
+            ) {
+                lazy.push(url);
+            }
         }
+
+
+        if (!lazy.length) return;
+
+
+        Lampa.Utils.putScriptAsync(lazy, function () {
+            for (var j = 0; j < lazy.length; j++) {
+                loadedPlugins.push(lazy[j]);
+            }
+        });
     }
-
-    if (!lazy.length) return;
-
-    Lampa.Utils.putScriptAsync(lazy, function () {
-        for (var j = 0; j < lazy.length; j++) {
-            loadedPlugins.push(lazy[j]);
-        }
-    });
-}
 
 
     function exportPlugins(urls) {
         if (!urls || urls.length === 0) {
-            Lampa.Noty.show('Плагины не выбраны');
+            Lampa.Noty.show(Lampa.Lang.translate('mp_plugins_not_selected'));
             return;
         }
+
+
         var installed = Lampa.Plugins.get() || [];
         var added = 0;
         var i;
+
+
         for (i = 0; i < urls.length; i++) {
             var url = urls[i];
             var plugin = null;
@@ -176,15 +190,36 @@ function loadEnabledPluginsLazy() {
                 url: plugin.url,
                 name: translateObj(plugin.name) || plugin.url.split('/').pop(),
                 status: 1,
-                source: 'multiplugin'
+                source: SOURCE_KEY
             });
+
+
+            addInstalledFromMulti(plugin.url);
+
+
             added++;
         }
+
+
         if (added > 0) {
             Lampa.Plugins.save();
+
+
+            // снять галочки с экспортированных плагинов
+            var enabled = Lampa.Storage.get(ENABLED_KEY, []);
+            var newEnabled = [];
+            var i;
+            for (i = 0; i < enabled.length; i++) {
+                if (urls.indexOf(enabled[i]) === -1) {
+                    newEnabled.push(enabled[i]);
+                }
+            }
+            Lampa.Storage.set(ENABLED_KEY, newEnabled);
+
+
             Lampa.Noty.show('Экспортировано: ' + added);
         } else {
-            Lampa.Noty.show('Новых плагинов не добавлено');
+            Lampa.Noty.show(Lampa.Lang.translate('mp_no_new_plugins'));
         }
     }
 
@@ -454,9 +489,17 @@ function loadEnabledPluginsLazy() {
     function showEnabledPlugins() {
         var enabled = Lampa.Storage.get(ENABLED_KEY, []);
         var active = [];
+        var seen = {};
         var i;
+
+
         for (i = 0; i < pluginList.length; i++) {
             var p = pluginList[i];
+
+
+            if (seen[p.url]) continue;
+
+
             var found = false;
             var j;
             for (j = 0; j < enabled.length; j++) {
@@ -465,12 +508,21 @@ function loadEnabledPluginsLazy() {
                     break;
                 }
             }
-            if (found) active.push(p);
+
+
+            if (found) {
+                active.push(p);
+                seen[p.url] = true;
+            }
         }
+
+
         if (active.length === 0) {
             Lampa.Noty.show(Lampa.Lang.translate('mp_no_plugins'));
             return;
         }
+
+
         var items = [];
         for (i = 0; i < active.length; i++) {
             var p = active[i];
@@ -482,6 +534,8 @@ function loadEnabledPluginsLazy() {
                 url: p.url
             });
         }
+
+
         Lampa.Select.show({
             title: Lampa.Lang.translate('mp_current_plugins'),
             items: items,
@@ -722,23 +776,25 @@ function loadEnabledPluginsLazy() {
             .catch(function () {});
     }
 
+
     function addCategoryButtons() {
-    if (pluginList.length === 0) return;
-    var categories = getCategories(pluginList);
-    var i;
-    for (i = 0; i < categories.length; i++) {
-        (function(cat) {
-            Lampa.SettingsApi.addParam({
-                component: 'multi_plugin',
-                param: { type: 'button' },
-                field: { name: cat },
-                onChange: function () {
-                    showCategory(cat);
-                }
-            });
-        })(categories[i]);
+        if (pluginList.length === 0) return;
+        var categories = getCategories(pluginList);
+        var i;
+        for (i = 0; i < categories.length; i++) {
+            (function(cat) {
+                Lampa.SettingsApi.addParam({
+                    component: 'multi_plugin',
+                    param: { type: 'button' },
+                    field: { name: cat },
+                    onChange: function () {
+                        showCategory(cat);
+                    }
+                });
+            })(categories[i]);
+        }
     }
-}
+
 
     function registerSettings() {
         Lampa.SettingsApi.addComponent({
@@ -777,6 +833,14 @@ function loadEnabledPluginsLazy() {
             param: { type: 'button' },
             field: { name: Lampa.Lang.translate('mp_export_select') },
             onChange: showInstallPlugins
+        });
+
+
+        Lampa.SettingsApi.addParam({
+            component: 'multi_plugin',
+            param: { type: 'button' },
+            field: { name: Lampa.Lang.translate('mp_installed_plugins') },
+            onChange: showInstalledPlugins
         });
 
 
@@ -962,6 +1026,11 @@ function loadEnabledPluginsLazy() {
 
 
         Lampa.Plugins.save();
+
+
+        addInstalledFromMulti(url);
+
+
         Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
     }
 
@@ -979,6 +1048,11 @@ function loadEnabledPluginsLazy() {
         if (plugin) {
             Lampa.Plugins.remove(plugin);
             Lampa.Plugins.save();
+
+
+            removeInstalledFromMulti(url);
+
+
             Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_removed'));
         }
     }
@@ -999,6 +1073,131 @@ function loadEnabledPluginsLazy() {
     }
 
 
+    function getInstalledFromMulti() {
+        return Lampa.Storage.get(INSTALLED_KEY, []);
+    }
+
+
+    function addInstalledFromMulti(url) {
+        var list = Lampa.Storage.get(INSTALLED_KEY, []);
+        var i;
+
+
+        for (i = 0; i < list.length; i++) {
+            if (list[i] === url) return;
+        }
+
+
+        list.push(url);
+        Lampa.Storage.set(INSTALLED_KEY, list);
+    }
+
+
+    function removeInstalledFromMulti(url) {
+        var list = Lampa.Storage.get(INSTALLED_KEY, []);
+        var newList = [];
+        var i;
+
+
+        for (i = 0; i < list.length; i++) {
+            if (list[i] !== url) newList.push(list[i]);
+        }
+
+
+        Lampa.Storage.set(INSTALLED_KEY, newList);
+    }
+
+
+    function showInstalledPlugins() {
+        var urls = getInstalledFromMulti();
+
+
+        if (!urls || urls.length === 0) {
+            Lampa.Noty.show(Lampa.Lang.translate('mp_no_installed_plugins'));
+
+
+            Lampa.Controller.toggle('settings_component');
+
+
+            return;
+        }
+
+
+        var items = [];
+        var i;
+
+
+        for (i = 0; i < urls.length; i++) {
+            var url = urls[i];
+            var name = url.split('/').pop().replace('.js','');
+
+
+            var j;
+            for (j = 0; j < pluginList.length; j++) {
+                if (pluginList[j].url === url) {
+                    name = translateObj(pluginList[j].name) || name;
+                    break;
+                }
+            }
+
+
+            items.push({
+                title: '<span style="color:' + INSTALLED_COLOR + '">' + name + '</span>',
+                subtitle: url,
+                url: url,
+                name: name
+            });
+        }
+
+
+        Lampa.Select.show({
+            title: Lampa.Lang.translate('mp_installed_plugins'),
+            items: items,
+            onSelect: function(item){
+                showInstalledActions(item);
+            },
+            onBack: function(){
+                Lampa.Controller.toggle('settings_component');
+            }
+        });
+    }
+
+
+    function showInstalledActions(item) {
+        Lampa.Select.show({
+            title: item.name,
+            items: [
+                {
+                    title: Lampa.Lang.translate('pi_remove'),
+                    onSelect: function () {
+                        var list = getInstalled();
+                        var i;
+                        for (i = 0; i < list.length; i++) {
+                            if (list[i].url === item.url) {
+                                Lampa.Plugins.remove(list[i]);
+                                Lampa.Plugins.save();
+                                break;
+                            }
+                        }
+                        removeInstalledFromMulti(item.url);
+                        Lampa.Noty.show(Lampa.Lang.translate('mp_plugin_removed'));
+                        showInstalledPlugins();
+                    }
+                },
+                {
+                    title: Lampa.Lang.translate('pi_cancel'),
+                    onSelect: function () {
+                        showInstalledPlugins();
+                    }
+                }
+            ],
+            onBack: function () {
+                showInstalledPlugins();
+            }
+        });
+    }
+
+
     pluginList = getPluginList();
     checkUpdatesOnStart();
 
@@ -1016,5 +1215,3 @@ function loadEnabledPluginsLazy() {
 
     console.log('Мультиплагин v5');
 })();
-
-
