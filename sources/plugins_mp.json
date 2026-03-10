@@ -1,5 +1,5 @@
 {
-  "updateDate": "07.03.2026",
+  "updateDate": "10.03.2026",
   "plugins": [
     {
       "name": {
@@ -620,7 +620,17 @@
         "uk": "Інтерфейс",
         "en": "Interface"
       }
-    },     
+    },
+    {
+      "name": { "en": "Series Status Mod by AddonsLMP" },
+      "url": "https://addonslmp.github.io/plugins/status.js",
+      "description": {
+      "ru": "Добавляет на карточки сериалов метку «Сериал» и отображает текущий статус проекта: «В эфире», «Пауза», «Завершён» или «Отменён». Статус определяется из данных TMDB и автоматически показывается во всех разделах Lampa. Плагин имеет настройку для включения или отключения отображения статусов.",
+      "uk": "Додає на картки серіалів мітку «Серіал» та показує поточний статус проєкту: «В ефірі», «Пауза», «Завершено» або «Скасовано». Статус визначається з даних TMDB і автоматично відображається у всіх розділах Lampa. Плагін має налаштування для увімкнення або вимкнення відображення статусів.",
+      "en": "Adds a \"Series\" label to TV show cards and displays the current status of the show: \"Airing\", \"Paused\", \"Ended\", or \"Canceled\". The status is retrieved from TMDB data and automatically shown across all sections of Lampa. The plugin also includes a setting to enable or disable status display."
+      },
+    "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },  
     {
       "name": {
         "en": "Torrent Manager"
@@ -1281,6 +1291,7 @@
     }        
   ]
 }
+
 
 
 
