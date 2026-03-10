@@ -1,5 +1,5 @@
 	//Original plugin: https://igorek1986.github.io/lampa-plugins/status.js
-	//Modded by AddonsLMP: added translate ru, uk, en
+	//Modded by AddonsLMP: added translate RU, UK, EN
 (function() {    
     'use strict';    
     
@@ -73,8 +73,17 @@
     airing: { ru: 'В эфире', uk: 'В ефірі', en: 'Airing' },
     paused: { ru: 'Пауза', uk: 'Пауза', en: 'Paused' },
     ended: { ru: 'Завершён', uk: 'Завершено', en: 'Ended' },
-    canceled: { ru: 'Отменен', uk: 'Скасовано', en: 'Canceled' }
+    canceled: { ru: 'Отменен', uk: 'Скасовано', en: 'Canceled' },
+	settings_title: { ru: 'Статус сериалов', uk: 'Статус серіалів', en: 'Series Status' },
+    settings_toggle: { ru: 'Показывать статус сериалов', uk: 'Показувати статус серіалів', en: 'Show series status'},
+	settings_desc: { ru: 'Включить или отключить отображение статуса (в эфире/завершён) и метки TV на всех карточках сериалов во всех разделах.', uk: 'Увімкнути або вимкнути відображення статусу (в ефірі/завершено) та мітки TV на всіх картках серіалів у всіх розділах.', en: 'Enable or disable displaying the series status (airing/ended) and TV label on all series cards in all sections.' },
+    settings_about: {
+    ru: 'Автор: igorek1986<br>Перевод: AddonsLMP<br>Добавлены языки RU, UK, EN.',
+    uk: 'Автор: igorek1986<br>Переклад: AddonsLMP<br>Додано мови RU, UK, EN.',
+    en: 'Author: igorek1986<br>Translation: AddonsLMP<br>Languages RU, UK, EN added.'
+        }
     };
+
 
 	function t(key){
 		var lang = Lampa.Storage.get('language','ru');
@@ -138,10 +147,19 @@
         if (Lampa.SettingsApi) {        
             Lampa.SettingsApi.addComponent({        
                 component: SETTINGS_COMPONENT,        
-                name: 'Статус сериалов',        
+                name: t('settings_title'),        
                 icon: '<svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="#2196F3"/><rect x="4" y="6" width="16" height="12" rx="1" fill="#fff"/></svg>'        
             });        
-                  
+             
+		    Lampa.SettingsApi.addParam({
+				component: SETTINGS_COMPONENT,
+				param: { type: 'title' },
+				field: {
+				name: t('settings_about')
+				}
+			});
+			
+			
             Lampa.SettingsApi.addParam({        
                 component: SETTINGS_COMPONENT,        
                 param: {        
@@ -150,8 +168,8 @@
                     default: GLOBAL_DEFAULT        
                 },        
                 field: {        
-                    name: 'Показывать статус сериалов',        
-                    description: 'Включить или отключить отображение статуса (в эфире/завершён) и метки TV на всех карточках сериалов во всех разделах.'        
+                    name: t('settings_toggle'),        
+                    description: t('settings_desc')        
                 },        
                 onChange: function(value) {        
                     var isEnabled = value === true || value === 'true';  
