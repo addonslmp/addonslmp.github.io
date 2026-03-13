@@ -1,5 +1,5 @@
 {
-  "updateDate": "10.03.2026",
+  "updateDate": "13.03.2026",
   "plugins": [
     {
       "name": {
@@ -548,24 +548,6 @@
         "ru": "Оценки к фильмам/сериалам с разных источников IMDB, TMDB, Metacritic.",
         "uk": "Оцінки до фільмів/серіалів з різних джерел IMDB, TMDB, Metacritic.",
         "en": "Ratings for movies/TV series from various sources: IMDB, TMDB, Metacritic."
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    },   
-    {
-      "name": {
-        "ru": "Рейтинг фильмов и сериалов от yarikrazor",
-        "uk": "Рейтинг фильмов и сериалов від yarikrazor",
-        "en": "Rating movies and tvshows by yarikrazor"
-      },
-      "url": "https://yarikrazor-star.github.io/lmp/Ratings_Lampa.js",
-      "description": {
-        "ru": "Рейтинг фильмов и сериалов от yarikrazor",
-        "uk": "Рейтинг фильмов и сериалов від yarikrazor",
-        "en": "Rating movies and tvshows by yarikrazor"
       },
       "category": {
         "ru": "Интерфейс",
