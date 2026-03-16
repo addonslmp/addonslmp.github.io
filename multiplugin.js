@@ -2,37 +2,6 @@
     'use strict';
 
 
-    if (typeof fetch === 'undefined') {
-        window.fetch = function (url) {
-            return new Promise(function (resolve, reject) {
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', url, true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status >= 200 && xhr.status < 300) {
-                            var response = {
-                                ok: true,
-                                status: xhr.status,
-                                statusText: xhr.statusText,
-                                text: function () { return Promise.resolve(xhr.responseText); },
-                                json: function () {
-                                    try { return Promise.resolve(JSON.parse(xhr.responseText)); }
-                                    catch (e) { return Promise.reject(e); }
-                                }
-                            };
-                            resolve(response);
-                        } else {
-                            reject(new Error('HTTP error ' + xhr.status));
-                        }
-                    }
-                };
-                xhr.onerror = function () { reject(new Error('Network error')); };
-                xhr.send();
-            });
-        };
-    }
-
-
     Lampa.Lang.add({
         mp_title: { ru: 'Мультиплагин', uk: 'Мультиплагін', en: 'Multiplugin' },
         mp_updated: { ru: 'Обновлено: ', uk: 'Оновлено: ', en: 'Updated: ' },
@@ -69,7 +38,6 @@
 
     var syncUrl = 'https://addonslmp.github.io/sources/plugins_mp.json';
     var STORAGE_KEY = 'multi_plugins_list';
-    var ENABLED_KEY = 'multi_enabled_plugins';
     var INFO_KEY = 'multi_last_update';
     var INSTALLED_KEY = 'multi_installed_plugins';
     var SOURCE_KEY = 'multiplugin';
@@ -262,226 +230,184 @@
 
     function loadOnlyOnline(callback) {
         Lampa.Loading.start();
-        fetch(syncUrl, { cache: 'no-cache' })
-            .then(function (response) { return response.json(); })
-            .then(function (data) {
-                try {
-                    if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
-                    var newList = [];
-                    var i;
-                    for (i = 0; i < data.plugins.length; i++) {
-                        var item = data.plugins[i];
-                        newList.push({
-                            url: item.url,
-                            name: item.name,
-                            description: item.description,
-                            category: item.category
-                        });
-                    }
-                    savePluginList(newList);
 
 
-                    var plugins = Lampa.Plugins.get() || [];
+        $.getJSON(syncUrl, function(data) {
+            try {
+                if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
+                var newList = [];
+                var i;
+                for (i = 0; i < data.plugins.length; i++) {
+                    var item = data.plugins[i];
+                    newList.push({
+                        url: item.url,
+                        name: item.name,
+                        description: item.description,
+                        category: item.category
+                    });
+                }
+                savePluginList(newList);
 
 
-                    for (i = 0; i < newList.length; i++) {
-                        var p = newList[i];
-                        var cat = translateObj(p.category).toLowerCase();
+                for (i = 0; i < newList.length; i++) {
+                    var p = newList[i];
+                    var cat = translateObj(p.category).toLowerCase();
 
 
-                        if (cat === 'онлайн' || cat === 'online') {
-                            var existsInstalled = isInstalled(p.url);
+                    if (cat === 'онлайн' || cat === 'online') {
+                        var existsInstalled = isInstalled(p.url);
 
 
-                            if (!existsInstalled) {
-                                Lampa.Plugins.add({
-                                    url: p.url,
-                                    name: translateObj(p.name) || p.url.split('/').pop(),
-                                    status: 1,
-                                    source: SOURCE_KEY
-                                });
+                        if (!existsInstalled) {
+                            Lampa.Plugins.add({
+                                url: p.url,
+                                name: translateObj(p.name) || p.url.split('/').pop(),
+                                status: 1,
+                                source: SOURCE_KEY
+                            });
 
 
-                                addInstalledFromMulti(p.url);
-                            }
+                            addInstalledFromMulti(p.url);
                         }
                     }
-
-
-                    Lampa.Plugins.save();
-                } catch (e) {
-                    console.error('Load online error:', e);
                 }
-            })
-            .catch(function () { Lampa.Noty.show('Ошибка загрузки'); })
-            .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
+
+
+                Lampa.Plugins.save();
+
+
+                setTimeout(function(){
+                    if (callback) callback();
+                    Lampa.Controller.toggle('settings_component');
+                }, 100);
+
+
+            } catch (e) {
+                console.error('Load online error:', e);
+                Lampa.Noty.show('Ошибка загрузки');
+            } finally {
+                Lampa.Loading.stop();
+            }
+        }).fail(function() {
+            Lampa.Noty.show('Ошибка загрузки');
+            Lampa.Loading.stop();
+            if (callback) callback();
+        });
     }
 
 
     function synchronize(callback) {
         Lampa.Loading.start();
-        fetch(syncUrl, { cache: 'no-cache' })
-            .then(function (response) { return response.json(); })
-            .then(function (data) {
-                try {
-                    if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
-                    var remoteDate = data.updateDate || '—';
-                    var newList = [];
-                    var i;
-                    for (i = 0; i < data.plugins.length; i++) {
-                        var item = data.plugins[i];
-                        newList.push({
-                            url: item.url,
-                            name: item.name,
-                            description: item.description,
-                            category: item.category
-                        });
-                    }
-                    var prevList = getPluginList();
-                    var prevUrls = [];
-                    for (i = 0; i < prevList.length; i++) {
-                        prevUrls.push(prevList[i].url);
-                    }
-                    var newUrls = [];
-                    for (i = 0; i < newList.length; i++) {
-                        newUrls.push(newList[i].url);
-                    }
-                    var added = [];
-                    for (i = 0; i < newList.length; i++) {
-                        var found = false;
-                        var j;
-                        for (j = 0; j < prevUrls.length; j++) {
-                            if (prevUrls[j] === newList[i].url) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) added.push(newList[i]);
-                    }
-                    var removed = [];
-                    for (i = 0; i < prevList.length; i++) {
-                        var found = false;
-                        var j;
-                        for (j = 0; j < newUrls.length; j++) {
-                            if (newUrls[j] === prevList[i].url) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) removed.push(prevList[i]);
-                    }
-                    savePluginList(newList);
-                    var oldEnabled = Lampa.Storage.get(ENABLED_KEY, []);
-                    var validEnabled = [];
-                    for (i = 0; i < oldEnabled.length; i++) {
-                        var found = false;
-                        var j;
-                        for (j = 0; j < newUrls.length; j++) {
-                            if (newUrls[j] === oldEnabled[i]) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (found) validEnabled.push(oldEnabled[i]);
-                    }
-                    Lampa.Storage.set(ENABLED_KEY, validEnabled);
-                    Lampa.Noty.show(Lampa.Lang.translate('mp_sync_complete'));
-                    saveUpdateInfo(remoteDate, added, removed);
-                } catch (e) {
-                    console.error('Sync error:', e);
+
+
+        $.getJSON(syncUrl, function(data) {
+            try {
+                if (!Array.isArray(data.plugins)) throw new Error('Invalid data');
+                var remoteDate = data.updateDate || '—';
+                var newList = [];
+                var i;
+                for (i = 0; i < data.plugins.length; i++) {
+                    var item = data.plugins[i];
+                    newList.push({
+                        url: item.url,
+                        name: item.name,
+                        description: item.description,
+                        category: item.category
+                    });
                 }
-            })
-            .catch(function () { Lampa.Noty.show('Ошибка синхронизации'); })
-            .finally(function () { Lampa.Loading.stop(); if (callback) callback(); });
+
+
+                var prevList = getPluginList();
+                var prevUrls = prevList.map(function(p) { return p.url; });
+                var newUrls = newList.map(function(p) { return p.url; });
+
+
+                var added = newList.filter(function(p) {
+                    return prevUrls.indexOf(p.url) === -1;
+                });
+
+
+                var removed = prevList.filter(function(p) {
+                    return newUrls.indexOf(p.url) === -1;
+                });
+
+
+                savePluginList(newList);
+
+
+                Lampa.Noty.show(Lampa.Lang.translate('mp_sync_complete'));
+                saveUpdateInfo(remoteDate, added, removed);
+
+
+                setTimeout(function(){
+                    if (callback) callback();
+                    Lampa.Controller.toggle('settings_component');
+                }, 100);
+
+
+            } catch (e) {
+                console.error('Sync error:', e);
+                Lampa.Noty.show('Ошибка синхронизации');
+            } finally {
+                Lampa.Loading.stop();
+            }
+        }).fail(function() {
+            Lampa.Noty.show('Ошибка синхронизации');
+            Lampa.Loading.stop();
+            if (callback) callback();
+        });
     }
 
 
     function checkUpdatesOnStart() {
-        fetch(syncUrl, { cache: 'no-cache' })
-            .then(function (r) { return r.json(); })
-            .then(function (data) {
-                try {
-                    if (!Array.isArray(data.plugins)) return;
-                    var remoteDate = data.updateDate || '—';
-                    var remotePlugins = data.plugins;
-                    var remoteList = [];
-                    var i;
-                    for (i = 0; i < remotePlugins.length; i++) {
-                        remoteList.push({ url: remotePlugins[i].url, name: remotePlugins[i].name, description: remotePlugins[i].description });
-                    }
-                    var localList = getPluginList();
-                    var localUrls = [];
-                    for (i = 0; i < localList.length; i++) {
-                        localUrls.push(localList[i].url);
-                    }
-                    var remoteUrls = [];
-                    for (i = 0; i < remoteList.length; i++) {
-                        remoteUrls.push(remoteList[i].url);
-                    }
-                    var added = [];
-                    for (i = 0; i < remoteList.length; i++) {
-                        var found = false;
-                        var j;
-                        for (j = 0; j < localUrls.length; j++) {
-                            if (localUrls[j] === remoteList[i].url) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) added.push(remoteList[i]);
-                    }
-                    var removed = [];
-                    for (i = 0; i < localList.length; i++) {
-                        var found = false;
-                        var j;
-                        for (j = 0; j < remoteUrls.length; j++) {
-                            if (remoteUrls[j] === localList[i].url) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) removed.push(localList[i]);
-                    }
-                    if (added.length > 0 || removed.length > 0) saveUpdateInfo(remoteDate, added, removed);
-                } catch (e) {
-                    console.error('Check on start error:', e);
+        $.getJSON(syncUrl, function(data) {
+            try {
+                if (!Array.isArray(data.plugins)) return;
+                var remoteDate = data.updateDate || '—';
+                var remotePlugins = data.plugins;
+                var remoteList = [];
+                var i;
+                for (i = 0; i < remotePlugins.length; i++) {
+                    remoteList.push({ url: remotePlugins[i].url, name: remotePlugins[i].name, description: remotePlugins[i].description });
                 }
-            })
-            .catch(function () {});
-    }
 
 
-    function migrateEnabledPlugins() {
-        if (Lampa.Storage.get('multi_enabled_migrated')) return;
+                var localList = getPluginList();
+                var localUrls = [];
+                for (i = 0; i < localList.length; i++) {
+                    localUrls.push(localList[i].url);
+                }
+                var remoteUrls = [];
+                for (i = 0; i < remoteList.length; i++) {
+                    remoteUrls.push(remoteList[i].url);
+                }
 
 
-        var enabled = Lampa.Storage.get(ENABLED_KEY, []);
-        if (!enabled || !enabled.length) {
-            Lampa.Storage.set('multi_enabled_migrated', true);
-            return;
-        }
+                var added = [];
+                for (i = 0; i < remoteList.length; i++) {
+                    if (localUrls.indexOf(remoteList[i].url) === -1) {
+                        added.push(remoteList[i]);
+                    }
+                }
 
 
-        var installed = Lampa.Storage.get(INSTALLED_KEY, []);
-        var plugins = Lampa.Plugins.get() || [];
+                var removed = [];
+                for (i = 0; i < localList.length; i++) {
+                    if (remoteUrls.indexOf(localList[i].url) === -1) {
+                        removed.push(localList[i]);
+                    }
+                }
 
 
-        enabled.forEach(function(url) {
-            var existsInstalled = installed.indexOf(url) !== -1;
-            var existsLampa = plugins.some(function(p) { return p.url === url; });
-
-
-            if (!existsInstalled && !existsLampa) {
-                Lampa.Plugins.add({ url: url, status: 1 });
-                installed.push(url);
+                if (added.length > 0 || removed.length > 0) {
+                    saveUpdateInfo(remoteDate, added, removed);
+                }
+            } catch (e) {
+                console.error('Check on start error:', e);
             }
+        }).fail(function() {
+
         });
-
-
-        Lampa.Plugins.save();
-        Lampa.Storage.set(INSTALLED_KEY, installed);
-        Lampa.Storage.set(ENABLED_KEY, []);
-        Lampa.Storage.set('multi_enabled_migrated', true);
     }
 
 
@@ -569,6 +495,13 @@
 
 
     function showInstallPlugins() {
+        if (!pluginList || pluginList.length === 0) {
+            Lampa.Noty.show('Список плагинов пуст. Сначала синхронизируйте.');
+            Lampa.Controller.toggle('settings_component');
+            return;
+        }
+
+
         var categories = getCategories(pluginList);
 
 
@@ -679,26 +612,50 @@
 
 
     function installPlugin(p) {
-        var url = p.url;
-        if (isInstalled(url)) return;
+    var url = p.url;
+    if (isInstalled(url)) return;
 
 
-        Lampa.Plugins.add({
-            url: url,
-            name: translateObj(p.name) || url.split('/').pop(),
-            status: 1,
-            source: SOURCE_KEY
-        });
+    var prev = null;
 
 
-        Lampa.Plugins.save();
+    try {
+        prev = Lampa.Controller.enabled().name;
+    } catch(e){}
 
 
-        addInstalledFromMulti(url);
+    Lampa.Plugins.add({
+        url: url,
+        name: translateObj(p.name) || url.split('/').pop(),
+        status: 1,
+        source: SOURCE_KEY
+    });
 
 
-        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
-    }
+    Lampa.Plugins.save();
+
+
+    addInstalledFromMulti(url);
+
+
+    Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
+
+
+    setTimeout(function(){
+
+
+        try{
+            Lampa.Controller.collectionSet();
+        }catch(e){}
+
+
+        try{
+            if(prev) Lampa.Controller.toggle(prev);
+        }catch(e){}
+
+
+    },800);
+}
 
 
     function removePlugin(url) {
@@ -780,11 +737,7 @@
 
         if (!urls || urls.length === 0) {
             Lampa.Noty.show(Lampa.Lang.translate('mp_no_installed_plugins'));
-
-
             Lampa.Controller.toggle('settings_component');
-
-
             return;
         }
 
@@ -864,13 +817,20 @@
     }
 
 
-    pluginList = getPluginList();
-    checkUpdatesOnStart();
-    migrateEnabledPlugins();
+    function startPlugin() {
+        pluginList = getPluginList();
+        checkUpdatesOnStart();
+        registerSettings();
+    }
 
 
-    registerSettings();
-
-
-    console.log('Мультиплагин v5 — стабильная версия без showCategory()');
+    if (window.appready) {
+        startPlugin();
+    } else {
+        Lampa.Listener.follow('app', function(e) {
+            if (e.type === 'ready') {
+                startPlugin();
+            }
+        });
+    }
 })();
