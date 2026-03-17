@@ -1,5 +1,5 @@
 {
-  "updateDate": "13.03.2026",
+  "updateDate": "17.03.2026",
   "plugins": [
     {
       "name": {
@@ -1270,7 +1270,88 @@
         "en": "Displaying the availability of Ukrainian translations in online sources."
       },
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
-    }        
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
+      "name": { "en": "Parsers" },
+      "description": {
+        "ru": "Каталог парсеров с индикацией доступности и быстрым выбором без ручного ввода.",
+        "uk": "Каталог парсерів з індикацією доступності та швидким вибором без ручного вводу.",
+        "en": "Parser catalog with availability indicators and quick selection without manual input."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/SeasonsInfo.js",
+      "name": { "en": "SeasonsInfo" },
+      "description": {
+        "ru": "Сезон/эпизоды на постерах: актуальный сезон и прогресс выхода серий.",
+        "uk": "Сезон/епізоди на постерах: актуальний сезон і прогрес виходу серій.",
+        "en": "Season/episode info on posters: current season and release progress."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/UA-Finder+Mod.js",
+      "name": { "en": "UA-Finder+Mod" },
+      "description": {
+        "ru": "Поиск украинских дорожек в релизах (Jacred) + метка/флаг на постере.",
+        "uk": "Пошук українських доріжок у релізах (Jacred) + мітка/прапор на постері.",
+        "en": "Search for Ukrainian audio tracks in releases (Jacred) with poster flag."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
+      "name": { "en": "Interface+" },
+      "description": {
+        "ru": "Комплексное улучшение интерфейса: панели, метки, темы и управление кнопками.",
+        "uk": "Комплексне покращення інтерфейсу: панелі, мітки, теми та керування кнопками.",
+        "en": "Comprehensive UI enhancement: panels, labels, themes, and button control."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/buttons+.js",
+      "name": { "en": "Buttons+" },
+      "description": {
+        "ru": "Редактор кнопок в карточке фильма или сериала.",
+        "uk": "Редактор кнопок у картці фільму або серіалу.",
+        "en": "Button editor in movie/series card."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/rtg.js",
+      "name": { "en": "RTG+"
+      },
+      "description": {
+        "ru": "Рейтинги и награды в карточке с гибкой настройкой логотипов и меток.",
+        "uk": "Рейтинги та нагороди у картці з гнучким налаштуванням логотипів і міток.",
+        "en": "Ratings and awards in card with customizable logos and labels."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/cardify+.js",
+      "name": { "en": "Cardify+" },
+      "description": {
+        "ru": "Расширенный интерфейс карточки: более чистый вид, фоновые трейлеры или слайдшоу.",
+        "uk": "Розширений інтерфейс картки: чистіший вигляд, фонові трейлери або слайдшоу.",
+        "en": "Enhanced card interface with cleaner UI and background trailers/slideshow."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },
+    {
+      "url": "https://ko31k.github.io/LMP/plugins/logo.js",
+      "name": { "en": "Logo" },
+      "description": {
+        "ru": "Графические логотипы вместо текстовых названий в карточке.",
+        "uk": "Графічні логотипи замість текстових назв у картці.",
+        "en": "Graphical logos instead of text titles in the card."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    }
   ]
 }
 
