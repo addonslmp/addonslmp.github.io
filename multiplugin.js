@@ -748,27 +748,51 @@
     }
 
 
-    function installPlugin(p) {
-        var url = p.url;
-        if (isInstalled(url)) return;
+        function installPlugin(p) {
+    var url = p.url;
+    if (isInstalled(url)) return;
 
 
-        Lampa.Plugins.add({
-            url: url,
-            name: translateObj(p.name) || url.split('/').pop(),
-            status: 1,
-            source: SOURCE_KEY
-        });
+    var prev = null;
 
 
-        Lampa.Plugins.save();
+    try {
+        prev = Lampa.Controller.enabled().name;
+    } catch(e){}
 
 
-        addInstalledFromMulti(url);
+    Lampa.Plugins.add({
+        url: url,
+        name: translateObj(p.name) || url.split('/').pop(),
+        status: 1,
+        source: SOURCE_KEY
+    });
 
 
-        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
-    }
+    Lampa.Plugins.save();
+
+
+    addInstalledFromMulti(url);
+
+
+    Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
+
+
+    setTimeout(function(){
+
+
+        try{
+            Lampa.Controller.collectionSet();
+        }catch(e){}
+
+
+        try{
+            if(prev) Lampa.Controller.toggle(prev);
+        }catch(e){}
+
+
+    },800);
+}
 
 
     function removePlugin(url) {
