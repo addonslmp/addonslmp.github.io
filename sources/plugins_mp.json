@@ -1,5 +1,5 @@
 {
-  "updateDate": "17.03.2026",
+  "updateDate": "19.03.2026",
   "plugins": [
     {
       "name": {
@@ -198,7 +198,27 @@
         "uk": "Різне",
         "en": "Misc"
       }
-    },     
+    },  
+    {
+      "name": { "en": "Anti DMCA" },
+      "url": "https://levende.github.io/lampa-plugins/anti-dmca.js",
+      "description": {
+        "ru": "С помощью этого плагина можно открывать заблокированный контент Lampa.",
+        "uk": "За допомогою цього плагіна можна відкривати заблокований контент Lampa.",
+        "en": "This plugin allows you to access blocked Lampa content."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "LGBT Unlock" },
+      "url": "https://cub.rip/plugin/lgbt",
+      "description": {
+        "ru": "Плагин разблокирует ЛГБТ-контент.",
+        "uk": "Плагін розблоковує ЛГБТ-контент.",
+        "en": "The plugin unblocks LGBT content."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    }, 
     {
       "name": {
         "ru": "Новые категории и подборки фильмов",
