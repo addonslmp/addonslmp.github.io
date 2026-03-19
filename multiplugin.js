@@ -25,6 +25,7 @@
         mp_reload_message: { ru: 'Перезапустить приложение?', uk: 'Перезавантажити додаток?', en: 'Restart application?' },
         mp_ok: { ru: 'OK', uk: 'OK', en: 'OK' },
         mp_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
+        mp_next: {ru: 'Далее', uk: 'Далі', en: 'Next' },
         mp_no_updates_found: { ru: 'Обновлений не найдено', uk: 'Оновлень не знайдено', en: 'No updates found' },
         mp_install_plugins: { ru: 'Установка плагинов', uk: 'Встановлення плагінів', en: 'Install Plugins' },
         mp_all_plugins_removed: { ru: 'Все плагины удалены. Перезагрузите Lampa', uk: 'Усі плагіни видалено. Перезавантажте Lampa', en: 'All plugins removed. Reload Lampa' },
@@ -542,7 +543,7 @@
                     }
                 },
                 {
-                    name: 'Далее',
+                    name: Lampa.Lang.translate('mp_next'),
                     onSelect: function () {
                         Lampa.Modal.close();
                         showCaptcha(prev);
