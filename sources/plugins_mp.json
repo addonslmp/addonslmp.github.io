@@ -198,16 +198,6 @@
         "uk": "Різне",
         "en": "Misc"
       }
-    },  
-    {
-      "name": { "en": "Anti DMCA" },
-      "url": "https://levende.github.io/lampa-plugins/anti-dmca.js",
-      "description": {
-        "ru": "С помощью этого плагина можно открывать заблокированный контент Lampa.",
-        "uk": "За допомогою цього плагіна можна відкривати заблокований контент Lampa.",
-        "en": "This plugin allows you to access blocked Lampa content."
-      },
-      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
       "name": { "en": "LGBT Unlock" },
