@@ -37,6 +37,16 @@
             ru: 'Внимание! Массовая установка плагинов может привести к нестабильной работе приложения.<br><br>Некоторые плагины могут конфликтовать друг с другом, вызывать ошибки, зависания или поломку интерфейса.<br>Рекомендуется устанавливать только необходимые плагины и проверять их совместимость.',
             uk: 'Увага! Масове встановлення плагінів може призвести до нестабільної роботи програми.<br><br>Деякі плагіни можуть конфліктувати між собою, викликати помилки, зависання або порушення роботи інтерфейсу.<br>Рекомендується встановлювати лише необхідні плагіни та перевіряти їх сумісність.',
             en: 'Warning! Installing many plugins at once may cause application instability.<br><br>Some plugins may conflict with each other, causing errors, freezes, or interface breakage.<br>It is recommended to install only necessary plugins and check their compatibility.'
+        },
+        mp_sync_required: { 
+            ru: 'Синхронизируйте список плагинов', 
+            uk: 'Синхронізуйте список плагінів', 
+            en: 'Sync the plugin list' 
+        },
+        mp_and_more: {
+            ru: '... и ещё ',
+            uk: '... і ще ',
+            en: '... and '
         }
     });
 
@@ -102,37 +112,64 @@
 
 
     function showInfo() {
+        var list = getPluginList();
+
+
+        if (!list || list.length === 0) {
+            Lampa.Noty.show(translateObj(Lampa.Lang.translate('mp_sync_required')));
+            return;
+        }
+
+
         var info = getUpdateInfo();
         if (info.added.length === 0 && info.removed.length === 0) {
             Lampa.Noty.show(Lampa.Lang.translate('mp_no_updates_found'));
             return;
         }
+
+
         var html = '<div class="about" style="text-align:left">';
         html += '<div><b>' + Lampa.Lang.translate('mp_last_update') + '</b> ' + info.date + '</div><br>';
+
+
         if (info.added.length) {
             html += '<b>' + Lampa.Lang.translate('mp_added') + '</b><br>';
+            var limit = 3;
+            var count = Math.min(info.added.length, limit);
             var i;
-            for (i = 0; i < info.added.length; i++) {
+            for (i = 0; i < count; i++) {
                 var p = info.added[i];
                 var name = translateObj(p.name) || p.url.split('/').pop();
                 html += '• <b>' + name + '</b><br>';
                 if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + translateObj(p.description) + '</div>';
                 html += '<br>';
             }
+            if (info.added.length > limit) {
+                html += '<div style="color:#999;">' + Lampa.Lang.translate('mp_and_more') + (info.added.length - limit) + '</div><br>';
+            }
             html += '<br>';
         }
+
+
         if (info.removed.length) {
             html += '<b>' + Lampa.Lang.translate('mp_removed') + '</b><br>';
+            var limit = 3;
+            var count = Math.min(info.removed.length, limit);
             var i;
-            for (i = 0; i < info.removed.length; i++) {
+            for (i = 0; i < count; i++) {
                 var p = info.removed[i];
                 var name = translateObj(p.name) || p.url.split('/').pop();
                 html += '• <b>' + name + '</b><br>';
                 if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + translateObj(p.description) + '</div>';
                 html += '<br>';
             }
+            if (info.removed.length > limit) {
+                html += '<div style="color:#999;">' + Lampa.Lang.translate('mp_and_more') + (info.removed.length - limit) + '</div><br>';
+            }
             html += '<br>';
         }
+
+
         html += '</div>';
         var prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
@@ -378,6 +415,9 @@
 
 
                 var localList = getPluginList();
+                if (!localList || localList.length === 0) return;
+
+
                 var localUrls = [];
                 for (i = 0; i < localList.length; i++) {
                     localUrls.push(localList[i].url);
