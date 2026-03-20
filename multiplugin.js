@@ -25,7 +25,6 @@
         mp_reload_message: { ru: 'Перезапустить приложение?', uk: 'Перезавантажити додаток?', en: 'Restart application?' },
         mp_ok: { ru: 'OK', uk: 'OK', en: 'OK' },
         mp_cancel: { ru: 'Отмена', uk: 'Скасувати', en: 'Cancel' },
-        mp_next: {ru: 'Далее', uk: 'Далі', en: 'Next' },
         mp_no_updates_found: { ru: 'Обновлений не найдено', uk: 'Оновлень не знайдено', en: 'No updates found' },
         mp_install_plugins: { ru: 'Установка плагинов', uk: 'Встановлення плагінів', en: 'Install Plugins' },
         mp_all_plugins_removed: { ru: 'Все плагины удалены. Перезагрузите Lampa', uk: 'Усі плагіни видалено. Перезавантажте Lampa', en: 'All plugins removed. Reload Lampa' },
@@ -38,10 +37,7 @@
             ru: 'Внимание! Массовая установка плагинов может привести к нестабильной работе приложения.<br><br>Некоторые плагины могут конфликтовать друг с другом, вызывать ошибки, зависания или поломку интерфейса.<br>Рекомендуется устанавливать только необходимые плагины и проверять их совместимость.',
             uk: 'Увага! Масове встановлення плагінів може призвести до нестабільної роботи програми.<br><br>Деякі плагіни можуть конфліктувати між собою, викликати помилки, зависання або порушення роботи інтерфейсу.<br>Рекомендується встановлювати лише необхідні плагіни та перевіряти їх сумісність.',
             en: 'Warning! Installing many plugins at once may cause application instability.<br><br>Some plugins may conflict with each other, causing errors, freezes, or interface breakage.<br>It is recommended to install only necessary plugins and check their compatibility.'
-        },
-        mp_captcha_title: { ru: 'Пройдите проверку', uk: 'Пройдіть перевірку', en: 'Verification' },
-        mp_captcha_question: { ru: 'Сколько будет ', uk: 'Скільки буде ', en: 'How much is ' },
-        mp_captcha_failed: { ru: 'Ответ неверный.', uk: 'Відповідь невірна.', en: 'Wrong answer.' }
+        }
     });
 
 
@@ -54,20 +50,6 @@
 
 
     var pluginList = [];
-
-
-    var captchaList = [
-        { q: '3 + 5', a: 8 },
-        { q: '5 + 6', a: 11 },
-        { q: '9 - 4', a: 5 },
-        { q: '7 + 2', a: 9 },
-        { q: '6 + 3', a: 9 },
-        { q: '8 - 3', a: 5 },
-        { q: '4 + 4', a: 8 },
-        { q: '10 - 6', a: 4 },
-        { q: '2 + 7', a: 9 },
-        { q: '6 + 5', a: 11 }
-    ];
 
 
     function translateObj(obj) {
@@ -517,16 +499,10 @@
 
 
     function openCaptchaGate() {
-        var passed = Lampa.Storage.get('mp_captcha_passed', false);
-
-
-        if (passed) {
-            showInstallPlugins();
-            return;
-        }
-
-
-        var prev = Lampa.Controller.enabled().name;
+        var prev = null;
+        try {
+            prev = Lampa.Controller.enabled().name;
+        } catch(e){}
 
 
         Lampa.Modal.open({
@@ -536,99 +512,18 @@
             html: $('<div class="about">' + Lampa.Lang.translate('mp_captcha_warning') + '</div>'),
             buttons: [
                 {
-                    name: Lampa.Lang.translate('mp_cancel'),
+                    name: 'OK',
                     onSelect: function () {
                         Lampa.Modal.close();
-                        Lampa.Controller.toggle(prev);
-                    }
-                },
-                {
-                    name: Lampa.Lang.translate('mp_next'),
-                    onSelect: function () {
-                        Lampa.Modal.close();
-                        showCaptcha(prev);
-                    }
-                }
-            ]
-        });
-    }
-
-
-    function showCaptcha(prev_controller) {
-        var captcha = captchaList[Math.floor(Math.random() * captchaList.length)];
-        var correct = captcha.a;
-
-
-        var answers = generateAnswers(correct);
-
-
-        var buttons = [];
-
-
-        answers.forEach(function(ans) {
-            buttons.push({
-                name: ans.toString(),
-                onSelect: function () {
-                    Lampa.Modal.close();
-
-
-                    if (ans === correct) {
-                        Lampa.Storage.set('mp_captcha_passed', true);
 
 
                         setTimeout(function(){
                             showInstallPlugins();
                         }, 300);
-                    } else {
-                        Lampa.Noty.show(Lampa.Lang.translate('mp_captcha_failed'));
-
-
-                        setTimeout(function(){
-                            showCaptcha(prev_controller);
-                        }, 300);
                     }
                 }
-            });
+            ]
         });
-
-
-        buttons.unshift({
-            name: Lampa.Lang.translate('mp_cancel'),
-            onSelect: function () {
-                Lampa.Modal.close();
-                Lampa.Controller.toggle(prev_controller);
-            }
-        });
-
-
-        Lampa.Modal.open({
-            title: Lampa.Lang.translate('mp_captcha_title'),
-            align: 'center',
-            size: 'medium',
-            html: $(
-                '<div class="about" style="text-align:center; font-size:1.8em; line-height:1.5; margin:30px 0 40px;">' +
-                Lampa.Lang.translate('mp_captcha_question') + captcha.q + '?</div>'
-            ),
-            buttons: buttons
-        });
-    }
-
-
-    function generateAnswers(correct) {
-        var answers = [correct];
-        while (answers.length < 4) {
-            var wrong = Math.floor(Math.random() * 20) - 10;
-            if (wrong !== correct && answers.indexOf(wrong) === -1) {
-                answers.push(wrong);
-            }
-        }
-        for (var i = answers.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = answers[i];
-            answers[i] = answers[j];
-            answers[j] = temp;
-        }
-        return answers;
     }
 
 
@@ -749,51 +644,39 @@
     }
 
 
-        function installPlugin(p) {
-    var url = p.url;
-    if (isInstalled(url)) return;
+    function installPlugin(p) {
+        var url = p.url;
+        if (isInstalled(url)) return;
 
 
-    var prev = null;
+        var prev = null;
+        try {
+            prev = Lampa.Controller.enabled().name;
+        } catch(e){}
 
 
-    try {
-        prev = Lampa.Controller.enabled().name;
-    } catch(e){}
+        Lampa.Plugins.add({
+            url: url,
+            name: translateObj(p.name) || url.split('/').pop(),
+            status: 1,
+            source: SOURCE_KEY
+        });
 
 
-    Lampa.Plugins.add({
-        url: url,
-        name: translateObj(p.name) || url.split('/').pop(),
-        status: 1,
-        source: SOURCE_KEY
-    });
+        Lampa.Plugins.save();
 
 
-    Lampa.Plugins.save();
+        addInstalledFromMulti(url);
 
 
-    addInstalledFromMulti(url);
+        Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
 
 
-    Lampa.Noty.show(Lampa.Lang.translate('pi_plugin_installed'));
-
-
-    setTimeout(function(){
-
-
-        try{
-            Lampa.Controller.collectionSet();
-        }catch(e){}
-
-
-        try{
-            if(prev) Lampa.Controller.toggle(prev);
-        }catch(e){}
-
-
-    },800);
-}
+        setTimeout(function(){
+            try{ Lampa.Controller.collectionSet(); }catch(e){}
+            try{ if(prev) Lampa.Controller.toggle(prev); }catch(e){}
+        },800);
+    }
 
 
     function removePlugin(url) {
@@ -956,9 +839,6 @@
 
 
     function startPlugin() {
-        Lampa.Storage.set('mp_captcha_passed', false);
-
-
         pluginList = getPluginList();
         checkUpdatesOnStart();
         registerSettings();
