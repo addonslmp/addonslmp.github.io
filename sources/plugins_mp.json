@@ -1,5 +1,5 @@
 {
-  "updateDate": "19.03.2026",
+  "updateDate": "21.03.2026",
   "plugins": [
     {
       "name": {
@@ -1329,7 +1329,47 @@
         "en": "Graphical logos instead of text titles in the card."
       },
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
-    }
+    },
+    {
+      "name": { "ru": "Редактор кнопок для LampaUa", "uk": "Редактор кнопок для LampaUa",  "en": "Button Editor for LampaUa" },
+      "url": "http://lampaua.mooo.com/buttons.js",
+      "description": {
+        "ru": "Запускаем наш плагин управления кнопками в полной версии Lampaua. Мы создали его для тех, кто хочет иметь чистый, удобный и полностью настраиваемый интерфейс под свои нужды.",
+        "uk": "Запускаємо наш плагін керування кнопками у повній картці Lampaua. Зробили його для тих, хто хоче мати чистий, зручний і повністю керований інтерфейс під себе.",
+        "en": "We're launching our button control plugin in the full Lampaua card. We created it for those who want a clean, user-friendly, and fully customizable interface."
+      },
+      "category": { "ru": "Плагины от BazarNet", "uk": "Плагіни від BazarNet", "en": "Plugins by BazarNet" }
+    },
+    {
+      "name": { "uk": "Likhtar | Мод від BazarNet",  "en": "Likhtar | Mod by BazarNet" },
+      "url": "http://lampaua.mooo.com/likhtar.js",
+      "description": {
+        "ru": "Полная адаптация интерфейса под любое ваше устройство! Неважно, с чего вы смотрите — мы оптимизировали отображение для смартфонов, телевизоров и больших 4K-экранов.",
+        "uk": "Повна адаптація інтерфейсу під будь-який ваш пристрій! Неважливо, з чого ви дивитесь — ми оптимізували відображення для смартфонів, телевізорів та великих 4K-екранів.",
+        "en": "The interface fully adapts to any device you use! No matter what you're viewing it on—we've optimized the display for smartphones, TVs, and large 4K screens."
+      },
+      "category": { "ru": "Плагины от BazarNet", "uk": "Плагіни від BazarNet", "en": "Plugins by BazarNet" }
+    }, 
+    {
+      "name": { "uk": "Applecation | Мод від BazarNet",  "en": "Applecation | Mod by BazarNet" },
+      "url": "http://lampaua.mooo.com/applecation.js",
+      "description": {
+        "ru": "Теперь интерфейс стал ещё удобнее и информативнее! Мы добавили систему меток (как в Likhtar), чтобы вы сразу видели все детали релиза.",
+        "uk": "Тепер інтерфейс став ще зручнішим та інформативнішим! Ми додали систему міток (як у Likhtar), щоб ви одразу бачили всі деталі релізу.",
+        "en": "The interface is now even more user-friendly and informative! We've added a tag system (similar to Likhtar) so you can see all the release details at a glance."
+      },
+      "category": { "ru": "Плагины от BazarNet", "uk": "Плагіни від BazarNet", "en": "Plugins by BazarNet" }
+    }, 
+    {
+      "name": { "uk": "UA Comments | Мод від BazarNet",  "en": "UA Comments | Mod by BazarNet" },
+      "url": "http://lampaua.mooo.com/uacoments.js",
+      "description": {
+        "ru": "В карточку фильма добавлена кнопка «Комментарии» (N), которая открывает отдельное всплывающее окно с полным просмотром комментариев.",
+        "uk": "Додали в картку фільму кнопку Коментарі (N), яка відкриває окреме pop-up вікно з повним переглядом коментарів.",
+        "en": "We've added a Comments (N) button to the movie card, which opens a separate pop-up window displaying all comments."
+      },
+      "category": { "ru": "Плагины от BazarNet", "uk": "Плагіни від BazarNet", "en": "Plugins by BazarNet" }
+    }    
   ]
 }
 
