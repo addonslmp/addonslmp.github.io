@@ -499,6 +499,15 @@
 
 
     function openCaptchaGate() {
+        var passed = Lampa.Storage.get('mp_install_shown', false);
+
+
+        if (passed) {
+            showInstallPlugins();
+            return;
+        }
+
+
         var prev = null;
         try {
             prev = Lampa.Controller.enabled().name;
@@ -515,6 +524,9 @@
                     name: 'OK',
                     onSelect: function () {
                         Lampa.Modal.close();
+
+
+                        Lampa.Storage.set('mp_install_shown', true);
 
 
                         setTimeout(function(){
@@ -839,6 +851,9 @@
 
 
     function startPlugin() {
+        Lampa.Storage.set('mp_install_shown', false);
+
+
         pluginList = getPluginList();
         checkUpdatesOnStart();
         registerSettings();
