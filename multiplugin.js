@@ -133,41 +133,47 @@
 
 
         if (info.added.length) {
-            html += '<b>' + Lampa.Lang.translate('mp_added') + '</b><br>';
-            var limit = 3;
-            var count = Math.min(info.added.length, limit);
-            var i;
-            for (i = 0; i < count; i++) {
-                var p = info.added[i];
-                var name = translateObj(p.name) || p.url.split('/').pop();
-                html += '• <b>' + name + '</b><br>';
-                if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + translateObj(p.description) + '</div>';
-                html += '<br>';
-            }
-            if (info.added.length > limit) {
-                html += '<div style="color:#999;">' + Lampa.Lang.translate('mp_and_more') + (info.added.length - limit) + '</div><br>';
-            }
-            html += '<br>';
+    html += '<b>' + Lampa.Lang.translate('mp_added') + '</b><div style="margin-bottom:6px;"></div>';
+    var limit = 3;
+    var count = Math.min(info.added.length, limit);
+    var i;
+    for (i = 0; i < count; i++) {
+        var p = info.added[i];
+        var name = translateObj(p.name) || p.url.split('/').pop();
+        html += '• <b>' + name + '</b><br>';
+        if (p.description) {
+            html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px; line-height:1.2; margin-bottom:2px;">' + translateObj(p.description) + '</div>';
+        } else {
+            html += '<br style="margin-bottom:2px;">';
         }
+    }
+    if (info.added.length > limit) {
+        html += '<div style="color:#999; margin-top:4px;">' + Lampa.Lang.translate('mp_and_more') + (info.added.length - limit) + '</div>';
+    }
+    html += '<br>';
+}
 
 
-        if (info.removed.length) {
-            html += '<b>' + Lampa.Lang.translate('mp_removed') + '</b><br>';
-            var limit = 3;
-            var count = Math.min(info.removed.length, limit);
-            var i;
-            for (i = 0; i < count; i++) {
-                var p = info.removed[i];
-                var name = translateObj(p.name) || p.url.split('/').pop();
-                html += '• <b>' + name + '</b><br>';
-                if (p.description) html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px;">' + translateObj(p.description) + '</div>';
-                html += '<br>';
-            }
-            if (info.removed.length > limit) {
-                html += '<div style="color:#999;">' + Lampa.Lang.translate('mp_and_more') + (info.removed.length - limit) + '</div><br>';
-            }
-            html += '<br>';
+       if (info.removed.length) {
+    html += '<b>' + Lampa.Lang.translate('mp_added') + '</b><div style="margin-bottom:6px;"></div>';
+    var limit = 3;
+    var count = Math.min(info.added.length, limit);
+    var i;
+    for (i = 0; i < count; i++) {
+        var p = info.added[i];
+        var name = translateObj(p.name) || p.url.split('/').pop();
+        html += '• <b>' + name + '</b><br>';
+        if (p.description) {
+            html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px; line-height:1.2; margin-bottom:2px;">' + translateObj(p.description) + '</div>';
+        } else {
+            html += '<br style="margin-bottom:2px;">';
         }
+    }
+    if (info.added.length > limit) {
+        html += '<div style="color:#999; margin-top:4px;">' + Lampa.Lang.translate('mp_and_more') + (info.added.length - limit) + '</div>';
+    }
+    html += '<br>';
+}
 
 
         html += '</div>';
@@ -175,6 +181,7 @@
         Lampa.Modal.open({
             title: Lampa.Lang.translate('mp_update_info'),
             align: 'center',
+            size: 'medium',
             html: $(html),
             buttons: [{ name: Lampa.Lang.translate('mp_ok'), onSelect: function () { Lampa.Modal.close(); Lampa.Controller.toggle(prev); } }]
         });
