@@ -1,5 +1,5 @@
 {
-  "updateDate": "21.03.2026",
+  "updateDate": "22.03.2026",
   "plugins": [
     {
       "name": {
@@ -1266,16 +1266,6 @@
         "ru": "Сезон/эпизоды на постерах: актуальный сезон и прогресс выхода серий.",
         "uk": "Сезон/епізоди на постерах: актуальний сезон і прогрес виходу серій.",
         "en": "Season/episode info on posters: current season and release progress."
-      },
-      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
-    },
-    {
-      "url": "https://ko31k.github.io/LMP/plugins/UA-Finder+Mod.js",
-      "name": { "en": "UA-Finder+Mod" },
-      "description": {
-        "ru": "Поиск украинских дорожек в релизах (Jacred) + метка/флаг на постере.",
-        "uk": "Пошук українських доріжок у релізах (Jacred) + мітка/прапор на постері.",
-        "en": "Search for Ukrainian audio tracks in releases (Jacred) with poster flag."
       },
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
