@@ -1,5 +1,5 @@
 {
-  "updateDate": "22.03.2026",
+  "updateDate": "24.03.2026",
   "plugins": [
     {
       "name": {
@@ -1125,16 +1125,6 @@
         "ru": "Добавляет новые разделы, сети стримингов, закладки и коллекции.",
         "uk": "Додає нові розділи, мережі стримінгів, закладки та колекції.",
         "en": "Adds new sections, streaming networks, bookmarks and collections."
-      },
-      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
-    },
-    {
-      "name": { "en": "Concert Torr Search" },
-      "url": "https://lampame.github.io/main/cts.js",
-      "description": {
-        "ru": "Отдельный поиск концертного контента в торрент-источниках.",
-        "uk": "Окремий пошук концертного контенту в торент-джерелах.",
-        "en": "Dedicated search for concert content in torrent sources."
       },
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
