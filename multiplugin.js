@@ -49,7 +49,7 @@
         }
     });
 
-    var syncUrl = 'https://dl.dropboxusercontent.com/scl/fi/nlb1da9ejxmdbqss737rc/plugins_mp.json?rlkey=nlc6ys907mwmp9g4d5xeh86t3&st=4gurwcc1';
+    var syncUrl = 'https://addonslmp.github.io/sources/plugins_mp.json';
     var STORAGE_KEY = 'multi_plugins_list';
     var INFO_KEY = 'multi_last_update';
     var INSTALLED_KEY = 'multi_installed_plugins';
