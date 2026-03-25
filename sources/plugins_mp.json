@@ -1,5 +1,5 @@
 {
-  "updateDate": "24.03.2026",
+  "updateDate": "25.03.2026",
   "plugins": [
     {
       "name": {
@@ -608,24 +608,19 @@
       }
     },
     {
-      "name": {
-        "en": "PubTorr"
-      },
+      "name": { "en": "PubTorr" },
       "url": "https://lampame.github.io/main/pubtorr.js",
       "description": {
         "ru": "Публичные парсеры для поиска торрентов",
         "uk": "Публічні парсери для пошуку торрентів",
         "en": "Public parsers for searching torrents"
       },
-      "category": {
-        "ru": "Торрент",
-        "uk": "Торрент",
-        "en": "Torrent"
+      "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent"
       }
     },
     {
       "name": {
-        "en": "Parsers"
+        "en": "Parsers by Ko31k"
       },
       "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
       "description": {
@@ -633,11 +628,17 @@
         "uk": "Плагін зі списком парсерів та індикацією доступності. Дозволяє вибрати один з декількох готових варіантів, щоб не вводити вручну URL/ключі.",
         "en": "Plugin with a list of parsers and availability indicators. Allows you to choose from several ready-made options so you don't have to enter URLs/keys manually."
       },
-      "category": {
-        "ru": "Торрент",
-        "uk": "Торрент",
-        "en": "Torrent"
-      }
+      "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent" }
+    },
+    {
+      "name": { "en": "DopParsers by Cevamnelampaplagin", "uk": "DopParsers від Cevamnelampaplagin" },
+      "url": "https://cevamnelampaplagin.github.io/sharewithothers/dopparser.js",
+      "description": {
+        "ru": "Сборка парсеров для поиска торрентов от Cevamnelampaplagin.",
+        "uk": "Збірка парсерів для пошуку торрентів від Cevamnelampaplagin.",
+        "en": "A collection of torrent search parsers by Cevamnelampaplagin."
+      },
+      "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent" }
     },    
     {
       "name": {
