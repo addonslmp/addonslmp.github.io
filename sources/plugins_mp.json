@@ -1,5 +1,5 @@
 {
-  "updateDate": "25.03.2026",
+  "updateDate": "26.03.2026",
   "plugins": [
     {
       "name": {
@@ -209,6 +209,16 @@
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     }, 
+    {
+      "name": { "en": "Hide Content by bodya-elven", "uk": "Фільтр контенту | bodya-elven" },
+      "url": "https://bodya-elven.github.io/different/hide_content.js",
+      "description": {
+        "ru": "Модификация плагина для скрытия карточек в каталоге. Можно скрыть любой фильм. В контекстном меню ннтерфейса есть пункт «Скрыть».",
+        "uk": "Модифікація плагіна для приховування карток у каталозі. Можна будь-який  фільм приховати. В контекстному меню в інтерфейсу є пункт Приховати.",
+        "en": "A plugin modification to hide items in the catalog. You can hide any movie. The context menu in the interface includes a Hide option."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },       
     {
       "name": {
         "ru": "Новые категории и подборки фильмов",
@@ -564,7 +574,17 @@
         "uk": "Інтерфейс",
         "en": "Interface"
       }
-    },       
+    }, 
+    {
+      "name": { "en": "Mdb_Ratings | bodya-elven" },
+      "url": "https://bodya-elven.github.io/different/mdb_ratings.js",
+      "description": {
+        "ru": "Плагин для отображения рейтингов в карточке, и на постерах.",
+        "uk": "Плагін для відображення рейтингів і в картці, і на постерах.",
+        "en": "A plugin for displaying ratings both in the card and on the posters."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },    
     {
       "name": {
         "en": "TMDB Networks & Providers"
