@@ -183,9 +183,9 @@
     },    
     {
       "name": {
-        "ru": "Редактор кнопок от Cheeze_l",
-        "uk": "Редактор кнопок від Cheeze_l",     
-        "en": "Button Editor by Cheeze_l"
+        "ru": "Редактор кнопок от Cheeze_l | mylampa1",
+        "uk": "Редактор кнопок від Cheeze_l | mylampa1",     
+        "en": "Button Editor by Cheeze_l | mylampa1"
       },
       "url": "https://mylampa1.github.io/buttons.js",
       "description": {
@@ -200,7 +200,7 @@
       }
     },
     {
-      "name": { "en": "LGBT Unlock" },
+      "name": { "en": "LGBT Unlock", "uk": "Розблокування LGBT контенту" },
       "url": "https://cub.rip/plugin/lgbt",
       "description": {
         "ru": "Плагин разблокирует ЛГБТ-контент.",
