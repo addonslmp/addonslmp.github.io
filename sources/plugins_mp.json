@@ -1,5 +1,5 @@
 {
-  "updateDate": "26.03.2026",
+  "updateDate": "31.03.2026",
   "plugins": [
     {
       "name": {
@@ -965,20 +965,34 @@
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },     
     {
-      "name": {
-        "en": "IPTV"
+      "name": { "en": "IPTV by Lampa(CUB)", "ru": "IPTV от Lampa(CUB)", "uk": "IPTV від Lampa(CUB)" },
+      "url": "https://cub.red/plugin/iptv",
+      "description": {
+        "ru": "Плагин от разработчиков Lampa. Работает только с вашим плейлистом, указанным на https://cub.red/iptv/ или ссылкой из плагина IPTV.",
+        "uk": "Плагін від розробників Lampa. Працює лише з вашим плейлистом, вказаним на https://cub.red/iptv/, або за посиланням із плагіна IPTV.",
+        "en": "A plugin from the developers at Lampa. It works only with your playlist specified at https://cub.red/iptv/ or a link from the IPTV plugin."
       },
+      "category": { "ru": "IPTV", "uk": "IPTV", "en": "IPTV" }
+    },
+	  {
+      "name": { "en": "IpTV by ne3nayskas", "ru": "IpTV от ne3nayskas", "uk": "IpTV від ne3nayskas" },
+      "url": "https://ne3nayskas.github.io/plugins/iptv_tv.js",
+      "description": {
+        "ru": "Просмотр собственных IPTV-плейлистов в Lampa. Есть встроенный плейлист, но лучше использовать свой.",
+        "uk": "Перегляд власних IPTV-плейлистів у Lampa. Є вбудований плейлист, але краще використовувати свій.",
+        "en": "Watch your own IPTV playlists in Lampa. There is a built-in playlist, but it's better to use your own."
+      },
+      "category": { "ru": "IPTV", "uk": "IPTV", "en": "IPTV" }
+    },
+  	{
+      "name": { "en": "IpTV by RootU", "ru": "IpTV от RootU", "uk": "IpTV від RootU" },
       "url": "https://plugin.rootu.top/tv.js",
       "description": {
-        "ru": "Просмотр собственных IPTV-плейлистов в Lampa",
-        "uk": "Перегляд власних IPTV-плейлистів у Lampa",
-        "en": "Watch your own IPTV playlists in Lampa"
+        "ru": "Просмотр собственных IPTV-плейлистов в Lampa.",
+        "uk": "Перегляд власних IPTV-плейлистів у Lampa.",
+        "en": "Watch your own IPTV playlists in Lampa."
       },
-      "category": {
-        "ru": "IPTV",
-        "uk": "IPTV",
-        "en": "IPTV"
-      }
+      "category": { "ru": "IPTV", "uk": "IPTV", "en": "IPTV" }
     },
     {
       "name": {
