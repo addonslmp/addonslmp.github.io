@@ -486,7 +486,7 @@
 
     var html = ''
         + '<div class="about" style="text-align:center;">'
-        + '<img src="https://dl.dropboxusercontent.com/scl/fi/hrlz4panydhw35zn1sftr/2eaef908-65e0-498e-b93f-53fa76d2f146.png?rlkey=j4rqae8a02w97ytpuez5xxe6f&st=lp4kib72" style="width:300px; height:300px; margin:20px auto; display:block;">'
+        + '<img src="https://dl.dropboxusercontent.com/scl/fi/hrlz4panydhw35zn1sftr/2eaef908-65e0-498e-b93f-53fa76d2f146.png?rlkey=j4rqae8a02w97ytpuez5xxe6f&st=lp4kib72" style="width:280px; height:280px; margin:15px auto; display:block;">'
         + '<div style="margin-top:10px;">'
         + '<a href="https://addonslmp.donatik.me" target="_blank" '
         + 'style="color:#4FC3F7; font-size:1.1em; text-decoration:underline;">'
