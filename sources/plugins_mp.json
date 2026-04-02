@@ -270,17 +270,7 @@
         "uk": "Категорії",
         "en": "Categories"
       }
-    },  
-    {
-      "name": { "uk": "🇺🇦Ліхтар", "en": "🇺🇦Likhtar" },
-      "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
-      "description": {
-        "ru": "Likhtar — кастомна главная страница для Lampa, полностью заменяющая стандартный интерфейс и добавляющая премиальный опыт просмотра с фокусом на украиноязычный контент.",
-        "uk": "Ліхтар — кастомная головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
-        "en": "Unified plugin for Lampa that integrates multiple streaming studio collections into one interface."
-      },
-      "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
-    },    
+    },   
     {
       "name": {
         "ru": "LNUM категория",
@@ -465,6 +455,16 @@
         "en": "Interface"
       }
     },
+    {
+      "name": { "uk": "🇺🇦Ліхтар", "en": "🇺🇦Likhtar" },
+      "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
+      "description": {
+        "ru": "Likhtar — кастомна главная страница для Lampa, полностью заменяющая стандартный интерфейс и добавляющая премиальный опыт просмотра с фокусом на украиноязычный контент.",
+        "uk": "Ліхтар — кастомная головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
+        "en": "Unified plugin for Lampa that integrates multiple streaming studio collections into one interface."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },   	  
     {
       "name": {
         "en": "🇺🇦 Interface+"
