@@ -743,7 +743,7 @@
       "name": {
         "en": "TS Preload"
       },
-      "url": "https://plugin.rootu.top/ts-preload.js",
+      "url": "http://plugin.rootu.top/ts-preload.js",
       "description": {
         "ru": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer'а.",
         "uk": "Плагін візуалізації попереднього завантаження торрентів для вбудованого клієнта TorrServer'а.",
@@ -986,7 +986,7 @@
     },
   	{
       "name": { "en": "IpTV by RootU", "ru": "IpTV от RootU", "uk": "IpTV від RootU" },
-      "url": "https://plugin.rootu.top/tv.js",
+      "url": "http://plugin.rootu.top/tv.js",
       "description": {
         "ru": "Просмотр собственных IPTV-плейлистов в Lampa.",
         "uk": "Перегляд власних IPTV-плейлистів у Lampa.",
