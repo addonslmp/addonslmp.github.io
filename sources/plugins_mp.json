@@ -208,7 +208,7 @@
       "url": "https://hauryllin03.github.io/Plugins/continue_movies.js",
       "description": {
         "ru": "Плагин добавляет новую подкатегорию на главной странице, с недосмотренными фильмами(до этого были только сериалы).",
-        "uk": "Плагін додає нову підкатегорію на головній сторінці, які ви недодивились (до цього там були лише серіали).",
+        "uk": "Плагін додає нову підкатегорію на головній сторінці, фільми які ви недодивились (до цього там були лише серіали).",
         "en": "The plugin adds a new subcategory to the home page featuring unwatched movies (previously, there were only TV shows)."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
