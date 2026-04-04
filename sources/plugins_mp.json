@@ -116,22 +116,6 @@
         "uk": "Різне",
         "en": "Misc"
       }
-    },    
-    {
-      "name": {
-        "en": "OnlineServe"
-      },
-      "url": "https://ipavlin98.github.io/lmp-plugins/oooo.js",
-      "description": {
-        "ru": "Можно ввести онлайн с Lampac сервера или с BWA (по коду), ссылки можно указать в настройках.",
-        "uk": "Можна ввести онлайн з Lampac сервера або з BWA (за кодом), посилання можна вказати в налаштуваннях.",
-        "en": "You can enter it online from the Lampac server or from BWA (by code); links can be specified in the settings."
-      },
-      "category": {
-        "ru": "Разное",
-        "uk": "Різне",
-        "en": "Misc"
-      }
     },
     {
       "name": {
@@ -218,7 +202,17 @@
         "en": "A plugin modification to hide items in the catalog. You can hide any movie. The context menu in the interface includes a Hide option."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-    },       
+    }, 
+    {
+      "name": { "en": "Continue Movies", "ru": "Досмотреть фильмы", "uk": "Додивитись фільми" },
+      "url": "https://hauryllin03.github.io/Plugins/continue_movies.js",
+      "description": {
+        "ru": "Плагин добавляет новую подкатегорию на главной странице, с недосмотренными фильмами(до этого были только сериалы).",
+        "uk": "Плагін додає нову підкатегорію на головній сторінці, які ви недодивились (до цього там були лише серіали).",
+        "en": "The plugin adds a new subcategory to the home page featuring unwatched movies (previously, there were only TV shows)."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },	  
     {
       "name": {
         "ru": "Новые категории и подборки фильмов",
@@ -239,7 +233,7 @@
     },
     {
       "name": {
-        "en": "NUM Parser"
+        "en": "NUM Parser | igorek1986"
       },
       "url": "https://igorek1986.github.io/lampa-plugins/np.js",
       "description": {
@@ -253,6 +247,26 @@
         "en": "Categories"
       }
     },
+    {
+      "name": { "ru": "LNUM категория | levende", "uk": "LNUM категорія | levende", "en": "LNUM Category | levende" },
+      "url": "https://levende.github.io/lampa-plugins/lnum.js",
+      "description": {
+        "ru": "Источник Lnum",
+        "uk": "Джерело Lnum",
+        "en": "LNum source"
+      },
+      "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
+    },
+    {
+      "name": { "en": "NUM jac-red.ru" },
+      "url": "https://num.jac-red.ru/plugin/nmprs.js",
+      "description": {
+        "ru": "Источник NUM jac-red.ru",
+        "uk": "Джерело NUM jac-red.ru",
+        "en": "LNum NUM jac-red.ru"
+      },
+      "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
+    },		  
     {
       "name": {
         "ru": "Подборки TMDB_MOD",
@@ -271,24 +285,6 @@
         "en": "Categories"
       }
     },   
-    {
-      "name": {
-        "ru": "LNUM категория",
-        "uk": "LNUM категорія",
-        "en": "LNUM Category"
-      },
-      "url": "https://levende.github.io/lampa-plugins/lnum.js",
-      "description": {
-        "ru": "Источник Lnum",
-        "uk": "Джерело Lnum",
-        "en": "LNum source"
-      },
-      "category": {
-        "ru": "Категории",
-        "uk": "Категорії",
-        "en": "Categories"
-      }
-    },
     {
       "name": {
         "ru": "Surs категория",
@@ -743,7 +739,7 @@
       "name": {
         "en": "TS Preload"
       },
-      "url": "http://plugin.rootu.top/ts-preload.js",
+      "url": "https://plugin.rootu.top/ts-preload.js",
       "description": {
         "ru": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer'а.",
         "uk": "Плагін візуалізації попереднього завантаження торрентів для вбудованого клієнта TorrServer'а.",
@@ -819,23 +815,7 @@
         "uk": "Онлайн",
         "en": "Online"
       }
-    },     
-    {
-      "name": {
-        "en": "Online Stream"
-      },
-      "url": "http://arkmv.ru/vod",
-      "description": {
-        "ru": "Онлайн Stream",
-        "uk": "Онлайн Stream",
-        "en": "Online Stream"
-      },
-      "category": {
-        "ru": "Онлайн",
-        "uk": "Онлайн",
-        "en": "Online"
-      }
-    },    
+    },        
     {
       "name": {
         "uk": "🇺🇦 BazarNetUA (безкоштовно)",
@@ -963,7 +943,21 @@
         "en": "Online GMTLOP"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },     
+    },
+    {
+      "name": { "en": "Online VOD" },
+      "url": "http://arkmv.ru/vod",
+      "description": {
+        "ru": "Онлайн VOD",
+        "uk": "Онлайн VOD",
+        "en": "Online VOD"
+      },
+      "category": {
+        "ru": "Дополнительный онлайн",
+        "uk": "Додатковий онлайн",
+        "en": "Additional online"
+      }
+    }, 	  
     {
       "name": { "en": "IPTV by Lampa(CUB)", "ru": "IPTV от Lampa(CUB)", "uk": "IPTV від Lampa(CUB)" },
       "url": "https://cub.red/plugin/iptv",
@@ -986,7 +980,7 @@
     },
   	{
       "name": { "en": "IpTV by RootU", "ru": "IpTV от RootU", "uk": "IpTV від RootU" },
-      "url": "http://plugin.rootu.top/tv.js",
+      "url": "https://plugin.rootu.top/tv.js",
       "description": {
         "ru": "Просмотр собственных IPTV-плейлистов в Lampa.",
         "uk": "Перегляд власних IPTV-плейлистів у Lampa.",
@@ -995,10 +989,7 @@
       "category": { "ru": "IPTV", "uk": "IPTV", "en": "IPTV" }
     },
     {
-      "name": {
-        "uk": "🇺🇦 TryzubTV",
-        "en": "🇺🇦 TryzubTV"
-      },
+      "name": { "en": "🇺🇦 TryzubTV" },
       "url": "https://lampame.github.io/main/ttv.js",
       "description": {
         "ru": "TryzubTV - украинские ТВ-каналы в удобном каталоге. Спільнота t.me/mmssixxx",
