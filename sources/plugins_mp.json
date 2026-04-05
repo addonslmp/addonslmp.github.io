@@ -783,23 +783,7 @@
         "uk": "Онлайн",
         "en": "Online"
       }
-    },
-    {
-      "name": {
-        "en": "Онлайн wtch.ch"
-      },
-      "url": "http://wtch.ch/m",
-      "description": {
-        "ru": "Онлайн. Filmix 720p",
-        "uk": "Онлайн. Filmix 720p",
-        "en": "Online. Filmix 720p"
-      },
-      "category": {
-        "ru": "Онлайн",
-        "uk": "Онлайн",
-        "en": "Online"
-      }
-    },    
+    },   
     {
       "name": {
         "en": "BWA Online"
@@ -957,6 +941,16 @@
         "uk": "Додатковий онлайн",
         "en": "Additional online"
       }
+    },
+    {
+      "name": { "en": "Онлайн wtch.ch" },
+      "url": "http://wtch.ch/m",
+      "description": {
+        "ru": "Онлайн. Filmix 720p",
+        "uk": "Онлайн. Filmix 720p",
+        "en": "Online. Filmix 720p"
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     }, 	  
     {
       "name": { "en": "IPTV by Lampa(CUB)", "ru": "IPTV от Lampa(CUB)", "uk": "IPTV від Lampa(CUB)" },
