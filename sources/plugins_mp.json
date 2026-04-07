@@ -1,5 +1,5 @@
 {
-  "updateDate": "04.04.2026",
+  "updateDate": "07.04.2026",
   "plugins": [
     {
       "name": {
@@ -1330,6 +1330,16 @@
       },
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
+    {
+      "name": { "en": "HorizontalMode" },
+      "url": "https://ko31k.github.io/LMP/plugins/HorizontalMode.js",
+      "description": {
+        "ru": "Комплексный плагин, полностью меняющий внешний вид каталога. Позволяет свободно переключаться между широкими (горизонтальными) и стандартными (вертикальными) карточками.",
+        "uk": "Комплексний плагін, що повністю змінює вигляд каталогу. Дозволяє вільно перемикатися між широкими (горизонтальними) та стандартними (вертикальними) картками.",
+        "en": "A comprehensive plugin that completely changes the look of the catalog. It allows you to switch freely between wide (horizontal) and standard (vertical) cards."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },    
     {
       "name": { "ru": "Редактор кнопок для LampaUa", "uk": "Редактор кнопок для LampaUa",  "en": "Button Editor for LampaUa" },
       "url": "http://lampaua.mooo.com/buttons.js",
