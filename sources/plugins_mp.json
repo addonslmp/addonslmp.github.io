@@ -1,5 +1,5 @@
 {
-  "updateDate": "07.04.2026",
+  "updateDate": "10.04.2026",
   "plugins": [
     {
       "name": {
@@ -536,23 +536,7 @@
         "en": "Display of quality marks and availability of Ukrainian voiceovers on posters."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },       
-    {
-      "name": {
-        "en": "Rating_omdb Tvigl"
-      },
-      "url": "https://tvigl.github.io/plugins/rating_omdb.js",
-      "description": {
-        "ru": "Плагин для добавления рейтингов: Imdb, Tmdb, MetaCritic, Rotten Tomato.",
-        "uk": "Плагін для додавання рейтингів: Imdb, Tmdb, MetaCritic, Rotten Tomato.",
-        "en": "Plugin for adding ratings: Imdb, Tmdb, MetaCritic, Rotten Tomato."
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    },     
+    },          
     {
       "name": {
         "ru": "Рейтинг фильмов и сериалов ko31k",
