@@ -1,5 +1,5 @@
 {
-  "updateDate": "10.04.2026",
+  "updateDate": "13.04.2026",
   "plugins": [
     {
       "name": {
@@ -212,7 +212,27 @@
         "en": "The plugin adds a new subcategory to the home page featuring unwatched movies (previously, there were only TV shows)."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-    },	  
+    },
+    {
+      "name": { "en": "Lampa Auto-Skip intro" },
+      "url": "https://vahagn-99.github.io/lampa-auto-skip/init.js",
+      "description": {
+        "ru": "Пропуск заставок в сериалах как в Netflix. Работает только во встроенном плеере Lampa.",
+        "uk": "Пропуск заставки в серіалах, як у Netflix. Працює лише у вбудованому плеєрі Lampa.",
+        "en": "Skip intros in TV shows, just like on Netflix. Works only in the built-in Lampa player."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "Local Backup", "uk", "Локальний Бекап" },
+      "url": "https://yarikrazor-star.github.io/lmp/localbackup.js",
+      "description": {
+        "ru": "Этот плагин позволяет сохранять ваши настройки, историю просмотров и плагины в файл на вашем устройстве (без использования облачной синхронизации).",
+        "uk": "Цей плагін дозволяє зберігати ваші налаштування, історію переглядів та плагіни у файл на ваш пристрій (без використання хмарної синхронізації).",
+        "en": "This plugin lets you save your settings, browsing history, and plugins to a file on your device (without using cloud sync)."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },    
     {
       "name": {
         "ru": "Новые категории и подборки фильмов",
