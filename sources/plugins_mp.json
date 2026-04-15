@@ -1,5 +1,5 @@
 {
-  "updateDate": "13.04.2026",
+  "updateDate": "15.04.2026",
   "plugins": [
     {
       "name": {
@@ -214,24 +214,24 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
-    "name": { "en": "Lampa Auto-Skip intro" },
-    "url": "https://vahagn-99.github.io/lampa-auto-skip/init.js",
-    "description": {
-      "ru": "Пропуск заставок в сериалах как в Netflix. Работает только во встроенном плеере Lampa.",
-      "uk": "Пропуск заставки в серіалах, як у Netflix. Працює лише у вбудованому плеєрі Lampa.",
-      "en": "Skip intros in TV shows, just like on Netflix. Works only in the built-in Lampa player."
+      "name": { "en": "Lampa Auto-Skip intro" },
+      "url": "https://vahagn-99.github.io/lampa-auto-skip/init.js",
+      "description": {
+        "ru": "Пропуск заставок в сериалах как в Netflix. Работает только во встроенном плеере Lampa.",
+        "uk": "Пропуск заставки в серіалах, як у Netflix. Працює лише у вбудованому плеєрі Lampa.",
+        "en": "Skip intros in TV shows, just like on Netflix. Works only in the built-in Lampa player."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
-    "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-  },
-  {
-    "name": { "en": "Local Backup", "uk": "Локальний Бекап" },
-    "url": "https://yarikrazor-star.github.io/lmp/localbackup.js",
-    "description": {
-      "ru": "Этот плагин позволяет сохранять ваши настройки, историю просмотров и плагины в файл на вашем устройстве (без использования облачной синхронизации).",
-      "uk": "Цей плагін дозволяє зберігати ваші налаштування, історію переглядів та плагіни у файл на ваш пристрій (без використання хмарної синхронізації).",
-      "en": "This plugin lets you save your settings, browsing history, and plugins to a file on your device (without using cloud sync)."
+    {
+      "name": { "en": "Local Backup", "uk": "Локальний Бекап" },
+      "url": "https://yarikrazor-star.github.io/lmp/localbackup.js",
+      "description": {
+        "ru": "Этот плагин позволяет сохранять ваши настройки, историю просмотров и плагины в файл на вашем устройстве (без использования облачной синхронизации).",
+        "uk": "Цей плагін дозволяє зберігати ваші налаштування, історію переглядів та плагіни у файл на ваш пристрій (без використання хмарної синхронізації).",
+        "en": "This plugin lets you save your settings, browsing history, and plugins to a file on your device (without using cloud sync)."
        },
-    "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
       "name": {
@@ -815,37 +815,17 @@
         "uk": "Онлайн-контент українською мовою. Для роботи плагіна потрібен експорт. Більше інформації ви знайдете в цій групі ТГ: https://t.me/bazarnetua/9/4113",
         "en": "Online content in Ukrainian. The plugin requires exporting to function. You can find more information in this Telegram group: https://t.me/bazarnetua/9/4113"
       },
-      "category": {
-        "ru": "Дополнительный онлайн",
-        "uk": "Додатковий онлайн",
-        "en": "Additional online"
-      }
-    },
-    {
-      "name": { "en": "AIpac BazarNetUa Online" },
-      "url": "https://golampaua.mooo.com/online.js",
-      "description": {
-        "ru": "Смотри фильмы, сериалы и аниме в 4K без тормозов! Наш новый сверхбыстрый онлайн на базе Go/Alcopac.",
-        "uk": "Дивись кіно, серіали та аніме у 4K без гальм! Наш новий надшвидкий онлайн на базі Go/Alcopac.",
-        "en": "Watch movies, TV series, and anime in 4K without any lag! Our new super-fast online service based on Go/Alcopac."
-      },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },    
+    },   
     {
-      "name": {
-        "en": "AIpac Online Beta"
-      },
+      "name": { "en": "AIpac Online Beta" },
       "url": "https://beta.l-vid.online/online.js",
       "description": {
         "ru": "Онлайн AIpac. Для просмотра онлайна необходимо авторизоваться в ТГ-боте: @go_lampa_testbot",
         "uk": "Онлайн AIpac. Для перегляду онлайн необхідно авторизуватися в ТГ-боті: @go_lampa_testbot",
         "en": "Online AIpac. To view online, you must log in to the TG bot: @go_lampa_testbot"
       },
-      "category": {
-        "ru": "Дополнительный онлайн",
-        "uk": "Додатковий онлайн",
-        "en": "Additional online"
-      }
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },
     {
       "name": { "en": "Skaz Online 4k" },
