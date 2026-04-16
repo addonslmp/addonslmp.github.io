@@ -756,20 +756,14 @@
       }
     },    
     {
-      "name": {
-        "en": "Online_Mod"
-      },
+      "name": { "en": "Online_Mod" },
       "url": "https://nb557.github.io/plugins/online_mod.js",
       "description": {
         "ru": "Онлайн-источник",
         "uk": "Онлайн-джерело",
         "en": "Online source"
       },
-      "category": {
-        "ru": "Онлайн",
-        "uk": "Онлайн",
-        "en": "Online"
-      }
+      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
     },   
     {
       "name": {
@@ -782,33 +776,30 @@
         "uk": "Спільнота t.me/mmssixxx",
         "en": "Community t.me/mmssixxx"
       },
-      "category": {
-        "ru": "Онлайн",
-        "uk": "Онлайн",
-        "en": "Online"
-      }
+      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
     },   
     {
-      "name": {
-        "en": "BWA Online"
-      },
+      "name": { "en": "BWA Online" },
       "url": "https://bwa.ad/rc",
       "description": {
         "ru": "Bwa - источник для онлайн просмотра фильмов и сериалов.",
         "uk": "Bwa - джерело для онлайн перегляду фільмів та серіалів.",
         "en": "Bwa - online source for watching movies and TVShows."
       },
-      "category": {
-        "ru": "Онлайн",
-        "uk": "Онлайн",
-        "en": "Online"
-      }
-    },        
+      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
+    }, 
     {
-      "name": {
-        "uk": "🇺🇦 BazarNetUA (безкоштовно)",
-        "en": "🇺🇦 BazarNetUA (free)"
+      "name": { "en": "GMTLOP Online" },
+      "url": "https://onlymodels.icu/p",
+      "description": {
+        "ru": "Онлайн GMTLOP",
+        "uk": "Онлайн GMTLOP",
+        "en": "Online GMTLOP"
       },
+      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
+    },    
+    {
+      "name": { "uk": "🇺🇦 BazarNetUA (безкоштовно)", "en": "🇺🇦 BazarNetUA (free)" },
       "url": "http://lampaua.mooo.com/online/js/",
       "description": {
         "ru": "Онлайн-контент на украинском языке. Больше иноформации вы найдете в этой группе ТГ: https://t.me/bazarnetua/9/4113",
@@ -900,17 +891,6 @@
         "uk": "Додатковий онлайн",
         "en": "Additional online"
       }
-    },
-    {
-      "name": {
-        "en": "GMTLOP Online" },
-      "url": "https://onlymodels.icu/p",
-      "description": {
-        "ru": "Онлайн GMTLOP",
-        "uk": "Онлайн GMTLOP",
-        "en": "Online GMTLOP"
-      },
-      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },
     {
       "name": { "en": "Online VOD" },
