@@ -1,5 +1,5 @@
 {
-  "updateDate": "15.04.2026",
+  "updateDate": "20.04.2026",
   "plugins": [
     {
       "name": {
@@ -705,9 +705,9 @@
     },       
     {
       "name": {
-        "en": "Torrent Styles by Hlushok"
+        "en": "Torrent Styles"
       },
-      "url": "https://hlushok.github.io/lampa-plugin/torrent_styles.js",
+      "url": "https://lampaplugins.github.io/store/torrent_styles_v2.js",
       "description": {
         "ru": "Цветное оформление для торрентов.",
         "uk": "Кольорове оформлення для торрентів.",
