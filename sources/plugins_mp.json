@@ -386,9 +386,9 @@
       "name": { "en": "Applecation" },
       "url": "https://darkestclouds.github.io/plugins/applecation/applecation.min.js",
       "description": {
-        "ru": "Интерфейс карточек в стиле Apple",
-        "uk": "Інтерфейс карток у стилі Apple",
-        "en": "Apple-style card interface"
+        "ru": "Делает интерфейс в карточке фильма похожим на Apple TV и оптимизирует под 4К.",
+        "uk": "Робить інтерфейс у картці фільму схожим на Apple TV та оптимізує його для 4K.",
+        "en": "Makes the interface on the movie card look like Apple TV and optimizes it for 4K."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },    
