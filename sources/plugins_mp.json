@@ -1,5 +1,5 @@
 {
-  "updateDate": "20.04.2026",
+  "updateDate": "22.04.2026",
   "plugins": [
     {
       "name": {
@@ -11,11 +11,7 @@
         "uk": "Плагін для синхронізації сервісу MyShows з Lampa",
         "en": "Plugin for syncing MyShows service with Lampa"
       },
-      "category": {
-        "ru": "Разное",
-        "uk": "Різне",
-        "en": "Misc"
-      }
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
       "name": {
@@ -91,9 +87,9 @@
       },
       "url": "https://addonslmp.github.io/plugins/block_shots.js",
       "description": {
-        "ru": "Убирает сервис Shots из интерфейса. Нужен экспорт.",
-        "uk": "Прибирає сервіс Shots з інтерфейсу. Потрібен експорт.",
-        "en": "Removes the Shots service from the interface. Need export."
+        "ru": "Убирает сервис Shots из интерфейса.",
+        "uk": "Прибирає сервіс Shots з інтерфейсу.",
+        "en": "Removes the Shots service from the interface."
       },
       "category": {
         "ru": "Разное",
@@ -150,20 +146,13 @@
       }
     },
     {
-      "name": {
-        "uk": "Редірект від BazarNetUa",
-        "en": "Redirect BazarNetUa"
-      },
+      "name": { "uk": "Редірект від BazarNetUa", "en": "Redirect BazarNetUa" },
       "url": "https://hlushok.github.io/lampa-plugin/redirect.js",
       "description": {
         "uk": "Перехід на серевер LampaUA від Hlushok.",
         "en": "Transition to the LampaUA server from Hlushok."
       },
-      "category": {
-        "ru": "Разное",
-        "uk": "Різне",
-        "en": "Misc"
-      }
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
     {
       "name": {
@@ -233,6 +222,16 @@
        },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
+    {
+      "name": { "en": "Tweaks & Tricks", "ru": "Приятные мелочи" },
+      "url": "https://skaztv.online/js/tricks.js",
+      "description": {
+        "ru": "Добавление кнопки «Перезагрузка», скрытие ненужных разделов в меню, стилизация кнопок внутри карточек фильмов или сериалов.",
+        "uk": "Додавання кнопки «Перезавантаження», приховування непотрібних розділів у меню, стилізація кнопок усередині карток фільмів або серіалів.",
+        "en": "Adding a «Reload» button, hiding unnecessary menu items, and customizing the appearance of buttons within movie or TV show cards."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },    
     {
       "name": {
         "ru": "Новые категории и подборки фильмов",
@@ -374,6 +373,26 @@
       }
     },
     {
+      "name": { "en": "AppleTV Interface", "ru": "AppleTV Интерфейс", "uk": "AppleTV Інтерфейс" },
+      "url": "https://llowmikee.github.io/AppleTVAGNativeNG/appletv_agnative.js",
+      "description": {
+        "ru": "Плагин Lampa, который изменяет внешний вид верхней навигации, карточек контента и отдельных элементов пользовательского интерфейса в стиле Apple TV.",
+        "uk": "Плагін Lampa, який змінює вигляд верхньої навігації, карток вмісту та окремих елементів інтерфейсу у стилі Apple TV.",
+        "en": "A Lampa plugin that reshapes top navigation, content cards, and selected UI parts in Apple TV style."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    }, 
+    {
+      "name": { "en": "Apple Theme" },
+      "url": "https://darkestclouds.github.io/plugins/applecation/applecation.min.js",
+      "description": {
+        "ru": "Интерфейс карточек в стиле Apple",
+        "uk": "Інтерфейс карток у стилі Apple",
+        "en": "Apple-style card interface"
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },    
+    {
       "name": {
         "en": "Netflix Premium Style"
       },
@@ -399,11 +418,7 @@
         "uk": "Логотип фільму замість назви",
         "en": "Movie logo instead of title"
       },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },
     {
       "name": {
@@ -425,38 +440,6 @@
     },    
     {
       "name": {
-        "en": "Apple Theme"
-      },
-      "url": "https://darkestclouds.github.io/plugins/applecation/applecation.min.js",
-      "description": {
-        "ru": "Интерфейс карточек в стиле Apple",
-        "uk": "Інтерфейс карток у стилі Apple",
-        "en": "Apple-style card interface"
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    },
-    {
-      "name": {
-        "en": "Interface Mod by Wolf"
-      },
-      "url": "https://bywolf88.github.io/lampa-plugins/interface_mod.js",
-      "description": {
-        "ru": "Подробная информация в карточке фильма/сериала",
-        "uk": "Детальна інформація в картці фільму/серіалу",
-        "en": "Detailed information in movie/series card"
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    },
-    {
-      "name": {
         "en": "Interface UI"
       },
       "url": "https://ipavlin98.github.io/lmp-plugins/int.js",
@@ -464,32 +447,6 @@
         "ru": "Версия интерфейса с множеством настроек и мелких улучшений.",
         "uk": "Версія інтерфейсу з безліччю налаштувань і дрібних поліпшень.",
         "en": "A version of the interface with numerous settings and minor improvements."
-      },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
-    },
-    {
-      "name": { "uk": "🇺🇦Ліхтар", "en": "🇺🇦Likhtar" },
-      "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
-      "description": {
-        "ru": "Likhtar — кастомна главная страница для Lampa, полностью заменяющая стандартный интерфейс и добавляющая премиальный опыт просмотра с фокусом на украиноязычный контент.",
-        "uk": "Ліхтар — кастомная головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
-        "en": "Unified plugin for Lampa that integrates multiple streaming studio collections into one interface."
-      },
-      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },   	  
-    {
-      "name": {
-        "en": "🇺🇦 Interface+"
-      },
-      "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
-      "description": {
-        "ru": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками.",
-        "uk": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками.",
-        "en": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками."
       },
       "category": {
         "ru": "Интерфейс",
@@ -582,15 +539,41 @@
       }
     }, 
     {
-      "name": { "en": "Series Status Mod by AddonsLMP" },
-      "url": "https://addonslmp.github.io/plugins/status.js",
+      "name": { "en": "Series Status | igorek1986" },
+      "url": "https://igorek1986.github.io/lampa-plugins/status.js",
       "description": {
       "ru": "Добавляет на карточки сериалов метку «Сериал» и отображает текущий статус проекта: «В эфире», «Пауза», «Завершён» или «Отменён». Статус определяется из данных TMDB и автоматически показывается во всех разделах Lampa. Плагин имеет настройку для включения или отключения отображения статусов.",
       "uk": "Додає на картки серіалів мітку «Серіал» та показує поточний статус проєкту: «В ефірі», «Пауза», «Завершено» або «Скасовано». Статус визначається з даних TMDB і автоматично відображається у всіх розділах Lampa. Плагін має налаштування для увімкнення або вимкнення відображення статусів.",
-      "en": "Adds a \"Series\" label to TV show cards and displays the current status of the show: \"Airing\", \"Paused\", \"Ended\", or \"Canceled\". The status is retrieved from TMDB data and automatically shown across all sections of Lampa. The plugin also includes a setting to enable or disable status display."
+      "en": "Adds a «Series» label to TV show cards and displays the current status of the show: «Airing», «Paused», «Ended», or «Canceled». The status is retrieved from TMDB data and automatically shown across all sections of Lampa. The plugin also includes a setting to enable or disable status display."
       },
     "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },  
+    {
+      "name": { "uk": "🇺🇦Ліхтар", "en": "🇺🇦Likhtar" },
+      "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
+      "description": {
+        "ru": "Likhtar — кастомна главная страница для Lampa, полностью заменяющая стандартный интерфейс и добавляющая премиальный опыт просмотра с фокусом на украиноязычный контент.",
+        "uk": "Ліхтар — кастомная головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
+        "en": "Unified plugin for Lampa that integrates multiple streaming studio collections into one interface."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },   	  
+    {
+      "name": {
+        "en": "🇺🇦 Interface+"
+      },
+      "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
+      "description": {
+        "ru": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками.",
+        "uk": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками.",
+        "en": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками."
+      },
+      "category": {
+        "ru": "Интерфейс",
+        "uk": "Інтерфейс",
+        "en": "Interface"
+      }
+    },    
     {
       "name": {
         "en": "Torrent Manager"
