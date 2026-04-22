@@ -373,7 +373,7 @@
       }
     },
     {
-      "name": { "en": "AppleTV Interface", "ru": "AppleTV Интерфейс", "uk": "AppleTV Інтерфейс" },
+      "name": { "en": "AppleTV AgNative" },
       "url": "https://llowmikee.github.io/AppleTVAGNativeNG/appletv_agnative.js",
       "description": {
         "ru": "Плагин Lampa, который изменяет внешний вид верхней навигации, карточек контента и отдельных элементов пользовательского интерфейса в стиле Apple TV.",
@@ -383,7 +383,7 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     }, 
     {
-      "name": { "en": "Apple Theme" },
+      "name": { "en": "Applecation" },
       "url": "https://darkestclouds.github.io/plugins/applecation/applecation.min.js",
       "description": {
         "ru": "Интерфейс карточек в стиле Apple",
