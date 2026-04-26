@@ -31,24 +31,6 @@
     },
     {
       "name": {
-        "ru": "Установщик плагинов",
-        "uk": "Встановлювач плагінів",
-        "en": "Plugin Installer"
-      },
-      "url": "https://addonslmp.github.io/plugins/pluginsinstaller.js",
-      "description": {
-        "ru": "Простая установка плагинов из пользовательского источника.",
-        "uk": "Просте встановлення плагінів з користувацького джерела.",
-        "en": "Simple plugin installation from a custom source."
-      },
-      "category": {
-        "ru": "Разное",
-        "uk": "Різне",
-        "en": "Misc"
-      }
-    }, 
-    {
-      "name": {
         "en": "NightingaleNotifications LME"
       },
       "url": "https://lampame.github.io/main/nn.js",
