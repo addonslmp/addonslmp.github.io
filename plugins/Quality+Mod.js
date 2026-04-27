@@ -11,7 +11,7 @@
         CACHE_REFRESH_THRESHOLD_MS: 12 * 60 * 60 * 1000,
         CACHE_KEY: 'lampa_quality_cache',
         JACRED_PROTOCOL: 'https://', // Меняем на HTTPS
-        JACRED_URL: 'jacred.xyz',
+        JACRED_URL: 'jac.red',
         JACRED_API_KEY: '',
         // Упрощенный список прокси с приоритетом на самые надежные
         PROXY_LIST: [
