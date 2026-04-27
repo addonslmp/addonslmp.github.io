@@ -152,7 +152,7 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
-      "name": { "en": "Tweaks & Tricks", "uk": "Приємні Дрібниці","ru": "Приятные мелочи" },
+      "name": { "en": "Tweaks & Tricks", "uk": "Приємні Дрібниці", "ru": "Приятные мелочи" },
       "url": "https://skaztv.online/js/tricks.js",
       "description": {
         "ru": "Добавление кнопки «Перезагрузка», скрытие ненужных разделов в меню, стилизация кнопок внутри карточек фильмов или сериалов.",
@@ -162,20 +162,14 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
-      "name": {
-        "en": "NUM Parser | igorek1986"
-      },
+      "name": { "en": "NUM Parser | igorek1986" },
       "url": "https://igorek1986.github.io/lampa-plugins/np.js",
       "description": {
         "ru": "Источник NUM",
         "uk": "Джерело NUM",
         "en": "NUM source"
       },
-      "category": {
-        "ru": "Категории",
-        "uk": "Категорії",
-        "en": "Categories"
-      }
+      "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
     },
     {
       "name": { "ru": "LNUM категория | levende", "uk": "LNUM категорія | levende", "en": "LNUM Category | levende" },
@@ -198,22 +192,14 @@
       "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
     },		  
     {
-      "name": {
-        "ru": "Подборки TMDB_MOD",
-        "uk": "Підбірки TMDB_MOD",
-        "en": "TMDB_MOD compilations"
-      },
+      "name": { "ru": "Подборки TMDB_MOD", "uk": "Підбірки TMDB_MOD", "en": "TMDB_MOD compilations" },
       "url": "https://gitfuntik.github.io/tmdb_mod.js",
       "description": {
         "ru": "Главная цель — предоставить вам уникальные и актуальные тематические коллекции, которые вы можете включить или выключить по своему усмотрению. Плагин создает отдельный источник контента: 'TMDB_MOD'.",
         "uk": "Головна мета — надати вам унікальні та актуальні тематичні колекції, які ви можете ввімкнути або вимкнути на свій розсуд. Плагін створює окреме джерело контенту: “TMDB_MOD”.",
         "en": "The main goal is to provide you with unique and relevant themed collections that you can enable or disable at your discretion. The plugin creates a separate content source: ‘TMDB_MOD’."
       },
-      "category": {
-        "ru": "Категории",
-        "uk": "Категорії",
-        "en": "Categories"
-      }
+      "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
     },   
     {
       "name": { "ru": "SURS категория", "uk": "SURS категорія", "en": "SURS Category" },
@@ -909,7 +895,6 @@
         "uk": "Топ тижня та сховані геми для головної, фільмів і серіалів.",
         "en": "Weekly top and hidden gems."
       },
-      "author": "LME",
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
@@ -974,8 +959,7 @@
     },
     {
       "url": "https://ko31k.github.io/LMP/plugins/rtg.js",
-      "name": { "en": "RTG+"
-      },
+      "name": { "en": "RTG+" },
       "description": {
         "ru": "Рейтинги и награды в карточке с гибкой настройкой логотипов и меток.",
         "uk": "Рейтинги та нагороди у картці з гнучким налаштуванням логотипів і міток.",
