@@ -100,7 +100,7 @@
         if (!obj) return "";
         if (typeof obj === "string") return obj;
         var lang = Lampa.Storage.get("language", "ru");
-        return obj[lang] || obj.ru || obj.en || "";
+        return obj[lang] || obj.ru || obj.uk || obj.en || '';
     }
 
     function getCategories(list) {
