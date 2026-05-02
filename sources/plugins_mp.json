@@ -1,5 +1,5 @@
 {
-  "updateDate": "27.04.2026",
+  "updateDate": "02.05.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -161,6 +161,16 @@
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
+    {
+      "name": { "en": "Skaz Games", "ru": "Сказочные игры", "uk": "Казкові ігри" },
+      "url": "",
+      "description": {
+        "ru": "Ретро-игры прямо в вашей Lampa.",
+        "uk": "Ретро-ігри прямо у вашій Lampa.",
+        "en": "Retro games right on your Lampa."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },    
     {
       "name": { "en": "NUM Parser | igorek1986" },
       "url": "https://igorek1986.github.io/lampa-plugins/np.js",
