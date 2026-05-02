@@ -165,9 +165,9 @@
       "name": { "en": "Skaz Games", "ru": "Сказочные игры", "uk": "Казкові ігри" },
       "url": "http://skaz.tv/g.js",
       "description": {
-        "ru": "Ретро-игры прямо в вашей Lampa.",
-        "uk": "Ретро-ігри прямо у вашій Lampa.",
-        "en": "Retro games right on your Lampa."
+        "ru": "Игры в Lampa.",
+        "uk": "Ігри у Lampa.",
+        "en": "Games on Lampa."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
