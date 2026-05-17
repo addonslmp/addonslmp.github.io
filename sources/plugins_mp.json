@@ -1,5 +1,5 @@
 {
-  "updateDate": "02.05.2026",
+  "updateDate": "17.05.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -293,9 +293,7 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },    
     {
-      "name": {
-        "en": "Logo Title"
-      },
+      "name": { "en": "Logo Title" },
       "url": "https://crowley38.github.io/NewLogo.js",
       "description": {
         "ru": "Логотип фильма вместо названия",
@@ -353,6 +351,16 @@
         "en": "A plugin for displaying ratings both in the card and on the posters."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },
+    {
+      "name": { "en": "Rating KP&IMDb | nb557", "ru": "Рейтинг КиноПоиск и IMDb | nb557", "uk": "Рейтинг Кінопошук та IMDb | nb557" },
+      "url": "https://nb557.github.io/plugins/rating.js",
+      "description": {
+        "ru": "Плагин для отображения рейтингов Кинопоиска и IMDb.",
+        "uk": "Плагін для відображення рейтингів «Кинопошуку» та IMDb.",
+        "en": "A plugin for displaying ratings from Kinopoisk and IMDb."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },    
     {
       "name": { "en": "TMDB Networks & Providers" },
@@ -384,19 +392,13 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },   	  
     {
-      "name": {
-        "en": "🇺🇦 Interface+"
-      },
+      "name": { "en": "🇺🇦 Interface+" },
       "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
       "description": {
         "uk": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками.",
         "en": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками."
       },
-      "category": {
-        "ru": "Интерфейс",
-        "uk": "Інтерфейс",
-        "en": "Interface"
-      }
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },    
     {
       "name": { "en": "Torrent Manager" },
