@@ -1,5 +1,5 @@
 {
-  "updateDate": "17.05.2026",
+  "updateDate": "24.05.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -170,6 +170,16 @@
         "en": "Games on Lampa."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "Channels Sort", "ru": "Сортировка разделов", "uk": "Сортування розділів" },
+      "url": "https://gist.githack.com/trigor74/c37b068491b42c98325bbe66188ef2e5/raw/channels_sort.js",
+      "description": {
+        "ru": "С этим плагином можно сортировать разделы на главной странице так, как вам удобно.",
+        "uk": "За допомогою цього плагіна можна сортувати розділи на головній сторінці так, як вам зручно.",
+        "en": "With this plugin, you can sort the sections on the home page however you like."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
     {
       "name": { "en": "NUM Parser | igorek1986" },
@@ -321,7 +331,17 @@
         "en": "A version of the interface with numerous settings and minor improvements."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },       
+    },
+    {
+      "name": { "en": "Interface Mod | pavelpikta", "ru": "Интерфейс мод | pavelpikta", "uk": "Інтерфейс мод | pavelpikta" },
+      "url": "https://lampaplugins.github.io/store/interface_mod.js",
+      "description": {
+        "ru": "Модификация интерфейса Lampa с темой Emerald и улучшенными стилями.",
+        "uk": "Модифікація інтерфейсу Lampa з темою Emerald та вдосконаленими стилями.",
+        "en": "A modified version of the Lampa interface featuring the Emerald theme and improved styles."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },    
     {
       "name": { "en": "Cardify Rating" },
       "url": "https://ipavlin98.github.io/lmp-plugins/cardify.js",
@@ -575,7 +595,17 @@
         "en": "Subscription by Skaz. Paid online 4K sources in Lampa. Control via Telegram bot @skaztv_bot"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },          
+    }, 
+    {
+      "name": { "en": "Amedia Skaz" },
+      "url": "https://skaz.tv/amedia/a.js",
+      "description": {
+        "ru": "После подключения в карточке фильма появится кнопка «Amedia» — нажатие запустит встроенный плеер Lampa с управлением громкостью, качеством и перемоткой через штатный UI.",
+        "uk": "Після підключення у картці фільму з’явиться кнопка «Amedia» — натискання запустить вбудований плеєр Lampa з можливістю регулювання гучності, якості та перемотування через стандартний інтерфейс користувача.",
+        "en": "Once connected, an Amedia button will appear on the movie card—tapping it will launch Lampa's built-in player, allowing you to control volume, quality, and playback via the standard UI."
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },    
     {
       "name": { "en": "Z01 Online" },
       "url": "http://z01.online/live",
@@ -630,7 +660,7 @@
         "en": "Online. Filmix 720p"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    }, 	  
+    }, 	    
     {
       "name": { "en": "IPTV by Lampa(CUB)", "ru": "IPTV от Lampa(CUB)", "uk": "IPTV від Lampa(CUB)" },
       "url": "https://cub.red/plugin/iptv",
