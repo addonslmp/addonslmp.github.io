@@ -1,5 +1,5 @@
 {
-  "updateDate": "24.05.2026",
+  "updateDate": "26.05.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -729,6 +729,16 @@
       },
       "category": { "ru": "Аниме", "uk": "Аніме", "en": "Anime" }
     },
+    {
+      "name": { "en": "Shikimori" },
+      "url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js",
+      "description": {
+        "ru": "Плагин для Lampа, который добавляет интеграцию с каталогом аниме Shikimori.",
+        "uk": "Плагін для Lamp, який додає інтеграцію з каталогом аніме Shikimori.",
+        "en": "A plugin for Lamp that adds integration with the Shikimori anime catalog."
+      },
+      "category": { "ru": "Аниме", "uk": "Аніме", "en": "Anime" }
+    },    
     {
       "name": { "en": "Plugin Home Page UA", "uk": "Plugin Головна сторінка UA" },
       "url": "http://lampalampa.free.nf/ymain.js",
