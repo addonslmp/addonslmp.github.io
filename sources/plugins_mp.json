@@ -1,5 +1,5 @@
 {
-  "updateDate": "26.05.2026",
+  "updateDate": "02.06.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -178,6 +178,16 @@
         "ru": "С этим плагином можно сортировать разделы на главной странице так, как вам удобно.",
         "uk": "За допомогою цього плагіна можна сортувати розділи на головній сторінці так, як вам зручно.",
         "en": "With this plugin, you can sort the sections on the home page however you like."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "Menu Editor", "uk": "Редактор меню" },
+      "url": "https://ko31k.github.io/LMP/plugins/menueditor.js",
+      "description": {
+        "ru": "Плагин добавляет возможность редактировать меню Lampa.",
+        "uk": "Плагін додає можливість редагувати меню Lampa.",
+        "en": "This plugin adds the ability to edit the Lampa menu."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
@@ -935,6 +945,25 @@
       },
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
+    {
+      "name": { "en": "IMDb Trailers" },
+      "url": "https://lampame.github.io/main/timdb.js",
+      "description": {
+        "ru": "Трендовые трейлеры IMDb: линия на главной и полноэкранный просмотр.",
+        "uk": "Трендові трейлери IMDb: лінія на головній та повноекранний перегляд.",
+        "en": "Trending IMDb trailers: main-page line and full-screen browsing."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },
+    {
+      "name": { "en": "🇺🇦Kinobaza" },
+      "url": "https://lampame.github.io/main/kb.js",
+      "description": {
+        "uk": "Український контент-провайдер КіноБаза: каталог, пошук, картки, рейтинги, трейлери, релізи, колекції.",
+        "en": "Ukrainian content provider KinoBaza: catalog, search, movie profiles, ratings, trailers, releases, collections."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },    
     {
       "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
       "name": { "en": "Parsers" },
