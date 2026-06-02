@@ -956,7 +956,7 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
-      "name": { "en": "🇺🇦Kinobaza" },
+      "name": { "en": "🇺🇦 Kinobaza" },
       "url": "https://lampame.github.io/main/kb.js",
       "description": {
         "uk": "Український контент-провайдер КіноБаза: каталог, пошук, картки, рейтинги, трейлери, релізи, колекції.",
