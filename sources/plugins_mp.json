@@ -1,5 +1,5 @@
 {
-  "updateDate": "02.06.2026",
+  "updateDate": "09.06.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -342,6 +342,16 @@
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },
+    {
+      "name": { "en": "Obsidian | levende" },
+      "url": "https://levende.github.io/lampa-plugins/obsidian.js",
+      "description": {
+        "ru": "Обновленный вид карточек для Lampa в минималистичном стиле.",
+        "uk": "Оновлений вигляд карток для Lampa у мінімалістичному стилі.",
+        "en": "Обновленный вид карточек для Lampa в минималистичном стиле."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },    
     {
       "name": { "en": "Interface Mod | pavelpikta", "ru": "Интерфейс мод | pavelpikta", "uk": "Інтерфейс мод | pavelpikta" },
       "url": "https://lampaplugins.github.io/store/interface_mod.js",
