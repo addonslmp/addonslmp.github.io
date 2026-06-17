@@ -1,5 +1,5 @@
 {
-  "updateDate": "09.06.2026",
+  "updateDate": "17.06.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -21,6 +21,16 @@
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
+   {
+      "name": { "en": "Jellyfin" },
+      "url": "https://lampaplugins.github.io/store/pavelpikta/jellyfin.js",
+      "description": {
+        "ru": "Интеграция медиасервера Jellyfin в Lampa.",
+        "uk": "Інтеграція медіасервера Jellyfin у Lampa.",
+        "en": "Integrating the Jellyfin media server into Lampa."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },    
     {
       "name": { "en": "NightingaleNotifications LME" },
       "url": "https://lampame.github.io/main/nn.js",
