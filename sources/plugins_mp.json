@@ -112,7 +112,7 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     }, 
     {
-      "name": { "en": "Hide Content by bodya-elven", "uk": "Фільтр контенту | bodya-elven" },
+      "name": { "en": "Hide Content | bodya-elven", "uk": "Фільтр контенту | bodya-elven", "ru": "Фильтр контента | bodya-elven" },
       "url": "https://bodya-elven.github.io/different/hide_content.js",
       "description": {
         "ru": "Модификация плагина для скрытия карточек в каталоге. Можно скрыть любой фильм. В контекстном меню ннтерфейса есть пункт «Скрыть».",
@@ -125,9 +125,9 @@
       "name": { "en": "TMDB Content Filter | Lampaplugins", "ru": "Фильтр контента | Lampaplugins", "uk": "Фільтр контенту | Lampaplugins" },
       "url": "https://lampaplugins.github.io/store/pavelpikta/tmdb-content-filter.js",
       "description": {
-        "ru": "Скрытие контента TMDB и CUB по стране и языку.",
-        "uk": "Приховування контенту TMDB та CUB за країною та мовою.",
-        "en": "Hiding TMDB and CUB content by country and language."
+        "ru": "Скрытие контента TMDB и CUB по стране и языку.<br>Настройки →TMDB →Включить фильтр контента.",
+        "uk": "Приховування контенту TMDB та CUB за країною та мовою.<br>Налаштування → TMDB → Увімкнути фільтр контенту.",
+        "en": "Hiding TMDB and CUB content by country and language.<br>Settings → TMDB → Enable content filter."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
@@ -841,8 +841,8 @@
       "name": { "en": "Ydes Cards", "uk": "Ydes Картки" },
       "url": "http://lampalampa.free.nf/ydes.js",
       "description": {
-        "uk": "<br>- Нестандратні пропорції карток, щоб краще считувались елементи.<br>- Змінює кількість карток, знову таки, щоб вони були більшими.<br>- Як горизонтальні так і вертикальні картки.<br>- Варіанти з текстом чи лого.<br>- Навіть слоган та опис можна додати)<br>- Декілька рейтингів *потрібні ключі MDBLIST/OMDB<br>- Налаштування карток під себе. *картки повністю кастомні - на деяких девайсах, щоб вступили налаштування в силу - потрібно лампу перезавантажити.<br>- Можна ставити на пусту лампу, можна спобувати комбінувати з іншими плагінами. (З моїми точно можна :)<br>- Поки працює тільки з джерелом TMDB",
-        "en": "<br>- Non-standard card proportions to make elements easier to read.<br>- Changes the number of cards, again, to make them larger.<br>- Both horizontal and vertical cards.<br>- Options with text or a logo. <br>- You can even add a tagline and description.<br>- Multiple ratings *requires MDBLIST/OMDB keys<br>- Customize cards to your liking. *Cards are fully customizable—on some devices, you’ll need to restart the lamp for the settings to take effect. <br>- You can install it on an empty lamp, or try combining it with other plugins. (It definitely works with mine :)<br>- Currently only works with TMDB as the data source"
+        "uk": "Оновлений дизайн карток.<br>- Нестандратні пропорції карток, щоб краще считувались елементи.<br>- Змінює кількість карток, знову таки, щоб вони були більшими.<br>- Як горизонтальні так і вертикальні картки.<br>- Варіанти з текстом чи лого.<br>- Навіть слоган та опис можна додати)<br>- Декілька рейтингів *потрібні ключі MDBLIST/OMDB<br>- Налаштування карток під себе. *картки повністю кастомні - на деяких девайсах, щоб вступили налаштування в силу - потрібно лампу перезавантажити.<br>- Можна ставити на пусту лампу, можна спобувати комбінувати з іншими плагінами. (З моїми точно можна :)<br>- Поки працює тільки з джерелом TMDB",
+        "en": "The updated look of the cards.<br>- Non-standard card proportions to make elements easier to read.<br>- Changes the number of cards, again, to make them larger.<br>- Both horizontal and vertical cards.<br>- Options with text or a logo. <br>- You can even add a tagline and description.<br>- Multiple ratings *requires MDBLIST/OMDB keys<br>- Customize cards to your liking. *Cards are fully customizable—on some devices, you’ll need to restart the lamp for the settings to take effect. <br>- You can install it on an empty lamp, or try combining it with other plugins. (It definitely works with mine :)<br>- Currently only works with TMDB as the data source"
       },
       "category": { "ru": "Плагины от Yarik's", "uk": "Плагіни від Yarik's", "en": "Plugins by Yarik's" }
     },    
