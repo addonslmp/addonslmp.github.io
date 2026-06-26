@@ -1,5 +1,5 @@
 {
-  "updateDate": "17.06.2026",
+  "updateDate": "26.06.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -120,7 +120,17 @@
         "en": "A plugin modification to hide items in the catalog. You can hide any movie. The context menu in the interface includes a Hide option."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-    }, 
+    },
+    {
+      "name": { "en": "TMDB Content Filter | Lampaplugins", "ru": "Фильтр контента | Lampaplugins", "uk": "Фільтр контенту | Lampaplugins" },
+      "url": "https://lampaplugins.github.io/store/pavelpikta/tmdb-content-filter.js",
+      "description": {
+        "ru": "Скрытие контента TMDB и CUB по стране и языку.",
+        "uk": "Приховування контенту TMDB та CUB за країною та мовою.",
+        "en": "Hiding TMDB and CUB content by country and language."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },    
     {
       "name": { "en": "Continue Movies", "ru": "Досмотреть фильмы", "uk": "Додивитись фільми" },
       "url": "https://hauryllin03.github.io/Plugins/continue_movies.js",
@@ -828,6 +838,15 @@
       "category": { "ru": "Плагины от Yarik's", "uk": "Плагіни від Yarik's", "en": "Plugins by Yarik's" }
     },
     {
+      "name": { "en": "Ydes Cards", "uk": "Ydes Картки" },
+      "url": "http://lampalampa.free.nf/ydes.js",
+      "description": {
+        "uk": "<br>- Нестандратні пропорції карток, щоб краще считувались елементи.<br>- Змінює кількість карток, знову таки, щоб вони були більшими.<br>- Як горизонтальні так і вертикальні картки.<br>- Варіанти з текстом чи лого.<br>- Навіть слоган та опис можна додати)<br>- Декілька рейтингів *потрібні ключі MDBLIST/OMDB<br>- Налаштування карток під себе. *картки повністю кастомні - на деяких девайсах, щоб вступили налаштування в силу - потрібно лампу перезавантажити.<br>- Можна ставити на пусту лампу, можна спобувати комбінувати з іншими плагінами. (З моїми точно можна :)<br>- Поки працює тільки з джерелом TMDB",
+        "en": "<br>- Non-standard card proportions to make elements easier to read.<br>- Changes the number of cards, again, to make them larger.<br>- Both horizontal and vertical cards.<br>- Options with text or a logo. <br>- You can even add a tagline and description.<br>- Multiple ratings *requires MDBLIST/OMDB keys<br>- Customize cards to your liking. *Cards are fully customizable—on some devices, you’ll need to restart the lamp for the settings to take effect. <br>- You can install it on an empty lamp, or try combining it with other plugins. (It definitely works with mine :)<br>- Currently only works with TMDB as the data source"
+      },
+      "category": { "ru": "Плагины от Yarik's", "uk": "Плагіни від Yarik's", "en": "Plugins by Yarik's" }
+    },    
+    {
       "name": { "en": "Infuse Save" },
       "url": "https://lampame.github.io/main/infuseSave.js",
       "description": {
@@ -971,6 +990,16 @@
       "description": {
         "uk": "Український контент-провайдер КіноБаза: каталог, пошук, картки, рейтинги, трейлери, релізи, колекції.",
         "en": "Ukrainian content provider KinoBaza: catalog, search, movie profiles, ratings, trailers, releases, collections."
+      },
+      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
+    },  
+    {
+      "name": { "en": "GramLink" },
+      "url": "https://lampame.github.io/main/GramLink/GramLink.js",
+      "description": {
+        "ru": "Синхронизация закладок, таймкодов и плагинов между устройствами через Telegram.",
+        "uk": "Синхронізація закладок, таймкодів і плагінів між пристроями через Telegram.",
+        "en": "Sync bookmarks, watch progress, and plugins across devices via Telegram."
       },
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },    
