@@ -143,7 +143,7 @@
     },
     {
       "name": { "en": "Pirate Store", "ru": "Пиратские плагины", "uk": "Піратські плагіни" },
-      "url": "https://skaztv.online/store.js",
+      "url": "https://lampaplugins.github.io/store/store.js",
       "description": {
         "ru": "Альтернативный магазин плагинов для Lampa.",
         "uk": "Альтернативний магазин плагінів для Lampa.",
