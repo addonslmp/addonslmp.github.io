@@ -1,5 +1,5 @@
 {
-  "updateDate": "26.06.2026",
+  "updateDate": "07.07.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -40,7 +40,7 @@
         "en": "This is a slightly reworked subscription to series releases, powered by Makhno and only for TV series. This means that notifications will only be sent if a new episode of a series has been added to the Makhno (Ashdi) database."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-    },    
+    },
     {
       "name": { "ru": "Комментарии от Резки", "uk": "Коментарі від Rezka", "en": "Rezka Comments" },
       "url": "https://bdvburik.github.io/rezkacomment.js",
@@ -208,6 +208,16 @@
         "ru": "Плагин добавляет возможность редактировать меню Lampa.",
         "uk": "Плагін додає можливість редагувати меню Lampa.",
         "en": "This plugin adds the ability to edit the Lampa menu."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },  
+   {
+      "name": { "en": "Lampa Add-on" },
+      "url": "https://lampa.qzz.io",
+      "description": {
+        "ru": "Цель сервиса ― сделать настройку Lampa максимально простой. Большинство возможностей работают автоматически после нескольких простых действий, без сложной конфигурации.",
+        "uk": "Мета сервісу — зробити налаштування Lampa максимально простим. Більшість функцій запускаються автоматично після кількох простих дій, без складного налаштування.",
+        "en": "The goal of this service is to make setting up Lampa as simple as possible. Most features work automatically after a few simple steps, without any complicated configuration."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
@@ -672,7 +682,16 @@
         "en": "TG Bot: @modssmy_bot"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online"}
-    },	
+    },
+    {
+      "name": { "en": "Lumio Online" },
+      "url": "http://beta.mitsu.tv/plugins/lumio.js",
+      "description": {
+        "uk": "Lumio онлайн",
+        "en": "Lumio online"
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },    
   	{
       "name": { "en": "Filmix Online" },
       "url": "https://lampaplugins.github.io/store/fx.js",
