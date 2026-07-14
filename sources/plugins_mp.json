@@ -608,12 +608,12 @@
       "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
     }, 
     {
-      "name": { "en": "GMTLOP Online" },
-      "url": "https://onlymodels.icu/p",
+      "name": { "en": "GPBX Online (GMTLOP)" },
+      "url": "https://gpbx.me/w",
       "description": {
-        "ru": "Онлайн GMTLOP",
-        "uk": "Онлайн GMTLOP",
-        "en": "Online GMTLOP"
+        "ru": "Онлайн GPBX.",
+        "uk": "Онлайн GPBX.",
+        "en": "Online GPBX."
       },
       "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
     },    
