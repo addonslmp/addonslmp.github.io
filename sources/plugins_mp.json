@@ -606,17 +606,7 @@
         "en": "Bwa - online source for watching movies and TVShows."
       },
       "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    }, 
-    {
-      "name": { "en": "GPBX Online (GMTLOP)" },
-      "url": "https://gpbx.me/w",
-      "description": {
-        "ru": "Онлайн GPBX.",
-        "uk": "Онлайн GPBX.",
-        "en": "Online GPBX."
-      },
-      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    },    
+    },   
     {
       "name": { "uk": "🇺🇦 BazarNetUA (безкоштовно)", "en": "🇺🇦 BazarNetUA (free)" },
       "url": "http://lampaua.mooo.com/online/js/",
@@ -655,7 +645,17 @@
         "en": "Once connected, an Amedia button will appear on the movie card—tapping it will launch Lampa's built-in player, allowing you to control volume, quality, and playback via the standard UI."
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },    
+    },
+    {
+      "name": { "en": "GPBX Online (GMTLOP)" },
+      "url": "https://gpbx.me/w",
+      "description": {
+        "ru": "Онлайн GPBX.",
+        "uk": "Онлайн GPBX.",
+        "en": "Online GPBX."
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },      
     {
       "name": { "en": "Z01 Online" },
       "url": "http://z01.online/live",
