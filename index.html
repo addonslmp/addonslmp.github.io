@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="uk">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='4' y='4' width='16' height='16' rx='2' fill='none' stroke='%23ffffff' stroke-width='2'/><rect x='8' y='8' width='8' height='8' rx='1' fill='none' stroke='%23ffffff' stroke-width='2'/></svg>">
 <head>
 <meta charset="UTF-8">
-<title>Multiplugin для Lampa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplugin для Lampa</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='4' y='4' width='16' height='16' rx='2' fill='none' stroke='%23ffffff' stroke-width='2'/><rect x='8' y='8' width='8' height='8' rx='1' fill='none' stroke='%23ffffff' stroke-width='2'/></svg>">
 <style>
 html, body{
 margin:0;
@@ -14,7 +14,6 @@ height:100%;
 background: radial-gradient(circle at top, #1e1e1e, #0b0b0b);
 font-family: Arial, Helvetica, sans-serif;
 color:#bfbfbf;
-transition:overflow 0.3s ease;
 }
 .no-scroll{overflow:hidden;}
 .container{
@@ -27,32 +26,46 @@ padding:40px 20px;
 box-sizing:border-box;
 }
 .lang-switcher{
-position:absolute;
-top:30px;
-right:30px;
 display:flex;
-gap:12px;
-z-index:10;
+align-items:center;
+justify-content:center;
+gap:3px;
+margin:0 auto 34px;
+padding:4px;
+width:max-content;
+background:rgba(255,255,255,0.045);
+border:1px solid rgba(255,255,255,0.10);
+border-radius:12px;
+box-shadow:0 8px 24px rgba(0,0,0,0.22);
+backdrop-filter:blur(10px);
 }
+
 .lang-btn{
-padding:10px 18px;
-font-size:18px;
-font-weight:bold;
-color:rgba(255,255,255,0.6);
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.15);
-border-radius:10px;
+min-width:54px;
+padding:8px 12px;
+font-size:14px;
+font-weight:700;
+letter-spacing:0.3px;
+color:rgba(255,255,255,0.48);
+background:transparent;
+border:1px solid transparent;
+border-radius:8px;
 cursor:pointer;
-transition:all 0.25s ease;
-backdrop-filter:blur(6px);
+transition:all 0.2s ease;
 }
-.lang-btn.active,
+
 .lang-btn:hover{
-color:white;
-background:rgba(255,255,255,0.15);
-border-color:rgba(255,255,255,0.35);
-transform:scale(1.05);
+color:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.07);
 }
+
+.lang-btn.active{
+color:#fff;
+background:rgba(58,123,253,0.32);
+border-color:rgba(58,123,253,0.48);
+box-shadow:0 3px 10px rgba(0,0,0,0.18);
+}
+
 .card{
 max-width:900px;
 text-align:center;
@@ -150,6 +163,7 @@ align-items:flex-start;
 justify-content:center;
 min-height:100%;
 padding-top:3vh;
+padding-bottom:5vh;
 }
 .modal-content{
 padding:24px;
@@ -169,9 +183,10 @@ float:right;
 font-size:32px;
 font-weight:bold;
 cursor:pointer;
+line-height:1;
 }
 .close:hover{color:white;}
-.modal h2,.modal h3{
+.modal h2{
 text-align:center;
 margin:0 0 20px;
 font-size:30px;
@@ -180,6 +195,7 @@ color:#ffffff;
 .modal h3{
 font-size:24px;
 margin:32px 0 12px;
+color:#ffffff;
 }
 .modal ol{
 font-size:19px;
@@ -228,16 +244,214 @@ opacity:0.6;
 .github-btn:hover .github-icon{
 opacity:0.9;
 }
+
+/* ===== Plugins modal ===== */
+.plugins-modal-content{
+max-width:720px;
+width:92%;
+padding:20px 20px 16px;
+display:flex;
+flex-direction:column;
+max-height:85vh;
+}
+.plugins-modal-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:16px;
+flex-shrink:0;
+}
+.plugins-modal-header h2{
+margin:0;
+font-size:26px;
+text-align:left;
+}
+.plugins-update-date{
+font-size:14px;
+color:rgba(255,255,255,0.45);
+margin-bottom:14px;
+flex-shrink:0;
+}
+.plugins-tabs{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:16px;
+flex-shrink:0;
+}
+.plugins-tab{
+padding:8px 14px;
+font-size:14px;
+font-weight:600;
+color:rgba(255,255,255,0.55);
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:8px;
+cursor:pointer;
+transition:all 0.2s ease;
+white-space:nowrap;
+}
+.plugins-tab:hover{
+color:#fff;
+background:rgba(255,255,255,0.12);
+}
+.plugins-tab.active{
+color:#fff;
+background:rgba(58,123,253,0.35);
+border-color:rgba(58,123,253,0.6);
+}
+.plugins-list{
+overflow-y:auto;
+flex:1;
+min-height:0;
+padding-right:4px;
+scrollbar-width:thin;
+scrollbar-color:rgba(255,255,255,0.25) rgba(255,255,255,0.06);
+}
+.plugins-list::-webkit-scrollbar{
+width:8px;
+}
+.plugins-list::-webkit-scrollbar-track{
+background:rgba(255,255,255,0.06);
+border-radius:4px;
+}
+.plugins-list::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.22);
+border-radius:4px;
+}
+.plugins-list::-webkit-scrollbar-thumb:hover{
+background:rgba(255,255,255,0.38);
+}
+.modal-content{
+scrollbar-width:thin;
+scrollbar-color:rgba(255,255,255,0.25) rgba(255,255,255,0.06);
+}
+.modal-content::-webkit-scrollbar{
+width:8px;
+}
+.modal-content::-webkit-scrollbar-track{
+background:rgba(255,255,255,0.06);
+border-radius:4px;
+}
+.modal-content::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.22);
+border-radius:4px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover{
+background:rgba(255,255,255,0.38);
+}
+.plugin-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+padding:14px 16px;
+margin-bottom:10px;
+transition:border-color 0.2s ease;
+}
+.plugin-card:hover{
+border-color:rgba(255,255,255,0.22);
+}
+.plugin-card-header{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:12px;
+margin-bottom:8px;
+}
+.plugin-card-name{
+font-size:17px;
+font-weight:700;
+color:#fff;
+line-height:1.3;
+}
+.plugin-card-cat{
+font-size:12px;
+font-weight:600;
+color:rgba(255,255,255,0.5);
+background:rgba(255,255,255,0.08);
+padding:3px 8px;
+border-radius:6px;
+white-space:nowrap;
+flex-shrink:0;
+}
+.plugin-card-desc{
+font-size:14px;
+line-height:1.45;
+color:rgba(255,255,255,0.65);
+margin:0 0 12px;
+}
+.plugin-card-actions{
+display:flex;
+align-items:center;
+gap:10px;
+}
+.plugin-copy-btn{
+padding:8px 14px;
+font-size:13px;
+font-weight:600;
+color:#fff;
+background:linear-gradient(135deg,#3a7bfd,#2455d6);
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:transform 0.15s ease, box-shadow 0.15s ease;
+}
+.plugin-copy-btn:hover{
+transform:scale(1.03);
+}
+.plugin-copy-btn:active{
+transform:scale(0.97);
+}
+.plugin-copy-btn.copied-state{
+background:linear-gradient(135deg,#2ecc71,#27ae60);
+}
+.plugin-url-preview{
+font-size:12px;
+color:rgba(255,255,255,0.35);
+word-break:break-all;
+flex:1;
+min-width:0;
+}
+.plugins-loading,
+.plugins-error{
+text-align:center;
+padding:40px 20px;
+font-size:16px;
+color:rgba(255,255,255,0.5);
+}
+.plugins-error{
+color:#ff6b6b;
+}
+.plugins-empty{
+text-align:center;
+padding:30px 20px;
+font-size:15px;
+color:rgba(255,255,255,0.45);
+}
+
+@media (max-width:600px){
+h1{font-size:36px;}
+p{font-size:20px;}
+.path{font-size:20px;}
+.plugin-link{font-size:18px;padding:16px 24px;}
+.help-btn,.plugins-list-btn{font-size:18px;padding:14px 28px;}
+.lang-switcher{margin-bottom:26px;gap:2px;}
+.lang-btn{min-width:48px;padding:7px 10px;font-size:13px;}
+.plugins-modal-content{width:96%;padding:16px 12px 12px;max-height:90vh;}
+.plugins-modal-header h2{font-size:22px;}
+.plugin-card-name{font-size:15px;}
+.plugin-card-desc{font-size:13px;}
+}
 </style>
 </head>
 <body>
+<div class="container">
+<div class="card">
 <div class="lang-switcher">
 <button class="lang-btn active" data-lang="uk">UA</button>
 <button class="lang-btn" data-lang="ru">RU</button>
 <button class="lang-btn" data-lang="en">EN</button>
 </div>
-<div class="container">
-<div class="card">
 <h1 data-key="title">Multiplugin для Lampa</h1>
 <p data-key="instruction">Натисніть на посилання нижче, щоб скопіювати його.</p>
 <p data-key="path_instruction">Потім вставте його в:</p>
@@ -253,12 +467,9 @@ https://addonslmp.github.io/multiplugin.js
 <button class="help-btn" onclick="openHelp()" data-key="help_button">
 Як користуватися мультиплагіном?
 </button>
-<a href="https://addonslmp.github.io/sources/plugins_mp.json"
-target="_blank"
-class="plugins-list-btn"
-data-key="plugins_list_button">
-Список плагинов
-</a>
+<button class="plugins-list-btn" onclick="openPlugins()" data-key="plugins_list_button">
+Список плагінів
+</button>
 </div>
 <div class="github-footer">
 <a href="https://github.com/addonslmp/addonslmp.github.io"
@@ -271,6 +482,8 @@ GitHub
 </a>
 </div>
 </div>
+
+<!-- Help modal -->
 <div id="helpModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content">
@@ -304,133 +517,398 @@ GitHub
 </div>
 </div>
 </div>
+
+<!-- Plugins modal -->
+<div id="pluginsModal" class="modal">
+<div class="modal-inner">
+<div class="modal-content plugins-modal-content">
+<div class="plugins-modal-header">
+<h2 data-key="plugins_modal_title">Список плагінів</h2>
+<span class="close" onclick="closePlugins()">×</span>
+</div>
+<div id="pluginsUpdateDate" class="plugins-update-date"></div>
+<div id="pluginsTabs" class="plugins-tabs"></div>
+<div id="pluginsList" class="plugins-list">
+<div class="plugins-loading" data-key="plugins_loading">Завантаження…</div>
+</div>
+</div>
+</div>
+</div>
+
 <script>
-const pluginLink='https://addonslmp.github.io/multiplugin.js';
-const translations={
-uk:{
-title:"Multiplugin для Lampa",
-instruction:"Натисніть на посилання нижче, щоб скопіювати його.",
-path_instruction:"Потім вставте його в:",
-path:"Lampa → Розширення → Додати плагін",
-copy_button:"https://addonslmp.github.io/multiplugin.js",
-copied:"✔ Скопійовано",
-help_title:"Як користуватися мультиплагіном?",
-step1:"Установіть плагін в Lampa.",
-step1_sub:"У налаштуваннях з'явиться кнопка «Мультиплагін».",
-step2:"Відкрийте мультиплагін і натисніть «Синхронізація плагінів».",
-step2_cont:"Буде завантажено актуальний список доступних плагінів.",
-step3:"Відкрийте потрібну категорію та встановіть потрібні плагіни.",
-step4:"Плагіни встановлюються в розширення Lampa.",
-step4_cont:"Після встановлення вони працюють як звичайні плагіни.",
-alt_title:"Якщо потрібні тільки онлайн-плагіни",
-alt_cont:"Натисніть «Установити тільки онлайн», і всі онлайн-плагіни будуть автоматично встановлені в розширення Lampa.",
-help_button:"Як користуватися мультиплагіном?",
-plugins_list_button:"Список плагінів"
+const pluginLink = 'https://addonslmp.github.io/multiplugin.js';
+const pluginsJsonUrl = 'https://addonslmp.github.io/sources/plugins_mp.json';
+
+const translations = {
+uk: {
+title: "Multiplugin для Lampa",
+instruction: "Натисніть на посилання нижче, щоб скопіювати його.",
+path_instruction: "Потім вставте його в:",
+path: "Lampa → Розширення → Додати плагін",
+copy_button: "https://addonslmp.github.io/multiplugin.js",
+copied: "✔ Скопійовано",
+help_title: "Як користуватися мультиплагіном?",
+step1: "Установіть плагін в Lampa.",
+step1_sub: "У налаштуваннях з'явиться кнопка «Мультиплагін».",
+step2: "Відкрийте мультиплагін і натисніть «Синхронізація плагінів».",
+step2_cont: "Буде завантажено актуальний список доступних плагінів.",
+step3: "Відкрийте потрібну категорію та встановіть потрібні плагіни.",
+step4: "Плагіни встановлюються в розширення Lampa.",
+step4_cont: "Після встановлення вони працюють як звичайні плагіни.",
+alt_title: "Якщо потрібні тільки онлайн-плагіни",
+alt_cont: "Натисніть «Установити тільки онлайн», і всі онлайн-плагіни будуть автоматично встановлені в розширення Lampa.",
+help_button: "Як користуватися мультиплагіном?",
+plugins_list_button: "Список плагінів",
+plugins_modal_title: "Список плагінів",
+plugins_loading: "Завантаження…",
+plugins_error: "Не вдалося завантажити список плагінів.",
+plugins_empty: "У цій категорії немає плагінів.",
+plugins_all: "Усі",
+plugins_copy: "Скопіювати",
+plugins_copied: "Скопійовано",
+plugins_updated: "Оновлено:"
 },
-ru:{
-title:"Мультиплагин для Lampa",
-instruction:"Нажмите на ссылку ниже, чтобы скопировать её.",
-path_instruction:"Затем вставьте её в:",
-path:"Lampa → Расширения → Добавить плагин",
-copy_button:"https://addonslmp.github.io/multiplugin.js",
-copied:"✔ Скопировано",
-help_title:"Как пользоваться мультиплагином?",
-step1:"Установите плагин в Lampa.",
-step1_sub:"В настройках появится кнопка «Мультиплагин».",
-step2:"Откройте мультиплагин и нажмите «Синхронизация плагинов».",
-step2_cont:"Будет загружен актуальный список доступных плагинов.",
-step3:"Откройте нужную категорию и установите необходимые плагины.",
-step4:"Плагины устанавливаются в расширения Lampa.",
-step4_cont:"После установки они работают как обычные плагины.",
-alt_title:"Если нужны только онлайн-плагины",
-alt_cont:"Нажмите «Установить только онлайн», и все онлайн-плагины будут автоматически установлены в расширения Lampa.",
-help_button:"Как пользоваться мультиплагином?",
-plugins_list_button:"Список плагинов"
+ru: {
+title: "Мультиплагин для Lampa",
+instruction: "Нажмите на ссылку ниже, чтобы скопировать её.",
+path_instruction: "Затем вставьте её в:",
+path: "Lampa → Расширения → Добавить плагин",
+copy_button: "https://addonslmp.github.io/multiplugin.js",
+copied: "✔ Скопировано",
+help_title: "Как пользоваться мультиплагином?",
+step1: "Установите плагин в Lampa.",
+step1_sub: "В настройках появится кнопка «Мультиплагин».",
+step2: "Откройте мультиплагин и нажмите «Синхронизация плагинов».",
+step2_cont: "Будет загружен актуальный список доступных плагинов.",
+step3: "Откройте нужную категорию и установите необходимые плагины.",
+step4: "Плагины устанавливаются в расширения Lampa.",
+step4_cont: "После установки они работают как обычные плагины.",
+alt_title: "Если нужны только онлайн-плагины",
+alt_cont: "Нажмите «Установить только онлайн», и все онлайн-плагины будут автоматически установлены в расширения Lampa.",
+help_button: "Как пользоваться мультиплагином?",
+plugins_list_button: "Список плагинов",
+plugins_modal_title: "Список плагинов",
+plugins_loading: "Загрузка…",
+plugins_error: "Не удалось загрузить список плагинов.",
+plugins_empty: "В этой категории нет плагинов.",
+plugins_all: "Все",
+plugins_copy: "Скопировать",
+plugins_copied: "Скопировано",
+plugins_updated: "Обновлено:"
 },
-en:{
-title:"Multiplugin for Lampa",
-instruction:"Click the link below to copy it.",
-path_instruction:"Then paste it into:",
-path:"Lampa → Extensions → Add plugin",
-copy_button:"https://addonslmp.github.io/multiplugin.js",
-copied:"✔ Copied",
-help_title:"How to use Multiplugin?",
-step1:"Install the plugin in Lampa.",
-step1_sub:"A «Multiplugin» button will appear in the settings.",
-step2:"Open Multiplugin and click «Sync plugins».",
-step2_cont:"The latest list of available plugins will be loaded.",
-step3:"Open the desired category and install the plugins you need.",
-step4:"Plugins are installed into Lampa Extensions.",
-step4_cont:"After installation they work as regular plugins.",
-alt_title:"If you only need online plugins",
-alt_cont:"Click «Install only online», and all online plugins will be automatically installed into Lampa Extensions.",
-help_button:"How to use Multiplugin?",
-plugins_list_button:"Plugins list"
+en: {
+title: "Multiplugin for Lampa",
+instruction: "Click the link below to copy it.",
+path_instruction: "Then paste it into:",
+path: "Lampa → Extensions → Add plugin",
+copy_button: "https://addonslmp.github.io/multiplugin.js",
+copied: "✔ Copied",
+help_title: "How to use Multiplugin?",
+step1: "Install the plugin in Lampa.",
+step1_sub: "A «Multiplugin» button will appear in the settings.",
+step2: "Open Multiplugin and click «Sync plugins».",
+step2_cont: "The latest list of available plugins will be loaded.",
+step3: "Open the desired category and install the plugins you need.",
+step4: "Plugins are installed into Lampa Extensions.",
+step4_cont: "After installation they work as regular plugins.",
+alt_title: "If you only need online plugins",
+alt_cont: "Click «Install only online», and all online plugins will be automatically installed into Lampa Extensions.",
+help_button: "How to use Multiplugin?",
+plugins_list_button: "Plugins list",
+plugins_modal_title: "Plugins list",
+plugins_loading: "Loading…",
+plugins_error: "Failed to load plugins list.",
+plugins_empty: "No plugins in this category.",
+plugins_all: "All",
+plugins_copy: "Copy",
+plugins_copied: "Copied",
+plugins_updated: "Updated:"
 }
 };
-let currentLang='uk';
-function setLanguage(lang){
-    currentLang = lang;
-    localStorage.setItem('selectedLang', lang);
-    document.querySelectorAll('[data-key]').forEach(el=>{
-        const key=el.getAttribute('data-key');
-        if(translations[lang][key]){
-            el.textContent=translations[lang][key];
-        }
-    });
-    document.querySelectorAll('.lang-btn').forEach(btn=>{
-        btn.classList.toggle(
-            'active',
-            btn.getAttribute('data-lang')===lang
-        );
-    });
+
+let currentLang = 'uk';
+let pluginsData = null;
+let activeCategoryKey = '__all__';
+let pluginsLoaded = false;
+
+function t(key) {
+  return (translations[currentLang] && translations[currentLang][key]) || key;
 }
-document.querySelectorAll('.lang-btn').forEach(btn=>{
-btn.addEventListener('click',()=>{
-setLanguage(btn.getAttribute('data-lang'));
+
+function pickLocalized(obj, lang) {
+  if (!obj || typeof obj !== 'object') return '';
+
+  const priority = [lang, 'uk', 'en', 'ru'];
+
+  for (const key of priority) {
+    if (obj[key]) return obj[key];
+  }
+
+  const keys = Object.keys(obj);
+  return keys.length ? obj[keys[0]] : '';
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('selectedLang', lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  if (pluginsData && document.getElementById('pluginsModal').style.display === 'block') {
+    renderPluginsUI();
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    setLanguage(btn.getAttribute('data-lang'));
+  });
 });
-});
-function copyLink(){
-navigator.clipboard.writeText(pluginLink).then(()=>{
-const copied=document.getElementById('copied');
-copied.textContent=translations[currentLang].copied;
-copied.classList.add('show');
-setTimeout(()=>copied.classList.remove('show'),2000);
-});
+
+function copyLink() {
+  navigator.clipboard.writeText(pluginLink).then(() => {
+    const copied = document.getElementById('copied');
+    copied.textContent = t('copied');
+    copied.classList.add('show');
+    setTimeout(() => copied.classList.remove('show'), 2000);
+  });
 }
-function openHelp(){
-document.body.classList.add('no-scroll');
-const modal=document.getElementById('helpModal');
-modal.style.display='block';
-setTimeout(()=>modal.classList.add('show'),10);
+
+function openHelp() {
+  document.body.classList.add('no-scroll');
+  const modal = document.getElementById('helpModal');
+  modal.style.display = 'block';
+  setTimeout(() => modal.classList.add('show'), 10);
 }
-function closeHelp(){
-const modal=document.getElementById('helpModal');
-modal.classList.remove('show');
-document.body.classList.remove('no-scroll');
-setTimeout(()=>modal.style.display='none',300);
+
+function closeHelp() {
+  const modal = document.getElementById('helpModal');
+  modal.classList.remove('show');
+  document.body.classList.remove('no-scroll');
+  setTimeout(() => { modal.style.display = 'none'; }, 300);
 }
-document.addEventListener('click',function(event){
-const modal=document.getElementById('helpModal');
-if(modal.style.display==='block'){
-if(!event.target.closest('.modal-content')&&!event.target.closest('.help-btn')){
-closeHelp();
+
+function openPlugins() {
+  document.body.classList.add('no-scroll');
+  const modal = document.getElementById('pluginsModal');
+  modal.style.display = 'block';
+  setTimeout(() => modal.classList.add('show'), 10);
+
+  if (!pluginsLoaded) {
+    loadPlugins();
+  } else {
+    renderPluginsUI();
+  }
 }
+
+function closePlugins() {
+  const modal = document.getElementById('pluginsModal');
+  modal.classList.remove('show');
+  document.body.classList.remove('no-scroll');
+  setTimeout(() => { modal.style.display = 'none'; }, 300);
 }
-});
-function detectLanguage(){
-    const saved = localStorage.getItem('selectedLang');
-    if(saved && translations[saved]) return saved;
-    const browserLang=(navigator.language||navigator.userLanguage)
-        .substring(0,2)
-        .toLowerCase();
-    const langMap={
-        uk:'uk',
-        ru:'ru',
-        en:'en'
+
+async function loadPlugins() {
+  const listEl = document.getElementById('pluginsList');
+  listEl.innerHTML = `<div class="plugins-loading">${t('plugins_loading')}</div>`;
+  document.getElementById('pluginsTabs').innerHTML = '';
+  document.getElementById('pluginsUpdateDate').textContent = '';
+
+  try {
+    const res = await fetch(pluginsJsonUrl + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    pluginsData = await res.json();
+    pluginsLoaded = true;
+    activeCategoryKey = '__all__';
+    renderPluginsUI();
+  } catch (e) {
+    listEl.innerHTML = `<div class="plugins-error">${t('plugins_error')}</div>`;
+    console.error(e);
+  }
+}
+
+function getCategoryKey(plugin) {
+  const cat = plugin.category || {};
+  return cat.en || cat.uk || cat.ru || 'Misc';
+}
+
+function getCategories() {
+  if (!pluginsData || !pluginsData.plugins) return [];
+  const map = new Map();
+  pluginsData.plugins.forEach(p => {
+    const key = getCategoryKey(p);
+    if (!map.has(key)) {
+      map.set(key, {
+        key,
+        labels: {
+          uk: (p.category && p.category.uk) || key,
+          ru: (p.category && p.category.ru) || key,
+          en: (p.category && p.category.en) || key
+        },
+        count: 0
+      });
+    }
+    map.get(key).count++;
+  });
+  return Array.from(map.values()).sort((a, b) => {
+    if (b.count !== a.count) return b.count - a.count;
+    return a.labels.en.localeCompare(b.labels.en);
+  });
+}
+
+function renderPluginsUI() {
+  if (!pluginsData) return;
+
+  const dateEl = document.getElementById('pluginsUpdateDate');
+  if (pluginsData.updateDate) {
+    dateEl.textContent = t('plugins_updated') + ' ' + pluginsData.updateDate;
+  } else {
+    dateEl.textContent = '';
+  }
+
+  const categories = getCategories();
+  const tabsEl = document.getElementById('pluginsTabs');
+  tabsEl.innerHTML = '';
+
+  // "All" tab
+  const allTab = document.createElement('button');
+  allTab.className = 'plugins-tab' + (activeCategoryKey === '__all__' ? ' active' : '');
+  allTab.textContent = t('plugins_all') + ' (' + pluginsData.plugins.length + ')';
+  allTab.onclick = () => {
+    activeCategoryKey = '__all__';
+    renderPluginsUI();
+  };
+  tabsEl.appendChild(allTab);
+
+  categories.forEach(cat => {
+    const tab = document.createElement('button');
+    tab.className = 'plugins-tab' + (activeCategoryKey === cat.key ? ' active' : '');
+    const label = cat.labels[currentLang] || cat.labels.en || cat.key;
+    tab.textContent = label + ' (' + cat.count + ')';
+    tab.onclick = () => {
+      activeCategoryKey = cat.key;
+      renderPluginsUI();
     };
-    return langMap[browserLang] || 'uk';
+    tabsEl.appendChild(tab);
+  });
+
+  renderPluginCards();
 }
+
+function renderPluginCards() {
+  const listEl = document.getElementById('pluginsList');
+  if (!pluginsData || !pluginsData.plugins) {
+    listEl.innerHTML = `<div class="plugins-empty">${t('plugins_empty')}</div>`;
+    return;
+  }
+
+  let plugins = pluginsData.plugins;
+  if (activeCategoryKey !== '__all__') {
+    plugins = plugins.filter(p => getCategoryKey(p) === activeCategoryKey);
+  }
+
+  if (!plugins.length) {
+    listEl.innerHTML = `<div class="plugins-empty">${t('plugins_empty')}</div>`;
+    return;
+  }
+
+  listEl.innerHTML = '';
+  plugins.forEach(plugin => {
+    const name = pickLocalized(plugin.name, currentLang) || '—';
+    const desc = pickLocalized(plugin.description, currentLang) || '';
+    const catLabel = pickLocalized(plugin.category, currentLang) || '';
+    const url = plugin.url || '';
+
+    const card = document.createElement('div');
+    card.className = 'plugin-card';
+
+    const header = document.createElement('div');
+    header.className = 'plugin-card-header';
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'plugin-card-name';
+    nameEl.textContent = name;
+
+    const catEl = document.createElement('div');
+    catEl.className = 'plugin-card-cat';
+    catEl.textContent = catLabel;
+
+    header.appendChild(nameEl);
+    if (catLabel) header.appendChild(catEl);
+
+    const descEl = document.createElement('p');
+    descEl.className = 'plugin-card-desc';
+    descEl.innerHTML = desc.replace(/<br\s*\/?>/gi, '<br>');
+
+    const actions = document.createElement('div');
+    actions.className = 'plugin-card-actions';
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'plugin-copy-btn';
+    copyBtn.textContent = t('plugins_copy');
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText(url).then(() => {
+        copyBtn.textContent = t('plugins_copied');
+        copyBtn.classList.add('copied-state');
+        setTimeout(() => {
+          copyBtn.textContent = t('plugins_copy');
+          copyBtn.classList.remove('copied-state');
+        }, 1800);
+      });
+    };
+
+    const urlPreview = document.createElement('div');
+    urlPreview.className = 'plugin-url-preview';
+    urlPreview.textContent = url;
+
+    actions.appendChild(copyBtn);
+    actions.appendChild(urlPreview);
+
+    card.appendChild(header);
+    if (desc) card.appendChild(descEl);
+    card.appendChild(actions);
+
+    listEl.appendChild(card);
+  });
+}
+
+document.addEventListener('click', function(event) {
+  if (!event.target || !document.body.contains(event.target)) return;
+
+  const helpModal = document.getElementById('helpModal');
+  if (helpModal.style.display === 'block') {
+    if (!event.target.closest('.modal-content') && !event.target.closest('.help-btn')) {
+      closeHelp();
+    }
+  }
+  const pluginsModal = document.getElementById('pluginsModal');
+  if (pluginsModal.style.display === 'block') {
+    if (!event.target.closest('.modal-content') && !event.target.closest('.plugins-list-btn')) {
+      closePlugins();
+    }
+  }
+});
+
+function detectLanguage() {
+  const saved = localStorage.getItem('selectedLang');
+  if (saved && translations[saved]) return saved;
+  const browserLang = (navigator.language || navigator.userLanguage || 'en')
+    .substring(0, 2)
+    .toLowerCase();
+  const langMap = { uk: 'uk', ru: 'ru', en: 'en' };
+  return langMap[browserLang] || 'uk';
+}
+
 setLanguage(detectLanguage());
 </script>
 </body>
