@@ -272,33 +272,58 @@ color:rgba(255,255,255,0.45);
 margin-bottom:14px;
 flex-shrink:0;
 }
-.plugins-tabs{
+.plugins-category-bar{
 display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:16px;
+align-items:center;
+gap:12px;
+margin-bottom:14px;
 flex-shrink:0;
 }
-.plugins-tab{
-padding:8px 14px;
+.plugins-category-label{
 font-size:14px;
 font-weight:600;
-color:rgba(255,255,255,0.55);
-background:rgba(255,255,255,0.06);
-border:1px solid rgba(255,255,255,0.12);
-border-radius:8px;
-cursor:pointer;
-transition:all 0.2s ease;
+color:rgba(255,255,255,0.45);
 white-space:nowrap;
+flex-shrink:0;
 }
-.plugins-tab:hover{
-color:#fff;
-background:rgba(255,255,255,0.12);
+.plugins-category-select{
+flex:1;
+min-width:0;
+appearance:none;
+-webkit-appearance:none;
+padding:10px 40px 10px 14px;
+font-size:14px;
+font-weight:600;
+font-family:inherit;
+color:rgba(255,255,255,0.82);
+background-color:rgba(255,255,255,0.05);
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' fill-opacity='0.4' d='M1.4 0.6L6 5.2 10.6 0.6 12 2 6 8 0 2z'/%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-position:right 14px center;
+border:1px solid rgba(255,255,255,0.12);
+border-radius:10px;
+cursor:pointer;
+outline:none;
+box-shadow:none;
+transition:border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
-.plugins-tab.active{
+.plugins-category-select:hover{
 color:#fff;
-background:rgba(58,123,253,0.35);
-border-color:rgba(58,123,253,0.6);
+background-color:rgba(255,255,255,0.08);
+border-color:rgba(255,255,255,0.2);
+}
+.plugins-category-select:focus,
+.plugins-category-select:focus-visible,
+.plugins-category-select:active{
+color:#fff;
+background-color:rgba(255,255,255,0.08);
+border-color:rgba(255,255,255,0.22);
+outline:none;
+box-shadow:none;
+}
+.plugins-category-select option{
+background:#252525;
+color:rgba(255,255,255,0.9);
 }
 .plugins-list{
 overflow-y:auto;
@@ -439,6 +464,8 @@ p{font-size:20px;}
 .lang-btn{min-width:48px;padding:7px 10px;font-size:13px;}
 .plugins-modal-content{width:96%;padding:16px 12px 12px;max-height:90vh;}
 .plugins-modal-header h2{font-size:22px;}
+.plugins-category-label{font-size:13px;}
+.plugins-category-select{padding:9px 36px 9px 12px;font-size:13px;}
 .plugin-card-name{font-size:15px;}
 .plugin-card-desc{font-size:13px;}
 }
@@ -527,7 +554,10 @@ GitHub
 <span class="close" onclick="closePlugins()">×</span>
 </div>
 <div id="pluginsUpdateDate" class="plugins-update-date"></div>
-<div id="pluginsTabs" class="plugins-tabs"></div>
+<div class="plugins-category-bar">
+<span class="plugins-category-label" data-key="plugins_category_label">Категорія</span>
+<select id="pluginsCategorySelect" class="plugins-category-select" aria-label="Category"></select>
+</div>
 <div id="pluginsList" class="plugins-list">
 <div class="plugins-loading" data-key="plugins_loading">Завантаження…</div>
 </div>
@@ -564,6 +594,7 @@ plugins_loading: "Завантаження…",
 plugins_error: "Не вдалося завантажити список плагінів.",
 plugins_empty: "У цій категорії немає плагінів.",
 plugins_all: "Усі",
+plugins_category_label: "Категорія",
 plugins_copy: "Скопіювати",
 plugins_copied: "Скопійовано",
 plugins_updated: "Оновлено:"
@@ -592,6 +623,7 @@ plugins_loading: "Загрузка…",
 plugins_error: "Не удалось загрузить список плагинов.",
 plugins_empty: "В этой категории нет плагинов.",
 plugins_all: "Все",
+plugins_category_label: "Категория",
 plugins_copy: "Скопировать",
 plugins_copied: "Скопировано",
 plugins_updated: "Обновлено:"
@@ -620,6 +652,7 @@ plugins_loading: "Loading…",
 plugins_error: "Failed to load plugins list.",
 plugins_empty: "No plugins in this category.",
 plugins_all: "All",
+plugins_category_label: "Category",
 plugins_copy: "Copy",
 plugins_copied: "Copied",
 plugins_updated: "Updated:"
@@ -721,7 +754,8 @@ function closePlugins() {
 async function loadPlugins() {
   const listEl = document.getElementById('pluginsList');
   listEl.innerHTML = `<div class="plugins-loading">${t('plugins_loading')}</div>`;
-  document.getElementById('pluginsTabs').innerHTML = '';
+  const selectEl = document.getElementById('pluginsCategorySelect');
+  if (selectEl) selectEl.innerHTML = '';
   document.getElementById('pluginsUpdateDate').textContent = '';
 
   try {
@@ -777,30 +811,36 @@ function renderPluginsUI() {
   }
 
   const categories = getCategories();
-  const tabsEl = document.getElementById('pluginsTabs');
-  tabsEl.innerHTML = '';
+  const selectEl = document.getElementById('pluginsCategorySelect');
+  const prevValue = activeCategoryKey;
 
-  // "All" tab
-  const allTab = document.createElement('button');
-  allTab.className = 'plugins-tab' + (activeCategoryKey === '__all__' ? ' active' : '');
-  allTab.textContent = t('plugins_all') + ' (' + pluginsData.plugins.length + ')';
-  allTab.onclick = () => {
-    activeCategoryKey = '__all__';
-    renderPluginsUI();
-  };
-  tabsEl.appendChild(allTab);
+  selectEl.innerHTML = '';
+
+  const allOpt = document.createElement('option');
+  allOpt.value = '__all__';
+  allOpt.textContent = t('plugins_all') + ' (' + pluginsData.plugins.length + ')';
+  selectEl.appendChild(allOpt);
 
   categories.forEach(cat => {
-    const tab = document.createElement('button');
-    tab.className = 'plugins-tab' + (activeCategoryKey === cat.key ? ' active' : '');
+    const opt = document.createElement('option');
+    opt.value = cat.key;
     const label = cat.labels[currentLang] || cat.labels.en || cat.key;
-    tab.textContent = label + ' (' + cat.count + ')';
-    tab.onclick = () => {
-      activeCategoryKey = cat.key;
-      renderPluginsUI();
-    };
-    tabsEl.appendChild(tab);
+    opt.textContent = label + ' (' + cat.count + ')';
+    selectEl.appendChild(opt);
   });
+
+  // Restore selection if category still exists
+  const hasPrev = Array.from(selectEl.options).some(o => o.value === prevValue);
+  activeCategoryKey = hasPrev ? prevValue : '__all__';
+  selectEl.value = activeCategoryKey;
+
+  if (!selectEl._changeBound) {
+    selectEl.addEventListener('change', () => {
+      activeCategoryKey = selectEl.value;
+      renderPluginCards();
+    });
+    selectEl._changeBound = true;
+  }
 
   renderPluginCards();
 }
