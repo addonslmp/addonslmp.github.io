@@ -510,7 +510,6 @@ GitHub
 </div>
 </div>
 
-<!-- Help modal -->
 <div id="helpModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content">
@@ -545,7 +544,6 @@ GitHub
 </div>
 </div>
 
-<!-- Plugins modal -->
 <div id="pluginsModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content plugins-modal-content">
@@ -829,7 +827,6 @@ function renderPluginsUI() {
     selectEl.appendChild(opt);
   });
 
-  // Restore selection if category still exists
   const hasPrev = Array.from(selectEl.options).some(o => o.value === prevValue);
   activeCategoryKey = hasPrev ? prevValue : '__all__';
   selectEl.value = activeCategoryKey;
