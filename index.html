@@ -220,31 +220,36 @@ text-align:center;
 .github-btn{
 display:inline-flex;
 align-items:center;
-gap:12px;
-padding:14px 28px;
-font-size:22px;
-color:rgba(255,255,255,0.5);
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.12);
+gap:10px;
+padding:12px 22px;
+font-size:16px;
+font-weight:600;
+color:rgba(255,255,255,0.45);
+background:rgba(255,255,255,0.045);
+border:1px solid rgba(255,255,255,0.1);
 border-radius:12px;
 text-decoration:none;
-transition:all 0.25s ease;
-backdrop-filter:blur(8px);
+transition:color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+backdrop-filter:blur(10px);
+box-shadow:0 2px 8px rgba(0,0,0,0.18);
 }
 .github-btn:hover{
-color:rgba(255,255,255,0.9);
-background:rgba(255,255,255,0.1);
-border-color:rgba(255,255,255,0.25);
-transform:translateY(-2px);
-box-shadow:0 8px 25px rgba(0,0,0,0.4);
+color:rgba(255,255,255,0.85);
+background:rgba(255,255,255,0.08);
+border-color:rgba(255,255,255,0.18);
+box-shadow:0 3px 10px rgba(0,0,0,0.22);
+}
+.github-btn:active{
+box-shadow:0 1px 6px rgba(0,0,0,0.16);
 }
 .github-icon{
-width:28px;
-height:28px;
-opacity:0.6;
+width:20px;
+height:20px;
+opacity:0.55;
+transition:opacity 0.2s ease;
 }
 .github-btn:hover .github-icon{
-opacity:0.9;
+opacity:0.85;
 }
 
 .plugins-modal-content{
