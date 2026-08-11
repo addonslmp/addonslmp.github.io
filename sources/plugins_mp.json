@@ -1,5 +1,5 @@
 {
-  "updateDate": "07.07.2026",
+  "updateDate": "11.08.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -15,12 +15,22 @@
       "name": { "en": "TraktTV" },
       "url": "https://lampame.github.io/main/trakttv.js",
       "description": {
-        "ru": "Интеграция аккаунта Trakt.tv в Lampa: списки, прогресс, календарь сериалов",
-        "uk": "Інтеграція акаунту Trakt.tv у Lampa: списки, прогрес, календар серіалів",
-        "en": "Trakt.tv account integration in Lampa: lists, progress, TV calendar"
+        "ru": "Интеграция аккаунта Trakt.tv в Lampa: списки, прогресс, календарь сериалов.",
+        "uk": "Інтеграція акаунту Trakt.tv у Lampa: списки, прогрес, календар серіалів.",
+        "en": "Trakt.tv account integration in Lampa: lists, progress, TV calendar."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-    },
+   },
+   {
+      "name": { "ru": "LParty - Совместный просмотр", "uk": "LParty - Спільний перегляд", "en": "LParty - Watch Together" },
+      "url": "https://nrsua.github.io/lampa-nrs/lparty.js",
+      "description": {
+        "ru": "Плагин для Lampa. Позволяет смотреть одно и то же одновременно с друзьями на разных устройствах.",
+        "uk": "Плагін для Lampa. Дозволяє дивитися одне й те саме синхронно з друзями на різних пристроях.",
+        "en": "A plugin for Lampa. It lets you watch the same content simultaneously with friends on different devices."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+   },    
    {
       "name": { "en": "Jellyfin" },
       "url": "https://lampaplugins.github.io/store/pavelpikta/jellyfin.js",
