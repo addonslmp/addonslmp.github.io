@@ -1,5 +1,5 @@
 {
-  "updateDate": "11.08.2026",
+  "updateDate": "16.08.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -1019,16 +1019,6 @@
       "description": {
         "uk": "Український контент-провайдер КіноБаза: каталог, пошук, картки, рейтинги, трейлери, релізи, колекції.",
         "en": "Ukrainian content provider KinoBaza: catalog, search, movie profiles, ratings, trailers, releases, collections."
-      },
-      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
-    },  
-    {
-      "name": { "en": "GramLink" },
-      "url": "https://lampame.github.io/main/GramLink/GramLink.js",
-      "description": {
-        "ru": "Синхронизация закладок, таймкодов и плагинов между устройствами через Telegram.",
-        "uk": "Синхронізація закладок, таймкодів і плагінів між пристроями через Telegram.",
-        "en": "Sync bookmarks, watch progress, and plugins across devices via Telegram."
       },
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },    
