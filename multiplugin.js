@@ -74,16 +74,6 @@
             uk: "... і ще ",
             en: "... and ",
         },
-        mp_donate: {
-            ru: "Поддержать разработчика",
-            uk: "Підтримати розробника",
-            en: "Support development",
-        },
-        mp_donate_text: {
-            ru: "Если вам нравится Мультиплагин, вы можете поддержать разработчика. Спасибо за использование!",
-            uk: "Якщо вам подобається Мультиплагін, ви можете підтримати розробника. Дякую за використання!",
-            en: "If you like Multiplugin, you can support development. Thank you for using it!",
-        },
     });
 
 
@@ -144,7 +134,7 @@
             removed: removed || []
         };
         Lampa.Storage.set(INFO_KEY, info, true);
-        Lampa.Storage.set(UPDATE_SEEN_KEY, false); 
+        Lampa.Storage.set(UPDATE_SEEN_KEY, false);
     }
 
 
@@ -155,7 +145,7 @@
 
     function showInfo() {
         var info = getUpdateInfo();
-        Lampa.Storage.set(UPDATE_SEEN_KEY, true); 
+        Lampa.Storage.set(UPDATE_SEEN_KEY, true);
 
 
         var html = '<div class="about" style="text-align:left">';
@@ -542,42 +532,6 @@
     }
 
 
-    function showDonate() {
-        var prev = null;
-        try {
-            prev = Lampa.Controller.enabled().name;
-        } catch (e) {}
-
-
-        var html =
-            "" +
-            '<div class="about" style="text-align:center;">' +
-            '<img src="https://dl.dropboxusercontent.com/scl/fi/hrlz4panydhw35zn1sftr/2eaef908-65e0-498e-b93f-53fa76d2f146.png?rlkey=j4rqae8a02w97ytpuez5xxe6f&st=lp4kib72" style="width:280px; height:280px; margin:15px auto; display:block;">' +
-            '<div style="margin-top:10px;">' +
-            '<a href="https://addonslmp.donatik.me" target="_blank" ' +
-            'style="color:#4FC3F7; font-size:1.1em; text-decoration:underline;">' +
-            "https://addonslmp.donatik.me" +
-            "</a>" +
-            "</div>" +
-            '<div style="margin-top:10px; font-size:1em; color:#ccc;">' +
-            Lampa.Lang.translate("mp_donate_text") +
-            "</div>" +
-            "</div>";
-
-
-        Lampa.Modal.open({
-            title: Lampa.Lang.translate("mp_donate"),
-            align: "center",
-            size: "medium",
-            html: $(html),
-            onBack: function () {
-                Lampa.Modal.close();
-                if (prev) Lampa.Controller.toggle(prev);
-            },
-        });
-    }
-
-
     function registerSettings() {
         Lampa.SettingsApi.addComponent({
             component: "multi_plugin",
@@ -669,14 +623,6 @@
                     ],
                 });
             },
-        });
-
-
-        Lampa.SettingsApi.addParam({
-            component: "multi_plugin",
-            param: { type: "button" },
-            field: { name: Lampa.Lang.translate("mp_donate") },
-            onChange: showDonate,
         });
     }
 
