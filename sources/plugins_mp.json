@@ -363,15 +363,15 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     }, 
     {
-      "name": { "en": "Nova Skin" },
-      "url": "https://amikdn.github.io/nova_skin.js",
-      "description": {
-        "ru": "Обновленный интерфейс в онлайн источниках.",
-        "uk": "Оновлений інтерфейс в онлайн-джерелах.",
-        "en": "A new interface in online sources."
-      },
-      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },    
+      "name": { "en": "Nova Skin" },
+      "url": "https://amikdn.github.io/nova_skin.js",
+      "description": {
+        "ru": "Обновленный интерфейс в онлайн источниках.",
+        "uk": "Оновлений інтерфейс в онлайн-джерелах.",
+        "en": "A new interface in online sources."
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },   
     {
       "name": { "en": "Logo Title" },
       "url": "https://crowley38.github.io/NewLogo.js",
