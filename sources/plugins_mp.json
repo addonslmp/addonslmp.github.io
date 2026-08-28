@@ -730,6 +730,7 @@
     },
     {
       "name": { "en": "GPBX Online (GMTLOP)" },
+      "author": "@gpbx",
       "url": "https://gpbx.me/w",
       "description": {
         "uk": "Онлайн GPBX.",
@@ -739,6 +740,7 @@
     },      
     {
       "name": { "en": "Z01 Online" },
+      "author": "@z01",
       "url": "http://z01.online/live",
       "description": {
         "uk": "Z01 Онлайн",
@@ -748,6 +750,7 @@
     },		
     {
       "name": { "en": "Showy Online" },
+      "author": "@Showy",
       "url": "http://showwwy.com/m.js",
       "description": {
         "uk": "ТГ Бот: @showybot",
@@ -796,6 +799,7 @@
     },
     {
       "name": { "en": "Online wtch.ch" },
+      "author": "@Showy",
       "url": "http://wtch.ch/m",
       "description": {
         "uk": "Онлайн. Filmix 720p",
