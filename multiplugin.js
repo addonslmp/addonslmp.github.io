@@ -74,6 +74,11 @@
             uk: "... і ще ",
             en: "... and ",
         },
+        mp_author: {
+            ru: "Автор:",
+            uk: "Автор:",
+            en: "Author:",
+        },
     });
 
 
@@ -355,6 +360,7 @@
                         name: item.name,
                         description: item.description,
                         category: item.category,
+                        author: item.author,
                     });
                 }
                 savePluginList(newList);
@@ -373,6 +379,7 @@
                             Lampa.Plugins.add({
                                 url: p.url,
                                 name: translateObj(p.name) || p.url.split("/").pop(),
+                                author: p.author || "",
                                 status: 1,
                                 source: SOURCE_KEY,
                             });
@@ -422,6 +429,7 @@
                         name: item.name,
                         description: item.description,
                         category: item.category,
+                        author: item.author,
                     });
                 }
 
@@ -488,6 +496,7 @@
                         name: remotePlugins[i].name,
                         description: remotePlugins[i].description,
                         category: remotePlugins[i].category,
+                        author: remotePlugins[i].author,
                     });
                 }
 
@@ -716,14 +725,21 @@
         for (i = 0; i < plugins.length; i++) {
             var p = plugins[i];
             var installed = isInstalled(p.url);
-            var title = installed
-                ? '<span style="color:' +
-                  INSTALLED_COLOR +
-                  '">' +
-                  (translateObj(p.name) || p.url.split("/").pop()) +
-                  "</span>"
-                : translateObj(p.name) || p.url.split("/").pop();
+            var name = translateObj(p.name) || p.url.split("/").pop();
 
+            var nameHtml = installed
+                ? '<span style="color:' + INSTALLED_COLOR + '">' + name + "</span>"
+                : name;
+
+            var title = nameHtml;
+
+            if (p.author) {
+                title +=
+                    "<br><font color='#aaaaaa'>" +
+                    Lampa.Lang.translate("mp_author") +
+                    "</font> " +
+                    p.author;
+            }
 
             items.push({
                 title: title,
@@ -803,6 +819,7 @@
         Lampa.Plugins.add({
             url: url,
             name: translateObj(p.name) || url.split("/").pop(),
+            author: p.author || "",
             status: 1,
             source: SOURCE_KEY,
         });
