@@ -696,6 +696,7 @@
     },   
     {
       "name": { "en": "AIpac Online Beta" },
+      "author": "@Alcopac",
       "url": "https://beta.l-vid.online/online.js",
       "description": {
         "ru": "Онлайн AIpac. Для просмотра онлайна необходимо авторизоваться в ТГ-боте: @go_lampa_testbot",
