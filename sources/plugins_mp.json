@@ -3,6 +3,7 @@
   "plugins": [
     {
       "name": { "en": "MyShows" },
+      "author": "@igorek1986",
       "url": "https://igorek1986.github.io/lampa-plugins/myshows.js",
       "description": {
         "ru": "Плагин для синхронизации сервиса MyShows с Lampa",
@@ -13,6 +14,7 @@
     },
     {
       "name": { "en": "TraktTV" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/trakttv.js",
       "description": {
         "ru": "Интеграция аккаунта Trakt.tv в Lampa: списки, прогресс, календарь сериалов.",
@@ -23,6 +25,7 @@
    },
    {
       "name": { "ru": "LParty - Совместный просмотр", "uk": "LParty - Спільний перегляд", "en": "LParty - Watch Together" },
+      "author": "@nrsua,@levende",
       "url": "https://nrsua.github.io/lampa-nrs/lparty.js",
       "description": {
         "ru": "Плагин для Lampa. Позволяет смотреть одно и то же одновременно с друзьями на разных устройствах.",
@@ -42,7 +45,8 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
     {
-      "name": { "en": "NightingaleNotifications LME" },
+      "name": { "en": "NightingaleNotifications" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/nn.js",
       "description": {
         "ru": "Это немного переосмысленная подписка на выход серий, работает с помощью Махно и только в сериалах. То есть уведомления будут приходить, только если у сериала появилась новая серия в базе Махно (Ашди).",
@@ -53,6 +57,7 @@
     },
     {
       "name": { "ru": "Комментарии от Резки", "uk": "Коментарі від Rezka", "en": "Rezka Comments" },
+      "author": "@bdvburik",
       "url": "https://bdvburik.github.io/rezkacomment.js",
       "description": {
         "ru": "Комментарии от сервиса Rezka",
@@ -73,6 +78,7 @@
     },
     {
       "name": { "en": "Movie Enhancer" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/lme.js",
       "description": {
         "ru": "Дополнительные мелочи для информации по Фильмам/Сериалам.",
@@ -82,7 +88,8 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
-      "name": { "en": "Ultimate Skip | ipavlin98" },
+      "name": { "en": "Ultimate Skip" },
+      "author": "@ipavlin98",
       "url": "https://ipavlin98.github.io/lmp-series-skip-db/ultimate-skip.js",
       "description": {
         "ru": "Пропуск интро и аутро для сериалов и аниме. Работает для большинства популярных тайтлов.",
@@ -102,7 +109,8 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },   
     {
-      "name": { "ru": "Редактор кнопок от Cheeze_l | mylampa1", "uk": "Редактор кнопок від Cheeze_l | mylampa1", "en": "Button Editor by Cheeze_l | mylampa1" },
+      "name": { "ru": "Редактор кнопок", "uk": "Редактор кнопок", "en": "Button Editor" },
+      "author": "@Cheeze_l",
       "url": "https://mylampa1.github.io/buttons.js",
       "description": {
         "ru": "Редактор для кнопок меню в карточке.",
@@ -122,7 +130,8 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     }, 
     {
-      "name": { "en": "Hide Content | bodya-elven", "uk": "Фільтр контенту | bodya-elven", "ru": "Фильтр контента | bodya-elven" },
+      "name": { "en": "Hide Content", "uk": "Фільтр контенту", "ru": "Фильтр контента" },
+      "author": "@bodya-elven",
       "url": "https://bodya-elven.github.io/different/hide_content.js",
       "description": {
         "ru": "Модификация плагина для скрытия карточек в каталоге. Можно скрыть любой фильм. В контекстном меню ннтерфейса есть пункт «Скрыть».",
@@ -132,7 +141,8 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
     {
-      "name": { "en": "TMDB Content Filter | Lampaplugins", "ru": "Фильтр контента | Lampaplugins", "uk": "Фільтр контенту | Lampaplugins" },
+      "name": { "en": "TMDB Content Filter", "ru": "Фильтр контента", "uk": "Фільтр контенту" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/pavelpikta/tmdb-content-filter.js",
       "description": {
         "ru": "Скрытие контента TMDB и CUB по стране и языку.<br>Настройки →TMDB →Включить фильтр контента.",
@@ -143,6 +153,7 @@
     },    
     {
       "name": { "en": "Continue Movies", "ru": "Досмотреть фильмы", "uk": "Додивитись фільми" },
+      "author": "@hauryllin03",
       "url": "https://hauryllin03.github.io/Plugins/continue_movies.js",
       "description": {
         "ru": "Плагин добавляет новую подкатегорию на главной странице, с недосмотренными фильмами(до этого были только сериалы).",
@@ -153,6 +164,7 @@
     },
     {
       "name": { "en": "Pirate Store", "ru": "Пиратские плагины", "uk": "Піратські плагіни" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/store.js",
       "description": {
         "ru": "Альтернативный магазин плагинов для Lampa.",
@@ -163,6 +175,7 @@
     },    
     {
       "name": { "en": "Lampa Auto-Skip intro" },
+      "author": "@vahagn-99",
       "url": "https://vahagn-99.github.io/lampa-auto-skip/init.js",
       "description": {
         "ru": "Пропуск заставок в сериалах как в Netflix. Работает только во встроенном плеере Lampa.",
@@ -173,6 +186,7 @@
     },
     {
       "name": { "en": "Local Backup", "uk": "Локальний Бекап" },
+      "author": "@YaroslavFilms",
       "url": "https://yarikrazor-star.github.io/lmp/localbackup.js",
       "description": {
         "ru": "Этот плагин позволяет сохранять ваши настройки, историю просмотров и плагины в файл на вашем устройстве (без использования облачной синхронизации).",
@@ -193,6 +207,7 @@
     },
     {
       "name": { "en": "Skaz Games", "ru": "Сказочные игры", "uk": "Казкові ігри" },
+      "author": "@SkazTV",
       "url": "http://skaz.tv/g.js",
       "description": {
         "ru": "Игры в Lampa.",
@@ -213,6 +228,7 @@
     },
     {
       "name": { "en": "Menu Editor", "uk": "Редактор меню" },
+      "author": "@ko31k",
       "url": "https://ko31k.github.io/LMP/plugins/menueditor.js",
       "description": {
         "ru": "Плагин добавляет возможность редактировать меню Lampa.",
@@ -232,7 +248,8 @@
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
     {
-      "name": { "en": "NUM Parser | igorek1986" },
+      "name": { "en": "NUM Parser" },
+      "author": "@igorek1986",
       "url": "https://igorek1986.github.io/lampa-plugins/np.js",
       "description": {
         "ru": "Источник NUM",
@@ -242,7 +259,8 @@
       "category": { "ru": "Категории", "uk": "Категорії", "en": "Categories" }
     },
     {
-      "name": { "ru": "LNUM категория | levende", "uk": "LNUM категорія | levende", "en": "LNUM Category | levende" },
+      "name": { "ru": "LNUM категория", "uk": "LNUM категорія", "en": "LNUM Category" },
+      "author": "@levende",
       "url": "https://levende.github.io/lampa-plugins/lnum.js",
       "description": {
         "ru": "Источник Lnum",
@@ -263,6 +281,7 @@
     },		  
     {
       "name": { "ru": "Подборки TMDB_MOD", "uk": "Підбірки TMDB_MOD", "en": "TMDB_MOD compilations" },
+      "author": "@gitfuntik",
       "url": "https://gitfuntik.github.io/tmdb_mod.js",
       "description": {
         "ru": "Главная цель — предоставить вам уникальные и актуальные тематические коллекции, которые вы можете включить или выключить по своему усмотрению. Плагин создает отдельный источник контента: 'TMDB_MOD'.",
@@ -273,6 +292,7 @@
     },   
     {
       "name": { "ru": "SURS категория", "uk": "SURS категорія", "en": "SURS Category" },
+      "author": "@aviamovie",
       "url": "https://aviamovie.github.io/surs.js",
       "description": {
         "ru": "Уникальные подборки фильмов и сериалов по жанрам, стримингу, популярности, просмотрам и кассовым сборам",
@@ -283,6 +303,7 @@
     },
     {
       "name": { "ru": "Трейлеры новинок", "uk": "Трейлери новинок", "en": "Upcoming Trailers" },
+      "author": "@mastermagic98",
       "url": "https://mastermagic98.github.io/l_plugins/upcoming.js",
       "description": {
         "ru": "Трейлеры новых фильмов и сериалов",
@@ -293,6 +314,7 @@
     },
     {
       "name": { "en": "Dorama source" },
+      "author": "@xxhekpxx2307",
       "url": "https://xxhekpxx2307.github.io/Plagins/Dorama.js",
       "description": {
         "ru": "Источник дорам.",
@@ -304,6 +326,7 @@
     },    
     {
       "name": { "en": "Studios" },
+      "author": "@syvyj",
       "url": "https://syvyj.github.io/studios_4lampa/studios.js",
       "description": {
         "ru": "Добавляет в боковое меню подборки по крупным студиям Netflix, Disney, Apple. Внутри каждой категории есть подборки, похожие на сами сервисы, а не просто набор фильмов/сериалов.",
@@ -314,6 +337,7 @@
     },
     {
       "name": { "ru": "Подборки", "uk": "Підбірки", "en": "Collections" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/p.js",
       "description": {
         "ru": "В этом плагине можно добавлять различные подборки фильмов и сериалов по категориям: «В качестве», «Аниме», «Дорамы», «Okko», «Кинопоиск».",
@@ -324,6 +348,7 @@
     },    
     {
       "name": { "en": "AppleTV AgNative" },
+      "author": "@llowmikee",
       "url": "https://llowmikee.github.io/AppleTVAGNativeNG/appletv_agnative.js",
       "description": {
         "ru": "Плагин Lampa, который изменяет внешний вид верхней навигации, карточек контента и отдельных элементов пользовательского интерфейса в стиле Apple TV.",
@@ -334,6 +359,7 @@
     }, 
     {
       "name": { "en": "Applecation" },
+      "author": "@darkestclouds",
       "url": "https://darkestclouds.github.io/plugins/applecation/applecation.min.js",
       "description": {
         "ru": "Делает интерфейс в карточке фильма похожим на Apple TV и оптимизирует под 4К.",
@@ -343,7 +369,8 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },  
     {
-      "name": { "en": "Lampa Netflix Style | adambenhassen" },
+      "name": { "en": "Lampa Netflix Style" },
+      "author": "@adambenhassen",
       "url": "https://adambenhassen.github.io/netflix.js",
       "description": {
         "ru": "Интерфейс в стиле Netflix для Lampa — строка «В тренде», еженедельные чарты «Топ-10», фирменные строки Netflix, видео-рекламный баннер и страница с полной информацией о фильме — всё это отображается на холсте.",
@@ -354,6 +381,7 @@
     },    
     {
       "name": { "en": "Netflix Premium Style" },
+      "author": "@ourbeerdelivery",
       "url": "https://ourbeerdelivery.github.io/pluginlmp/netflix_premium_style.js",
       "description": {
         "ru": "Интерфейс в стиле Netflix.",
@@ -364,6 +392,7 @@
     }, 
     {
       "name": { "en": "Nova Skin" },
+      "author": "@amikdn",
       "url": "https://amikdn.github.io/nova_skin.js",
       "description": {
         "ru": "Обновленный интерфейс в онлайн источниках.",
@@ -374,6 +403,7 @@
     },   
     {
       "name": { "en": "Logo Title" },
+      "author": "@crowley38",
       "url": "https://crowley38.github.io/NewLogo.js",
       "description": {
         "ru": "Логотип фильма вместо названия",
@@ -384,6 +414,7 @@
     },
     {
       "name": { "ru": "Цветной рейтинг", "uk": "Кольоровий рейтинг", "en": "Color rating" },
+      "author": "@tvigl",
       "url": "https://tvigl.github.io/plugins/vote_colour.js",
       "description": {
         "ru": "Цветной рейтинг на карточке фильмов / сериалов.",
@@ -394,6 +425,7 @@
     },    
     {
       "name": { "en": "Interface UI" },
+      "author": "@ipavlin98",
       "url": "https://ipavlin98.github.io/lmp-plugins/int.js",
       "description": {
         "ru": "Версия интерфейса с множеством настроек и мелких улучшений.",
@@ -403,7 +435,8 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },
     {
-      "name": { "en": "Obsidian | levende" },
+      "name": { "en": "Obsidian" },
+      "author": "@levende",
       "url": "https://levende.github.io/lampa-plugins/obsidian.js",
       "description": {
         "ru": "Обновленный вид карточек для Lampa в минималистичном стиле.",
@@ -413,7 +446,8 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },    
     {
-      "name": { "en": "Interface Mod | pavelpikta", "ru": "Интерфейс мод | pavelpikta", "uk": "Інтерфейс мод | pavelpikta" },
+      "name": { "en": "Interface Mod", "ru": "Интерфейс мод", "uk": "Інтерфейс мод" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/interface_mod.js",
       "description": {
         "ru": "Модификация интерфейса Lampa с темой Emerald и улучшенными стилями.",
@@ -424,6 +458,7 @@
     },    
     {
       "name": { "en": "Cardify Rating" },
+      "author": "@ipavlin98",
       "url": "https://ipavlin98.github.io/lmp-plugins/cardify.js",
       "description": {
         "ru": "Немного исправленная версия Cardify с парой фиксов и отображением рейтингов.",
@@ -434,6 +469,7 @@
     },
     {
       "name": { "en": "QualityUA" },
+      "author": "@crowley38",
       "url": "https://crowley38.github.io/QualityUA.js",
       "description": {
         "ru": "Показывает информацию о качестве и наличие украинской озвучки фильма в карточке.",
@@ -443,7 +479,8 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },
     {
-      "name": { "en": "Mdb_Ratings | bodya-elven" },
+      "name": { "en": "Mdb_Ratings" },
+      "author": "@bodya-elven",
       "url": "https://bodya-elven.github.io/different/mdb_ratings.js",
       "description": {
         "ru": "Плагин для отображения рейтингов в карточке, и на постерах.",
@@ -453,7 +490,8 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },
     {
-      "name": { "en": "Rating KP&IMDb | nb557", "ru": "Рейтинг КиноПоиск и IMDb | nb557", "uk": "Рейтинг Кінопошук та IMDb | nb557" },
+      "name": { "en": "Rating KP&IMDb", "ru": "Рейтинг КиноПоиск и IMDb", "uk": "Рейтинг Кінопошук та IMDb" },
+      "author": "@nb557",
       "url": "https://nb557.github.io/plugins/rating.js",
       "description": {
         "ru": "Плагин для отображения рейтингов Кинопоиска и IMDb.",
@@ -464,6 +502,7 @@
     },    
     {
       "name": { "en": "TMDB Networks & Providers" },
+      "author": "@levende",
       "url": "https://levende.github.io/lampa-plugins/tmdb-networks.js",
       "description": {
         "ru": "Плагин добавляет на карточки кнопки стриминговых сервисов и платформ, показывающие, где были выпущены или проданы фильмы и сериалы, что упрощает их поиск.",
@@ -473,7 +512,8 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     }, 
     {
-      "name": { "en": "Series Status | igorek1986" },
+      "name": { "en": "Series Status" },
+      "author": "@igorek1986",
       "url": "https://igorek1986.github.io/lampa-plugins/status.js",
       "description": {
       "ru": "Добавляет на карточки сериалов метку «Сериал» и отображает текущий статус проекта: «В эфире», «Пауза», «Завершён» или «Отменён». Статус определяется из данных TMDB и автоматически показывается во всех разделах Lampa. Плагин имеет настройку для включения или отключения отображения статусов.",
@@ -484,6 +524,7 @@
     },  
     {
       "name": { "uk": "🇺🇦Ліхтар", "en": "🇺🇦Likhtar" },
+      "author": "@syvyj",
       "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
       "description": {
         "uk": "Ліхтар — кастомная головна сторінка для Lampa, що повністю замінює стандартний інтерфейс і додає преміальний досвід перегляду з фокусом на україномовний контент.",
@@ -493,6 +534,7 @@
     },   	  
     {
       "name": { "en": "🇺🇦 Interface+" },
+      "author": "@ko31k",
       "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
       "description": {
         "uk": "Комплексне покращення інтерфейсу: панелі, мітки, теми, керування кнопками.",
@@ -502,6 +544,7 @@
     },    
     {
       "name": { "en": "Torrent Manager" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/torrentmanager.js",
       "description": {
         "ru": "Управление торрент-клиентом прямо из Lampa",
@@ -512,6 +555,7 @@
     },
     {
       "name": { "en": "PubTorr" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/pubtorr.js",
       "description": {
         "ru": "Публичные парсеры для поиска торрентов",
@@ -522,9 +566,8 @@
       }
     },
     {
-      "name": {
-        "en": "Parsers by Ko31k"
-      },
+      "name": { "en": "Parsers by Ko31k" },
+      "author": "@ko31k",
       "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
       "description": {
         "ru": "Плагин со списком парсеров и индикацией доступности. Позволяет выбрать один из нескольких готовых вариантов, чтобы не вводить вручную URL/ключи.",
@@ -535,6 +578,7 @@
     },
     {
       "name": { "en": "DopParsers by Cevamnelampaplagin", "uk": "DopParsers від Cevamnelampaplagin" },
+      "author": "@Cevamnelampaplagin",
       "url": "https://cevamnelampaplagin.github.io/sharewithothers/dopparser.js",
       "description": {
         "ru": "Сборка парсеров для поиска торрентов от Cevamnelampaplagin.",
@@ -545,7 +589,7 @@
     },    
     {
       "name": { "en": "Etor" },
-      "url": "http://cub.red/plugin/etor",
+      "url": "http://cub.best/plugin/etor",
       "description": {
         "ru": "Пункты TorrServer в меню настроек (актуально для Samsung)",
         "uk": "Пункти TorrServer в меню налаштувань (актуально для Samsung)",
@@ -555,7 +599,7 @@
     },
     {
       "name": { "ru": "Tracks", "uk": "Tracks", "en": "Tracks" },
-      "url": "http://cub.red/plugin/tracks",
+      "url": "http://cub.best/plugin/tracks",
       "description": {
         "ru": "Корректное отображение списка озвучек в торрентах",
         "uk": "Коректне відображення списку озвучок у торрентах",
@@ -565,6 +609,7 @@
     },
     {
       "name": { "en": "EasyTorrent" },
+      "author": "@darkestclouds",
       "url": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js",
       "description": {
         "ru": "Новое оформление для списка торрентов.",
@@ -574,9 +619,8 @@
       "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent" }
     },  
     {
-      "name": {
-        "en": "EasyTorrent UA Mod by Cevamnelampaplagin"
-      },
+      "name": { "en": "EasyTorrent UA Mod by Cevamnelampaplagin" },
+      "author": "@Cevamnelampaplagin",
       "url": "https://cevamnelampaplagin.github.io/plugins/easytorrent2.1.0.5.js",
       "description": {
         "ru": "Обновленный EasyTorrent. Плагин переведён на украинский язык, и в первую очередь рекомендует раздачи с украинским языком.",
@@ -587,9 +631,8 @@
       }
     },       
     {
-      "name": {
-        "en": "Torrent Styles by LampaPlugins"
-      },
+      "name": { "en": "Torrent Styles by LampaPlugins" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/torrent_styles_v2.js",
       "description": {
         "ru": "Цветное оформление для торрентов.",
@@ -600,6 +643,7 @@
     },    
     {
       "name": { "en": "TS Preload" },
+      "author": "@RootU",
       "url": "https://plugin.rootu.top/ts-preload.js",
       "description": {
         "ru": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer'а.",
@@ -610,6 +654,7 @@
     },    
     {
       "name": { "en": "Online_Mod" },
+      "author": "@nb557",
       "url": "https://nb557.github.io/plugins/online_mod.js",
       "description": {
         "ru": "Онлайн-источник",
@@ -620,6 +665,7 @@
     },   
     {
       "name": { "uk": "🇺🇦 Free Bandera Онлайн" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/bo.js",
       "description": {
         "uk": "Спільнота t.me/mmssixxx",
@@ -629,6 +675,7 @@
     },   
     {
       "name": { "en": "BWA Online" },
+      "author": "@bwa",
       "url": "http://bwa.ad/rc",
       "description": {
         "ru": "Bwa - источник для онлайн просмотра фильмов и сериалов.",
@@ -639,6 +686,7 @@
     },   
     {
       "name": { "uk": "🇺🇦 BazarNetUA (безкоштовно)", "en": "🇺🇦 BazarNetUA (free)" },
+      "author": "@BazarNetUA",
       "url": "http://lampaua.mooo.com/online/js/",
       "description": {
         "uk": "Онлайн-контент українською мовою. Для роботи плагіна потрібен експорт. Більше інформації ви знайдете в цій групі ТГ: https://t.me/bazarnetua/9/26900",
@@ -658,6 +706,7 @@
     },
     {
       "name": { "en": "Skaz Online 4k" },
+      "author": "@SkazTV",
       "url": "http://skaz.tv/o.js",
       "description": {
         "ru": "Подписка by Skaz. Платные онлайн 4k источники в Lampa. Управление через телеграм-бот @skaztv_bot",
@@ -668,6 +717,7 @@
     }, 
     {
       "name": { "en": "Amedia Skaz" },
+      "author": "@SkazTV",
       "url": "https://skaz.tv/amedia/a.js",
       "description": {
         "ru": "После подключения в карточке фильма появится кнопка «Amedia» — нажатие запустит встроенный плеер Lampa с управлением громкостью, качеством и перемоткой через штатный UI.",
@@ -680,7 +730,6 @@
       "name": { "en": "GPBX Online (GMTLOP)" },
       "url": "https://gpbx.me/w",
       "description": {
-        "ru": "Онлайн GPBX.",
         "uk": "Онлайн GPBX.",
         "en": "Online GPBX."
       },
@@ -706,6 +755,7 @@
     },	
     {
       "name": { "en": "MODS's" },
+      "author": "@Modss",
       "url": "https://lampa.stream/modss",
       "description": {
         "uk": "ТГ Бот: @modssmy_bot",
@@ -724,6 +774,7 @@
     },    
   	{
       "name": { "en": "Filmix Online" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/fx.js",
       "description": {
         "ru": "Плагин для подключения своего аккаунта Filmix.",
@@ -761,7 +812,8 @@
       "category": { "ru": "IPTV", "uk": "IPTV", "en": "IPTV" }
     },
   	{
-      "name": { "en": "IpTV by RootU", "ru": "IpTV от RootU", "uk": "IpTV від RootU" },
+      "name": { "en": "IpTV", "ru": "IpTV", "uk": "IpTV" },
+      "author": "@RootU",
       "url": "https://plugin.rootu.top/tv.js",
       "description": {
         "ru": "Просмотр собственных IPTV-плейлистов в Lampa.",
@@ -772,6 +824,7 @@
     },
     {
       "name": { "en": "🇺🇦 TryzubTV" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/ttv.js",
       "description": {
         "uk": "TryzubTV - українські ТВ-канали в зручному каталозі. Спільнота t.me/mmssixxx",
@@ -781,6 +834,7 @@
     },
     {
       "name": { "en": "Skaz TV + Online 4k" },
+      "author": "@SkazTV",
       "url": "http://skaz.tv/tv.js",
       "description": {
         "ru": "Подписка by Skaz. Более 1800 каналов · SD, HD, FHD, 4K HDR. Онлайн 4k источники в Lampa. Управление через телеграм-бот @skaztv_bot",
@@ -791,6 +845,7 @@
     },       
     {
       "name": { "en": "Season Fix" },
+      "author": "@ipavlin98",
       "url": "https://ipavlin98.github.io/lmp-plugins/season-fix.js",
       "description": {
         "ru": "Разбивает бесконечные первые сезоны аниме на нормальные части используя базу данных TVmaze.",
@@ -801,6 +856,7 @@
     },
     {
       "name": { "en": "🇺🇦 Hikka Anime" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/hikka.js",
       "description": {
         "uk": "Каталог аніме з hikka.io: пошук, фільтри, сортування.",
@@ -810,6 +866,7 @@
     },
     {
       "name": { "en": "Shikimori" },
+      "author": "@lme,@kartmansms",
       "url": "https://kartmansms.github.io/lampa/Shikimori/Shikimori.js",
       "description": {
         "ru": "Плагин для Lampа, который добавляет интеграцию с каталогом аниме Shikimori.",
@@ -820,6 +877,7 @@
     },    
     {
       "name": { "en": "YummyAnime for Lampa" },
+      "author": "@yummyanime",
       "url": "https://yummyanime.github.io/yummy-lampa-plugin/stable/index.js",
       "description": {
         "ru": "Неофициальное расширение YummyAnime для Lampa. Добавляет каталог аниме, расписание, рейтинги, личные списки и просмотр доступных источников. Интерфейс адаптирован для ТВ-пульта.",
@@ -830,6 +888,7 @@
     },    
     {
       "name": { "en": "Plugin Home Page UA", "uk": "Plugin Головна сторінка UA" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/ymain.js",
       "description": {
         "ru": "Замена главной страницы на модифицированную с фильмами, доступными на украинских сайтах UaSerials, UaKino, Uaflix и т. д. Больше никаких странных карточек на главной! Возможность перемещать, включать/выключать нужную вам строку. Также добавляет новые страницы с фильмами и сериалами в основе те, где есть украинский язык. Новый стиль карточек главной страницы и всех других карточек в Lampa (рейтинг, год, список сезонов/серий сериала, наличие украинской озвучки). Интеграция подборки Сообщества LME, а также определение и отображение имеющейся озвучки у фильма - флажком. (спасибо LME) Внимание! Полностью заменяет вашу главную страницу. Может конфликтовать с другими плагинами, которые стилизуют рейтинг на карточках или главной странице.",
@@ -840,6 +899,7 @@
     },       
     {
       "name": { "en": "Plugin Yarik's Mod" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/ymod.js",
       "description": {
         "ru": "Большой набор для оформления карточки: Лого вместо названий (Если нет Укр ставит ENG), Лого студий - активные кнопки на страницу студии, Рейтинги IMDB, RT, Mc и т.д. (Требуются api-ключи с сайтов OMDB, MDBList) Оригинальное название (Добавляет тем языком, которого не хватает). Отображение наличия и статуса украинских торрентов из вашего парсера (Должен быть включен и настроен парсер).",
@@ -850,6 +910,7 @@
     },  
     {
       "name": { "en": "Plugin Cardify Mod" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/ycardmod.js",
       "description": {
         "ru": "Модификация плагина Cardify с новым отображением описания фильма. Подходит для работы с другими плагинами отсюда. Добавлено слайд-шоу обложек фильмов.",
@@ -860,6 +921,7 @@
     },      
     {
       "name": { "en": "Plugin Ua Comments" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/uacoments.js",
       "description": {
         "ru": "Добавляет комментарии с украинских ресурсов сразу под карточкой фильма.",
@@ -870,6 +932,7 @@
     },      
     {
       "name": { "en": "Plugin WikiFind" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/wikifind.js",
       "description": {
         "ru": "Добавляет кнопку поиска статьи на Wikipedia. Сами статьи переформатируются под формат экрана, чтобы было удобно просматривать информацию. Также добавляет дополнительные статьи, имеющие отношение к фильму.",
@@ -880,6 +943,7 @@
     },      
     {
       "name": { "en": "Mod for Interface+" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/interfaceymod.js",
       "description": {
         "ru": "Модификация плагина Интерфейс+, в которой есть возможность управлять отступами до и после, чтобы вписать в ваш интерфейс. Также есть много других приятных настроек.",
@@ -890,6 +954,7 @@
     },
     {
       "name": { "en": "Ydes Cards", "uk": "Ydes Картки" },
+      "author": "@YaroslavFilms",
       "url": "http://lampalampa.free.nf/ydes.js",
       "description": {
         "uk": "Оновлений дизайн карток.<br>- Нестандратні пропорції карток, щоб краще считувались елементи.<br>- Змінює кількість карток, знову таки, щоб вони були більшими.<br>- Як горизонтальні так і вертикальні картки.<br>- Варіанти з текстом чи лого.<br>- Навіть слоган та опис можна додати)<br>- Декілька рейтингів *потрібні ключі MDBLIST/OMDB<br>- Налаштування карток під себе. *картки повністю кастомні - на деяких девайсах, щоб вступили налаштування в силу - потрібно лампу перезавантажити.<br>- Можна ставити на пусту лампу, можна спобувати комбінувати з іншими плагінами. (З моїми точно можна :)<br>- Поки працює тільки з джерелом TMDB",
@@ -899,6 +964,7 @@
     },    
     {
       "name": { "en": "Infuse Save" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/infuseSave.js",
       "description": {
         "ru": "Быстрое сохранение торрент-потока в Infuse из меню файлов.",
@@ -909,6 +975,7 @@
     },
     {
       "name": { "en": "New Category" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/newcategory.js",
       "description": {
         "ru": "Добавляет новые разделы, сети стримингов, закладки и коллекции.",
@@ -919,6 +986,7 @@
     },
     {
       "name": { "en": "Movie Enhancer" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/lme.js",
       "description": {
         "ru": "Комплексное улучшение карточки: кнопки, рейтинги, источники, метаданные.",
@@ -929,6 +997,7 @@
     },
     {
       "name": { "en": "Torrent Downloader" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/torrentmanager.js",
       "description": {
         "ru": "Управление торрент-клиентом в Lampa: статусы, действия, метаданные.",
@@ -939,6 +1008,7 @@
     },
     {
       "name": { "en": "TraktTV" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/trakttv.js",
       "description": {
         "ru": "Глубокая интеграция с Trakt: авторизация, история, списки, Up Next.",
@@ -949,6 +1019,7 @@
     },
     {
       "name": { "en": "Tracks Probe" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/tracks.js",
       "description": {
         "ru": "Подробная информация об аудио и субтитрах с удобным выбором дорожек.",
@@ -959,6 +1030,7 @@
     },
     {
       "name": { "en": "TS Tracks Probe" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/tstracks.js",
       "description": {
         "ru": "Информация об аудио и субтитрах от TorrServer.",
@@ -969,6 +1041,7 @@
     },
     {
       "name": { "en": "Hikka Anime" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/hikka.js",
       "description": {
         "ru": "Аниме-каталог Hikka с фильтрами, франшизами и персонажами.",
@@ -979,6 +1052,7 @@
     },
     {
       "name": { "en": "TryzubTV" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/ttv.js",
       "description": {
         "uk": "Українське ТБ: канали, категорії та кешований каталог.",
@@ -987,7 +1061,8 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
-      "name": { "uk": "Бандера 2.0", "en": "Bandera 2.0" },
+      "name": { "uk": "🇺🇦 Бандера 2.0", "en": "Bandera 2.0" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/bo.js",
       "description": {
         "uk": "Онлайн з українськими джерелами.",
@@ -997,6 +1072,7 @@
     },
     {
       "name": { "en": "CommunityWatches" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/cw.js",
       "description": {
         "ru": "Топ недели и скрытые жемчужины для главной, фильмов и сериалов.",
@@ -1006,7 +1082,8 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
-      "name": { "en": "NightingaleNotifications" },
+      "name": { "en": "🇺🇦 NightingaleNotifications" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/nn.js",
       "description": {
         "ru": "Подписки на сериалы с уведомлениями о новых эпизодах.",
@@ -1016,7 +1093,8 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
-      "name": { "en": "Nightingale" },
+      "name": { "en": "🇺🇦 Nightingale" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/n.js",
       "description": {
         "ru": "Отображение наличия украинского перевода в онлайн-источниках.",
@@ -1027,6 +1105,7 @@
     },
     {
       "name": { "en": "IMDb Trailers" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/timdb.js",
       "description": {
         "ru": "Трендовые трейлеры IMDb: линия на главной и полноэкранный просмотр.",
@@ -1037,6 +1116,7 @@
     },
     {
       "name": { "en": "🇺🇦 Kinobaza" },
+      "author": "@lme",
       "url": "https://lampame.github.io/main/kb.js",
       "description": {
         "uk": "Український контент-провайдер КіноБаза: каталог, пошук, картки, рейтинги, трейлери, релізи, колекції.",
@@ -1045,8 +1125,9 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },    
     {
-      "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
       "name": { "en": "Parsers" },
+      "author": "@ko31k",
+      "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
       "description": {
         "ru": "Каталог парсеров с индикацией доступности и быстрым выбором без ручного ввода.",
         "uk": "Каталог парсерів з індикацією доступності та швидким вибором без ручного вводу.",
@@ -1055,8 +1136,9 @@
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
     {
-      "url": "https://ko31k.github.io/LMP/plugins/SeasonsInfo.js",
       "name": { "en": "SeasonsInfo" },
+      "author": "@ko31k",
+      "url": "https://ko31k.github.io/LMP/plugins/SeasonsInfo.js",
       "description": {
         "ru": "Сезон/эпизоды на постерах: актуальный сезон и прогресс выхода серий.",
         "uk": "Сезон/епізоди на постерах: актуальний сезон і прогрес виходу серій.",
@@ -1065,8 +1147,9 @@
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
     {
-      "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
       "name": { "en": "Interface+" },
+      "author": "@ko31k",
+      "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
       "description": {
         "ru": "Комплексное улучшение интерфейса: панели, метки, темы и управление кнопками.",
         "uk": "Комплексне покращення інтерфейсу: панелі, мітки, теми та керування кнопками.",
@@ -1075,8 +1158,9 @@
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
     {
-      "url": "https://ko31k.github.io/LMP/plugins/buttons+.js",
       "name": { "en": "Buttons+" },
+      "author": "@ko31k",
+      "url": "https://ko31k.github.io/LMP/plugins/buttons+.js",
       "description": {
         "ru": "Редактор кнопок в карточке фильма или сериала.",
         "uk": "Редактор кнопок у картці фільму або серіалу.",
@@ -1085,8 +1169,9 @@
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
     {
-      "url": "https://ko31k.github.io/LMP/plugins/rtg.js",
       "name": { "en": "RTG+" },
+      "author": "@ko31k",
+      "url": "https://ko31k.github.io/LMP/plugins/rtg.js",
       "description": {
         "ru": "Рейтинги и награды в карточке с гибкой настройкой логотипов и меток.",
         "uk": "Рейтинги та нагороди у картці з гнучким налаштуванням логотипів і міток.",
@@ -1096,6 +1181,7 @@
     },
     {
       "name": { "en": "Cardify+" },
+      "author": "@ko31k",
       "url": "https://ko31k.github.io/LMP/plugins/cardify+.js",
       "description": {
         "ru": "Расширенный интерфейс карточки: более чистый вид, фоновые трейлеры или слайдшоу.",
@@ -1106,6 +1192,7 @@
     },
     {
       "name": { "en": "Logo" },
+      "author": "@ko31k",
       "url": "https://ko31k.github.io/LMP/plugins/logo.js",
       "description": {
         "ru": "Графические логотипы вместо текстовых названий в карточке.",
@@ -1116,6 +1203,7 @@
     },
     {
       "name": { "en": "HorizontalMode" },
+      "author": "@ko31k",
       "url": "https://ko31k.github.io/LMP/plugins/HorizontalMode.js",
       "description": {
         "ru": "Комплексный плагин, полностью меняющий внешний вид каталога. Позволяет свободно переключаться между широкими (горизонтальными) и стандартными (вертикальными) карточками.",
@@ -1126,6 +1214,7 @@
     },
     {
       "name": { "ru": "Редирект на BazarNetUa", "uk": "Редірект на BazarNetUa",  "en": "Redirect to BazarNetUa" },
+      "author": "@BazarNetUA",
       "url": "https://hlushok.github.io/lampa-plugin/redirect.js",
       "description": {
         "uk": "За допомогою цього плагіна можна швидко перейти на інший сервер від BazarNetUa.",
@@ -1135,6 +1224,7 @@
     },    
     {
       "name": { "ru": "Редактор кнопок от BazarNet", "uk": "Редактор кнопок від BazarNet",  "en": "Button Editor by BazarNet" },
+      "author": "@BazarNetUA",
       "url": "http://lampaua.mooo.com/buttons.js",
       "description": {
         "uk": "Плагін керування кнопками у повній картці Lampaua. Зробили його для тих, хто хоче мати чистий, зручний і повністю керований інтерфейс під себе.",
@@ -1144,6 +1234,7 @@
     },
     {
       "name": { "uk": "Likhtar | Мод від BazarNet",  "en": "Likhtar | Mod by BazarNet" },
+      "author": "@BazarNetUA",
       "url": "http://lampaua.mooo.com/likhtar.js",
       "description": {
         "uk": "Повна адаптація інтерфейсу під будь-який ваш пристрій! Неважливо, з чого ви дивитесь — ми оптимізували відображення для смартфонів, телевізорів та великих 4K-екранів.",
@@ -1153,6 +1244,7 @@
     }, 
     {
       "name": { "uk": "Applecation | Мод від BazarNet", "en": "Applecation | Mod by BazarNet" },
+      "author": "@BazarNetUA",
       "url": "http://lampaua.mooo.com/applecation.js",
       "description": {
         "uk": "Тепер інтерфейс став ще зручнішим та інформативнішим! Ми додали систему міток (як у Likhtar), щоб ви одразу бачили всі деталі релізу.",
@@ -1162,6 +1254,7 @@
     }, 
     {
       "name": { "uk": "UA Comments | Мод від BazarNet", "en": "UA Comments | Mod by BazarNet" },
+      "author": "@BazarNetUA",
       "url": "http://lampaua.mooo.com/uacoments.js",
       "description": {
         "uk": "Додали в картку фільму кнопку Коментарі (N), яка відкриває окреме pop-up вікно з повним переглядом коментарів.",
@@ -1171,6 +1264,7 @@
     },    
     {
       "name": { "en": "Marks" },
+      "author": "@BazarNetUA",
       "url": "http://lampaua.mooo.com/marks.js",
       "description": {
         "uk": "Marks — легкий модуль для LampaUa, що додає на картки фільмів/серіалів мітки: UA/EN, 4K/1080p/720p, HDR/Dolby Vision і рейтинг ★.",
