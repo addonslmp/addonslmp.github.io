@@ -36,6 +36,7 @@
    },    
    {
       "name": { "en": "Jellyfin" },
+      "author": "@Lampaplugins",
       "url": "https://lampaplugins.github.io/store/pavelpikta/jellyfin.js",
       "description": {
         "ru": "Интеграция медиасервера Jellyfin в Lampa.",
@@ -121,7 +122,7 @@
     },
     {
       "name": { "en": "LGBT Unlock", "ru": "Разблокировка LGBT контента", "uk": "Розблокування LGBT контенту" },
-      "url": "https://cub.red/plugin/lgbt",
+      "url": "https://cub.best/plugin/lgbt",
       "description": {
         "ru": "Плагин разблокирует ЛГБТ-контент.",
         "uk": "Плагін розблоковує ЛГБТ-контент.",
