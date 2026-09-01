@@ -104,17 +104,17 @@ background:linear-gradient(135deg,#3a7bfd,#2455d6);
 border-radius:14px;
 cursor:pointer;
 transition:transform 0.15s ease, box-shadow 0.15s ease;
-box-shadow:0 4px 14px rgba(0,0,0,0.28);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 word-break:break-all;
 max-width:90vw;
 display:block;
 }
 .plugin-link:hover{
-transform:scale(1.01);
-box-shadow:0 6px 18px rgba(0,0,0,0.34);
+transform:scale(1.02);
+box-shadow:0 15px 40px rgba(0,0,0,0.7);
 }
 .plugin-link:active{
-transform:scale(0.99);
+transform:scale(0.98);
 }
 .copied{
 margin-top:24px;
@@ -137,15 +137,13 @@ border:none;
 border-radius:14px;
 cursor:pointer;
 transition:transform 0.15s ease, box-shadow 0.15s ease;
-box-shadow:0 3px 10px rgba(0,0,0,0.25);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 .help-btn:hover,.plugins-list-btn:hover{
-transform:scale(1.015);
-box-shadow:0 5px 14px rgba(0,0,0,0.3);
+transform:scale(1.04);
 }
 .help-btn:active,.plugins-list-btn:active{
-transform:scale(0.99);
-box-shadow:0 2px 8px rgba(0,0,0,0.22);
+transform:scale(0.98);
 }
 .plugins-list-btn{margin-top:12px;}
 .modal{
@@ -220,38 +218,34 @@ text-align:center;
 .github-btn{
 display:inline-flex;
 align-items:center;
-gap:10px;
-padding:12px 22px;
-font-size:16px;
-font-weight:600;
-color:rgba(255,255,255,0.45);
-background:rgba(255,255,255,0.045);
-border:1px solid rgba(255,255,255,0.1);
+gap:12px;
+padding:14px 28px;
+font-size:22px;
+color:rgba(255,255,255,0.5);
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.12);
 border-radius:12px;
 text-decoration:none;
-transition:color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-backdrop-filter:blur(10px);
-box-shadow:0 2px 8px rgba(0,0,0,0.18);
+transition:all 0.25s ease;
+backdrop-filter:blur(8px);
 }
 .github-btn:hover{
-color:rgba(255,255,255,0.85);
-background:rgba(255,255,255,0.08);
-border-color:rgba(255,255,255,0.18);
-box-shadow:0 3px 10px rgba(0,0,0,0.22);
-}
-.github-btn:active{
-box-shadow:0 1px 6px rgba(0,0,0,0.16);
+color:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.1);
+border-color:rgba(255,255,255,0.25);
+transform:translateY(-2px);
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
 }
 .github-icon{
-width:20px;
-height:20px;
-opacity:0.55;
-transition:opacity 0.2s ease;
+width:28px;
+height:28px;
+opacity:0.6;
 }
 .github-btn:hover .github-icon{
-opacity:0.85;
+opacity:0.9;
 }
 
+/* ===== Plugins modal ===== */
 .plugins-modal-content{
 max-width:720px;
 width:92%;
@@ -278,58 +272,33 @@ color:rgba(255,255,255,0.45);
 margin-bottom:14px;
 flex-shrink:0;
 }
-.plugins-category-bar{
+.plugins-tabs{
 display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:14px;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:16px;
 flex-shrink:0;
 }
-.plugins-category-label{
+.plugins-tab{
+padding:8px 14px;
 font-size:14px;
 font-weight:600;
-color:rgba(255,255,255,0.45);
-white-space:nowrap;
-flex-shrink:0;
-}
-.plugins-category-select{
-flex:1;
-min-width:0;
-appearance:none;
--webkit-appearance:none;
-padding:10px 40px 10px 14px;
-font-size:14px;
-font-weight:600;
-font-family:inherit;
-color:rgba(255,255,255,0.82);
-background-color:rgba(255,255,255,0.05);
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' fill-opacity='0.4' d='M1.4 0.6L6 5.2 10.6 0.6 12 2 6 8 0 2z'/%3E%3C/svg%3E");
-background-repeat:no-repeat;
-background-position:right 14px center;
+color:rgba(255,255,255,0.55);
+background:rgba(255,255,255,0.06);
 border:1px solid rgba(255,255,255,0.12);
-border-radius:10px;
+border-radius:8px;
 cursor:pointer;
-outline:none;
-box-shadow:none;
-transition:border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+transition:all 0.2s ease;
+white-space:nowrap;
 }
-.plugins-category-select:hover{
+.plugins-tab:hover{
 color:#fff;
-background-color:rgba(255,255,255,0.08);
-border-color:rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.12);
 }
-.plugins-category-select:focus,
-.plugins-category-select:focus-visible,
-.plugins-category-select:active{
+.plugins-tab.active{
 color:#fff;
-background-color:rgba(255,255,255,0.08);
-border-color:rgba(255,255,255,0.22);
-outline:none;
-box-shadow:none;
-}
-.plugins-category-select option{
-background:#252525;
-color:rgba(255,255,255,0.9);
+background:rgba(58,123,253,0.35);
+border-color:rgba(58,123,253,0.6);
 }
 .plugins-list{
 overflow-y:auto;
@@ -394,6 +363,18 @@ font-size:17px;
 font-weight:700;
 color:#fff;
 line-height:1.3;
+}
+.plugin-card-author{
+font-size:12px;
+font-weight:600;
+margin-top:4px;
+letter-spacing:0.2px;
+}
+.plugin-card-author-label{
+color:rgba(255,255,255,0.4);
+}
+.plugin-card-author-name{
+color:#ffffff;
 }
 .plugin-card-cat{
 font-size:12px;
@@ -470,8 +451,6 @@ p{font-size:20px;}
 .lang-btn{min-width:48px;padding:7px 10px;font-size:13px;}
 .plugins-modal-content{width:96%;padding:16px 12px 12px;max-height:90vh;}
 .plugins-modal-header h2{font-size:22px;}
-.plugins-category-label{font-size:13px;}
-.plugins-category-select{padding:9px 36px 9px 12px;font-size:13px;}
 .plugin-card-name{font-size:15px;}
 .plugin-card-desc{font-size:13px;}
 }
@@ -516,6 +495,7 @@ GitHub
 </div>
 </div>
 
+<!-- Help modal -->
 <div id="helpModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content">
@@ -550,6 +530,7 @@ GitHub
 </div>
 </div>
 
+<!-- Plugins modal -->
 <div id="pluginsModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content plugins-modal-content">
@@ -558,10 +539,7 @@ GitHub
 <span class="close" onclick="closePlugins()">×</span>
 </div>
 <div id="pluginsUpdateDate" class="plugins-update-date"></div>
-<div class="plugins-category-bar">
-<span class="plugins-category-label" data-key="plugins_category_label">Категорія</span>
-<select id="pluginsCategorySelect" class="plugins-category-select" aria-label="Category"></select>
-</div>
+<div id="pluginsTabs" class="plugins-tabs"></div>
 <div id="pluginsList" class="plugins-list">
 <div class="plugins-loading" data-key="plugins_loading">Завантаження…</div>
 </div>
@@ -598,10 +576,10 @@ plugins_loading: "Завантаження…",
 plugins_error: "Не вдалося завантажити список плагінів.",
 plugins_empty: "У цій категорії немає плагінів.",
 plugins_all: "Усі",
-plugins_category_label: "Категорія",
 plugins_copy: "Скопіювати",
 plugins_copied: "Скопійовано",
-plugins_updated: "Оновлено:"
+plugins_updated: "Оновлено:",
+plugins_author: "Автор:"
 },
 ru: {
 title: "Мультиплагин для Lampa",
@@ -627,10 +605,10 @@ plugins_loading: "Загрузка…",
 plugins_error: "Не удалось загрузить список плагинов.",
 plugins_empty: "В этой категории нет плагинов.",
 plugins_all: "Все",
-plugins_category_label: "Категория",
 plugins_copy: "Скопировать",
 plugins_copied: "Скопировано",
-plugins_updated: "Обновлено:"
+plugins_updated: "Обновлено:",
+plugins_author: "Автор:"
 },
 en: {
 title: "Multiplugin for Lampa",
@@ -656,10 +634,10 @@ plugins_loading: "Loading…",
 plugins_error: "Failed to load plugins list.",
 plugins_empty: "No plugins in this category.",
 plugins_all: "All",
-plugins_category_label: "Category",
 plugins_copy: "Copy",
 plugins_copied: "Copied",
-plugins_updated: "Updated:"
+plugins_updated: "Updated:",
+plugins_author: "Author:"
 }
 };
 
@@ -758,8 +736,7 @@ function closePlugins() {
 async function loadPlugins() {
   const listEl = document.getElementById('pluginsList');
   listEl.innerHTML = `<div class="plugins-loading">${t('plugins_loading')}</div>`;
-  const selectEl = document.getElementById('pluginsCategorySelect');
-  if (selectEl) selectEl.innerHTML = '';
+  document.getElementById('pluginsTabs').innerHTML = '';
   document.getElementById('pluginsUpdateDate').textContent = '';
 
   try {
@@ -815,35 +792,30 @@ function renderPluginsUI() {
   }
 
   const categories = getCategories();
-  const selectEl = document.getElementById('pluginsCategorySelect');
-  const prevValue = activeCategoryKey;
+  const tabsEl = document.getElementById('pluginsTabs');
+  tabsEl.innerHTML = '';
 
-  selectEl.innerHTML = '';
-
-  const allOpt = document.createElement('option');
-  allOpt.value = '__all__';
-  allOpt.textContent = t('plugins_all') + ' (' + pluginsData.plugins.length + ')';
-  selectEl.appendChild(allOpt);
+  // "All" tab
+  const allTab = document.createElement('button');
+  allTab.className = 'plugins-tab' + (activeCategoryKey === '__all__' ? ' active' : '');
+  allTab.textContent = t('plugins_all') + ' (' + pluginsData.plugins.length + ')';
+  allTab.onclick = () => {
+    activeCategoryKey = '__all__';
+    renderPluginsUI();
+  };
+  tabsEl.appendChild(allTab);
 
   categories.forEach(cat => {
-    const opt = document.createElement('option');
-    opt.value = cat.key;
+    const tab = document.createElement('button');
+    tab.className = 'plugins-tab' + (activeCategoryKey === cat.key ? ' active' : '');
     const label = cat.labels[currentLang] || cat.labels.en || cat.key;
-    opt.textContent = label + ' (' + cat.count + ')';
-    selectEl.appendChild(opt);
+    tab.textContent = label + ' (' + cat.count + ')';
+    tab.onclick = () => {
+      activeCategoryKey = cat.key;
+      renderPluginsUI();
+    };
+    tabsEl.appendChild(tab);
   });
-
-  const hasPrev = Array.from(selectEl.options).some(o => o.value === prevValue);
-  activeCategoryKey = hasPrev ? prevValue : '__all__';
-  selectEl.value = activeCategoryKey;
-
-  if (!selectEl._changeBound) {
-    selectEl.addEventListener('change', () => {
-      activeCategoryKey = selectEl.value;
-      renderPluginCards();
-    });
-    selectEl._changeBound = true;
-  }
 
   renderPluginCards();
 }
@@ -870,6 +842,7 @@ function renderPluginCards() {
     const name = pickLocalized(plugin.name, currentLang) || '—';
     const desc = pickLocalized(plugin.description, currentLang) || '';
     const catLabel = pickLocalized(plugin.category, currentLang) || '';
+    const author = (plugin.author || '').trim();
     const url = plugin.url || '';
 
     const card = document.createElement('div');
@@ -878,15 +851,32 @@ function renderPluginCards() {
     const header = document.createElement('div');
     header.className = 'plugin-card-header';
 
+    const nameWrap = document.createElement('div');
+
     const nameEl = document.createElement('div');
     nameEl.className = 'plugin-card-name';
     nameEl.textContent = name;
+    nameWrap.appendChild(nameEl);
+
+    if (author) {
+      const authorEl = document.createElement('div');
+      authorEl.className = 'plugin-card-author';
+      const authorLabel = document.createElement('span');
+      authorLabel.className = 'plugin-card-author-label';
+      authorLabel.textContent = t('plugins_author') + ' ';
+      const authorName = document.createElement('span');
+      authorName.className = 'plugin-card-author-name';
+      authorName.textContent = author;
+      authorEl.appendChild(authorLabel);
+      authorEl.appendChild(authorName);
+      nameWrap.appendChild(authorEl);
+    }
 
     const catEl = document.createElement('div');
     catEl.className = 'plugin-card-cat';
     catEl.textContent = catLabel;
 
-    header.appendChild(nameEl);
+    header.appendChild(nameWrap);
     if (catLabel) header.appendChild(catEl);
 
     const descEl = document.createElement('p');
