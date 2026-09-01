@@ -1,5 +1,5 @@
 {
-  "updateDate": "27.08.2026",
+  "updateDate": "01.09.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -23,6 +23,39 @@
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
    },
+   {
+      "name": { "en": "Custom Favorites" },
+      "author": "@levende",
+      "url": "https://levende.github.io/lampa-plugins/bookmarks-sync.js",
+      "description": {
+        "ru": "Плагин добавляет возможность создавать свои папки в закладках Lampa.",
+        "uk": "Плагін додає можливість створювати власні папки в закладках Lampa.",
+        "en": "The plugin adds the ability to create your own folders in Lampa bookmarks."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "Anti DMCA" },
+      "author": "@levende",
+      "url": "https://levende.github.io/lampa-plugins/anti-dmca.js",
+      "description": {
+        "ru": "Обходит ограничения Lampa.mx по DMCA блокировке контента.",
+        "uk": "Обходить обмеження Lampa.mx щодо блокування контенту DMCA.",
+        "en": "Bypasses Lampa.mx restrictions on DMCA content blocking."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "Bookmarks Sync Plugin" },
+      "author": "@levende",
+      "url": "https://levende.github.io/lampa-plugins/bookmarks-sync.js",
+      "description": {
+        "ru": "С помощью этого плагина можно перенести историю просмотров, закладки из сервиса CUB напрямую в Lampa. Будьте осторожны, плагин полностью заменяет вашу историю и сохранённые закладки.",
+        "uk": "За допомогою цього плагіна ви можете перенести історію перегляду, закладки з сервісу CUB безпосередньо в Lampa. Будьте обережні, плагін повністю замінює вашу історію та збережені закладки.",
+        "en": "With this plugin, you can transfer your browsing history, bookmarks from the CUB service directly to Lampa. Be careful, the plugin completely replaces your history and saved bookmarks."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },    
    {
       "name": { "ru": "LParty - Совместный просмотр", "uk": "LParty - Спільний перегляд", "en": "LParty - Watch Together" },
       "author": "@nrsua,@levende",
