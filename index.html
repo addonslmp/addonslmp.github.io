@@ -159,11 +159,12 @@ transition:opacity 0.3s ease;
 .modal.show{opacity:1;}
 .modal-inner{
 display:flex;
-align-items:flex-start;
+align-items:center;
 justify-content:center;
 min-height:100%;
-padding-top:3vh;
-padding-bottom:5vh;
+height:100%;
+padding:20px;
+box-sizing:border-box;
 }
 .modal-content{
 padding:24px;
@@ -173,9 +174,9 @@ max-width:580px;
 background:rgba(30,30,30,0.92);
 border-radius:16px;
 box-shadow:0 20px 60px rgba(0,0,0,0.7);
-max-height:78vh;
+max-height:min(78vh,calc(100% - 40px));
 overflow-y:auto;
-margin:3% auto 5% auto;
+margin:0;
 }
 .close{
 color:#aaa;
@@ -247,18 +248,19 @@ opacity:0.9;
 
 /* ===== Plugins modal ===== */
 .plugins-modal-content{
-max-width:720px;
-width:92%;
+max-width:860px;
+width:94%;
 padding:20px 20px 16px;
 display:flex;
 flex-direction:column;
-max-height:85vh;
+max-height:min(85vh,calc(100% - 40px));
+margin:0;
 }
 .plugins-modal-header{
 display:flex;
 align-items:center;
 justify-content:space-between;
-margin-bottom:16px;
+margin-bottom:12px;
 flex-shrink:0;
 }
 .plugins-modal-header h2{
@@ -272,37 +274,53 @@ color:rgba(255,255,255,0.45);
 margin-bottom:14px;
 flex-shrink:0;
 }
+.plugins-body{
+display:flex;
+gap:14px;
+flex:1;
+min-height:0;
+overflow:hidden;
+}
 .plugins-tabs{
 display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:16px;
-flex-shrink:0;
+flex-direction:column;
+gap:6px;
+flex:0 0 200px;
+width:200px;
+overflow-y:auto;
+overflow-x:hidden;
+padding-right:6px;
+scrollbar-width:thin;
+scrollbar-color:rgba(255,255,255,0.25) rgba(255,255,255,0.06);
 }
 .plugins-tab{
-padding:8px 14px;
-font-size:14px;
+padding:9px 12px;
+font-size:13px;
 font-weight:600;
 color:rgba(255,255,255,0.55);
-background:rgba(255,255,255,0.06);
-border:1px solid rgba(255,255,255,0.12);
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
 border-radius:8px;
 cursor:pointer;
-transition:all 0.2s ease;
-white-space:nowrap;
+transition:color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+text-align:left;
+white-space:normal;
+line-height:1.3;
 }
 .plugins-tab:hover{
 color:#fff;
-background:rgba(255,255,255,0.12);
+background:rgba(255,255,255,0.1);
+border-color:rgba(255,255,255,0.18);
 }
 .plugins-tab.active{
 color:#fff;
-background:rgba(58,123,253,0.35);
-border-color:rgba(58,123,253,0.6);
+background:rgba(255,255,255,0.12);
+border-color:rgba(255,255,255,0.22);
 }
 .plugins-list{
 overflow-y:auto;
 flex:1;
+min-width:0;
 min-height:0;
 padding-right:4px;
 scrollbar-width:thin;
@@ -321,6 +339,17 @@ border-radius:4px;
 }
 .plugins-list::-webkit-scrollbar-thumb:hover{
 background:rgba(255,255,255,0.38);
+}
+.plugins-tabs::-webkit-scrollbar{
+width:6px;
+}
+.plugins-tabs::-webkit-scrollbar-track{
+background:rgba(255,255,255,0.04);
+border-radius:4px;
+}
+.plugins-tabs::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.2);
+border-radius:4px;
 }
 .modal-content{
 scrollbar-width:thin;
@@ -451,6 +480,25 @@ p{font-size:20px;}
 .lang-btn{min-width:48px;padding:7px 10px;font-size:13px;}
 .plugins-modal-content{width:96%;padding:16px 12px 12px;max-height:90vh;}
 .plugins-modal-header h2{font-size:22px;}
+.plugins-body{flex-direction:column;gap:10px;}
+.plugins-tabs{
+flex:0 0 auto;
+width:100%;
+flex-direction:row;
+flex-wrap:nowrap;
+overflow-x:auto;
+overflow-y:hidden;
+padding-right:0;
+padding-bottom:4px;
+gap:6px;
+-webkit-overflow-scrolling:touch;
+}
+.plugins-tab{
+flex:0 0 auto;
+white-space:nowrap;
+padding:8px 12px;
+font-size:12px;
+}
 .plugin-card-name{font-size:15px;}
 .plugin-card-desc{font-size:13px;}
 }
@@ -530,7 +578,6 @@ GitHub
 </div>
 </div>
 
-<!-- Plugins modal -->
 <div id="pluginsModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content plugins-modal-content">
@@ -539,9 +586,11 @@ GitHub
 <span class="close" onclick="closePlugins()">×</span>
 </div>
 <div id="pluginsUpdateDate" class="plugins-update-date"></div>
+<div class="plugins-body">
 <div id="pluginsTabs" class="plugins-tabs"></div>
 <div id="pluginsList" class="plugins-list">
 <div class="plugins-loading" data-key="plugins_loading">Завантаження…</div>
+</div>
 </div>
 </div>
 </div>
