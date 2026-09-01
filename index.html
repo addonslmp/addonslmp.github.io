@@ -104,17 +104,19 @@ background:linear-gradient(135deg,#3a7bfd,#2455d6);
 border-radius:14px;
 cursor:pointer;
 transition:transform 0.15s ease, box-shadow 0.15s ease;
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
+box-shadow:0 3px 10px rgba(0,0,0,0.28);
 word-break:break-all;
 max-width:90vw;
 display:block;
+user-select:all;
 }
 .plugin-link:hover{
-transform:scale(1.02);
-box-shadow:0 15px 40px rgba(0,0,0,0.7);
+transform:scale(1.006);
+box-shadow:0 4px 12px rgba(0,0,0,0.32);
 }
 .plugin-link:active{
-transform:scale(0.98);
+transform:scale(0.997);
+box-shadow:0 2px 8px rgba(0,0,0,0.24);
 }
 .copied{
 margin-top:24px;
@@ -137,13 +139,15 @@ border:none;
 border-radius:14px;
 cursor:pointer;
 transition:transform 0.15s ease, box-shadow 0.15s ease;
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
+box-shadow:0 3px 10px rgba(0,0,0,0.28);
 }
 .help-btn:hover,.plugins-list-btn:hover{
-transform:scale(1.04);
+transform:scale(1.006);
+box-shadow:0 4px 12px rgba(0,0,0,0.32);
 }
 .help-btn:active,.plugins-list-btn:active{
-transform:scale(0.98);
+transform:scale(0.997);
+box-shadow:0 2px 8px rgba(0,0,0,0.24);
 }
 .plugins-list-btn{margin-top:12px;}
 .modal{
@@ -219,31 +223,75 @@ text-align:center;
 .github-btn{
 display:inline-flex;
 align-items:center;
-gap:12px;
-padding:14px 28px;
-font-size:22px;
-color:rgba(255,255,255,0.5);
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.12);
+gap:10px;
+padding:12px 22px;
+font-size:16px;
+font-weight:600;
+color:rgba(255,255,255,0.45);
+background:rgba(255,255,255,0.045);
+border:1px solid rgba(255,255,255,0.1);
 border-radius:12px;
 text-decoration:none;
-transition:all 0.25s ease;
-backdrop-filter:blur(8px);
+transition:color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+backdrop-filter:blur(10px);
+box-shadow:0 2px 8px rgba(0,0,0,0.18);
 }
 .github-btn:hover{
-color:rgba(255,255,255,0.9);
-background:rgba(255,255,255,0.1);
-border-color:rgba(255,255,255,0.25);
-transform:translateY(-2px);
-box-shadow:0 8px 25px rgba(0,0,0,0.4);
+color:rgba(255,255,255,0.85);
+background:rgba(255,255,255,0.08);
+border-color:rgba(255,255,255,0.18);
+box-shadow:0 3px 10px rgba(0,0,0,0.22);
 }
 .github-icon{
-width:28px;
-height:28px;
-opacity:0.6;
+width:20px;
+height:20px;
+opacity:0.55;
+transition:opacity 0.2s ease;
 }
 .github-btn:hover .github-icon{
-opacity:0.9;
+opacity:0.85;
+}
+.plugins-search-wrap{
+flex-shrink:0;
+margin-bottom:12px;
+}
+.plugins-search{
+width:100%;
+padding:10px 12px;
+font-size:14px;
+font-family:inherit;
+color:#fff;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.12);
+border-radius:10px;
+outline:none;
+box-sizing:border-box;
+transition:border-color 0.2s ease, background 0.2s ease;
+}
+.plugins-search::placeholder{color:rgba(255,255,255,0.35);}
+.plugins-search:focus{
+border-color:rgba(255,255,255,0.28);
+background:rgba(255,255,255,0.09);
+}
+.help-modal-header{
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:12px;
+margin-bottom:8px;
+}
+.help-modal-header h2{
+margin:0;
+text-align:left;
+flex:1;
+}
+.help-modal-header .close{
+float:none;
+flex-shrink:0;
+}
+button:focus-visible,.lang-btn:focus-visible,.plugin-link:focus-visible,.plugins-search:focus-visible{
+outline:2px solid rgba(58,123,253,0.7);
+outline-offset:2px;
 }
 
 /* ===== Plugins modal ===== */
@@ -438,10 +486,11 @@ cursor:pointer;
 transition:transform 0.15s ease, box-shadow 0.15s ease;
 }
 .plugin-copy-btn:hover{
-transform:scale(1.03);
+transform:scale(1.006);
+box-shadow:0 2px 8px rgba(0,0,0,0.25);
 }
 .plugin-copy-btn:active{
-transform:scale(0.97);
+transform:scale(0.997);
 }
 .plugin-copy-btn.copied-state{
 background:linear-gradient(135deg,#2ecc71,#27ae60);
@@ -519,7 +568,7 @@ font-size:12px;
 Lampa → Розширення → Додати плагін
 </div>
 <div class="plugin-link-wrapper">
-<div class="plugin-link" onclick="copyLink()" data-key="copy_button">
+<div class="plugin-link" role="button" tabindex="0" onclick="copyLink()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyLink();}" data-key="copy_button">
 https://addonslmp.github.io/multiplugin.js
 </div>
 </div>
@@ -543,12 +592,13 @@ GitHub
 </div>
 </div>
 
-<!-- Help modal -->
 <div id="helpModal" class="modal">
 <div class="modal-inner">
 <div class="modal-content">
-<span class="close" onclick="closeHelp()">×</span>
+<div class="help-modal-header">
 <h2 data-key="help_title">Як користуватися мультиплагіном?</h2>
+<span class="close" onclick="closeHelp()" role="button" tabindex="0" aria-label="Close">×</span>
+</div>
 <ol>
 <li>
 <strong data-key="step1"></strong>
@@ -586,6 +636,9 @@ GitHub
 <span class="close" onclick="closePlugins()">×</span>
 </div>
 <div id="pluginsUpdateDate" class="plugins-update-date"></div>
+<div class="plugins-search-wrap">
+<input type="search" id="pluginsSearch" class="plugins-search" data-key-placeholder="plugins_search" placeholder="Пошук плагінів…" autocomplete="off">
+</div>
 <div class="plugins-body">
 <div id="pluginsTabs" class="plugins-tabs"></div>
 <div id="pluginsList" class="plugins-list">
@@ -628,7 +681,8 @@ plugins_all: "Усі",
 plugins_copy: "Скопіювати",
 plugins_copied: "Скопійовано",
 plugins_updated: "Оновлено:",
-plugins_author: "Автор:"
+plugins_author: "Автор:",
+plugins_search: "Пошук плагінів…"
 },
 ru: {
 title: "Мультиплагин для Lampa",
@@ -657,7 +711,8 @@ plugins_all: "Все",
 plugins_copy: "Скопировать",
 plugins_copied: "Скопировано",
 plugins_updated: "Обновлено:",
-plugins_author: "Автор:"
+plugins_author: "Автор:",
+plugins_search: "Поиск плагинов…"
 },
 en: {
 title: "Multiplugin for Lampa",
@@ -686,7 +741,8 @@ plugins_all: "All",
 plugins_copy: "Copy",
 plugins_copied: "Copied",
 plugins_updated: "Updated:",
-plugins_author: "Author:"
+plugins_author: "Author:",
+plugins_search: "Search plugins…"
 }
 };
 
@@ -694,6 +750,7 @@ let currentLang = 'uk';
 let pluginsData = null;
 let activeCategoryKey = '__all__';
 let pluginsLoaded = false;
+let pluginsSearchQuery = '';
 
 function t(key) {
   return (translations[currentLang] && translations[currentLang][key]) || key;
@@ -727,6 +784,11 @@ function setLanguage(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+
+  const searchInput = document.getElementById('pluginsSearch');
+  if (searchInput && translations[lang] && translations[lang].plugins_search) {
+    searchInput.placeholder = translations[lang].plugins_search;
+  }
 
   if (pluginsData && document.getElementById('pluginsModal').style.display === 'block') {
     renderPluginsUI();
@@ -844,8 +906,8 @@ function renderPluginsUI() {
   const tabsEl = document.getElementById('pluginsTabs');
   tabsEl.innerHTML = '';
 
-  // "All" tab
   const allTab = document.createElement('button');
+  allTab.type = 'button';
   allTab.className = 'plugins-tab' + (activeCategoryKey === '__all__' ? ' active' : '');
   allTab.textContent = t('plugins_all') + ' (' + pluginsData.plugins.length + ')';
   allTab.onclick = () => {
@@ -856,6 +918,7 @@ function renderPluginsUI() {
 
   categories.forEach(cat => {
     const tab = document.createElement('button');
+    tab.type = 'button';
     tab.className = 'plugins-tab' + (activeCategoryKey === cat.key ? ' active' : '');
     const label = cat.labels[currentLang] || cat.labels.en || cat.key;
     tab.textContent = label + ' (' + cat.count + ')';
@@ -865,6 +928,13 @@ function renderPluginsUI() {
     };
     tabsEl.appendChild(tab);
   });
+
+  const activeTab = tabsEl.querySelector('.plugins-tab.active');
+  if (activeTab) {
+    setTimeout(() => {
+      activeTab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    }, 20);
+  }
 
   renderPluginCards();
 }
@@ -879,6 +949,18 @@ function renderPluginCards() {
   let plugins = pluginsData.plugins;
   if (activeCategoryKey !== '__all__') {
     plugins = plugins.filter(p => getCategoryKey(p) === activeCategoryKey);
+  }
+
+  const q = (pluginsSearchQuery || '').trim().toLowerCase();
+  if (q) {
+    plugins = plugins.filter(p => {
+      const name = pickLocalized(p.name, currentLang).toLowerCase();
+      const desc = pickLocalized(p.description, currentLang).toLowerCase();
+      const author = (p.author || '').toLowerCase();
+      const url = (p.url || '').toLowerCase();
+      const cat = pickLocalized(p.category, currentLang).toLowerCase();
+      return name.indexOf(q) !== -1 || desc.indexOf(q) !== -1 || author.indexOf(q) !== -1 || url.indexOf(q) !== -1 || cat.indexOf(q) !== -1;
+    });
   }
 
   if (!plugins.length) {
@@ -980,6 +1062,22 @@ document.addEventListener('click', function(event) {
     }
   }
 });
+
+document.addEventListener('keydown', function(event) {
+  if (event.key !== 'Escape') return;
+  const helpModal = document.getElementById('helpModal');
+  const pluginsModal = document.getElementById('pluginsModal');
+  if (pluginsModal.style.display === 'block') closePlugins();
+  else if (helpModal.style.display === 'block') closeHelp();
+});
+
+const pluginsSearchInput = document.getElementById('pluginsSearch');
+if (pluginsSearchInput) {
+  pluginsSearchInput.addEventListener('input', function() {
+    pluginsSearchQuery = pluginsSearchInput.value || '';
+    renderPluginCards();
+  });
+}
 
 function detectLanguage() {
   const saved = localStorage.getItem('selectedLang');
