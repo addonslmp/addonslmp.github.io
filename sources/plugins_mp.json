@@ -581,9 +581,9 @@
       "author": "@lme",
       "url": "https://lampame.github.io/main/torrentmanager.js",
       "description": {
-        "ru": "Управление торрент-клиентом прямо из Lampa",
-        "uk": "Керування торент-клієнтом прямо з Lampa",
-        "en": "Manage torrent client directly from Lampa"
+        "ru": "Управление торрент-клиентом прямо из Lampa.",
+        "uk": "Керування торент-клієнтом прямо з Lampa.",
+        "en": "Manage torrent client directly from Lampa."
       },
       "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent" }
     },
@@ -592,9 +592,9 @@
       "author": "@lme",
       "url": "https://lampame.github.io/main/pubtorr.js",
       "description": {
-        "ru": "Публичные парсеры для поиска торрентов",
-        "uk": "Публічні парсери для пошуку торрентів",
-        "en": "Public parsers for searching torrents"
+        "ru": "Публичные парсеры для поиска торрентов.",
+        "uk": "Публічні парсери для пошуку торрентів.",
+        "en": "Public parsers for searching torrents."
       },
       "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent"
       }
@@ -635,9 +635,9 @@
       "name": { "ru": "Tracks", "uk": "Tracks", "en": "Tracks" },
       "url": "http://cub.best/plugin/tracks",
       "description": {
-        "ru": "Корректное отображение списка озвучек в торрентах",
-        "uk": "Коректне відображення списку озвучок у торрентах",
-        "en": "Correct display of voice acting lists in torrents"
+        "ru": "Корректное отображение списка озвучек в торрентах.",
+        "uk": "Коректне відображення списку озвучок у торрентах.",
+        "en": "Correct display of voice acting lists in torrents."
       },
       "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent" }
     },
@@ -691,9 +691,9 @@
       "author": "@nb557",
       "url": "https://nb557.github.io/plugins/online_mod.js",
       "description": {
-        "ru": "Онлайн-источник",
-        "uk": "Онлайн-джерело",
-        "en": "Online source"
+        "ru": "Онлайн-источник.",
+        "uk": "Онлайн-джерело.",
+        "en": "Online source."
       },
       "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
     },   
@@ -776,8 +776,8 @@
       "author": "@z01",
       "url": "http://z01.online/live",
       "description": {
-        "uk": "Z01 Онлайн",
-        "en": "Z01 Online"
+        "uk": "Z01 Онлайн.",
+        "en": "Z01 Online."
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },		
@@ -805,8 +805,8 @@
       "name": { "en": "Lumio Online" },
       "url": "http://beta.mitsu.tv/plugins/lumio.js",
       "description": {
-        "uk": "Lumio онлайн",
-        "en": "Lumio online"
+        "uk": "Lumio онлайн.",
+        "en": "Lumio online."
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },    
@@ -825,8 +825,8 @@
       "name": { "en": "Online VOD" },
       "url": "http://arkmv.ru/vod",
       "description": {
-        "uk": "Онлайн VOD",
-        "en": "Online VOD"
+        "uk": "Онлайн VOD.",
+        "en": "Online VOD."
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },
@@ -835,8 +835,8 @@
       "author": "@Showy",
       "url": "http://wtch.ch/m",
       "description": {
-        "uk": "Онлайн. Filmix 720p",
-        "en": "Online. Filmix 720p"
+        "uk": "Онлайн. Filmix 720p.",
+        "en": "Online. Filmix 720p."
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     }, 	    
