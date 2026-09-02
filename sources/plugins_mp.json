@@ -6,9 +6,9 @@
       "author": "@igorek1986",
       "url": "https://igorek1986.github.io/lampa-plugins/myshows.js",
       "description": {
-        "ru": "Плагин для синхронизации сервиса MyShows с Lampa",
-        "uk": "Плагін для синхронізації сервісу MyShows з Lampa",
-        "en": "Plugin for syncing MyShows service with Lampa"
+        "ru": "Плагин для синхронизации сервиса MyShows с Lampa.",
+        "uk": "Плагін для синхронізації сервісу MyShows з Lampa.",
+        "en": "Plugin for syncing MyShows service with Lampa."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },
