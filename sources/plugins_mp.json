@@ -1,5 +1,5 @@
 {
-  "updateDate": "01.09.2026",
+  "updateDate": "08.09.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -425,13 +425,13 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     }, 
     {
-      "name": { "en": "Nova Skin" },
+      "name": { "en": "Nova Plus" },
       "author": "@amikdn",
-      "url": "https://amikdn.github.io/nova_skin.js",
+      "url": "https://amikdn.github.io/nova_plus.js",
       "description": {
         "ru": "Обновленный интерфейс в онлайн источниках.",
         "uk": "Оновлений інтерфейс в онлайн-джерелах.",
-        "en": "A new interface in online sources."
+        "en": "Updated interface in online sources."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },   
@@ -801,6 +801,17 @@
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online"}
     },
+    {
+      "name": { "uk": "NetFix Онлайн", "en": "NetFix Online" },
+      "author": "@NetFix",
+      "url": "https://netfix.cc/netfix.js",
+      "description": {
+        "ru": "NetFix — это стриминговый сервис, позволяющий смотреть фильмы, сериалы и многое другое на разных устройствах с подключением к интернету. ТГ-бот: @netfixUserBot",
+        "uk": "NetFix — це потоковий сервіс, який дозволяє переглядати фільми, телевізійні шоу тощо на різних пристроях, підключених до Інтернету. TG-бот: @netfixUserBot",
+        "en": "NetFix is a streaming service that lets you watch movies, TV shows, and more on a variety of internet-connected devices. TG bot: @netfixUserBot"
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },    
     {
       "name": { "en": "Lumio Online" },
       "url": "http://beta.mitsu.tv/plugins/lumio.js",
