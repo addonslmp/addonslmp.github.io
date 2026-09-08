@@ -480,17 +480,6 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },    
     {
-      "name": { "en": "Interface Mod", "ru": "Интерфейс мод", "uk": "Інтерфейс мод" },
-      "author": "@Lampaplugins",
-      "url": "https://lampaplugins.github.io/store/interface_mod.js",
-      "description": {
-        "ru": "Модификация интерфейса Lampa с темой Emerald и улучшенными стилями.",
-        "uk": "Модифікація інтерфейсу Lampa з темою Emerald та вдосконаленими стилями.",
-        "en": "A modified version of the Lampa interface featuring the Emerald theme and improved styles."
-      },
-      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },    
-    {
       "name": { "en": "Cardify Rating" },
       "author": "@ipavlin98",
       "url": "https://ipavlin98.github.io/lmp-plugins/cardify.js",
