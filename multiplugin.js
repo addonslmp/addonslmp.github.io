@@ -159,7 +159,7 @@
 
         if (info.added.length) {
             html += "<b>" + Lampa.Lang.translate("mp_added") + '</b><div style="margin-bottom:6px;"></div>';
-            var limit = 3;
+            var limit = 5;
             var count = Math.min(info.added.length, limit);
             var i;
 
@@ -185,7 +185,7 @@
 
         if (info.removed.length) {
             html += "<b>" + Lampa.Lang.translate("mp_removed") + '</b><div style="margin-bottom:6px;"></div>';
-            var limit = 3;
+            var limit = 5;
             var count = Math.min(info.removed.length, limit);
             var i;
 
