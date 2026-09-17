@@ -1,5 +1,5 @@
 {
-  "updateDate": "08.09.2026",
+  "updateDate": "17.09.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -75,6 +75,28 @@
         "ru": "Интеграция медиасервера Jellyfin в Lampa.",
         "uk": "Інтеграція медіасервера Jellyfin у Lampa.",
         "en": "Integrating the Jellyfin media server into Lampa."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "Jellyfin Extended" },
+      "author": "@Lampaplugins",
+      "url": "https://lampaplugins.github.io/store/wmajiug3e/jellyfin.js",
+      "description": {
+        "ru": "Расширенная версия Jellyfin: выбор пользователя, сезоны и эпизоды, HLS-транскодинг с выбором качества, синхронизация прогресса просмотра, постеры TMDB.",
+        "uk": "Розширена версія Jellyfin: відбір користувачів, сезони та епізоди, перекодування HLS з відбором якості, синхронізація перегляду, плакати TMDB.",
+        "en": "Extended version of Jellyfin: user selection, seasons and episodes, HLS transcoding with quality selection, synchronization of viewing progress, TMDB posters."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "en": "TorrServer Settings" },
+      "author": "@pavelpikta",
+      "url": "https://lampaplugins.github.io/store/pavelpikta/torrserver-settings.js",
+      "description": {
+        "ru": "Настройки TorrServer (BTSets) из Lampa: кэш, диск, сеть, DLNA, трекеры, TMDB и другое.",
+        "uk": "Налаштування TorrServer (BTSets) від Lampa: кеш, диск, мережа, DLNA, трекери, TMDB тощо.",
+        "en": "TorrServer (BTSets) settings from Lampa: cache, disk, network, DLNA, trackers, TMDB, and more."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
@@ -992,12 +1014,22 @@
       "category": { "ru": "Плагины от Yarik's", "uk": "Плагіни від Yarik's", "en": "Plugins by Yarik's" }
     },
     {
-      "name": { "en": "Ydes Cards", "uk": "Ydes Картки" },
+      "name": { "en": "Yarik's Design" },
       "author": "@YaroslavFilms",
-      "url": "http://lampalampa.free.nf/ydes.js",
+      "url": "https://yarikrazor-star.github.io/lmp/ydes.js",
       "description": {
-        "uk": "Оновлений дизайн карток.<br>- Нестандратні пропорції карток, щоб краще считувались елементи.<br>- Змінює кількість карток, знову таки, щоб вони були більшими.<br>- Як горизонтальні так і вертикальні картки.<br>- Варіанти з текстом чи лого.<br>- Навіть слоган та опис можна додати)<br>- Декілька рейтингів *потрібні ключі MDBLIST/OMDB<br>- Налаштування карток під себе. *картки повністю кастомні - на деяких девайсах, щоб вступили налаштування в силу - потрібно лампу перезавантажити.<br>- Можна ставити на пусту лампу, можна спобувати комбінувати з іншими плагінами. (З моїми точно можна :)<br>- Поки працює тільки з джерелом TMDB",
-        "en": "The updated look of the cards.<br>- Non-standard card proportions to make elements easier to read.<br>- Changes the number of cards, again, to make them larger.<br>- Both horizontal and vertical cards.<br>- Options with text or a logo. <br>- You can even add a tagline and description.<br>- Multiple ratings *requires MDBLIST/OMDB keys<br>- Customize cards to your liking. *Cards are fully customizable—on some devices, you’ll need to restart the lamp for the settings to take effect. <br>- You can install it on an empty lamp, or try combining it with other plugins. (It definitely works with mine :)<br>- Currently only works with TMDB as the data source"
+        "uk": "Пакет повного кастомного редизайну карток фільмів. Можливість вмикати горизонтальні картки. Налаштування бейджів інформації прямо на картці. Можливість додати кілька рейтингів на картку (Потрібні api ключі MDBlist+).  Зміна дизайну блоку серій, виправлення інформації про назву/дату/рейтинг.",
+        "en": "A package of full custom redesign of movie cards. Ability to enable horizontal cards. Setting up information badges directly on the card. Ability to add multiple ratings to the card (MDBlist + API keys required).  Changing the design of the series block, correcting the information about the title/date/rating."
+      },
+      "category": { "ru": "Плагины от Yarik's", "uk": "Плагіни від Yarik's", "en": "Plugins by Yarik's" }
+    },
+    {
+      "name": { "en": "Ytranslate" },
+      "author": "@YaroslavFilms",
+      "url": "https://yarikrazor-star.github.io/lmp/ytranslate.js",
+      "description": {
+        "uk": "Автоматичний переклад назв, описів, слоганів Українською.",
+        "en": "Automatic translation of titles, descriptions, slogans into Ukrainian."
       },
       "category": { "ru": "Плагины от Yarik's", "uk": "Плагіни від Yarik's", "en": "Plugins by Yarik's" }
     },    
@@ -1251,6 +1283,17 @@
       },
       "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
     },
+    {
+      "name": { "en": "Networks" },
+      "author": "@ko31k,@levende",
+      "url": "https://ko31k.github.io/LMP/plugins/Networks.js",
+      "description": {
+        "ru": "Мод плагина от @levende. Добавляет на карту стриминговые кнопки, где были выпущены проекты, и продакшн-студии. На смартфонах можно регулировать отступы, размеры и центрирование.",
+        "uk": "Мод плагіну від @levende. Додає в картку кнопки стримінгів, де виходили проекти, та виробничих студій. Є можливість налаштування відступів, розмірів і центрування на смартфонах.",
+        "en": "Plugin mod by @levende. Adds streaming buttons, where projects were released, and production studios to the card. It is possible to adjust indents, sizes and centering on smartphones."
+      },
+      "category": { "ru": "Плагины от Ko31k", "uk": "Плагіни від Ko31k", "en": "Plugins by Ko31k" }
+    },    
     {
       "name": { "ru": "Редирект на BazarNetUa", "uk": "Редірект на BazarNetUa",  "en": "Redirect to BazarNetUa" },
       "author": "@BazarNetUA",
