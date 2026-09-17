@@ -1288,7 +1288,7 @@
       "author": "@ko31k,@levende",
       "url": "https://ko31k.github.io/LMP/plugins/Networks.js",
       "description": {
-        "ru": "Мод плагина от @levende. Добавляет на карту стриминговые кнопки, где были выпущены проекты, и продакшн-студии. На смартфонах можно регулировать отступы, размеры и центрирование.",
+        "ru": "Мод плагина от @levende. Добавляет на карточку стриминговые кнопки, где были выпущены проекты, и продакшн-студии. На смартфонах можно регулировать отступы, размеры и центрирование.",
         "uk": "Мод плагіну від @levende. Додає в картку кнопки стримінгів, де виходили проекти, та виробничих студій. Є можливість налаштування відступів, розмірів і центрування на смартфонах.",
         "en": "Plugin mod by @levende. Adds streaming buttons, where projects were released, and production studios to the card. It is possible to adjust indents, sizes and centering on smartphones."
       },
