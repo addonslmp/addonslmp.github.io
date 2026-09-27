@@ -855,15 +855,6 @@
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },
     {
-      "name": { "en": "Online VOD" },
-      "url": "http://arkmv.ru/vod",
-      "description": {
-        "uk": "Онлайн VOD.",
-        "en": "Online VOD."
-      },
-      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },
-    {
       "name": { "en": "Online wtch.ch" },
       "author": "@Showy",
       "url": "http://wtch.ch/m",
