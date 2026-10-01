@@ -1,5 +1,5 @@
 {
-  "updateDate": "27.09.2026",
+  "updateDate": "01.10.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -292,7 +292,7 @@
         "en": "This plugin adds the ability to edit the Lampa menu."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
-    },  
+   },  
    {
       "name": { "en": "Lampa Add-on" },
       "url": "https://uafree.mooo.com",
@@ -300,6 +300,17 @@
         "ru": "Цель сервиса ― сделать настройку Lampa максимально простой. Большинство возможностей работают автоматически после нескольких простых действий, без сложной конфигурации.",
         "uk": "Мета сервісу — зробити налаштування Lampa максимально простим. Більшість функцій запускаються автоматично після кількох простих дій, без складного налаштування.",
         "en": "The goal of this service is to make setting up Lampa as simple as possible. Most features work automatically after a few simple steps, without any complicated configuration."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+    },
+    {
+      "name": { "ru": "Радио", "uk": "Радіо", "en": "Radio" },
+      "author": "@ne3nayskas",
+      "url": "https://ne3nayskas.github.io/plugins/radio.js",
+      "description": {
+        "ru": "Плагин «Радио» для Lampa добавляет в меню раздел с более чем 50 радиостанциями (украинской и мировые).",
+        "uk": "Плагін «Radio» для Lampa додає в меню розділ з понад 50 радіостанціями (українські та світові).",
+        "en": "The \"Radio\" plugin for Lampa adds a section with more than 50 radio stations (Ukrainian and world) to the menu."
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
     },    
@@ -742,7 +753,7 @@
     {
       "name": { "en": "Alpac Online Beta" },
       "author": "@Alcopac",
-      "url": "https://beta.l-vid.online/online.js",
+      "url": "https://lampa.wtf/on.js",
       "description": {
         "ru": "Онлайн Alpac. Для просмотра онлайна необходимо авторизоваться в ТГ-боте: @go_lampa_testbot",
         "uk": "Онлайн Alpac. Для перегляду онлайн необхідно авторизуватися в ТГ-боті: @go_lampa_testbot",
