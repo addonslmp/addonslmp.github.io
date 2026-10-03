@@ -1,5 +1,5 @@
 {
-  "updateDate": "01.10.2026",
+  "updateDate": "03.10.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -23,6 +23,17 @@
       },
       "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
    },
+   {
+      "name": { "en": "Simkl" },
+      "author": "@entropious",
+      "url": "https://entropious.github.io/lampa-simkl/simkl.js",
+      "description": {
+        "ru": "Плагин показывает на карточке фильма или сериала ваш статус просмотра с simkl.com и позволяет менять его, не уходя из Lampa.",
+        "uk": "Плагін показує на картці фільму або серіалу ваш статус перегляду на сайті simkl.com і дозволяє змінювати його, не виходячи з Lampa.",
+        "en": "The plugin shows on the movie or series card your viewing status with simkl.com and allows you to change it without leaving Lampa."
+      },
+      "category": { "ru": "Разное", "uk": "Різне", "en": "Misc" }
+   },    
    {
       "name": { "en": "Custom Favorites" },
       "author": "@levende",
