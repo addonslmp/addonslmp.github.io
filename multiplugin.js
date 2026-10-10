@@ -167,6 +167,196 @@
 
 
 
+    // ================== Flat / Apple-style модальные окна ==================
+    var MP_STYLE_ID = "mp-flat-modal-style";
+
+    function mpInjectFlatStyle() {
+        if (document.getElementById(MP_STYLE_ID)) return;
+
+        var css = "" +
+            // ===== Палитра (меняй здесь) =====
+            ".mp-flat-modal{" +
+                "--mp-bg:#2c2c2e;--mp-card:#3a3a3c;--mp-card-focus:#48484a;" +
+                "--mp-text:#f2f2f7;--mp-muted:#98989f;" +
+                "--mp-accent:#0a84ff;--mp-add:#30d158;--mp-remove:#ff453a;--mp-warn:#ff9f0a;" +
+            "}" +
+
+            // ===== Контейнер модалки =====
+            ".mp-flat-modal .modal__content{" +
+                "background:var(--mp-bg)!important;color:var(--mp-text)!important;" +
+                "border:none!important;border-radius:6px!important;" +
+                "box-shadow:none!important;background-image:none!important;" +
+            "}" +
+            ".mp-flat-modal .modal__head,.mp-flat-modal .modal__body,.mp-flat-modal .modal__footer{" +
+                "background:transparent!important;box-shadow:none!important;" +
+            "}" +
+            ".mp-flat-modal .modal__title{color:var(--mp-text)!important;font-weight:600;}" +
+            ".mp-flat-modal .about{color:var(--mp-text);line-height:1.45;}" +
+
+            // ===== Кнопки модалки (OK / Отмена) =====
+            ".mp-flat-modal .simple-button,.mp-flat-modal .modal__button{" +
+                "background:var(--mp-card)!important;color:var(--mp-text)!important;" +
+                "border:none!important;border-radius:4px!important;box-shadow:none!important;" +
+            "}" +
+            ".mp-flat-modal .simple-button.focus,.mp-flat-modal .modal__button.focus{" +
+                "background:#fff!important;color:#1c1c1e!important;" +
+            "}" +
+
+            // ===== Содержимое: общее =====
+            ".mp-flat{text-align:left;color:var(--mp-text);box-sizing:border-box;font-size:1.2em;}" +
+            ".mp-flat__date{color:var(--mp-muted);font-size:.86em;line-height:1.35;margin-bottom:14px;}" +
+            ".mp-flat__date b{color:var(--mp-text);font-weight:500;}" +
+            ".mp-flat__section{font-weight:600;font-size:.95em;margin:0 0 8px;display:flex;align-items:center;}" +
+            ".mp-flat__section:before{content:'';width:4px;height:1em;border-radius:2px;margin-right:8px;background:var(--mp-accent);}" +
+            ".mp-flat__section--add:before{background:var(--mp-add);}" +
+            ".mp-flat__section--remove:before{background:var(--mp-remove);}" +
+            ".mp-flat__item{background:var(--mp-card);border-radius:4px;padding:9px 12px;margin-bottom:6px;}" +
+            ".mp-flat__name{line-height:1.3;font-weight:600;}" +
+            ".mp-flat__desc{color:var(--mp-muted);font-size:.88em;line-height:1.3;margin-top:3px;}" +
+            ".mp-flat__more{color:var(--mp-muted);font-size:.9em;margin:2px 0 16px 2px;}" +
+            ".mp-flat__empty{color:var(--mp-muted);}" +
+
+            // ===== Предупреждение =====
+            ".mp-flat__warn{" +
+                "background:var(--mp-card);border-radius:4px;padding:12px 14px;" +
+                "border-left:4px solid var(--mp-warn);line-height:1.45;font-size:1em;" +
+            "}" +
+
+            // ===== Чекбокс «Больше не показывать» =====
+            ".mp-dont-show{display:inline-flex;align-items:center;justify-content:center;" +
+                "padding:.7em 1.1em;border-radius:4px;background:var(--mp-card);}" +
+            ".mp-dont-show.focus{background:var(--mp-card-focus);}" +
+            ".mp-dont-show .mp-check-box{width:1.3em;height:1.3em;border-radius:50%;margin-right:.7em;" +
+                "display:flex;align-items:center;justify-content:center;flex-shrink:0;box-sizing:border-box;" +
+                "font-size:.85em;line-height:1;color:#fff;background:transparent;border:2px solid var(--mp-muted);}" +
+            ".mp-dont-show .mp-check-box.mp-checked{background:var(--mp-accent);border-color:var(--mp-accent);}" +
+            ".mp-dont-show.focus .mp-check-box:not(.mp-checked){border-color:var(--mp-text);}" +
+            ".mp-dont-show .mp-check-label{line-height:1.25em;white-space:nowrap;}" +
+
+            // ===== Уведомления сверху экрана =====
+            ".mp-toast{position:fixed;top:1.6em;left:50%;transform:translate(-50%,-160%);opacity:0;z-index:99999;" +
+                "display:flex;align-items:center;max-width:80%;box-sizing:border-box;" +
+                "background:#2c2c2e;color:#f2f2f7;border-radius:14px;padding:.75em 1.3em .75em 0;" +
+                "font-size:1.05em;line-height:1.3;pointer-events:none;box-shadow:none;" +
+                "transition:transform .25s ease,opacity .25s ease;}" +
+            ".mp-toast--show{transform:translate(-50%,0);opacity:1;}" +
+            ".mp-toast__bar{width:4px;align-self:stretch;border-radius:2px;margin:.1em .9em .1em .75em;background:#98989f;flex-shrink:0;}" +
+            ".mp-toast--success .mp-toast__bar{background:#30d158;}" +
+            ".mp-toast--error .mp-toast__bar{background:#ff453a;}" +
+            ".mp-toast--warn .mp-toast__bar{background:#ff9f0a;}" +
+            ".mp-toast--info .mp-toast__bar{background:#0a84ff;}" +
+
+            // ===== Временное скрытие штатных уведомлений Lampa (внизу экрана) =====
+            "body.mp-mute-noty .noty{display:none!important;}";
+
+        var style = document.createElement("style");
+        style.id = MP_STYLE_ID;
+        style.textContent = css;
+        document.head.appendChild(style);
+    }
+
+    // Помечаем именно нашу модалку, чтобы стиль не влиял на другие окна Lampa
+    function mpMarkModal() {
+        try {
+            $(".modal").last().addClass("mp-flat-modal");
+        } catch (e) {}
+    }
+
+    // Единая точка открытия всех модалок мультиплагина
+    function mpOpenModal(params) {
+        mpInjectFlatStyle();
+        Lampa.Modal.open(params);
+        mpMarkModal();
+    }
+
+    // Временно глушит штатные уведомления Lampa (снизу экрана)
+    var mpNotyMuted = false;
+    var mpNotyOrig = null;
+    var mpNotyMuteTimer = null;
+
+    function mpMuteLampaNoty(ms) {
+        try {
+            mpInjectFlatStyle();
+
+            if (!mpNotyOrig && Lampa.Noty && typeof Lampa.Noty.show === "function") {
+                mpNotyOrig = Lampa.Noty.show;
+                Lampa.Noty.show = function () {
+                    if (mpNotyMuted) return;
+                    return mpNotyOrig.apply(this, arguments);
+                };
+            }
+
+            mpNotyMuted = true;
+            $("body").addClass("mp-mute-noty");
+            $(".noty").remove();
+
+            clearTimeout(mpNotyMuteTimer);
+            mpNotyMuteTimer = setTimeout(function () {
+                mpNotyMuted = false;
+                $("body").removeClass("mp-mute-noty");
+            }, ms || 3000);
+        } catch (e) {}
+    }
+
+    // Уведомление сверху экрана. type: success | error | warn | info
+    var mpToastTimer = null;
+    var mpToastRemoveTimer = null;
+
+    function mpNotify(text, type, time) {
+        mpInjectFlatStyle();
+        type = type || "info";
+        time = time || 3000;
+
+        clearTimeout(mpToastTimer);
+        clearTimeout(mpToastRemoveTimer);
+        $(".mp-toast").remove();
+
+        var el = $('<div class="mp-toast mp-toast--' + type + '"><div class="mp-toast__bar"></div><div class="mp-toast__text"></div></div>');
+        el.find(".mp-toast__text").text(text);
+        $("body").append(el);
+
+        setTimeout(function () {
+            el.addClass("mp-toast--show");
+        }, 20);
+
+        mpToastTimer = setTimeout(function () {
+            el.removeClass("mp-toast--show");
+            mpToastRemoveTimer = setTimeout(function () {
+                el.remove();
+            }, 300);
+        }, time);
+    }
+
+    function mpFlatItem(p) {
+        var name = translateObj(p.name) || p.url.split("/").pop();
+        var category = translateObj(p.category);
+        if (category) name += " (" + category + ")";
+
+        var html = '<div class="mp-flat__item"><div class="mp-flat__name">' + name + "</div>";
+        if (p.description) {
+            html += '<div class="mp-flat__desc">' + translateObj(p.description) + "</div>";
+        }
+        return html + "</div>";
+    }
+
+    function mpFlatSection(list, titleKey, modifier) {
+        if (!list.length) return "";
+        var limit = 5;
+        var count = Math.min(list.length, limit);
+
+        var html = '<div class="mp-flat__section mp-flat__section--' + modifier + '">' +
+            Lampa.Lang.translate(titleKey).replace(/:\s*$/, "") + "</div>";
+
+        for (var i = 0; i < count; i++) html += mpFlatItem(list[i]);
+
+        if (list.length > limit) {
+            html += '<div class="mp-flat__more">' + Lampa.Lang.translate("mp_and_more") + (list.length - limit) + "</div>";
+        } else {
+            html += '<div style="height:10px"></div>';
+        }
+        return html;
+    }
+
     function getUpdateInfo() {
         return Lampa.Storage.get(INFO_KEY, { date: "—", added: [], removed: [] });
     }
@@ -178,89 +368,18 @@
         var info = getUpdateInfo();
         Lampa.Storage.set(UPDATE_SEEN_KEY, true);
 
-
-
-
-        var html = '<div class="about" style="text-align:left">';
-        html += "<div><b>" + Lampa.Lang.translate("mp_last_update") + "</b> " + info.date + "</div><br>";
-
-
-
-
-        if (info.added.length) {
-            html += "<b>" + Lampa.Lang.translate("mp_added") + '</b><div style="margin-bottom:6px;"></div>';
-            var limit = 5;
-            var count = Math.min(info.added.length, limit);
-            var i;
-
-
-
-
-            for (i = 0; i < count; i++) {
-                var p = info.added[i];
-                var name = translateObj(p.name) || p.url.split("/").pop();
-                var category = translateObj(p.category);
-                if (category) name += " (" + category + ")";
-                html += "• <b>" + name + "</b><br>";
-                if (p.description) {
-                    html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px; line-height:1.2; margin-bottom:2px;">' + translateObj(p.description) + "</div>";
-                } else {
-                    html += '<br style="margin-bottom:2px;">';
-                }
-            }
-            if (info.added.length > limit) {
-                html += '<div style="color:#999; margin-top:4px;">' + Lampa.Lang.translate("mp_and_more") + (info.added.length - limit) + "</div>";
-            }
-            html += "<br>";
-        }
-
-
-
-
-        if (info.removed.length) {
-            html += "<b>" + Lampa.Lang.translate("mp_removed") + '</b><div style="margin-bottom:6px;"></div>';
-            var limit = 5;
-            var count = Math.min(info.removed.length, limit);
-            var i;
-
-
-
-
-            for (i = 0; i < count; i++) {
-                var p = info.removed[i];
-                var name = translateObj(p.name) || p.url.split("/").pop();
-                var category = translateObj(p.category);
-                if (category) name += " (" + category + ")";
-                html += "• <b>" + name + "</b><br>";
-                if (p.description) {
-                    html += '<div style="color:#bfbfbf; font-size:0.9em; margin-left:18px; line-height:1.2; margin-bottom:2px;">' + translateObj(p.description) + "</div>";
-                } else {
-                    html += '<br style="margin-bottom:2px;">';
-                }
-            }
-            if (info.removed.length > limit) {
-                html += '<div style="color:#999; margin-top:4px;">' + Lampa.Lang.translate("mp_and_more") + (info.removed.length - limit) + "</div>";
-            }
-            html += "<br>";
-        }
-
-
-
+        var html = '<div class="mp-flat">';
+        html += '<div class="mp-flat__date">' + Lampa.Lang.translate("mp_last_update") + "<b>" + info.date + "</b></div>";
+        html += mpFlatSection(info.added, "mp_added", "add");
+        html += mpFlatSection(info.removed, "mp_removed", "remove");
 
         if (!info.added.length && !info.removed.length) {
-            html += "<div>" + Lampa.Lang.translate("mp_no_changes") + "</div>";
+            html += '<div class="mp-flat__empty">' + Lampa.Lang.translate("mp_no_changes") + "</div>";
         }
-
-
-
-
-        html += '</div>';
-
-
-
+        html += "</div>";
 
         var prev = Lampa.Controller.enabled().name;
-        Lampa.Modal.open({
+        mpOpenModal({
             title: Lampa.Lang.translate("mp_update_info"),
             align: "center",
             size: "medium",
@@ -273,15 +392,13 @@
     }
 
 
-
-
     function disableAllPlugins() {
         var prev = Lampa.Controller.enabled().name;
 
 
 
 
-        Lampa.Modal.open({
+        mpOpenModal({
             title: Lampa.Lang.translate("mp_disable_all"),
             align: "center",
             html: $('<div class="about">' + Lampa.Lang.translate("mp_confirm_disable_all") + "</div>"),
@@ -333,7 +450,7 @@
 
 
 
-                        Lampa.Noty.show(Lampa.Lang.translate("mp_all_plugins_removed"), INSTALLED_COLOR, 6000);
+                        mpNotify(Lampa.Lang.translate("mp_all_plugins_removed"), "error", 4000);
 
 
 
@@ -350,7 +467,7 @@
 
     function confirmAndSync() {
         var prev = Lampa.Controller.enabled().name;
-        Lampa.Modal.open({
+        mpOpenModal({
             title: Lampa.Lang.translate("mp_sync_plugins"),
             align: "center",
             html: $('<div class="about">' + Lampa.Lang.translate("mp_confirm_sync") + "</div>"),
@@ -380,7 +497,7 @@
 
     function confirmAndLoadOnline() {
         var prev = Lampa.Controller.enabled().name;
-        Lampa.Modal.open({
+        mpOpenModal({
             title: Lampa.Lang.translate("mp_load_online_only"),
             align: "center",
             html: $('<div class="about">' + Lampa.Lang.translate("mp_confirm_online") + "</div>"),
@@ -478,12 +595,12 @@
                 }, 100);
             } catch (e) {
                 console.error("Load online error:", e);
-                Lampa.Noty.show("Ошибка загрузки");
+                mpNotify("Ошибка загрузки", "error");
             } finally {
                 Lampa.Loading.stop();
             }
         }).fail(function () {
-            Lampa.Noty.show("Ошибка загрузки");
+            mpNotify("Ошибка загрузки", "error");
             Lampa.Loading.stop();
             if (callback) callback();
         });
@@ -536,7 +653,7 @@
                     savePluginList(newList);
                     saveUpdateInfo(remoteDate, [], []);
                     Lampa.Storage.set(SYNCED_ONCE_KEY, true);
-                    Lampa.Noty.show(Lampa.Lang.translate("mp_sync_complete"));
+                    mpNotify(Lampa.Lang.translate("mp_sync_complete"), "success");
                     if (callback) callback();
                     Lampa.Loading.stop();
                     return;
@@ -559,7 +676,7 @@
 
                 if (sameDate) {
                     savePluginList(newList);
-                    Lampa.Noty.show(Lampa.Lang.translate("mp_sync_complete"));
+                    mpNotify(Lampa.Lang.translate("mp_sync_complete"), "success");
                     if (callback) callback();
                     Lampa.Loading.stop();
                     return;
@@ -588,16 +705,16 @@
 
 
 
-                Lampa.Noty.show(Lampa.Lang.translate("mp_sync_complete"));
+                mpNotify(Lampa.Lang.translate("mp_sync_complete"), "success");
             } catch (e) {
                 console.error("Sync error:", e);
-                Lampa.Noty.show("Ошибка синхронизации");
+                mpNotify("Ошибка синхронизации", "error");
             } finally {
                 Lampa.Loading.stop();
                 if (callback) callback();
             }
         }).fail(function () {
-            Lampa.Noty.show("Ошибка синхронизации");
+            mpNotify("Ошибка синхронизации", "error");
             Lampa.Loading.stop();
             if (callback) callback();
         });
@@ -762,7 +879,7 @@
             field: { name: Lampa.Lang.translate("mp_reload_lampa") },
             onChange: function () {
                 var prev = Lampa.Controller.enabled().name;
-                Lampa.Modal.open({
+                mpOpenModal({
                     title: Lampa.Lang.translate("mp_reload_lampa"),
                     align: "center",
                     html: $('<div class="about">' + Lampa.Lang.translate("mp_reload_message") + "</div>"),
@@ -796,16 +913,10 @@
             return;
         }
 
-
-
-
         if (Lampa.Storage.get("mp_install_shown", false)) {
             showInstallPlugins();
             return;
         }
-
-
-
 
         var hideWarning = false;
         var prev = null;
@@ -813,27 +924,9 @@
             prev = Lampa.Controller.enabled().name;
         } catch (e) {}
 
-
-
-
-        if (!$("#mp-dont-show-style").length) {
-            $("head").append(
-                '<style id="mp-dont-show-style">' +
-                    ".mp-dont-show{display:inline-flex;align-items:center;justify-content:center;padding:0.75em 1.1em;border-radius:0.5em;}" +
-                    ".mp-dont-show .mp-check-box{width:1.25em;height:1.25em;border:2px solid rgba(255,255,255,0.55);border-radius:0.25em;margin-right:0.75em;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-sizing:border-box;font-size:0.95em;line-height:1;color:#fff;background:transparent;}" +
-                    ".mp-dont-show .mp-check-box.mp-checked{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.9);}" +
-                    ".mp-dont-show.focus .mp-check-box{border-color:#fff !important;box-shadow:0 0 0 2px #fff;}" +
-                    ".mp-dont-show .mp-check-label{line-height:1.25em;white-space:nowrap;}" +
-                "</style>"
-            );
-        }
-
-
-
-
         var html = $(
-            '<div class="about">' +
-                Lampa.Lang.translate("mp_captcha_warning") +
+            '<div class="mp-flat">' +
+                '<div class="mp-flat__warn">' + Lampa.Lang.translate("mp_captcha_warning") + "</div>" +
                 '<div style="display:flex;justify-content:center;width:100%;margin-top:1.2em;">' +
                     '<div class="selector mp-dont-show">' +
                         '<div class="mp-check-box"></div>' +
@@ -843,10 +936,7 @@
             "</div>"
         );
 
-
-
-
-        Lampa.Modal.open({
+        mpOpenModal({
             title: Lampa.Lang.translate("mp_install_plugins"),
             align: "center",
             size: "medium",
@@ -872,21 +962,12 @@
             },
         });
 
-
-
-
         setTimeout(function () {
             var row = $(".modal .mp-dont-show");
             var box = row.find(".mp-check-box");
             if (!row.length) return;
 
-
-
-
             var toggling = false;
-
-
-
 
             function updateCheckVisual() {
                 if (hideWarning) {
@@ -895,9 +976,6 @@
                     box.removeClass("mp-checked").html("");
                 }
             }
-
-
-
 
             function toggleCheck() {
                 if (toggling) return;
@@ -909,9 +987,6 @@
                 }, 150);
             }
 
-
-
-
             row.off("hover:enter.mpdont click.mpdont");
             row.on("hover:enter.mpdont", toggleCheck);
             row.on("click.mpdont", function (e) {
@@ -920,9 +995,6 @@
                 toggleCheck();
             });
 
-
-
-
             try {
                 Lampa.Controller.collectionSet($(".modal"));
             } catch (e) {}
@@ -930,11 +1002,9 @@
     }
 
 
-
-
     function showInstallPlugins() {
         if (!pluginList || pluginList.length === 0) {
-            Lampa.Noty.show(Lampa.Lang.translate("mp_sync_required"));
+            mpNotify(Lampa.Lang.translate("mp_sync_required"), "warn");
             Lampa.Controller.toggle("settings_component");
             return;
         }
@@ -1090,6 +1160,8 @@
         var url = p.url;
         if (isInstalled(url)) return;
 
+        mpMuteLampaNoty(3500);
+
 
 
 
@@ -1122,7 +1194,7 @@
 
 
 
-        Lampa.Noty.show(Lampa.Lang.translate("pi_plugin_installed"));
+        mpNotify(Lampa.Lang.translate("pi_plugin_installed"), "success");
 
 
 
@@ -1162,7 +1234,7 @@
 
 
 
-            Lampa.Noty.show(Lampa.Lang.translate("mp_plugin_removed"));
+            mpNotify(Lampa.Lang.translate("mp_plugin_removed"), "error");
         }
     }
 
@@ -1244,7 +1316,7 @@
 
 
         if (!urls || urls.length === 0) {
-            Lampa.Noty.show(Lampa.Lang.translate("mp_no_installed_plugins"));
+            mpNotify(Lampa.Lang.translate("mp_no_installed_plugins"), "info");
             Lampa.Controller.toggle("settings_component");
             return;
         }
@@ -1319,7 +1391,7 @@
                             }
                         }
                         removeInstalledFromMulti(item.url);
-                        Lampa.Noty.show(Lampa.Lang.translate("mp_plugin_removed"));
+                        mpNotify(Lampa.Lang.translate("mp_plugin_removed"), "error");
                         showInstalledPlugins();
                     },
                 },
@@ -1363,5 +1435,3 @@
         });
     }
 })();
-
-
