@@ -203,7 +203,7 @@
             "}" +
 
             // ===== Содержимое: общее =====
-            ".mp-flat{text-align:left;color:var(--mp-text);box-sizing:border-box;font-size:1.2em;}" +
+            ".mp-flat{text-align:left;color:var(--mp-text);box-sizing:border-box;font-size:1.44em;}" +
             ".mp-flat__date{color:var(--mp-muted);font-size:.86em;line-height:1.35;margin-bottom:14px;}" +
             ".mp-flat__date b{color:var(--mp-text);font-weight:500;}" +
             ".mp-flat__section{font-weight:600;font-size:.95em;margin:0 0 8px;display:flex;align-items:center;}" +
