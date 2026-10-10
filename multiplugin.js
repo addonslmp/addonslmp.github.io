@@ -1,6 +1,7 @@
 (function () {
     "use strict";
 
+
     Lampa.Lang.add({
         mp_title: { ru: "Мультиплагин", uk: "Мультиплагін", en: "Multiplugin" },
         mp_updated: { ru: "Обновлено: ", uk: "Оновлено: ", en: "Updated: " },
@@ -79,7 +80,14 @@
             uk: "Автор:",
             en: "Author:",
         },
+        mp_dont_show_again: {
+            ru: "Больше не показывать",
+            uk: "Більше не показувати",
+            en: "Don't show again",
+        },
     });
+
+
 
 
     var syncUrl = "https://addonslmp.github.io/sources/plugins_mp.json";
@@ -89,9 +97,15 @@
     var SOURCE_KEY = "multiplugin";
     var INSTALLED_COLOR = "#8bc34a";
     var UPDATE_SEEN_KEY = "multi_update_seen";
+    var SYNCED_ONCE_KEY = "multi_plugins_synced_once";
+    var HIDE_INSTALL_WARNING_KEY = "mp_hide_install_warning";
+
+
 
 
     var pluginList = [];
+
+
 
 
     function translateObj(obj) {
@@ -100,6 +114,8 @@
         var lang = Lampa.Storage.get("language", "ru");
         return obj[lang] || obj.ru || obj.uk || obj.en || '';
     }
+
+
 
 
     function getCategories(list) {
@@ -121,15 +137,21 @@
     }
 
 
+
+
     function savePluginList(list) {
         Lampa.Storage.set(STORAGE_KEY, list);
         pluginList = list;
     }
 
 
+
+
     function getPluginList() {
         return Lampa.Storage.get(STORAGE_KEY, []);
     }
+
+
 
 
     function saveUpdateInfo(date, added, removed) {
@@ -143,9 +165,13 @@
     }
 
 
+
+
     function getUpdateInfo() {
         return Lampa.Storage.get(INFO_KEY, { date: "—", added: [], removed: [] });
     }
+
+
 
 
     function showInfo() {
@@ -153,8 +179,12 @@
         Lampa.Storage.set(UPDATE_SEEN_KEY, true);
 
 
+
+
         var html = '<div class="about" style="text-align:left">';
         html += "<div><b>" + Lampa.Lang.translate("mp_last_update") + "</b> " + info.date + "</div><br>";
+
+
 
 
         if (info.added.length) {
@@ -162,6 +192,8 @@
             var limit = 5;
             var count = Math.min(info.added.length, limit);
             var i;
+
+
 
 
             for (i = 0; i < count; i++) {
@@ -183,11 +215,15 @@
         }
 
 
+
+
         if (info.removed.length) {
             html += "<b>" + Lampa.Lang.translate("mp_removed") + '</b><div style="margin-bottom:6px;"></div>';
             var limit = 5;
             var count = Math.min(info.removed.length, limit);
             var i;
+
+
 
 
             for (i = 0; i < count; i++) {
@@ -209,12 +245,18 @@
         }
 
 
+
+
         if (!info.added.length && !info.removed.length) {
             html += "<div>" + Lampa.Lang.translate("mp_no_changes") + "</div>";
         }
 
 
+
+
         html += '</div>';
+
+
 
 
         var prev = Lampa.Controller.enabled().name;
@@ -231,8 +273,12 @@
     }
 
 
+
+
     function disableAllPlugins() {
         var prev = Lampa.Controller.enabled().name;
+
+
 
 
         Lampa.Modal.open({
@@ -253,14 +299,20 @@
                         Lampa.Modal.close();
 
 
+
+
                         var urls = Lampa.Storage.get(INSTALLED_KEY, []);
                         var allPlugins = Lampa.Plugins.get() || [];
+
+
 
 
                         if (urls.length === 0) {
                             Lampa.Controller.toggle(prev);
                             return;
                         }
+
+
 
 
                         for (var i = 0; i < urls.length; i++) {
@@ -273,11 +325,17 @@
                         }
 
 
+
+
                         Lampa.Plugins.save();
                         Lampa.Storage.set(INSTALLED_KEY, []);
 
 
+
+
                         Lampa.Noty.show(Lampa.Lang.translate("mp_all_plugins_removed"), INSTALLED_COLOR, 6000);
+
+
 
 
                         Lampa.Controller.toggle(prev);
@@ -286,6 +344,8 @@
             ],
         });
     }
+
+
 
 
     function confirmAndSync() {
@@ -316,6 +376,8 @@
     }
 
 
+
+
     function confirmAndLoadOnline() {
         var prev = Lampa.Controller.enabled().name;
         Lampa.Modal.open({
@@ -344,8 +406,12 @@
     }
 
 
+
+
     function loadOnlyOnline(callback) {
         Lampa.Loading.start();
+
+
 
 
         $.getJSON(syncUrl, function (data) {
@@ -366,13 +432,19 @@
                 savePluginList(newList);
 
 
+
+
                 for (i = 0; i < newList.length; i++) {
                     var p = newList[i];
                     var cat = translateObj(p.category).toLowerCase();
 
 
+
+
                     if (cat === "онлайн" || cat === "online") {
                         var existsInstalled = isInstalled(p.url);
+
+
 
 
                         if (!existsInstalled) {
@@ -385,13 +457,19 @@
                             });
 
 
+
+
                             addInstalledFromMulti(p.url);
                         }
                     }
                 }
 
 
+
+
                 Lampa.Plugins.save();
+
+
 
 
                 setTimeout(function () {
@@ -412,8 +490,12 @@
     }
 
 
+
+
     function synchronize(callback) {
         Lampa.Loading.start();
+
+
 
 
         $.getJSON(syncUrl, function (data) {
@@ -434,13 +516,45 @@
                 }
 
 
+
+
                 var prevList = getPluginList();
+                var syncedOnce = Lampa.Storage.get(SYNCED_ONCE_KEY, false);
+
+
+
+
+                if (!syncedOnce && prevList && prevList.length > 0) {
+                    Lampa.Storage.set(SYNCED_ONCE_KEY, true);
+                    syncedOnce = true;
+                }
+
+
+
+
+                if (!syncedOnce) {
+                    savePluginList(newList);
+                    saveUpdateInfo(remoteDate, [], []);
+                    Lampa.Storage.set(SYNCED_ONCE_KEY, true);
+                    Lampa.Noty.show(Lampa.Lang.translate("mp_sync_complete"));
+                    if (callback) callback();
+                    Lampa.Loading.stop();
+                    return;
+                }
+
+
+
+
                 var prevUrls = prevList.map(function (p) { return p.url; });
                 var newUrls = newList.map(function (p) { return p.url; });
 
 
+
+
                 var currentInfo = getUpdateInfo();
                 var sameDate = currentInfo.date === remoteDate;
+
+
 
 
                 if (sameDate) {
@@ -452,9 +566,13 @@
                 }
 
 
+
+
                 var added = newList.filter(function (p) {
                     return prevUrls.indexOf(p.url) === -1;
                 });
+
+
 
 
                 var removed = prevList.filter(function (p) {
@@ -462,8 +580,12 @@
                 });
 
 
+
+
                 savePluginList(newList);
                 saveUpdateInfo(remoteDate, added, removed);
+
+
 
 
                 Lampa.Noty.show(Lampa.Lang.translate("mp_sync_complete"));
@@ -480,6 +602,8 @@
             if (callback) callback();
         });
     }
+
+
 
 
     function checkUpdatesOnStart() {
@@ -501,8 +625,12 @@
                 }
 
 
+
+
                 var localList = getPluginList();
                 if (!localList || localList.length === 0) return;
+
+
 
 
                 var localUrls = [];
@@ -515,6 +643,8 @@
                 }
 
 
+
+
                 var added = [];
                 for (i = 0; i < remoteList.length; i++) {
                     if (localUrls.indexOf(remoteList[i].url) === -1) {
@@ -523,12 +653,16 @@
                 }
 
 
+
+
                 var removed = [];
                 for (i = 0; i < localList.length; i++) {
                     if (remoteUrls.indexOf(localList[i].url) === -1) {
                         removed.push(localList[i]);
                     }
                 }
+
+
 
 
                 if (added.length > 0 || removed.length > 0) {
@@ -541,12 +675,16 @@
     }
 
 
+
+
     function registerSettings() {
         Lampa.SettingsApi.addComponent({
             component: "multi_plugin",
             icon: '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/><rect x="8" y="8" width="8" height="8" rx="1" stroke="#fff" stroke-width="2"/></svg>',
             name: Lampa.Lang.translate("mp_title"),
         });
+
+
 
 
         Lampa.SettingsApi.addParam({
@@ -557,12 +695,16 @@
         });
 
 
+
+
         Lampa.SettingsApi.addParam({
             component: "multi_plugin",
             param: { type: "button" },
             field: { name: Lampa.Lang.translate("mp_sync_plugins") },
             onChange: confirmAndSync,
         });
+
+
 
 
         Lampa.SettingsApi.addParam({
@@ -573,11 +715,15 @@
         });
 
 
+
+
         Lampa.SettingsApi.addParam({
             component: "multi_plugin",
             param: { type: "title" },
             field: { name: Lampa.Lang.translate("mp_management") },
         });
+
+
 
 
         Lampa.SettingsApi.addParam({
@@ -588,6 +734,8 @@
         });
 
 
+
+
         Lampa.SettingsApi.addParam({
             component: "multi_plugin",
             param: { type: "button" },
@@ -596,12 +744,16 @@
         });
 
 
+
+
         Lampa.SettingsApi.addParam({
             component: "multi_plugin",
             param: { type: "button" },
             field: { name: Lampa.Lang.translate("mp_disable_all") },
             onChange: disableAllPlugins,
         });
+
+
 
 
         Lampa.SettingsApi.addParam({
@@ -636,45 +788,148 @@
     }
 
 
+
+
     function openCaptchaGate() {
-        var passed = Lampa.Storage.get("mp_install_shown", false);
-
-
-        if (passed) {
+        if (Lampa.Storage.get(HIDE_INSTALL_WARNING_KEY, false)) {
             showInstallPlugins();
             return;
         }
 
 
+
+
+        if (Lampa.Storage.get("mp_install_shown", false)) {
+            showInstallPlugins();
+            return;
+        }
+
+
+
+
+        var hideWarning = false;
         var prev = null;
         try {
             prev = Lampa.Controller.enabled().name;
         } catch (e) {}
 
 
+
+
+        if (!$("#mp-dont-show-style").length) {
+            $("head").append(
+                '<style id="mp-dont-show-style">' +
+                    ".mp-dont-show{display:inline-flex;align-items:center;justify-content:center;padding:0.75em 1.1em;border-radius:0.5em;}" +
+                    ".mp-dont-show .mp-check-box{width:1.25em;height:1.25em;border:2px solid rgba(255,255,255,0.55);border-radius:0.25em;margin-right:0.75em;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-sizing:border-box;font-size:0.95em;line-height:1;color:#fff;background:transparent;}" +
+                    ".mp-dont-show .mp-check-box.mp-checked{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.9);}" +
+                    ".mp-dont-show.focus .mp-check-box{border-color:#fff !important;box-shadow:0 0 0 2px #fff;}" +
+                    ".mp-dont-show .mp-check-label{line-height:1.25em;white-space:nowrap;}" +
+                "</style>"
+            );
+        }
+
+
+
+
+        var html = $(
+            '<div class="about">' +
+                Lampa.Lang.translate("mp_captcha_warning") +
+                '<div style="display:flex;justify-content:center;width:100%;margin-top:1.2em;">' +
+                    '<div class="selector mp-dont-show">' +
+                        '<div class="mp-check-box"></div>' +
+                        '<div class="mp-check-label">' + Lampa.Lang.translate("mp_dont_show_again") + "</div>" +
+                    "</div>" +
+                "</div>" +
+            "</div>"
+        );
+
+
+
+
         Lampa.Modal.open({
             title: Lampa.Lang.translate("mp_install_plugins"),
             align: "center",
             size: "medium",
-            html: $('<div class="about">' + Lampa.Lang.translate("mp_captcha_warning") + "</div>"),
+            html: html,
             buttons: [
                 {
                     name: "OK",
                     onSelect: function () {
                         Lampa.Modal.close();
-
-
                         Lampa.Storage.set("mp_install_shown", true);
-
-
+                        if (hideWarning) {
+                            Lampa.Storage.set(HIDE_INSTALL_WARNING_KEY, true);
+                        }
                         setTimeout(function () {
                             showInstallPlugins();
                         }, 300);
                     },
                 },
             ],
+            onBack: function () {
+                Lampa.Modal.close();
+                if (prev) Lampa.Controller.toggle(prev);
+            },
         });
+
+
+
+
+        setTimeout(function () {
+            var row = $(".modal .mp-dont-show");
+            var box = row.find(".mp-check-box");
+            if (!row.length) return;
+
+
+
+
+            var toggling = false;
+
+
+
+
+            function updateCheckVisual() {
+                if (hideWarning) {
+                    box.addClass("mp-checked").html("✓");
+                } else {
+                    box.removeClass("mp-checked").html("");
+                }
+            }
+
+
+
+
+            function toggleCheck() {
+                if (toggling) return;
+                toggling = true;
+                hideWarning = !hideWarning;
+                updateCheckVisual();
+                setTimeout(function () {
+                    toggling = false;
+                }, 150);
+            }
+
+
+
+
+            row.off("hover:enter.mpdont click.mpdont");
+            row.on("hover:enter.mpdont", toggleCheck);
+            row.on("click.mpdont", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleCheck();
+            });
+
+
+
+
+            try {
+                Lampa.Controller.collectionSet($(".modal"));
+            } catch (e) {}
+        }, 80);
     }
+
+
 
 
     function showInstallPlugins() {
@@ -685,7 +940,11 @@
         }
 
 
+
+
         var categories = getCategories(pluginList);
+
+
 
 
         var items = [];
@@ -696,6 +955,8 @@
                 category: categories[i],
             });
         }
+
+
 
 
         Lampa.Select.show({
@@ -711,6 +972,8 @@
     }
 
 
+
+
     function showInstallCategory(category) {
         var plugins = [];
         var i;
@@ -721,17 +984,22 @@
         }
 
 
+
+
         var items = [];
         for (i = 0; i < plugins.length; i++) {
             var p = plugins[i];
             var installed = isInstalled(p.url);
             var name = translateObj(p.name) || p.url.split("/").pop();
 
+
             var nameHtml = installed
                 ? '<span style="color:' + INSTALLED_COLOR + '">' + name + "</span>"
                 : name;
 
+
             var title = nameHtml;
+
 
             if (p.author) {
                 title +=
@@ -741,6 +1009,7 @@
                     p.author;
             }
 
+
             items.push({
                 title: title,
                 subtitle: translateObj(p.description) || "",
@@ -749,6 +1018,8 @@
                 installed: installed,
             });
         }
+
+
 
 
         Lampa.Select.show({
@@ -764,8 +1035,12 @@
     }
 
 
+
+
     function showPluginActions(plugin, isInstalled, category) {
         var actions = [];
+
+
 
 
         if (isInstalled) {
@@ -787,12 +1062,16 @@
         }
 
 
+
+
         actions.push({
             title: Lampa.Lang.translate("pi_cancel"),
             onSelect: function () {
                 showInstallCategory(category);
             },
         });
+
+
 
 
         Lampa.Select.show({
@@ -805,15 +1084,21 @@
     }
 
 
+
+
     function installPlugin(p) {
         var url = p.url;
         if (isInstalled(url)) return;
+
+
 
 
         var prev = null;
         try {
             prev = Lampa.Controller.enabled().name;
         } catch (e) {}
+
+
 
 
         Lampa.Plugins.add({
@@ -825,13 +1110,21 @@
         });
 
 
+
+
         Lampa.Plugins.save();
+
+
 
 
         addInstalledFromMulti(url);
 
 
+
+
         Lampa.Noty.show(Lampa.Lang.translate("pi_plugin_installed"));
+
+
 
 
         setTimeout(function () {
@@ -843,6 +1136,8 @@
             } catch (e) {}
         }, 800);
     }
+
+
 
 
     function removePlugin(url) {
@@ -860,7 +1155,11 @@
             Lampa.Plugins.save();
 
 
+
+
             removeInstalledFromMulti(url);
+
+
 
 
             Lampa.Noty.show(Lampa.Lang.translate("mp_plugin_removed"));
@@ -868,9 +1167,13 @@
     }
 
 
+
+
     function getInstalled() {
         return Lampa.Plugins.get() || [];
     }
+
+
 
 
     function isInstalled(url) {
@@ -883,9 +1186,13 @@
     }
 
 
+
+
     function getInstalledFromMulti() {
         return Lampa.Storage.get(INSTALLED_KEY, []);
     }
+
+
 
 
     function addInstalledFromMulti(url) {
@@ -893,14 +1200,20 @@
         var i;
 
 
+
+
         for (i = 0; i < list.length; i++) {
             if (list[i] === url) return;
         }
 
 
+
+
         list.push(url);
         Lampa.Storage.set(INSTALLED_KEY, list);
     }
+
+
 
 
     function removeInstalledFromMulti(url) {
@@ -909,17 +1222,25 @@
         var i;
 
 
+
+
         for (i = 0; i < list.length; i++) {
             if (list[i] !== url) newList.push(list[i]);
         }
+
+
 
 
         Lampa.Storage.set(INSTALLED_KEY, newList);
     }
 
 
+
+
     function showInstalledPlugins() {
         var urls = getInstalledFromMulti();
+
+
 
 
         if (!urls || urls.length === 0) {
@@ -929,13 +1250,19 @@
         }
 
 
+
+
         var items = [];
         var i;
+
+
 
 
         for (i = 0; i < urls.length; i++) {
             var url = urls[i];
             var name = url.split("/").pop().replace(".js", "");
+
+
 
 
             var j;
@@ -947,6 +1274,8 @@
             }
 
 
+
+
             items.push({
                 title: '<span style="color:' + INSTALLED_COLOR + '">' + name + "</span>",
                 subtitle: url,
@@ -954,6 +1283,8 @@
                 name: name,
             });
         }
+
+
 
 
         Lampa.Select.show({
@@ -967,6 +1298,8 @@
             },
         });
     }
+
+
 
 
     function showInstalledActions(item) {
@@ -1004,14 +1337,20 @@
     }
 
 
+
+
     function startPlugin() {
         Lampa.Storage.set("mp_install_shown", false);
+
+
 
 
         pluginList = getPluginList();
         checkUpdatesOnStart();
         registerSettings();
     }
+
+
 
 
     if (window.appready) {
@@ -1024,3 +1363,5 @@
         });
     }
 })();
+
+
