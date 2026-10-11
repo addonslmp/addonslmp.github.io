@@ -237,7 +237,7 @@
             ".mp-toast{position:fixed;top:1.6em;left:50%;transform:translate(-50%,-160%);opacity:0;z-index:99999;" +
                 "display:flex;align-items:center;max-width:80%;box-sizing:border-box;" +
                 "background:#2c2c2e;color:#f2f2f7;border-radius:14px;padding:.75em 1.3em .75em 0;" +
-                "font-size:1.21em;line-height:1.3;pointer-events:none;box-shadow:none;" +
+                "font-size:1.28em;line-height:1.3;pointer-events:none;box-shadow:none;" +
                 "transition:transform .25s ease,opacity .25s ease;}" +
             ".mp-toast--show{transform:translate(-50%,0);opacity:1;}" +
             ".mp-toast__bar{width:4px;align-self:stretch;border-radius:2px;margin:.1em .9em .1em .75em;background:#98989f;flex-shrink:0;}" +
