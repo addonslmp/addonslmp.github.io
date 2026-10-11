@@ -188,7 +188,7 @@
                 "display:flex;align-items:center;max-width:80%;box-sizing:border-box;" +
                 "background:rgba(28,28,30,.85);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);" +
                 "color:#f2f2f7;border-radius:14px;padding:.75em 1.3em .75em 0;" +
-                "font-size:1.28em;line-height:1.3;pointer-events:none;box-shadow:none;" +
+                "font-size:1.21em;line-height:1.3;pointer-events:none;box-shadow:none;" +
                 "transition:transform .25s ease,opacity .25s ease;}" +
             ".mp-toast--show{transform:translate(-50%,0);opacity:1;}" +
             ".mp-toast__bar{width:4px;align-self:stretch;border-radius:2px;margin:.1em .9em .1em .75em;background:#98989f;flex-shrink:0;}" +
@@ -803,7 +803,10 @@
             });
 
             try {
-                Lampa.Controller.collectionSet($(".modal"));
+                var modal = $(".modal");
+                var okButton = modal.find(".selector").not(".mp-dont-show").last();
+                Lampa.Controller.collectionSet(modal);
+                if (okButton.length) Lampa.Controller.collectionFocus(okButton[0], modal);
             } catch (e) {}
         }, 80);
     }
