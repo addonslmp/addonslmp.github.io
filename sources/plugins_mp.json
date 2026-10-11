@@ -1,5 +1,5 @@
 {
-  "updateDate": "03.10.2026",
+  "updateDate": "11.10.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -590,7 +590,7 @@
     "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },  
     {
-      "name": { "uk": "🇺🇦Ліхтар", "en": "🇺🇦Likhtar" },
+      "name": { "uk": "🇺🇦 Ліхтар", "en": "🇺🇦 Likhtar" },
       "author": "@syvyj",
       "url": "https://syvyj.github.io/studios_4lampa/likhtar.js",
       "description": {
@@ -760,7 +760,17 @@
         "en": "Online content in Ukrainian. You can find more information in this Telegram group: https://t.me/bazarnetua/9/26900"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },   
+    },
+    {
+      "name": { "uk": "🇺🇦 UAКіно", "en": "🇺🇦 UAKino" },
+      "author": "@uakino.ax",
+      "url": "https://uakino.ax/lampa.js",
+      "description": {
+        "uk": "Найбільший україномовний кінопортал. Фільми, серіали, аніме та мультфільми в українському дубляжі — від HD до Full HD, безкоштовно.",
+        "en": "The largest Ukrainian-language film portal. Films, serials, anime and cartoons in Ukrainian dubbing — from HD to Full HD, free of charge."
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },    
     {
       "name": { "en": "Alpac Online Beta" },
       "author": "@Alcopac",
