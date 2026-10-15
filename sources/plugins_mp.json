@@ -1,5 +1,5 @@
 {
-  "updateDate": "11.10.2026",
+  "updateDate": "15.10.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -718,7 +718,18 @@
         "en": "Torrent preload visualization plugin for TorrServer's built-in client."
       },
       "category": { "ru": "Торрент", "uk": "Торрент", "en": "Torrent" }
-    },    
+    },
+    {
+      "name": { "en": "BWA Online" },
+      "author": "@bwato",
+      "url": "https://app.bwa.ad/online.js",
+      "description": {
+        "ru": "Плагин для просмотра онлайн источников от разработчиков BWA Online.",
+        "uk": "Плагін для перегляду онлайн джерел від розробників BWA Online.",
+        "en": "A plugin for viewing online sources from BWA Online developers."
+      },
+      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
+    },     
     {
       "name": { "en": "Online_Mod" },
       "author": "@nb557",
@@ -739,18 +750,7 @@
         "en": "Community t.me/mmssixxx"
       },
       "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    },   
-    {
-      "name": { "en": "BWA Online" },
-      "author": "@bwato",
-      "url": "http://bwa.ad/rc",
-      "description": {
-        "ru": "Bwa - источник для онлайн просмотра фильмов и сериалов.",
-        "uk": "Bwa - джерело для онлайн перегляду фільмів та серіалів.",
-        "en": "Bwa - online source for watching movies and TVShows."
-      },
-      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    },   
+    },  
     {
       "name": { "en": "🇺🇦 LampaUA | KinoHub" },
       "author": "@BazarNetUA",
@@ -781,18 +781,7 @@
         "en": "Online Alpac. To view online, you must log in to the TG bot: @go_lampa_testbot"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },
-    {
-      "name": { "en": "New BWA Online" },
-      "author": "@bwato",
-      "url": "https://app.bwa.ad/online.js",
-      "description": {
-        "ru": "Плагин для просмотра онлайн источников от разработчиков BWA Online.",
-        "uk": "Плагін для перегляду онлайн джерел від розробників BWA Online.",
-        "en": "A plugin for viewing online sources from BWA Online developers."
-      },
-      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },    
+    },   
     {
       "name": { "en": "Skaz Online 4k" },
       "author": "@SkazTV",
