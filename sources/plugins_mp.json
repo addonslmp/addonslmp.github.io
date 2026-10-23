@@ -943,7 +943,6 @@
       "author": "@levende",
       "url": "https://lampa-ua-plugins.github.io/dawn.js",
       "description": {
-        "ru": "Dawn - плагин для просмотра аниме онлайн на украинском языке. Плагин также поддерживает пропуск интро и окончаний во встроенном плеере.",
         "uk": "Dawn - плагін для перегляду аніме онлайн українською. Плагін також підтримує пропуск інтро та ендінгів у вбудованому плеєрі.",
         "en": "Dawn is a plugin for viewing anime online in Ukrainian. The plugin also supports skipping intro and endings in the built-in player."
       },
