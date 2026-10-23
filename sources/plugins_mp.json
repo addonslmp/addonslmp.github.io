@@ -781,7 +781,18 @@
         "en": "Online Alpac. To view online, you must log in to the TG bot: @go_lampa_testbot"
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
-    },   
+    },
+    {
+      "name": { "en": "BWA Online 2" },
+      "author": "@bwato",
+      "url": "https://p.bwa.ad/online.js",
+      "description": {
+        "ru": "Альтернативная ссылка для установки BWA онлайн. Для тех у кого провайдер блокирует основную ссылку на плагин (https://app.bwa.ad/online.js).",
+        "uk": "Альтернативне посилання для встановлення BWA онлайн. Для тих, чий провайдер блокує основне посилання на плагін (https://app.bwa.ad/online.js).",
+        "en": "Alternative link to install BWA online. For those whose provider blocks the main link to the plugin (https://app.bwa.ad/online.js."
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },    
     {
       "name": { "en": "Skaz Online 4k" },
       "author": "@SkazTV",
