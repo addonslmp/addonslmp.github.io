@@ -1,5 +1,5 @@
 {
-  "updateDate": "23.10.2026",
+  "updateDate": "30.10.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -456,18 +456,7 @@
         "en": "A Netflix-style experience for Lampa — trending row, weekly Top 10 charts, Netflix's own named rows, a video billboard, and a full detail page, all rendered on canvas."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },    
-    {
-      "name": { "en": "Netflix Premium Style" },
-      "author": "@ourbeerdelivery",
-      "url": "https://ourbeerdelivery.github.io/pluginlmp/netflix_premium_style.js",
-      "description": {
-        "ru": "Интерфейс в стиле Netflix.",
-        "uk": "Інтерфейс у стилі Netflix.",
-        "en": "Netflix-style interface."
-      },
-      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    }, 
+    },
     {
       "name": { "en": "Nova Plus" },
       "author": "@amikdn",
