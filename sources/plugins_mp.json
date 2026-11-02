@@ -1165,16 +1165,6 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
-      "name": { "uk": "🇺🇦 Бандера 2.0", "en": "Bandera 2.0" },
-      "author": "@lme",
-      "url": "https://lampame.github.io/main/bo.js",
-      "description": {
-        "uk": "Онлайн з українськими джерелами.",
-        "en": "Online with Ukrainian sources."
-      },
-      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
-    },
-    {
       "name": { "en": "CommunityWatches" },
       "author": "@lme",
       "url": "https://lampame.github.io/main/cw.js",
