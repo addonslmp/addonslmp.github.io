@@ -1,5 +1,5 @@
 {
-  "updateDate": "30.10.2026",
+  "updateDate": "02.11.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -729,17 +729,7 @@
         "en": "Online source."
       },
       "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    },   
-    {
-      "name": { "uk": "🇺🇦 Free Bandera Онлайн" },
-      "author": "@lme",
-      "url": "https://lampame.github.io/main/bo.js",
-      "description": {
-        "uk": "Спільнота t.me/mmssixxx",
-        "en": "Community t.me/mmssixxx"
-      },
-      "category": { "ru": "Онлайн", "uk": "Онлайн", "en": "Online" }
-    },  
+    },
     {
       "name": { "en": "🇺🇦 LampaUA | KinoHub" },
       "author": "@BazarNetUA",
@@ -757,6 +747,16 @@
       "description": {
         "uk": "Агрегатор фільмів і серіалів, який об’єднує контент з різних українських джерел та надає зручний інтерфейс для перегляду.",
         "en": "An aggregator of films and series that combines content from different Ukrainian sources and provides a user-friendly interface for viewing."
+      },
+      "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
+    },
+    {
+      "name": { "en": "🇺🇦 UAKino" },
+      "author": "@ofreshofresh",
+      "url": "https://uakino.ofreshofresh.workers.dev/uakino.js",
+      "description": {
+        "uk": "UAKino — плагін для Lampa з українською озвучкою.<br>• Онлайн-перегляд: фільми, серіали й аніме з українських сайтів (UASerials, UAFlix, Eneyida, UASerial, AniTube, AnimeUA). Шукає одразу на всіх і першим відкриває джерело з найкращою якістю.<br>• Розумний пошук: знаходить потрібне, навіть якщо в Lampa назва російською або сайт переклав її інакше. Звіряє рік і тип, тому не плутає фільм із серіалом чи спін-офом.<br>• Торенти (UA): стандартний екран торентів Lampa, але лише роздачі з українською доріжкою, плюс Толока (з вашим акаунтом). Запускаються через ваш TorrServer.<br>• Зручний вибір серій: вкладки сезонів, картки серій з кадрами, вибір озвучки, перехід за номером серії. Переглянуті серії позначаються.",
+        "en": "UAKino — a plugin for Lampa with Ukrainian audio.<br>• Online streaming: movies, TV shows, and anime from Ukrainian websites (UASerials, UAFlix, Eneyida, UASerial, AniTube, AnimeUA). It searches all sources simultaneously and opens the source with the best quality first.<br>• Smart search: finds what you’re looking for, even if the title is in Russian in Lampa or the website has translated it differently. It checks the year and genre, so it doesn’t confuse a movie with a TV series or a spin-off. <br>• Torrents (UA): Lampa’s standard torrent screen, but only for torrents with a Ukrainian audio track, plus Toloka (with your account). They run through your TorrServer.<br>• Convenient episode selection: season tabs, episode cards with stills, audio track selection, and navigation by episode number. Watched episodes are marked as such."
       },
       "category": { "ru": "Дополнительный онлайн", "uk": "Додатковий онлайн", "en": "Additional online" }
     },    
