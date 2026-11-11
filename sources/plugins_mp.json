@@ -1,5 +1,5 @@
 {
-  "updateDate": "02.11.2026",
+  "updateDate": "11.11.2026",
   "plugins": [
     {
       "name": { "en": "MyShows" },
@@ -458,6 +458,16 @@
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
     },
     {
+      "name": { "en": "🇺🇦 LMX Pack" },
+      "author": "@irfnekf",
+      "url": "https://irfnekf.github.io/lampa-plugins/lmx_pack.js",
+      "description": {
+        "uk": "Один плагін змінює інтерфейс головного екрану, картки й сторінку фільму. Також додає нові каталоги: Netflix, Apple TV+, HBO, Prime, Disney+, Paramount+, SkyShowtime, AMC+, Аніме, Дорами — окрема сторінка з підбірками. Вигляд карток: назва, жанр, рейтинг і рік на постері, значок С4Е32, мітки «Нова серія» / «Сьогодні» / «Новинка» / «Скоро»",
+        "en": "One plugin changes the interface of the home screen, cards, and movie page. Also adds new directories: Netflix, Apple TV+, HBO, Prime, Disney+, Paramount+, SkyShowtime, AMC+, Anime, Dorami - a separate page with selections. Card appearance: title, genre, rating and year on the poster, C4E32 icon, labels \"New series\" / \"Today\" / \"New\" / \"Coming soon\""
+      },
+      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
+    },    
+    {
       "name": { "en": "Nova Plus" },
       "author": "@amikdn",
       "url": "https://amikdn.github.io/nova_plus.js",
@@ -555,18 +565,7 @@
         "en": "A plugin for displaying ratings from Kinopoisk and IMDb."
       },
       "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    },    
-    {
-      "name": { "en": "TMDB Networks & Providers" },
-      "author": "@levende",
-      "url": "https://levende.github.io/lampa-plugins/tmdb-networks.js",
-      "description": {
-        "ru": "Плагин добавляет на карточки кнопки стриминговых сервисов и платформ, показывающие, где были выпущены или проданы фильмы и сериалы, что упрощает их поиск.",
-        "uk": "Плагін додає на картки кнопки стрімінгових сервісів і платформ, що показують, де були випущені або продані фільми та серіали, що спрощує їх пошук.",
-        "en": "The plugin adds buttons for streaming services and platforms to the cards, showing where movies and TV series were released or sold, making them easier to find."
-      },
-      "category": { "ru": "Интерфейс", "uk": "Інтерфейс", "en": "Interface" }
-    }, 
+    },
     {
       "name": { "en": "Series Status" },
       "author": "@igorek1986",
