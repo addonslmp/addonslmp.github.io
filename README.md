@@ -139,6 +139,7 @@ Example structure:
         "uk": "МегаПлагін",
         "en": "MegaPlugin"
       },
+      "author": "@Author",
       "url": "https://megaplugin.com/plugin.js",
       "description": {
         "ru": "Лучший плагин в мире.",
@@ -158,6 +159,7 @@ Main fields:
 | Field       | Description                |
 | :---------- | :------------------------- |
 | name        | Plugin name                |
+| author      | Plugin author              |
 | url         | Link to the plugin file    |
 | description | Plugin description         |
 | category    | Plugin category            |
