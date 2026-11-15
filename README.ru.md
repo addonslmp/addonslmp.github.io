@@ -139,6 +139,7 @@ https://addonslmp.github.io/sources/plugins_mp.json
         "uk": "МегаПлагін",
         "en": "MegaPlugin"
       },
+      "author": "@Author",
       "url": "https://megaplugin.com/plugin.js",
       "description": {
         "ru": "Лучший плагин в мире.",
@@ -158,6 +159,7 @@ https://addonslmp.github.io/sources/plugins_mp.json
 | Поле | Описание |
 |-----|-----|
 | name | название плагина |
+| author | автор плагина |
 | url | ссылка на файл плагина |
 | description | описание плагина |
 | category | категория плагина |
