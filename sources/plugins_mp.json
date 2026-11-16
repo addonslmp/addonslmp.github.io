@@ -1185,16 +1185,6 @@
         "en": "Trending IMDb trailers: main-page line and full-screen browsing."
       },
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
-    },
-    {
-      "name": { "en": "🇺🇦 Kinobaza" },
-      "author": "@lme",
-      "url": "https://lampame.github.io/main/kb.js",
-      "description": {
-        "uk": "Український контент-провайдер КіноБаза: каталог, пошук, картки, рейтинги, трейлери, релізи, колекції.",
-        "en": "Ukrainian content provider KinoBaza: catalog, search, movie profiles, ratings, trailers, releases, collections."
-      },
-      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },    
     {
       "name": { "en": "Parsers" },
