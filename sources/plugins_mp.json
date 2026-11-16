@@ -1133,17 +1133,6 @@
       "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
     },
     {
-      "name": { "en": "Hikka Anime" },
-      "author": "@lme",
-      "url": "https://lampame.github.io/main/hikka.js",
-      "description": {
-        "ru": "Аниме-каталог Hikka с фильтрами, франшизами и персонажами.",
-        "uk": "Аніме-каталог Hikka з фільтрами, франшизами та персонажами.",
-        "en": "Hikka anime catalog with filters and characters."
-      },
-      "category": { "ru": "Плагины от LME", "uk": "Плагіни від LME", "en": "Plugins by LME" }
-    },
-    {
       "name": { "en": "TryzubTV" },
       "author": "@lme",
       "url": "https://lampame.github.io/main/ttv.js",
