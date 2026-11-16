@@ -275,7 +275,7 @@
     {
       "name": { "en": "Skaz Games", "ru": "Сказочные игры", "uk": "Казкові ігри" },
       "author": "@SkazTV",
-      "url": "http://skaz.tv/g.js",
+      "url": "http://skaz.team/g.js",
       "description": {
         "ru": "Игры в Lampa.",
         "uk": "Ігри у Lampa.",
@@ -784,7 +784,7 @@
     {
       "name": { "en": "Skaz Online 4k" },
       "author": "@SkazTV",
-      "url": "http://skaz.tv/o.js",
+      "url": "http://skaz.team/o.js",
       "description": {
         "ru": "Подписка by Skaz. Платные онлайн 4k источники в Lampa. Управление через телеграм-бот @skaztv_bot",
         "uk": "Підписка від Skaz. Платні онлайн 4k джерела в Lampa. Управління через телеграм-бот @skaztv_bot",
@@ -795,7 +795,7 @@
     {
       "name": { "en": "Amedia Skaz" },
       "author": "@SkazTV",
-      "url": "https://skaz.tv/amedia/a.js",
+      "url": "https://skaz.team/amedia/a.js",
       "description": {
         "ru": "После подключения в карточке фильма появится кнопка «Amedia» — нажатие запустит встроенный плеер Lampa с управлением громкостью, качеством и перемоткой через штатный UI.",
         "uk": "Після підключення у картці фільму з’явиться кнопка «Amedia» — натискання запустить вбудований плеєр Lampa з можливістю регулювання гучності, якості та перемотування через стандартний інтерфейс користувача.",
@@ -918,7 +918,7 @@
     {
       "name": { "en": "Skaz TV + Online 4k" },
       "author": "@SkazTV",
-      "url": "http://skaz.tv/tv.js",
+      "url": "http://skaz.team/tv.js",
       "description": {
         "ru": "Подписка by Skaz. Более 1800 каналов · SD, HD, FHD, 4K HDR. Онлайн 4k источники в Lampa. Управление через телеграм-бот @skaztv_bot",
         "uk": "Підписка від Skaz. Понад 1800 каналів · SD, HD, FHD, 4K HDR. Онлайн 4k джерела в Lampa. Управління через телеграм-бот @skaztv_bot",
@@ -947,16 +947,6 @@
       },
       "category": { "ru": "Аниме", "uk": "Аніме", "en": "Anime" }
     },    
-    {
-      "name": { "en": "🇺🇦 Hikka Anime" },
-      "author": "@lme",
-      "url": "https://lampame.github.io/main/hikka.js",
-      "description": {
-        "uk": "Каталог аніме з hikka.io: пошук, фільтри, сортування.",
-        "en": "Anime catalog from hikka.io: search, filters, sorting."
-      },
-      "category": { "ru": "Аниме", "uk": "Аніме", "en": "Anime" }
-    },
     {
       "name": { "en": "Shikimori" },
       "author": "@lme,@kartmansms",
